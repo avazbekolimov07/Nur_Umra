@@ -7,21 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08EC25A329A341F700DAC561 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EC25A229A341F700DAC561 /* MainVC.swift */; };
 		30A9C35D29A32AD700C9EEEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A9C35C29A32AD700C9EEEA /* AppDelegate.swift */; };
-		30A9C35F29A32AD700C9EEEA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A9C35E29A32AD700C9EEEA /* SceneDelegate.swift */; };
-		30A9C36129A32AD700C9EEEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A9C36029A32AD700C9EEEA /* ViewController.swift */; };
-		30A9C36429A32AD700C9EEEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30A9C36229A32AD700C9EEEA /* Main.storyboard */; };
 		30A9C36629A32AD800C9EEEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30A9C36529A32AD800C9EEEA /* Assets.xcassets */; };
 		30A9C36929A32AD800C9EEEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30A9C36729A32AD800C9EEEA /* LaunchScreen.storyboard */; };
 		F984BFFBFD2A39BC20E316F3 /* Pods_Nur_Umra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4BA30C2E6F8DF0B7CEE341 /* Pods_Nur_Umra.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		08EC25A229A341F700DAC561 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		30A9C35929A32AD700C9EEEA /* Nur_Umra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nur_Umra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30A9C35C29A32AD700C9EEEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		30A9C35E29A32AD700C9EEEA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		30A9C36029A32AD700C9EEEA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		30A9C36329A32AD700C9EEEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		30A9C36529A32AD800C9EEEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30A9C36829A32AD800C9EEEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30A9C36A29A32AD800C9EEEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,12 +60,10 @@
 			isa = PBXGroup;
 			children = (
 				30A9C35C29A32AD700C9EEEA /* AppDelegate.swift */,
-				30A9C35E29A32AD700C9EEEA /* SceneDelegate.swift */,
-				30A9C36029A32AD700C9EEEA /* ViewController.swift */,
-				30A9C36229A32AD700C9EEEA /* Main.storyboard */,
 				30A9C36529A32AD800C9EEEA /* Assets.xcassets */,
 				30A9C36729A32AD800C9EEEA /* LaunchScreen.storyboard */,
 				30A9C36A29A32AD800C9EEEA /* Info.plist */,
+				08EC25A229A341F700DAC561 /* MainVC.swift */,
 			);
 			path = Nur_Umra;
 			sourceTree = "<group>";
@@ -88,7 +82,6 @@
 				8DCE3CF87F82B0ACD7566477 /* Pods-Nur_Umra.debug.xcconfig */,
 				8B68D0C6A4E41D488AE64253 /* Pods-Nur_Umra.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -155,7 +148,6 @@
 			files = (
 				30A9C36929A32AD800C9EEEA /* LaunchScreen.storyboard in Resources */,
 				30A9C36629A32AD800C9EEEA /* Assets.xcassets in Resources */,
-				30A9C36429A32AD700C9EEEA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,23 +217,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30A9C36129A32AD700C9EEEA /* ViewController.swift in Sources */,
+				08EC25A329A341F700DAC561 /* MainVC.swift in Sources */,
 				30A9C35D29A32AD700C9EEEA /* AppDelegate.swift in Sources */,
-				30A9C35F29A32AD700C9EEEA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		30A9C36229A32AD700C9EEEA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				30A9C36329A32AD700C9EEEA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		30A9C36729A32AD800C9EEEA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -303,7 +286,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -357,7 +340,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -380,9 +363,8 @@
 				INFOPLIST_FILE = Nur_Umra/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -409,9 +391,8 @@
 				INFOPLIST_FILE = Nur_Umra/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
