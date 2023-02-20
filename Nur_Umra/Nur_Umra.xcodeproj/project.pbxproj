@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		08EC25A329A341F700DAC561 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EC25A229A341F700DAC561 /* MainVC.swift */; };
+		08EC25B829A39EB300DAC561 /* HomeContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EC25B729A39EB300DAC561 /* HomeContact.swift */; };
+		08EC25BA29A39ED100DAC561 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EC25B929A39ED100DAC561 /* HomePresenter.swift */; };
+		08EC25BC29A39EEE00DAC561 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EC25BB29A39EEE00DAC561 /* HomeRouter.swift */; };
+		08EC25BE29A39EFD00DAC561 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EC25BD29A39EFD00DAC561 /* HomeViewController.swift */; };
+		08EC25C029A39F0D00DAC561 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EC25BF29A39F0D00DAC561 /* HomeInteractor.swift */; };
+		08EC25C429A39FC700DAC561 /* UmraGideContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EC25C329A39FC700DAC561 /* UmraGideContract.swift */; };
+		08EC25C629A39FDA00DAC561 /* UmraGidePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EC25C529A39FDA00DAC561 /* UmraGidePresenter.swift */; };
+		08EC25C829A39FE800DAC561 /* UmraGideRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EC25C729A39FE800DAC561 /* UmraGideRouter.swift */; };
+		08EC25CA29A39FFD00DAC561 /* UmraGideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EC25C929A39FFD00DAC561 /* UmraGideViewController.swift */; };
+		08EC25CC29A3A00E00DAC561 /* UmraGideInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EC25CB29A3A00E00DAC561 /* UmraGideInteractor.swift */; };
+		08EC25CE29A3A19B00DAC561 /* NewsDm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EC25CD29A3A19B00DAC561 /* NewsDm.swift */; };
 		30A9C35D29A32AD700C9EEEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A9C35C29A32AD700C9EEEA /* AppDelegate.swift */; };
 		30A9C36629A32AD800C9EEEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30A9C36529A32AD800C9EEEA /* Assets.xcassets */; };
 		30A9C36929A32AD800C9EEEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30A9C36729A32AD800C9EEEA /* LaunchScreen.storyboard */; };
@@ -16,6 +27,17 @@
 
 /* Begin PBXFileReference section */
 		08EC25A229A341F700DAC561 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		08EC25B729A39EB300DAC561 /* HomeContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContact.swift; sourceTree = "<group>"; };
+		08EC25B929A39ED100DAC561 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		08EC25BB29A39EEE00DAC561 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		08EC25BD29A39EFD00DAC561 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		08EC25BF29A39F0D00DAC561 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		08EC25C329A39FC700DAC561 /* UmraGideContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmraGideContract.swift; sourceTree = "<group>"; };
+		08EC25C529A39FDA00DAC561 /* UmraGidePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmraGidePresenter.swift; sourceTree = "<group>"; };
+		08EC25C729A39FE800DAC561 /* UmraGideRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmraGideRouter.swift; sourceTree = "<group>"; };
+		08EC25C929A39FFD00DAC561 /* UmraGideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmraGideViewController.swift; sourceTree = "<group>"; };
+		08EC25CB29A3A00E00DAC561 /* UmraGideInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmraGideInteractor.swift; sourceTree = "<group>"; };
+		08EC25CD29A3A19B00DAC561 /* NewsDm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDm.swift; sourceTree = "<group>"; };
 		30A9C35929A32AD700C9EEEA /* Nur_Umra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nur_Umra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30A9C35C29A32AD700C9EEEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30A9C36529A32AD800C9EEEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +60,178 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08EC25A429A39A0500DAC561 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				30A9C36729A32AD800C9EEEA /* LaunchScreen.storyboard */,
+				30A9C36A29A32AD800C9EEEA /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		08EC25A529A39A1800DAC561 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				08EC25A729A39A4300DAC561 /* App */,
+				08EC25A829A39A5400DAC561 /* Modules */,
+				08EC25A929A39AA000DAC561 /* Common */,
+				08EC25AB29A39AB700DAC561 /* Managers */,
+				08EC25AC29A39AC000DAC561 /* Services */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		08EC25A629A39A2E00DAC561 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				30A9C36529A32AD800C9EEEA /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		08EC25A729A39A4300DAC561 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				30A9C35C29A32AD700C9EEEA /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		08EC25A829A39A5400DAC561 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				08EC25AF29A39B5600DAC561 /* Home */,
+				08EC25CF29A3A28E00DAC561 /* AllNews */,
+				08EC25C129A39F1700DAC561 /* Umra Gides */,
+				08EC25C229A39F6500DAC561 /* Umra Gides Detailed */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		08EC25A929A39AA000DAC561 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				08EC25AE29A39B0000DAC561 /* Entites */,
+				08EC25AD29A39AF400DAC561 /* EndPoints */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		08EC25AB29A39AB700DAC561 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		08EC25AC29A39AC000DAC561 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		08EC25AD29A39AF400DAC561 /* EndPoints */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EndPoints;
+			sourceTree = "<group>";
+		};
+		08EC25AE29A39B0000DAC561 /* Entites */ = {
+			isa = PBXGroup;
+			children = (
+				08EC25CD29A3A19B00DAC561 /* NewsDm.swift */,
+			);
+			path = Entites;
+			sourceTree = "<group>";
+		};
+		08EC25AF29A39B5600DAC561 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				08EC25B729A39EB300DAC561 /* HomeContact.swift */,
+				08EC25B929A39ED100DAC561 /* HomePresenter.swift */,
+				08EC25BB29A39EEE00DAC561 /* HomeRouter.swift */,
+				08EC25BD29A39EFD00DAC561 /* HomeViewController.swift */,
+				08EC25BF29A39F0D00DAC561 /* HomeInteractor.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		08EC25B129A39C2F00DAC561 /* Umra Detail - Dua */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Umra Detail - Dua";
+			sourceTree = "<group>";
+		};
+		08EC25B229A39C3800DAC561 /* Umra Detail - Dua Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Umra Detail - Dua Detail";
+			sourceTree = "<group>";
+		};
+		08EC25B329A39C7800DAC561 /* Umra Detail - Preparation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Umra Detail - Preparation";
+			sourceTree = "<group>";
+		};
+		08EC25B429A39CC400DAC561 /* Umra Detail - Places */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Umra Detail - Places";
+			sourceTree = "<group>";
+		};
+		08EC25B529A39D0500DAC561 /* Umra Detail - Places Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Umra Detail - Places Detail";
+			sourceTree = "<group>";
+		};
+		08EC25B629A39D6200DAC561 /* Umra Detail - Abot */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Umra Detail - Abot";
+			sourceTree = "<group>";
+		};
+		08EC25C129A39F1700DAC561 /* Umra Gides */ = {
+			isa = PBXGroup;
+			children = (
+				08EC25C329A39FC700DAC561 /* UmraGideContract.swift */,
+				08EC25C529A39FDA00DAC561 /* UmraGidePresenter.swift */,
+				08EC25C729A39FE800DAC561 /* UmraGideRouter.swift */,
+				08EC25C929A39FFD00DAC561 /* UmraGideViewController.swift */,
+				08EC25CB29A3A00E00DAC561 /* UmraGideInteractor.swift */,
+			);
+			path = "Umra Gides";
+			sourceTree = "<group>";
+		};
+		08EC25C229A39F6500DAC561 /* Umra Gides Detailed */ = {
+			isa = PBXGroup;
+			children = (
+				08EC25B529A39D0500DAC561 /* Umra Detail - Places Detail */,
+				08EC25B629A39D6200DAC561 /* Umra Detail - Abot */,
+				08EC25B129A39C2F00DAC561 /* Umra Detail - Dua */,
+				08EC25B229A39C3800DAC561 /* Umra Detail - Dua Detail */,
+				08EC25B329A39C7800DAC561 /* Umra Detail - Preparation */,
+				08EC25B429A39CC400DAC561 /* Umra Detail - Places */,
+			);
+			path = "Umra Gides Detailed";
+			sourceTree = "<group>";
+		};
+		08EC25CF29A3A28E00DAC561 /* AllNews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AllNews;
+			sourceTree = "<group>";
+		};
 		30A9C35029A32AD700C9EEEA = {
 			isa = PBXGroup;
 			children = (
@@ -59,10 +253,9 @@
 		30A9C35B29A32AD700C9EEEA /* Nur_Umra */ = {
 			isa = PBXGroup;
 			children = (
-				30A9C35C29A32AD700C9EEEA /* AppDelegate.swift */,
-				30A9C36529A32AD800C9EEEA /* Assets.xcassets */,
-				30A9C36729A32AD800C9EEEA /* LaunchScreen.storyboard */,
-				30A9C36A29A32AD800C9EEEA /* Info.plist */,
+				08EC25A629A39A2E00DAC561 /* Resources */,
+				08EC25A529A39A1800DAC561 /* Classes */,
+				08EC25A429A39A0500DAC561 /* Supporting Files */,
 				08EC25A229A341F700DAC561 /* MainVC.swift */,
 			);
 			path = Nur_Umra;
@@ -218,7 +411,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				08EC25A329A341F700DAC561 /* MainVC.swift in Sources */,
+				08EC25B829A39EB300DAC561 /* HomeContact.swift in Sources */,
 				30A9C35D29A32AD700C9EEEA /* AppDelegate.swift in Sources */,
+				08EC25BA29A39ED100DAC561 /* HomePresenter.swift in Sources */,
+				08EC25C829A39FE800DAC561 /* UmraGideRouter.swift in Sources */,
+				08EC25C629A39FDA00DAC561 /* UmraGidePresenter.swift in Sources */,
+				08EC25CA29A39FFD00DAC561 /* UmraGideViewController.swift in Sources */,
+				08EC25BC29A39EEE00DAC561 /* HomeRouter.swift in Sources */,
+				08EC25CC29A3A00E00DAC561 /* UmraGideInteractor.swift in Sources */,
+				08EC25C429A39FC700DAC561 /* UmraGideContract.swift in Sources */,
+				08EC25BE29A39EFD00DAC561 /* HomeViewController.swift in Sources */,
+				08EC25C029A39F0D00DAC561 /* HomeInteractor.swift in Sources */,
+				08EC25CE29A3A19B00DAC561 /* NewsDm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
