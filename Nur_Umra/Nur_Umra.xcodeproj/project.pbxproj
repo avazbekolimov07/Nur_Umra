@@ -64,7 +64,6 @@
 			isa = PBXGroup;
 			children = (
 				30A9C36729A32AD800C9EEEA /* LaunchScreen.storyboard */,
-				30A9C36A29A32AD800C9EEEA /* Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -253,10 +252,11 @@
 		30A9C35B29A32AD700C9EEEA /* Nur_Umra */ = {
 			isa = PBXGroup;
 			children = (
-				08EC25A629A39A2E00DAC561 /* Resources */,
 				08EC25A529A39A1800DAC561 /* Classes */,
+				08EC25A629A39A2E00DAC561 /* Resources */,
 				08EC25A429A39A0500DAC561 /* Supporting Files */,
 				08EC25A229A341F700DAC561 /* MainVC.swift */,
+				30A9C36A29A32AD800C9EEEA /* Info.plist */,
 			);
 			path = Nur_Umra;
 			sourceTree = "<group>";
