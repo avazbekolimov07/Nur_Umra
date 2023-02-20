@@ -12,6 +12,6 @@ target 'Nur_Umra' do
  pod 'GoogleMaps'
  pod 'GooglePlaces'
  pod 'Localize-Swift', '~> 3.2'
-
+ pod 'SnapKit'
 
 end

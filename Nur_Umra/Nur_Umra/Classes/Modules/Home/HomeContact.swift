@@ -10,13 +10,13 @@ import UIKit
 
 // MARK: View Output (Presenter -> View)
 protocol PresenterToViewHomeProtocol: class {
-    func onFetchQuotesSuccess()
-    func onFetchQuotesFailure(error: String)
-    
-    func showHUD()
-    func hideHUD()
-    
-    func deselectRowAt(row: Int)
+//    func onFetchQuotesSuccess()
+//    func onFetchQuotesFailure(error: String)
+//
+//    func showHUD()
+//    func hideHUD()
+//
+//    func deselectRowAt(row: Int)
 }
 
 
@@ -27,17 +27,17 @@ protocol ViewToPresenterHomeProtocol: class {
     var interactor: PresenterToInteractorHomeProtocol? { get set }
     var router: PresenterToRouterHomeProtocol? { get set }
     
-    var quotesStrings: [String]? { get set }
-    
-    func viewDidLoad()
-    
-    func refresh()
-    
-    func numberOfRowsInSection() -> Int
-    func textLabelText(indexPath: IndexPath) -> String?
-    
-    func didSelectRowAt(index: Int)
-    func deselectRowAt(index: Int)
+//    var quotesStrings: [String]? { get set }
+//
+//    func viewDidLoad()
+//
+//    func refresh()
+//
+//    func numberOfRowsInSection() -> Int
+//    func textLabelText(indexPath: IndexPath) -> String?
+//
+//    func didSelectRowAt(index: Int)
+//    func deselectRowAt(index: Int)
 
 }
 
@@ -47,19 +47,19 @@ protocol PresenterToInteractorHomeProtocol: class {
     
     var presenter: InteractorToPresenterHomeProtocol? { get set }
     
-    func loadQuotes()
-    func retrieveQuote(at index: Int)
+//    func loadQuotes()
+//    func retrieveQuote(at index: Int)
 }
 
 
 // MARK: Interactor Output (Interactor -> Presenter)
 protocol InteractorToPresenterHomeProtocol: class {
     
-    func fetchNewsSuccess(news: [NewsDM])
-    func fetchNewsFailure(errorCode: Int)
-    
-    func getNewsSuccess(_ news: NewsDM)
-    func getNewsFailure()
+//    func fetchNewsSuccess(news: [NewsDM])
+//    func fetchNewsFailure(errorCode: Int)
+//
+//    func getNewsSuccess(_ news: NewsDM)
+//    func getNewsFailure()
     
 }
 
@@ -67,7 +67,7 @@ protocol InteractorToPresenterHomeProtocol: class {
 // MARK: Router Input (Presenter -> Router)
 protocol PresenterToRouterHomeProtocol: class {
     
-    static func createModule() -> UINavigationController
-    
-    func pushToAllNews(on view: PresenterToViewHomeProtocol, with news: NewsDM)
+//    static func createModule() -> UINavigationController
+//
+//    func pushToAllNews(on view: PresenterToViewHomeProtocol, with news: NewsDM)
 }
