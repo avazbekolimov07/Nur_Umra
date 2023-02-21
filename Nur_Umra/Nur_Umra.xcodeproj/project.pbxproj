@@ -19,6 +19,14 @@
 		08EC25CA29A39FFD00DAC561 /* UmraGideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EC25C929A39FFD00DAC561 /* UmraGideViewController.swift */; };
 		08EC25CC29A3A00E00DAC561 /* UmraGideInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EC25CB29A3A00E00DAC561 /* UmraGideInteractor.swift */; };
 		08EC25CE29A3A19B00DAC561 /* NewsDm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EC25CD29A3A19B00DAC561 /* NewsDm.swift */; };
+		305DBDEF29A48EA300D962EF /* Home-UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305DBDEE29A48EA300D962EF /* Home-UI.swift */; };
+		305DBDF229A4940000D962EF /* HomeNewsCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305DBDF129A4940000D962EF /* HomeNewsCVC.swift */; };
+		305DBDF429A4945E00D962EF /* HomeGuideCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305DBDF329A4945E00D962EF /* HomeGuideCVC.swift */; };
+		305DBDF829A4952E00D962EF /* HomeReusableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305DBDF729A4952E00D962EF /* HomeReusableHeaderView.swift */; };
+		305DBDFC29A4980900D962EF /* ClassIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305DBDFB29A4980900D962EF /* ClassIdentifiable.swift */; };
+		305DBDFE29A4982A00D962EF /* UITableView+ClassIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305DBDFD29A4982A00D962EF /* UITableView+ClassIdentifiable.swift */; };
+		305DBE0029A4984200D962EF /* UICollectionView+ClassIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305DBDFF29A4984200D962EF /* UICollectionView+ClassIdentifiable.swift */; };
+		305DBE0329A498EE00D962EF /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305DBE0229A498EE00D962EF /* UIWindow+Extension.swift */; };
 		30A9C35D29A32AD700C9EEEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A9C35C29A32AD700C9EEEA /* AppDelegate.swift */; };
 		30A9C36629A32AD800C9EEEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30A9C36529A32AD800C9EEEA /* Assets.xcassets */; };
 		30A9C36929A32AD800C9EEEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30A9C36729A32AD800C9EEEA /* LaunchScreen.storyboard */; };
@@ -38,6 +46,14 @@
 		08EC25C929A39FFD00DAC561 /* UmraGideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmraGideViewController.swift; sourceTree = "<group>"; };
 		08EC25CB29A3A00E00DAC561 /* UmraGideInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmraGideInteractor.swift; sourceTree = "<group>"; };
 		08EC25CD29A3A19B00DAC561 /* NewsDm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDm.swift; sourceTree = "<group>"; };
+		305DBDEE29A48EA300D962EF /* Home-UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home-UI.swift"; sourceTree = "<group>"; };
+		305DBDF129A4940000D962EF /* HomeNewsCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNewsCVC.swift; sourceTree = "<group>"; };
+		305DBDF329A4945E00D962EF /* HomeGuideCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGuideCVC.swift; sourceTree = "<group>"; };
+		305DBDF729A4952E00D962EF /* HomeReusableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReusableHeaderView.swift; sourceTree = "<group>"; };
+		305DBDFB29A4980900D962EF /* ClassIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassIdentifiable.swift; sourceTree = "<group>"; };
+		305DBDFD29A4982A00D962EF /* UITableView+ClassIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+ClassIdentifiable.swift"; sourceTree = "<group>"; };
+		305DBDFF29A4984200D962EF /* UICollectionView+ClassIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+ClassIdentifiable.swift"; sourceTree = "<group>"; };
+		305DBE0229A498EE00D962EF /* UIWindow+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extension.swift"; sourceTree = "<group>"; };
 		30A9C35929A32AD700C9EEEA /* Nur_Umra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nur_Umra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30A9C35C29A32AD700C9EEEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30A9C36529A32AD800C9EEEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -83,6 +99,7 @@
 		08EC25A629A39A2E00DAC561 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				305DBDF929A497C900D962EF /* Extensions */,
 				30A9C36529A32AD800C9EEEA /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -148,11 +165,13 @@
 		08EC25AF29A39B5600DAC561 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				08EC25B729A39EB300DAC561 /* HomeContact.swift */,
+				305DBDF029A493B000D962EF /* CVC */,
+				305DBDEE29A48EA300D962EF /* Home-UI.swift */,
+				08EC25BD29A39EFD00DAC561 /* HomeViewController.swift */,
 				08EC25B929A39ED100DAC561 /* HomePresenter.swift */,
 				08EC25BB29A39EEE00DAC561 /* HomeRouter.swift */,
-				08EC25BD29A39EFD00DAC561 /* HomeViewController.swift */,
 				08EC25BF29A39F0D00DAC561 /* HomeInteractor.swift */,
+				08EC25B729A39EB300DAC561 /* HomeContact.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -229,6 +248,43 @@
 			children = (
 			);
 			path = AllNews;
+			sourceTree = "<group>";
+		};
+		305DBDF029A493B000D962EF /* CVC */ = {
+			isa = PBXGroup;
+			children = (
+				305DBDF729A4952E00D962EF /* HomeReusableHeaderView.swift */,
+				305DBDF129A4940000D962EF /* HomeNewsCVC.swift */,
+				305DBDF329A4945E00D962EF /* HomeGuideCVC.swift */,
+			);
+			path = CVC;
+			sourceTree = "<group>";
+		};
+		305DBDF929A497C900D962EF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				305DBE0129A498D500D962EF /* UIKit */,
+				305DBDFA29A497DB00D962EF /* Identifiable Type  */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		305DBDFA29A497DB00D962EF /* Identifiable Type  */ = {
+			isa = PBXGroup;
+			children = (
+				305DBDFB29A4980900D962EF /* ClassIdentifiable.swift */,
+				305DBDFD29A4982A00D962EF /* UITableView+ClassIdentifiable.swift */,
+				305DBDFF29A4984200D962EF /* UICollectionView+ClassIdentifiable.swift */,
+			);
+			path = "Identifiable Type ";
+			sourceTree = "<group>";
+		};
+		305DBE0129A498D500D962EF /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				305DBE0229A498EE00D962EF /* UIWindow+Extension.swift */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 		30A9C35029A32AD700C9EEEA = {
@@ -410,6 +466,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				305DBDFE29A4982A00D962EF /* UITableView+ClassIdentifiable.swift in Sources */,
+				305DBE0029A4984200D962EF /* UICollectionView+ClassIdentifiable.swift in Sources */,
+				305DBE0329A498EE00D962EF /* UIWindow+Extension.swift in Sources */,
+				305DBDF429A4945E00D962EF /* HomeGuideCVC.swift in Sources */,
 				08EC25A329A341F700DAC561 /* MainVC.swift in Sources */,
 				08EC25B829A39EB300DAC561 /* HomeContact.swift in Sources */,
 				30A9C35D29A32AD700C9EEEA /* AppDelegate.swift in Sources */,
@@ -417,7 +477,11 @@
 				08EC25C829A39FE800DAC561 /* UmraGideRouter.swift in Sources */,
 				08EC25C629A39FDA00DAC561 /* UmraGidePresenter.swift in Sources */,
 				08EC25CA29A39FFD00DAC561 /* UmraGideViewController.swift in Sources */,
+				305DBDF829A4952E00D962EF /* HomeReusableHeaderView.swift in Sources */,
 				08EC25BC29A39EEE00DAC561 /* HomeRouter.swift in Sources */,
+				305DBDEF29A48EA300D962EF /* Home-UI.swift in Sources */,
+				305DBDF229A4940000D962EF /* HomeNewsCVC.swift in Sources */,
+				305DBDFC29A4980900D962EF /* ClassIdentifiable.swift in Sources */,
 				08EC25CC29A3A00E00DAC561 /* UmraGideInteractor.swift in Sources */,
 				08EC25C429A39FC700DAC561 /* UmraGideContract.swift in Sources */,
 				08EC25BE29A39EFD00DAC561 /* HomeViewController.swift in Sources */,
