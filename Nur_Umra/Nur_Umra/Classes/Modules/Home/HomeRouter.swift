@@ -30,14 +30,23 @@ class HomeRouter {
 extension HomeRouter: PresenterToRouterHomeProtocol {
     
     // MARK: - Navigation
-//    func pushToQuoteDetail(on view: PresenterToViewQuotesProtocol, with quote: Quote) {
-//        print("QuotesRouter is instructed to push QuoteDetailViewController onto the navigation stack.")
-//        let quoteDetailViewController = QuoteDetailRouter.createModule(with: quote)
-//
-//        let viewController = view as! QuotesViewController
+    func pushToNewDetail(on view: PresenterToViewHomeProtocol, with new: NewsDM) {
+        print("New Detail")
+//        let quoteDetailViewController = QuoteDetailRouter.createModule(with: new)
+
+//        let viewController = view as! AllNewsViewController
 //        viewController.navigationController?
 //            .pushViewController(quoteDetailViewController, animated: true)
-//    }
+    }
+    
+    func pushToAllNews(on view: PresenterToViewHomeProtocol, with allNews: [NewsDM]) {
+        print("All News")
+//        let quoteDetailViewController = QuoteDetailRouter.createModule(with: allNews)
+
+//        let viewController = view as! AllNewsViewController
+//        viewController.navigationController?
+//            .pushViewController(quoteDetailViewController, animated: true)
+    }
     
 }
 

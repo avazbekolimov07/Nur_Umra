@@ -15,8 +15,7 @@ protocol PresenterToViewHomeProtocol: AnyObject {
 
 //    func showHUD()
 //    func hideHUD()
-//
-//    func deselectRowAt(row: Int)
+
     func  createUIElements()
 }
 
@@ -28,17 +27,17 @@ protocol ViewToPresenterHomeProtocol: AnyObject {
     var interactor: PresenterToInteractorHomeProtocol? { get set }
     var router: PresenterToRouterHomeProtocol? { get set }
     
-//    var quotesStrings: [String]? { get set }
+    var news: [NewsDM]? { get set }
     
     func viewDidLoad()
 
     func refresh()
-//
+
     func numberOfRowsInSection() -> Int
     func eachNewsData(indexPath: IndexPath) -> NewsDM?
-//
-    func didSelectRowAt(index: Int)
-//    func deselectRowAt(index: Int)
+
+    func didSelectMore()
+    func didSelectRowAt(indexPath: IndexPath)
 
     func didShowShareView(link: String)
 }
@@ -50,7 +49,8 @@ protocol PresenterToInteractorHomeProtocol: AnyObject {
     var presenter: InteractorToPresenterHomeProtocol? { get set }
     
     func loadNews()
-//    func retrieveQuote(at index: Int)
+    func retrieveNewDetail(at index: Int)
+    func retrieveAllNews()
 }
 
 
@@ -60,16 +60,19 @@ protocol InteractorToPresenterHomeProtocol: AnyObject {
     func fetchNewsSuccess(news: [NewsDM])
     func fetchNewsFailure(errorCode: Int)
 
-//    func getNewsSuccess(_ news: NewsDM)
-//    func getNewsFailure()
+    func getNewsDetailSuccess(_ news: NewsDM)
+    func getNewsDetailFailure()
     
+    func getAllNewsSuccess(_ allNews: [NewsDM])
+    func getAllNewsFailure()
 }
 
 
 // MARK: Router Input (Presenter -> Router)
 protocol PresenterToRouterHomeProtocol: AnyObject {
     
-//    static func createModule() -> UINavigationController
-//
-//    func pushToAllNews(on view: PresenterToViewHomeProtocol, with news: NewsDM)
+    static func createModule() -> UINavigationController
+
+    func pushToNewDetail(on view: PresenterToViewHomeProtocol, with new: NewsDM)
+    func pushToAllNews(on view: PresenterToViewHomeProtocol, with allNews: [NewsDM])
 }

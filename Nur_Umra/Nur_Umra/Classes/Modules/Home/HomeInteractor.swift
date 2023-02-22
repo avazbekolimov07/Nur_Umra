@@ -24,6 +24,23 @@ class HomeInteractor: PresenterToInteractorHomeProtocol {
         }
     }
     
+    func retrieveNewDetail(at index: Int) {
+        guard let news = self.news, news.indices.contains(index) else {
+            self.presenter?.getNewsDetailFailure()
+            return
+        }
+        self.presenter?.getNewsDetailSuccess(news[index])
+    }
+    
+    func retrieveAllNews() {
+        guard let news = self.news else {
+            self.presenter?.getAllNewsFailure()
+            return
+        }
+        self.presenter?.getAllNewsSuccess(news)
+    }
+    
+    
 }
 
 

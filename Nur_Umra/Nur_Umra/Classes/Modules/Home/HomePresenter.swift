@@ -50,10 +50,18 @@ class HomePresenter: ViewToPresenterHomeProtocol {
         
     }
     
-    func didSelectRowAt(index: Int) {
-//        interactor?.retrieveQuote(at: index)
+    func didSelectRowAt(indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0:
+            interactor?.retrieveNewDetail(at: indexPath.item)
+        default:
+            print("retrieve bottom 4 cells data...")
+        }
     }
     
+    func didSelectMore() {
+        interactor?.retrieveAllNews()
+    }
 }
 
 // MARK: - Outputs to view
@@ -65,21 +73,27 @@ extension HomePresenter: InteractorToPresenterHomeProtocol {
 //        view?.hideHUD()
         view?.onFetchNewsSuccess()
     }
-    
     func fetchNewsFailure(errorCode: Int) {
         print("Presenter receives the result from Interactor after it's done its job.")
 //        view?.hideHUD()
         view?.onFetchNewsFailure(error: "Couldn't fetch news: \(errorCode)")
     }
   
-//    func getQuoteSuccess(_ quote: Quote) {
-//        router?.pushToQuoteDetail(on: view!, with: quote)
-//    }
-//    
-//    func getQuoteFailure() {
+    func getNewsDetailSuccess(_ news: NewsDM) {
+        router?.pushToNewDetail(on: view!, with: news)
+    }
+    func getNewsDetailFailure() {
 //        view?.hideHUD()
-//        print("Couldn't retrieve quote by index")
-//    }
+        print("Couldn't retrieve news by index")
+    }
+    
+    func getAllNewsSuccess(_ allNews: [NewsDM]) {
+        router?.pushToAllNews(on: view!, with: allNews)
+    }
+    func getAllNewsFailure() {
+//        view?.hideHUD()
+        print("Couldn't retrieve all news")
+    }
     
     
 }

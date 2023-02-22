@@ -30,7 +30,6 @@ extension HomeViewController: PresenterToViewHomeProtocol{
     
     func onFetchNewsSuccess() {
         print("View receives the response from Presenter and updates itself.")
-        
         self.collectionView.reloadData()
         self.refreshControl.endRefreshing()
     }
@@ -49,9 +48,6 @@ extension HomeViewController: PresenterToViewHomeProtocol{
 //        HUD.hide()
 //    }
 
-//    func deselectRowAt(row: Int) {
-//        self.tableView.deselectRow(at: IndexPath(row: row, section: 0), animated: true)
-//    }
     
 }
 
@@ -113,8 +109,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                                                                 withViewType: HomeReusableHeaderView.self,
                                                                 for:indexPath)
                 header.label.text = "Yangiliklar"
+                header.seeMoreButton.isHidden = false
                 header.seeMoreTapped = { [weak self] in
-                    print("Yangiliklar tapped")
+                    self?.presenter?.didSelectMore()
                 }
                 return header
             default:
@@ -133,11 +130,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.section {
         case 0:
-            print("Yangiliklar")
-            presenter?.didSelectRowAt(index: indexPath.row)
+            presenter?.didSelectRowAt(indexPath: indexPath)
         default:
-            print("Qo’llanma")
-            presenter?.didSelectRowAt(index: indexPath.row)
+            presenter?.didSelectRowAt(indexPath: indexPath)
         }
     }
     
