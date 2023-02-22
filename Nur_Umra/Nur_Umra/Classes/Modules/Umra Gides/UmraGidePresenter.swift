@@ -2,7 +2,27 @@
 //  UmraGidePresenter.swift
 //  Nur_Umra
 //
-//  Created by Azizbek Salimov on 20/02/23.
+//  Created by AvazbekOS on 22/02/23
 //
 
-import Foundation
+import SwiftyJSON
+
+class UmraGidePresenter: ViewToPresenterUmraGideProtocol {
+    
+    // MARK: Properties
+    weak var view: PresenterToViewUmraGideProtocol?
+    var interactor: PresenterToInteractorUmraGideProtocol?
+    var router: PresenterToRouterUmraGideProtocol?
+    
+    // MARK: Inputs from view
+    func viewDidLoad() {
+        print("Presenter is being notified that the View was loaded.")
+//        view?.showHUD()
+        view?.createUIElements()
+//        interactor?.loadNews()
+    }
+}
+
+extension UmraGidePresenter: InteractorToPresenterUmraGideProtocol {
+    
+}

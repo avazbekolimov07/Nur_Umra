@@ -2,7 +2,7 @@
 //  HomePresenter.swift
 //  Nur_Umra
 //
-//  Created by Azizbek Salimov on 20/02/23.
+//  Created by AvazbekOS on 21/02/23.
 //
 
 import UIKit

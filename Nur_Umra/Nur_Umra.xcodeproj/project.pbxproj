@@ -33,6 +33,7 @@
 		305DBDFE29A4982A00D962EF /* UITableView+ClassIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305DBDFD29A4982A00D962EF /* UITableView+ClassIdentifiable.swift */; };
 		305DBE0029A4984200D962EF /* UICollectionView+ClassIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305DBDFF29A4984200D962EF /* UICollectionView+ClassIdentifiable.swift */; };
 		305DBE0329A498EE00D962EF /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305DBE0229A498EE00D962EF /* UIWindow+Extension.swift */; };
+		307344A029A65D700051BFFD /* UmraGide-UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3073449F29A65D700051BFFD /* UmraGide-UI.swift */; };
 		30A9C35D29A32AD700C9EEEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A9C35C29A32AD700C9EEEA /* AppDelegate.swift */; };
 		30A9C36629A32AD800C9EEEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30A9C36529A32AD800C9EEEA /* Assets.xcassets */; };
 		30A9C36929A32AD800C9EEEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30A9C36729A32AD800C9EEEA /* LaunchScreen.storyboard */; };
@@ -76,6 +77,7 @@
 		305DBDFD29A4982A00D962EF /* UITableView+ClassIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+ClassIdentifiable.swift"; sourceTree = "<group>"; };
 		305DBDFF29A4984200D962EF /* UICollectionView+ClassIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+ClassIdentifiable.swift"; sourceTree = "<group>"; };
 		305DBE0229A498EE00D962EF /* UIWindow+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extension.swift"; sourceTree = "<group>"; };
+		3073449F29A65D700051BFFD /* UmraGide-UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UmraGide-UI.swift"; sourceTree = "<group>"; };
 		30A9C35929A32AD700C9EEEA /* Nur_Umra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nur_Umra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30A9C35C29A32AD700C9EEEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30A9C36529A32AD800C9EEEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -258,11 +260,12 @@
 		08EC25C129A39F1700DAC561 /* Umra Gides */ = {
 			isa = PBXGroup;
 			children = (
-				08EC25C329A39FC700DAC561 /* UmraGideContract.swift */,
-				08EC25C529A39FDA00DAC561 /* UmraGidePresenter.swift */,
-				08EC25C729A39FE800DAC561 /* UmraGideRouter.swift */,
+				3073449F29A65D700051BFFD /* UmraGide-UI.swift */,
 				08EC25C929A39FFD00DAC561 /* UmraGideViewController.swift */,
+				08EC25C529A39FDA00DAC561 /* UmraGidePresenter.swift */,
 				08EC25CB29A3A00E00DAC561 /* UmraGideInteractor.swift */,
+				08EC25C729A39FE800DAC561 /* UmraGideRouter.swift */,
+				08EC25C329A39FC700DAC561 /* UmraGideContract.swift */,
 			);
 			path = "Umra Gides";
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				08639A2929A5FC61002E0D48 /* NewsDM.swift in Sources */,
 				30C71D5729A50E0500E5F6CF /* CALayer+Shadow.swift in Sources */,
 				30AA27B629A5EBED0014C351 /* Endpoints.swift in Sources */,
+				307344A029A65D700051BFFD /* UmraGide-UI.swift in Sources */,
 				30C71D5E29A528B500E5F6CF /* UIColor+App.swift in Sources */,
 				08EC25CC29A3A00E00DAC561 /* UmraGideInteractor.swift in Sources */,
 				08EC25C429A39FC700DAC561 /* UmraGideContract.swift in Sources */,
