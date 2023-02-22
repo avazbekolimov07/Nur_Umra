@@ -25,3 +25,4 @@ struct NewsDM {
         link = json["link"].stringValue
     }
 }
+
