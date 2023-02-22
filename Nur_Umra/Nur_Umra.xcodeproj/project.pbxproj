@@ -24,7 +24,6 @@
 		08EC25C829A39FE800DAC561 /* UmraGideRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EC25C729A39FE800DAC561 /* UmraGideRouter.swift */; };
 		08EC25CA29A39FFD00DAC561 /* UmraGideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EC25C929A39FFD00DAC561 /* UmraGideViewController.swift */; };
 		08EC25CC29A3A00E00DAC561 /* UmraGideInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EC25CB29A3A00E00DAC561 /* UmraGideInteractor.swift */; };
-		08EC25CE29A3A19B00DAC561 /* NewsDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EC25CD29A3A19B00DAC561 /* NewsDM.swift */; };
 		305DBDEF29A48EA300D962EF /* Home-UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305DBDEE29A48EA300D962EF /* Home-UI.swift */; };
 		305DBDF229A4940000D962EF /* HomeNewsCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305DBDF129A4940000D962EF /* HomeNewsCVC.swift */; };
 		305DBDF429A4945E00D962EF /* HomeGuideCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305DBDF329A4945E00D962EF /* HomeGuideCVC.swift */; };
@@ -67,7 +66,6 @@
 		08EC25C729A39FE800DAC561 /* UmraGideRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmraGideRouter.swift; sourceTree = "<group>"; };
 		08EC25C929A39FFD00DAC561 /* UmraGideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmraGideViewController.swift; sourceTree = "<group>"; };
 		08EC25CB29A3A00E00DAC561 /* UmraGideInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmraGideInteractor.swift; sourceTree = "<group>"; };
-		08EC25CD29A3A19B00DAC561 /* NewsDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDM.swift; sourceTree = "<group>"; };
 		305DBDEE29A48EA300D962EF /* Home-UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home-UI.swift"; sourceTree = "<group>"; };
 		305DBDF129A4940000D962EF /* HomeNewsCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNewsCVC.swift; sourceTree = "<group>"; };
 		305DBDF329A4945E00D962EF /* HomeGuideCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGuideCVC.swift; sourceTree = "<group>"; };
@@ -194,7 +192,6 @@
 		08EC25AE29A39B0000DAC561 /* Entites */ = {
 			isa = PBXGroup;
 			children = (
-				08EC25CD29A3A19B00DAC561 /* NewsDM.swift */,
 			);
 			path = Entites;
 			sourceTree = "<group>";
@@ -564,7 +561,6 @@
 				08EC25BE29A39EFD00DAC561 /* HomeViewController.swift in Sources */,
 				08EC25C029A39F0D00DAC561 /* HomeInteractor.swift in Sources */,
 				08476B6F29A4EB16006D7509 /* AllNewsContract.swift in Sources */,
-				08EC25CE29A3A19B00DAC561 /* NewsDM.swift in Sources */,
 				30C71D5529A50DCC00E5F6CF /* UIView+Shadow.swift in Sources */,
 				08476B7529A4EB69006D7509 /* AllNewsRouter.swift in Sources */,
 			);
