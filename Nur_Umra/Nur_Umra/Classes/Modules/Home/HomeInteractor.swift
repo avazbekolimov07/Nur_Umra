@@ -14,15 +14,15 @@ class HomeInteractor: PresenterToInteractorHomeProtocol {
     weak var presenter: InteractorToPresenterHomeProtocol?
     var news: [NewsDM]?
     
-//    func loadQuotes() {
-//        print("Interactor receives the request from Presenter to load quotes from the server.")
-//        QuoteService.shared.getQuotes(count: 6, success: { (code, quotes) in
-//            self.quotes = quotes
-//            self.presenter?.fetchQuotesSuccess(quotes: quotes)
-//        }) { (code) in
-//            self.presenter?.fetchQuotesFailure(errorCode: code)
-//        }
-//    }
+    func loadNews() {
+        print("Interactor receives the request from Presenter to load quotes from the server.")
+        HomeService.shared.getNews(success: { (code, news) in
+            self.news = news
+            self.presenter?.fetchNewsSuccess(news: news)
+        }) { (code) in
+            self.presenter?.fetchNewsFailure(errorCode: code)
+        }
+    }
     
 }
 

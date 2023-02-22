@@ -32,12 +32,12 @@ protocol ViewToPresenterHomeProtocol: AnyObject {
 
     func viewDidLoad()
 
-//    func refresh()
+    func refresh()
 //
-//    func numberOfRowsInSection() -> Int
+    func numberOfRowsInSection() -> Int
 //    func textLabelText(indexPath: IndexPath) -> String?
 //
-//    func didSelectRowAt(index: Int)
+    func didSelectRowAt(index: Int)
 //    func deselectRowAt(index: Int)
 
 }
@@ -48,7 +48,7 @@ protocol PresenterToInteractorHomeProtocol: AnyObject {
     
     var presenter: InteractorToPresenterHomeProtocol? { get set }
     
-//    func loadQuotes()
+    func loadNews()
 //    func retrieveQuote(at index: Int)
 }
 
@@ -56,9 +56,9 @@ protocol PresenterToInteractorHomeProtocol: AnyObject {
 // MARK: Interactor Output (Interactor -> Presenter)
 protocol InteractorToPresenterHomeProtocol: AnyObject {
     
-//    func fetchNewsSuccess(news: [NewsDM])
-//    func fetchNewsFailure(errorCode: Int)
-//
+    func fetchNewsSuccess(news: [NewsDM])
+    func fetchNewsFailure(errorCode: Int)
+
 //    func getNewsSuccess(_ news: NewsDM)
 //    func getNewsFailure()
     

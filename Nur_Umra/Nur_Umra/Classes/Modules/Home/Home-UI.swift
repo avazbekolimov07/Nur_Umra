@@ -34,4 +34,12 @@ extension HomeViewController {
         return collectionView
     }
     
+    func create_refreshController() -> UIRefreshControl {
+        let refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Refreshing")
+        
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        return refreshControl
+    }
+    
 }

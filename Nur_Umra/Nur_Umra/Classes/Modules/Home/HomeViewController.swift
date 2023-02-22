@@ -18,10 +18,11 @@ class HomeViewController: UIViewController {
     // MARK: - Properties
     var presenter: ViewToPresenterHomeProtocol?
     var collectionView: UICollectionView!
+    var refreshControl: UIRefreshControl!
     
     // MARK: - Actions
     @objc func refresh() {
-//        presenter?.refresh()
+        presenter?.refresh()
     }
 }
 
@@ -30,14 +31,13 @@ extension HomeViewController: PresenterToViewHomeProtocol{
     func onFetchNewsSuccess() {
         print("View receives the response from Presenter and updates itself.")
         
-//        self.collectionView.reloadData()
-//        self.refreshControl.endRefreshing()
+        self.collectionView.reloadData()
+        self.refreshControl.endRefreshing()
     }
 
     func onFetchNewsFailure(error: String) {
         print("View receives the response from Presenter with error: \(error)")
-        
-//        self.refreshControl.endRefreshing()
+        self.refreshControl.endRefreshing()
     }
     
 
@@ -48,7 +48,7 @@ extension HomeViewController: PresenterToViewHomeProtocol{
 //    func hideHUD() {
 //        HUD.hide()
 //    }
-//
+
 //    func deselectRowAt(row: Int) {
 //        self.tableView.deselectRow(at: IndexPath(row: row, section: 0), animated: true)
 //    }
@@ -66,7 +66,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return 3
+            return presenter?.numberOfRowsInSection() ?? 0
         default:
             return 4
         }
@@ -135,10 +135,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         switch indexPath.section {
         case 0:
             print("Yangiliklar")
-            print(indexPath.item)
+            presenter?.didSelectRowAt(index: indexPath.row)
         default:
             print("Qo’llanma")
-            print(indexPath.item)
+            presenter?.didSelectRowAt(index: indexPath.row)
         }
     }
     
@@ -149,7 +149,8 @@ extension HomeViewController {
     func createUIElements() {
         overrideUserInterfaceStyle = .light
         self.collectionView = self.create_collectionView()
-
+        self.refreshControl = self.create_refreshController()
+        self.collectionView.addSubview(self.refreshControl)
         self.navigationItem.title = ""
     }
 }

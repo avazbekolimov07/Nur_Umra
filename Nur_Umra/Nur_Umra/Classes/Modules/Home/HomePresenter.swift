@@ -23,7 +23,23 @@ class HomePresenter: ViewToPresenterHomeProtocol {
         
         view?.createUIElements()
 //        view?.showHUD()
-//        interactor?.loadQuotes()
+        interactor?.loadNews()
+    }
+    
+    func refresh() {
+        print("Presenter is being notified that the View was refreshed.")
+        interactor?.loadNews()
+    }
+    
+    func numberOfRowsInSection() -> Int {
+        guard let news = self.news else {
+            return 0
+        }
+        return news.count
+    }
+    
+    func didSelectRowAt(index: Int) {
+//        interactor?.retrieveQuote(at: index)
     }
     
 }
@@ -35,13 +51,13 @@ extension HomePresenter: InteractorToPresenterHomeProtocol {
         print("Presenter receives the result from Interactor after it's done its job.")
         self.news = news
 //        view?.hideHUD()
-//        view?.onFetchQuotesSuccess()
+        view?.onFetchNewsSuccess()
     }
     
     func fetchNewsFailure(errorCode: Int) {
         print("Presenter receives the result from Interactor after it's done its job.")
 //        view?.hideHUD()
-//        view?.onFetchQuotesFailure(error: "Couldn't fetch quotes: \(errorCode)")
+        view?.onFetchNewsFailure(error: "Couldn't fetch news: \(errorCode)")
     }
   
 //    func getQuoteSuccess(_ quote: Quote) {
