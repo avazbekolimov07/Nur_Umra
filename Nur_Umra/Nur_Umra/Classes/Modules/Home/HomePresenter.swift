@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import SwiftyJSON
 
 class HomePresenter: ViewToPresenterHomeProtocol {
     
@@ -15,6 +15,8 @@ class HomePresenter: ViewToPresenterHomeProtocol {
     var interactor: PresenterToInteractorHomeProtocol?
     var router: PresenterToRouterHomeProtocol?
 
+    var news: [NewsDM]?
+    
     // MARK: Inputs from view
     func viewDidLoad() {
         print("Presenter is being notified that the View was loaded.")
@@ -29,19 +31,19 @@ class HomePresenter: ViewToPresenterHomeProtocol {
 // MARK: - Outputs to view
 extension HomePresenter: InteractorToPresenterHomeProtocol {
     
-//    func fetchQuotesSuccess(quotes: [Quote]) {
-//        print("Presenter receives the result from Interactor after it's done its job.")
-//        self.quotesStrings = quotes.compactMap { $0.quote }
+    func fetchNewsSuccess(news: [NewsDM]) {
+        print("Presenter receives the result from Interactor after it's done its job.")
+        self.news = news
 //        view?.hideHUD()
 //        view?.onFetchQuotesSuccess()
-//    }
-//    
-//    func fetchQuotesFailure(errorCode: Int) {
-//        print("Presenter receives the result from Interactor after it's done its job.")
+    }
+    
+    func fetchNewsFailure(errorCode: Int) {
+        print("Presenter receives the result from Interactor after it's done its job.")
 //        view?.hideHUD()
 //        view?.onFetchQuotesFailure(error: "Couldn't fetch quotes: \(errorCode)")
-//    }
-//    
+    }
+  
 //    func getQuoteSuccess(_ quote: Quote) {
 //        router?.pushToQuoteDetail(on: view!, with: quote)
 //    }

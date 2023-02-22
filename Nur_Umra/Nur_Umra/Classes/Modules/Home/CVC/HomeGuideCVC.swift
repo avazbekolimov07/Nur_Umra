@@ -10,10 +10,9 @@ import UIKit
 class HomeGuideCVC: UICollectionViewCell, ClassIdentifiable {
     
     // MARK: - UI Elements
-    private lazy var photoImageView: UIImageView = {
+    lazy var photoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.image = UIImage(named: "demo_img")
         return imageView
     }()
     
@@ -24,7 +23,7 @@ class HomeGuideCVC: UICollectionViewCell, ClassIdentifiable {
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
+        blurEffectView.alpha = 0.9
         view.insertSubview(blurEffectView, at: 0)
         
         view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]

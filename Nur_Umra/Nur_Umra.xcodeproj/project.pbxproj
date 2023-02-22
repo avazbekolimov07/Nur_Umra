@@ -24,7 +24,7 @@
 		08EC25C829A39FE800DAC561 /* UmraGideRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EC25C729A39FE800DAC561 /* UmraGideRouter.swift */; };
 		08EC25CA29A39FFD00DAC561 /* UmraGideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EC25C929A39FFD00DAC561 /* UmraGideViewController.swift */; };
 		08EC25CC29A3A00E00DAC561 /* UmraGideInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EC25CB29A3A00E00DAC561 /* UmraGideInteractor.swift */; };
-		08EC25CE29A3A19B00DAC561 /* NewsDm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EC25CD29A3A19B00DAC561 /* NewsDm.swift */; };
+		08EC25CE29A3A19B00DAC561 /* NewsDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EC25CD29A3A19B00DAC561 /* NewsDM.swift */; };
 		305DBDEF29A48EA300D962EF /* Home-UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305DBDEE29A48EA300D962EF /* Home-UI.swift */; };
 		305DBDF229A4940000D962EF /* HomeNewsCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305DBDF129A4940000D962EF /* HomeNewsCVC.swift */; };
 		305DBDF429A4945E00D962EF /* HomeGuideCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305DBDF329A4945E00D962EF /* HomeGuideCVC.swift */; };
@@ -36,6 +36,10 @@
 		30A9C35D29A32AD700C9EEEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A9C35C29A32AD700C9EEEA /* AppDelegate.swift */; };
 		30A9C36629A32AD800C9EEEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30A9C36529A32AD800C9EEEA /* Assets.xcassets */; };
 		30A9C36929A32AD800C9EEEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30A9C36729A32AD800C9EEEA /* LaunchScreen.storyboard */; };
+		30AA27B029A5E0490014C351 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AA27AF29A5E0490014C351 /* APIManager.swift */; };
+		30AA27B229A5E0660014C351 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AA27B129A5E0660014C351 /* APIClient.swift */; };
+		30AA27B429A5E9380014C351 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AA27B329A5E9380014C351 /* HomeService.swift */; };
+		30AA27B629A5EBED0014C351 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AA27B529A5EBED0014C351 /* Endpoints.swift */; };
 		30C71D5329A50DAE00E5F6CF /* UIView+Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C71D5229A50DAE00E5F6CF /* UIView+Subviews.swift */; };
 		30C71D5529A50DCC00E5F6CF /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C71D5429A50DCC00E5F6CF /* UIView+Shadow.swift */; };
 		30C71D5729A50E0500E5F6CF /* CALayer+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C71D5629A50E0500E5F6CF /* CALayer+Shadow.swift */; };
@@ -63,7 +67,7 @@
 		08EC25C729A39FE800DAC561 /* UmraGideRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmraGideRouter.swift; sourceTree = "<group>"; };
 		08EC25C929A39FFD00DAC561 /* UmraGideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmraGideViewController.swift; sourceTree = "<group>"; };
 		08EC25CB29A3A00E00DAC561 /* UmraGideInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmraGideInteractor.swift; sourceTree = "<group>"; };
-		08EC25CD29A3A19B00DAC561 /* NewsDm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDm.swift; sourceTree = "<group>"; };
+		08EC25CD29A3A19B00DAC561 /* NewsDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDM.swift; sourceTree = "<group>"; };
 		305DBDEE29A48EA300D962EF /* Home-UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home-UI.swift"; sourceTree = "<group>"; };
 		305DBDF129A4940000D962EF /* HomeNewsCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNewsCVC.swift; sourceTree = "<group>"; };
 		305DBDF329A4945E00D962EF /* HomeGuideCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGuideCVC.swift; sourceTree = "<group>"; };
@@ -77,6 +81,10 @@
 		30A9C36529A32AD800C9EEEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30A9C36829A32AD800C9EEEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30A9C36A29A32AD800C9EEEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30AA27AF29A5E0490014C351 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIManager.swift; path = Nur_Umra/Classes/Modules/Home/APIManager.swift; sourceTree = SOURCE_ROOT; };
+		30AA27B129A5E0660014C351 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIClient.swift; path = Nur_Umra/Classes/Modules/Home/APIClient.swift; sourceTree = SOURCE_ROOT; };
+		30AA27B329A5E9380014C351 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeService.swift; path = Nur_Umra/Classes/Modules/Home/HomeService.swift; sourceTree = SOURCE_ROOT; };
+		30AA27B529A5EBED0014C351 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Endpoints.swift; path = Nur_Umra/Classes/Modules/Home/Endpoints.swift; sourceTree = SOURCE_ROOT; };
 		30C71D5229A50DAE00E5F6CF /* UIView+Subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Subviews.swift"; sourceTree = "<group>"; };
 		30C71D5429A50DCC00E5F6CF /* UIView+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
 		30C71D5629A50E0500E5F6CF /* CALayer+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Shadow.swift"; sourceTree = "<group>"; };
@@ -161,6 +169,8 @@
 		08EC25AB29A39AB700DAC561 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				30AA27AF29A5E0490014C351 /* APIManager.swift */,
+				30AA27B129A5E0660014C351 /* APIClient.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -168,6 +178,7 @@
 		08EC25AC29A39AC000DAC561 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				30AA27B329A5E9380014C351 /* HomeService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -175,6 +186,7 @@
 		08EC25AD29A39AF400DAC561 /* EndPoints */ = {
 			isa = PBXGroup;
 			children = (
+				30AA27B529A5EBED0014C351 /* Endpoints.swift */,
 			);
 			path = EndPoints;
 			sourceTree = "<group>";
@@ -182,7 +194,7 @@
 		08EC25AE29A39B0000DAC561 /* Entites */ = {
 			isa = PBXGroup;
 			children = (
-				08EC25CD29A3A19B00DAC561 /* NewsDm.swift */,
+				08EC25CD29A3A19B00DAC561 /* NewsDM.swift */,
 			);
 			path = Entites;
 			sourceTree = "<group>";
@@ -524,12 +536,15 @@
 				305DBE0329A498EE00D962EF /* UIWindow+Extension.swift in Sources */,
 				305DBDF429A4945E00D962EF /* HomeGuideCVC.swift in Sources */,
 				08476B6D29A4EAFF006D7509 /* AllNews-UI.swift in Sources */,
+				30AA27B429A5E9380014C351 /* HomeService.swift in Sources */,
 				08EC25A329A341F700DAC561 /* MainVC.swift in Sources */,
 				08EC25B829A39EB300DAC561 /* HomeContact.swift in Sources */,
+				30AA27B229A5E0660014C351 /* APIClient.swift in Sources */,
 				30A9C35D29A32AD700C9EEEA /* AppDelegate.swift in Sources */,
 				08EC25BA29A39ED100DAC561 /* HomePresenter.swift in Sources */,
 				08EC25C829A39FE800DAC561 /* UmraGideRouter.swift in Sources */,
 				08476B7329A4EB4B006D7509 /* AllNewsPresenter.swift in Sources */,
+				30AA27B029A5E0490014C351 /* APIManager.swift in Sources */,
 				08EC25C629A39FDA00DAC561 /* UmraGidePresenter.swift in Sources */,
 				08476B7129A4EB2A006D7509 /* AllNewsViewController.swift in Sources */,
 				08EC25CA29A39FFD00DAC561 /* UmraGideViewController.swift in Sources */,
@@ -542,13 +557,14 @@
 				305DBDF229A4940000D962EF /* HomeNewsCVC.swift in Sources */,
 				305DBDFC29A4980900D962EF /* ClassIdentifiable.swift in Sources */,
 				30C71D5729A50E0500E5F6CF /* CALayer+Shadow.swift in Sources */,
+				30AA27B629A5EBED0014C351 /* Endpoints.swift in Sources */,
 				30C71D5E29A528B500E5F6CF /* UIColor+App.swift in Sources */,
 				08EC25CC29A3A00E00DAC561 /* UmraGideInteractor.swift in Sources */,
 				08EC25C429A39FC700DAC561 /* UmraGideContract.swift in Sources */,
 				08EC25BE29A39EFD00DAC561 /* HomeViewController.swift in Sources */,
 				08EC25C029A39F0D00DAC561 /* HomeInteractor.swift in Sources */,
 				08476B6F29A4EB16006D7509 /* AllNewsContract.swift in Sources */,
-				08EC25CE29A3A19B00DAC561 /* NewsDm.swift in Sources */,
+				08EC25CE29A3A19B00DAC561 /* NewsDM.swift in Sources */,
 				30C71D5529A50DCC00E5F6CF /* UIView+Shadow.swift in Sources */,
 				08476B7529A4EB69006D7509 /* AllNewsRouter.swift in Sources */,
 			);

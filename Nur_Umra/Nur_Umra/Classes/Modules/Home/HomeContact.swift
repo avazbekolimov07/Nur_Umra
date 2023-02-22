@@ -10,9 +10,9 @@ import UIKit
 
 // MARK: View Output (Presenter -> View)
 protocol PresenterToViewHomeProtocol: AnyObject {
-//    func onFetchQuotesSuccess()
-//    func onFetchQuotesFailure(error: String)
-//
+    func onFetchNewsSuccess()
+    func onFetchNewsFailure(error: String)
+
 //    func showHUD()
 //    func hideHUD()
 //
@@ -29,9 +29,9 @@ protocol ViewToPresenterHomeProtocol: AnyObject {
     var router: PresenterToRouterHomeProtocol? { get set }
     
 //    var quotesStrings: [String]? { get set }
-//
+
     func viewDidLoad()
-//
+
 //    func refresh()
 //
 //    func numberOfRowsInSection() -> Int

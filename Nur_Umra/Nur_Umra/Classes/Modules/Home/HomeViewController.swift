@@ -27,17 +27,20 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: PresenterToViewHomeProtocol{
     
-//    func onFetchQuotesSuccess() {
-//        print("View receives the response from Presenter and updates itself.")
-//        self.tableView.reloadData()
+    func onFetchNewsSuccess() {
+        print("View receives the response from Presenter and updates itself.")
+        
+//        self.collectionView.reloadData()
 //        self.refreshControl.endRefreshing()
-//    }
-//
-//    func onFetchQuotesFailure(error: String) {
-//        print("View receives the response from Presenter with error: \(error)")
+    }
+
+    func onFetchNewsFailure(error: String) {
+        print("View receives the response from Presenter with error: \(error)")
+        
 //        self.refreshControl.endRefreshing()
-//    }
-//
+    }
+    
+
 //    func showHUD() {
 //        HUD.show(.progress, onView: self.view)
 //    }
@@ -82,12 +85,16 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             switch indexPath.item {
             case 0:
                 cell.titleLabel.text = "Umra qo’llanmasi"
+                cell.photoImageView.image = UIImage(named: "qo'llanma_img")
             case 1:
                 cell.titleLabel.text = "Umra duolari"
+                cell.photoImageView.image = UIImage(named: "duolar_img")
             case 2:
                 cell.titleLabel.text = "Safarga tayorgarlik"
+                cell.photoImageView.image = UIImage(named: "safar_img")
             default:
                 cell.titleLabel.text = "Islom tarixiga oid joylar"
+                cell.photoImageView.image = UIImage(named: "tarix_img")
             }
             return cell
         }
