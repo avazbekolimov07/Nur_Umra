@@ -6,20 +6,31 @@
 //
 
 import UIKit
+import SnapKit
 
 extension HomeViewController {
     
-    private func create_collectionView() -> UICollectionView {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+     func create_collectionView() -> UICollectionView {
+         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
         collectionView.backgroundColor = .clear
         collectionView.register(cellType: HomeNewsCVC.self)
         collectionView.register(cellType: HomeGuideCVC.self)
         
         collectionView.registerView(ofKind: .header, viewType: HomeReusableHeaderView.self)
         
+        collectionView.showsVerticalScrollIndicator = false
         collectionView.contentInset.bottom = UIWindow.safeAreaInsets.bottom
         collectionView.delegate = self
         collectionView.dataSource = self
+       
+        self.view.addSubview(collectionView)
+        
+        collectionView.snp.makeConstraints { make in
+            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
+            make.left.equalTo(self.view.snp.left)
+            make.right.equalTo(self.view.snp.right)
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
+        }
         return collectionView
     }
     

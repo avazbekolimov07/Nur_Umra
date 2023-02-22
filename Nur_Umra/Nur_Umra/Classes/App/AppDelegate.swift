@@ -10,20 +10,20 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-var window: UIWindow?
+    var window: UIWindow?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         window = UIWindow()
-        let vc = MainVC()
-        window?.rootViewController = vc
+        window?.backgroundColor = .white
+        window?.rootViewController = HomeRouter.createModule()
         window?.makeKeyAndVisible()
         
         return true
     }
-
-  
+    
+    
 
 
 }

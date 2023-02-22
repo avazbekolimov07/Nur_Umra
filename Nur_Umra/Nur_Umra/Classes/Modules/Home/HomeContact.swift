@@ -9,7 +9,7 @@ import UIKit
 
 
 // MARK: View Output (Presenter -> View)
-protocol PresenterToViewHomeProtocol: class {
+protocol PresenterToViewHomeProtocol: AnyObject {
 //    func onFetchQuotesSuccess()
 //    func onFetchQuotesFailure(error: String)
 //
@@ -17,11 +17,12 @@ protocol PresenterToViewHomeProtocol: class {
 //    func hideHUD()
 //
 //    func deselectRowAt(row: Int)
+    func  createUIElements()
 }
 
 
 // MARK: View Input (View -> Presenter)
-protocol ViewToPresenterHomeProtocol: class {
+protocol ViewToPresenterHomeProtocol: AnyObject {
     
     var view: PresenterToViewHomeProtocol? { get set }
     var interactor: PresenterToInteractorHomeProtocol? { get set }
@@ -29,7 +30,7 @@ protocol ViewToPresenterHomeProtocol: class {
     
 //    var quotesStrings: [String]? { get set }
 //
-//    func viewDidLoad()
+    func viewDidLoad()
 //
 //    func refresh()
 //
@@ -43,7 +44,7 @@ protocol ViewToPresenterHomeProtocol: class {
 
 
 // MARK: Interactor Input (Presenter -> Interactor)
-protocol PresenterToInteractorHomeProtocol: class {
+protocol PresenterToInteractorHomeProtocol: AnyObject {
     
     var presenter: InteractorToPresenterHomeProtocol? { get set }
     
@@ -53,7 +54,7 @@ protocol PresenterToInteractorHomeProtocol: class {
 
 
 // MARK: Interactor Output (Interactor -> Presenter)
-protocol InteractorToPresenterHomeProtocol: class {
+protocol InteractorToPresenterHomeProtocol: AnyObject {
     
 //    func fetchNewsSuccess(news: [NewsDM])
 //    func fetchNewsFailure(errorCode: Int)
@@ -65,7 +66,7 @@ protocol InteractorToPresenterHomeProtocol: class {
 
 
 // MARK: Router Input (Presenter -> Router)
-protocol PresenterToRouterHomeProtocol: class {
+protocol PresenterToRouterHomeProtocol: AnyObject {
     
 //    static func createModule() -> UINavigationController
 //
