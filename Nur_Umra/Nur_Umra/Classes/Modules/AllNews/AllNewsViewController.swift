@@ -15,17 +15,10 @@ class AllNewsViewController: UIViewController {
        print("didLoad")
     }
     
-
-    override func viewWillAppear(_ animated: Bool) {
-        print("will appear ")
-    }
+   
     
-
-    
-    private func setupCollectionDelegates() {
-        
-    }
 }
+extension AllNewsViewController
 
 extension AllNewsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -36,7 +29,6 @@ extension AllNewsViewController: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         return UICollectionViewCell()
     }
-    
     
 }
 

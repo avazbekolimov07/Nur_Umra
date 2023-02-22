@@ -27,10 +27,8 @@ extension AllNewsViewController {
         self.view.addSubview(collectionView)
         
         collectionView.snp.makeConstraints { make in
-            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
-            make.left.equalTo(self.view.snp.left)
-            make.right.equalTo(self.view.snp.right)
-            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
+            make.center.equalTo(self.view.snp.center)
+            make.edges.equalTo(self.view.snp.edges)
         }
         return collectionView
     }
