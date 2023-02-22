@@ -10,7 +10,8 @@ import SDWebImage
 
 class HomeNewsCVC: UICollectionViewCell, ClassIdentifiable {
     
-    var didShareButtonPressed: (() -> Void)?
+    var didShareButtonPressed: ((_ link: String) -> Void)?
+    var new: NewsDM?
     
     // MARK: - UI Elements
     private lazy var shareImageView: UIImageView = {
@@ -45,7 +46,6 @@ class HomeNewsCVC: UICollectionViewCell, ClassIdentifiable {
         imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = 16
         imageView.contentMode = .scaleAspectFill
-        imageView.image = UIImage(named: "demo1_img")
         return imageView
     }()
     
@@ -67,7 +67,7 @@ class HomeNewsCVC: UICollectionViewCell, ClassIdentifiable {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "1-fevraldan umra safariga aviareyslar har kuni amalga oshiriladi"
+
 //        label.font = .jostRegular(size: 14)
         label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = .white
@@ -78,7 +78,7 @@ class HomeNewsCVC: UICollectionViewCell, ClassIdentifiable {
     
     private lazy var timeLabel: UILabel = {
         let label = UILabel()
-        label.text = "2 soat oldin"
+    
 //        label.font = .jostRegular(size: 11)
         label.font = UIFont.systemFont(ofSize: 11)
         label.alpha = 0.6
@@ -105,12 +105,23 @@ class HomeNewsCVC: UICollectionViewCell, ClassIdentifiable {
     
     //MARK: - Action
     @objc func handleShareButton() {
-        didShareButtonPressed?()
+        if let newSafe = self.new {
+            didShareButtonPressed?(newSafe.link)
+        }
     }
     
-    func configure(imgString: String?, title: String?, time: String?) {
-        titleLabel.text = title
-        timeLabel.text = time
+    func configure(new: NewsDM?) {
+        guard let newSafe = new else { return }
+        self.new = newSafe
+        self.updateUI(new: newSafe)
+    }
+    
+    private func updateUI(new: NewsDM) {
+        guard let url =  URL(string: new.image) else {return}
+        photoImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
+        photoImageView.sd_setImage(with: url, placeholderImage: nil)
+        titleLabel.text = new.title
+        timeLabel.text = new.created_at
     }
 
     @available(*, unavailable)

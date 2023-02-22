@@ -29,17 +29,18 @@ protocol ViewToPresenterHomeProtocol: AnyObject {
     var router: PresenterToRouterHomeProtocol? { get set }
     
 //    var quotesStrings: [String]? { get set }
-
+    
     func viewDidLoad()
 
     func refresh()
 //
     func numberOfRowsInSection() -> Int
-//    func textLabelText(indexPath: IndexPath) -> String?
+    func eachNewsData(indexPath: IndexPath) -> NewsDM?
 //
     func didSelectRowAt(index: Int)
 //    func deselectRowAt(index: Int)
 
+    func didShowShareView(link: String)
 }
 
 

@@ -20,9 +20,8 @@ class HomePresenter: ViewToPresenterHomeProtocol {
     // MARK: Inputs from view
     func viewDidLoad() {
         print("Presenter is being notified that the View was loaded.")
-        
-        view?.createUIElements()
 //        view?.showHUD()
+        view?.createUIElements()
         interactor?.loadNews()
     }
     
@@ -36,6 +35,19 @@ class HomePresenter: ViewToPresenterHomeProtocol {
             return 0
         }
         return news.count
+    }
+    
+    func eachNewsData(indexPath: IndexPath) -> NewsDM? {
+        guard let news = self.news else {
+            return nil
+        }
+        
+        return news[indexPath.row]
+    }
+    
+    //MARK: - SHARE>>>
+    func didShowShareView(link: String) {
+        
     }
     
     func didSelectRowAt(index: Int) {

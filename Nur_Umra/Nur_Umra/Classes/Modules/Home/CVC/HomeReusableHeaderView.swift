@@ -18,7 +18,7 @@ class HomeReusableHeaderView: UICollectionReusableView, ClassIdentifiable {
         return label
     }()
     
-    private lazy var seeMoreButton: UIButton = {
+    lazy var seeMoreButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("see more", for: .normal)
         button.setTitleColor(#colorLiteral(red: 0, green: 0.3961157799, blue: 0.404067874, alpha: 1), for: .normal)

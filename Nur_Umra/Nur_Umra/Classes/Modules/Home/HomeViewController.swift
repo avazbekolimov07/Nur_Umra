@@ -76,8 +76,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         switch indexPath.section {
         case 0:
             let cell = collectionView.dequeueReusableCell(withCellType: HomeNewsCVC.self, for: indexPath)
-            cell.didShareButtonPressed = { [weak self] in
-                print("Share Button Pressed")
+            cell.configure(new: presenter?.eachNewsData(indexPath: indexPath))
+            cell.didShareButtonPressed = { [weak self] link in
+                self?.presenter?.didShowShareView(link: link)
             }
             return cell
         default:
@@ -121,9 +122,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                                                                 withViewType: HomeReusableHeaderView.self,
                                                                 for: indexPath)
                 header.label.text = "Qo’llanma"
-                header.seeMoreTapped = { [weak self] in
-                    print("Qo’llanma tapped")
-                }
+                header.seeMoreButton.isHidden = true
                 return header
             }
         } else {
