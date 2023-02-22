@@ -14,9 +14,11 @@ extension AllNewsViewController {
      func create_collectionView() -> UICollectionView {
          let flow = UICollectionViewFlowLayout()
          flow.scrollDirection = .vertical
+         flow.minimumLineSpacing = 16
          
-         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flow )
+         let collectionView = UICollectionView(frame: view.frame, collectionViewLayout: flow )
         collectionView.backgroundColor = .clear
+         collectionView.contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 80, right: 0)
         collectionView.register(cellType: HomeNewsCVC.self)
      
         collectionView.showsVerticalScrollIndicator = false
@@ -31,6 +33,14 @@ extension AllNewsViewController {
             make.edges.equalTo(self.view.snp.edges)
         }
         return collectionView
+    }
+    
+    func create_refreshController() -> UIRefreshControl {
+        let refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Refreshing")
+        
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        return refreshControl
     }
     
 }

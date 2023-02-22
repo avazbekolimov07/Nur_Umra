@@ -5,4 +5,37 @@
 //  Created by Azizbek Salimov on 21/02/23.
 //
 
-import Foundation
+import UIKit
+class AllNewsRouter {
+    
+    // MARK: Static methods
+    static func createModule() -> UINavigationController {
+        let viewController = AllNewsViewController()
+        let navigationController = UINavigationController(rootViewController: viewController)
+        
+        let presenter: ViewToPresenterAllNewsProtocol & InteractorToPresenterAllNewsProtocol = AllNewsPresenter()
+        
+        viewController.presenter = presenter
+        viewController.presenter?.router = AllNewsRouter()
+        viewController.presenter?.view = viewController
+        viewController.presenter?.interactor = AllNewsInteractor()
+        viewController.presenter?.interactor?.presenter = presenter
+
+        return navigationController
+    }
+}
+
+extension AllNewsRouter: PresenterToRouterAllNewsProtocol {
+    
+    // MARK: - Navigation
+//    func pushToQuoteDetail(on view: PresenterToViewQuotesProtocol, with quote: Quote) {
+//        print("QuotesRouter is instructed to push QuoteDetailViewController onto the navigation stack.")
+//        let quoteDetailViewController = QuoteDetailRouter.createModule(with: quote)
+//
+//        let viewController = view as! QuotesViewController
+//        viewController.navigationController?
+//            .pushViewController(quoteDetailViewController, animated: true)
+//    }
+    
+}
+
