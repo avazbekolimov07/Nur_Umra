@@ -5,50 +5,34 @@
 //  Created by Azizbek Salimov on 21/02/23.
 //
 
+
 import UIKit
 import SnapKit
 
-//class AllNewsView: UIView {
-//
-//
-//    let baseView: UIView = {
-//        let baseView = UIView()
-//        baseView.backgroundColor = .purple
-//    }()
-//    let flow: UICollectionViewFlowLayout = {
-//        let flow = UICollectionViewFlowLayout()
-//        flow.scrollDirection = .horizontal
-//    }()
-//
-//    var collection: UICollectionView = {
-//        let collectionView = UICollectionView()
-//        collectionView.backgroundColor = .green
-//        collectionView.showsVerticalScrollIndicator = false
-//        collectionView.showsHorizontalScrollIndicator = false
-//        collectionView.register(<#T##cellClass: AnyClass?##AnyClass?#>, forCellWithReuseIdentifier: <#T##String#>)
-//    }()
-//
-//    override func layoutSubviews() {
-//        super.layoutSubviews()
-//        addViews()
-//    }
-//
-//
-//
-//    private func addViews() {
-//        collection = UICollectionView(frame: baseView.frame, collectionViewLayout: self.flow)
-//
-//
-//        baseView.addSubview(collectionView)
-//
-//        collectionView.snp_makeConstraints { make in
-//            make.edges.equalTo(self.view.snp.edges)
-//            make.center.equalTo(self.view.center)
-//        }
-//
-//        return collectionView
-//    }
-//
-//
-//
-//}
+extension AllNewsViewController {
+    
+     func create_collectionView() -> UICollectionView {
+         let flow = UICollectionViewFlowLayout()
+         flow.scrollDirection = .vertical
+         
+         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flow )
+        collectionView.backgroundColor = .clear
+        collectionView.register(cellType: HomeNewsCVC.self)
+     
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.contentInset.bottom = UIWindow.safeAreaInsets.bottom
+        collectionView.delegate = self
+        collectionView.dataSource = self
+       
+        self.view.addSubview(collectionView)
+        
+        collectionView.snp.makeConstraints { make in
+            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
+            make.left.equalTo(self.view.snp.left)
+            make.right.equalTo(self.view.snp.right)
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
+        }
+        return collectionView
+    }
+    
+}

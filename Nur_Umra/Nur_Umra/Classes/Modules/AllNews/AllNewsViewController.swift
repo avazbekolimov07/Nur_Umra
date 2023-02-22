@@ -15,24 +15,28 @@ class AllNewsViewController: UIViewController {
        print("didLoad")
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-//        setupViews()
-    }
+
     override func viewWillAppear(_ animated: Bool) {
         print("will appear ")
     }
     
-//    private func setupViews() {
-//        print("didLayout sub views")
-//        baseView.frame = self.view.frame
-//        self.view.addSubview(baseView)
-//    }
+
     
     private func setupCollectionDelegates() {
         
     }
+}
+
+extension AllNewsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        return UICollectionViewCell()
+    }
     
     
 }
+
