@@ -72,6 +72,7 @@ extension AllNewsPresenter: InteractorToPresenterAllNewsProtocol {
     func getAllNewsFailure() {
 //        view?.hideHUD()
         print("Couldn't retrieve all news")
+        view?.onFetchNewsFailure(error: "Empty  news: ")
     }
     
     

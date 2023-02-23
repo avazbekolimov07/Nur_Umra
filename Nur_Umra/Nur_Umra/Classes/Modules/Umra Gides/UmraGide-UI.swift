@@ -22,8 +22,8 @@ extension UmraGideViewController {
         
         tableView.contentInset.bottom = UIWindow.safeAreaInsets.bottom
         
-//        tableView.register(ChildrenTVC.nib(), forCellReuseIdentifier: ChildrenTVC.identifier)
-//        tableView.register(ChildrenTVC.nib(), forCellReuseIdentifier: ChildrenTVC.identifier)
+        tableView.register(cellType: UmraGideTopImageTVC.self)
+        tableView.register(cellType: UmraGideTVC.self)
         
         self.view.addSubview(tableView)
         

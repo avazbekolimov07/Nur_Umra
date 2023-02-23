@@ -33,6 +33,8 @@ extension AllNewsViewController {
     
     func createUIElements() {
         overrideUserInterfaceStyle = .light
+        
+        self.view.backgroundColor = .white
         self.collectionView = self.create_collectionView()
         self.refreshControl = self.create_refreshController()
         self.collectionView.addSubview(self.refreshControl)
