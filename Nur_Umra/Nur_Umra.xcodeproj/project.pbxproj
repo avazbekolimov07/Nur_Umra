@@ -47,6 +47,9 @@
 		30C71D5929A50E5900E5F6CF /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C71D5829A50E5900E5F6CF /* UIViewController+Extensions.swift */; };
 		30C71D5B29A5225200E5F6CF /* HomeViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C71D5A29A5225200E5F6CF /* HomeViewController+Layout.swift */; };
 		30C71D5E29A528B500E5F6CF /* UIColor+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C71D5D29A528B500E5F6CF /* UIColor+App.swift */; };
+		30CC5EBA29A757A0005C158A /* HandbookDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC5EB929A757A0005C158A /* HandbookDM.swift */; };
+		30CC5EBE29A757BC005C158A /* UmraGideTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC5EBC29A757BC005C158A /* UmraGideTVC.swift */; };
+		30CC5EBF29A757BC005C158A /* UmraGideTopImageTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC5EBD29A757BC005C158A /* UmraGideTopImageTVC.swift */; };
 		F984BFFBFD2A39BC20E316F3 /* Pods_Nur_Umra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4BA30C2E6F8DF0B7CEE341 /* Pods_Nur_Umra.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +96,9 @@
 		30C71D5829A50E5900E5F6CF /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		30C71D5A29A5225200E5F6CF /* HomeViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+Layout.swift"; sourceTree = "<group>"; };
 		30C71D5D29A528B500E5F6CF /* UIColor+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+App.swift"; sourceTree = "<group>"; };
+		30CC5EB929A757A0005C158A /* HandbookDM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandbookDM.swift; sourceTree = "<group>"; };
+		30CC5EBC29A757BC005C158A /* UmraGideTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UmraGideTVC.swift; sourceTree = "<group>"; };
+		30CC5EBD29A757BC005C158A /* UmraGideTopImageTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UmraGideTopImageTVC.swift; sourceTree = "<group>"; };
 		8B68D0C6A4E41D488AE64253 /* Pods-Nur_Umra.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nur_Umra.release.xcconfig"; path = "Target Support Files/Pods-Nur_Umra/Pods-Nur_Umra.release.xcconfig"; sourceTree = "<group>"; };
 		8DCE3CF87F82B0ACD7566477 /* Pods-Nur_Umra.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nur_Umra.debug.xcconfig"; path = "Target Support Files/Pods-Nur_Umra/Pods-Nur_Umra.debug.xcconfig"; sourceTree = "<group>"; };
 		BA4BA30C2E6F8DF0B7CEE341 /* Pods_Nur_Umra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nur_Umra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,6 +202,7 @@
 		08EC25AE29A39B0000DAC561 /* Entites */ = {
 			isa = PBXGroup;
 			children = (
+				30CC5EB929A757A0005C158A /* HandbookDM.swift */,
 				08639A2829A5FC61002E0D48 /* NewsDM.swift */,
 			);
 			path = Entites;
@@ -260,6 +267,7 @@
 		08EC25C129A39F1700DAC561 /* Umra Gides */ = {
 			isa = PBXGroup;
 			children = (
+				30CC5EBB29A757BC005C158A /* TVC */,
 				3073449F29A65D700051BFFD /* UmraGide-UI.swift */,
 				08EC25C929A39FFD00DAC561 /* UmraGideViewController.swift */,
 				08EC25C529A39FDA00DAC561 /* UmraGidePresenter.swift */,
@@ -382,6 +390,15 @@
 			children = (
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		30CC5EBB29A757BC005C158A /* TVC */ = {
+			isa = PBXGroup;
+			children = (
+				30CC5EBC29A757BC005C158A /* UmraGideTVC.swift */,
+				30CC5EBD29A757BC005C158A /* UmraGideTopImageTVC.swift */,
+			);
+			path = TVC;
 			sourceTree = "<group>";
 		};
 		4B63F65067FFFD7CDB1B9B1B /* Frameworks */ = {
@@ -533,6 +550,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30CC5EBA29A757A0005C158A /* HandbookDM.swift in Sources */,
 				305DBDFE29A4982A00D962EF /* UITableView+ClassIdentifiable.swift in Sources */,
 				305DBE0029A4984200D962EF /* UICollectionView+ClassIdentifiable.swift in Sources */,
 				08476B7729A4EB78006D7509 /* AllNewsInteractor.swift in Sources */,
@@ -540,6 +558,7 @@
 				305DBDF429A4945E00D962EF /* HomeGuideCVC.swift in Sources */,
 				08476B6D29A4EAFF006D7509 /* AllNews-UI.swift in Sources */,
 				30AA27B429A5E9380014C351 /* HomeService.swift in Sources */,
+				30CC5EBF29A757BC005C158A /* UmraGideTopImageTVC.swift in Sources */,
 				08EC25A329A341F700DAC561 /* MainVC.swift in Sources */,
 				08EC25B829A39EB300DAC561 /* HomeContact.swift in Sources */,
 				30AA27B229A5E0660014C351 /* APIClient.swift in Sources */,
@@ -563,6 +582,7 @@
 				30C71D5729A50E0500E5F6CF /* CALayer+Shadow.swift in Sources */,
 				30AA27B629A5EBED0014C351 /* Endpoints.swift in Sources */,
 				307344A029A65D700051BFFD /* UmraGide-UI.swift in Sources */,
+				30CC5EBE29A757BC005C158A /* UmraGideTVC.swift in Sources */,
 				30C71D5E29A528B500E5F6CF /* UIColor+App.swift in Sources */,
 				08EC25CC29A3A00E00DAC561 /* UmraGideInteractor.swift in Sources */,
 				08EC25C429A39FC700DAC561 /* UmraGideContract.swift in Sources */,
