@@ -6,26 +6,29 @@
 //
 
 import UIKit
-class AllNewsRouter {
-    
-    // MARK: Static methods
-    static func createModule() -> UINavigationController {
+class AllNewsRouter: PresenterToRouterAllNewsProtocol {
+    static func createModule(with allNews: [NewsDM]?) -> UIViewController {
         let viewController = AllNewsViewController()
-        let navigationController = UINavigationController(rootViewController: viewController)
-        
+
         let presenter: ViewToPresenterAllNewsProtocol & InteractorToPresenterAllNewsProtocol = AllNewsPresenter()
-        
+
         viewController.presenter = presenter
         viewController.presenter?.router = AllNewsRouter()
         viewController.presenter?.view = viewController
         viewController.presenter?.interactor = AllNewsInteractor()
+        if let safeNews = allNews {
+            print(" \(allNews?.count) Retrieved news !")
+            viewController.presenter?.interactor?.news = safeNews
+        } else {
+            print(" \(allNews?.count) Retrieved news !  Trying  loadNews is ")
+            viewController.presenter?.interactor?.loadNews()
+        }
         viewController.presenter?.interactor?.presenter = presenter
 
-        return navigationController
+        return viewController
     }
-}
-
-extension AllNewsRouter: PresenterToRouterAllNewsProtocol {
+    
+  
     
     // MARK: - Navigation
 //    func pushToQuoteDetail(on view: PresenterToViewQuotesProtocol, with quote: Quote) {

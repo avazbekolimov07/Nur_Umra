@@ -24,8 +24,8 @@ class AllNewsPresenter: ViewToPresenterAllNewsProtocol {
         print("Presenter is being notified that the View was loaded.")
         
         view?.createUIElements()
-//        view?.showHUD()
-        interactor?.loadNews()
+        interactor?.retrieveAllNews()
+
     }
     
     func refresh() {
@@ -33,13 +33,23 @@ class AllNewsPresenter: ViewToPresenterAllNewsProtocol {
         interactor?.loadNews()
     }
     
-    //MARK: - SHARE>>>
+    //MARK: SHARE>>>
     func didShowShareView(link: String) {
-        
+      let myWebsite = URL(string: link)
+         let objectsToShare = [myWebsite]
+         let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+
+         //Excluded Activities
+         activityVC.excludedActivityTypes = [UIActivity.ActivityType.airDrop, UIActivity.ActivityType.addToReadingList]
+
+        view?.showShareView(shareView: activityVC)
+
     }
     
+    
+    
     func numberOfRowsInSection() -> Int {
-        guard let news = self.news else {
+        guard let news = news else {
             return 0
         }
         return news.count
@@ -53,6 +63,17 @@ class AllNewsPresenter: ViewToPresenterAllNewsProtocol {
 
 // MARK: - Outputs to view
 extension AllNewsPresenter: InteractorToPresenterAllNewsProtocol {
+    
+    func getAllNewsSuccess(_ allNews: [NewsDM]) {
+        self.news = allNews
+        view?.onFetchNewsSuccess()
+    }
+    
+    func getAllNewsFailure() {
+//        view?.hideHUD()
+        print("Couldn't retrieve all news")
+    }
+    
     
     func fetchNewsSuccess(news: [NewsDM]) {
         print("Presenter receives the result from Interactor after it's done its job.")
@@ -68,14 +89,7 @@ extension AllNewsPresenter: InteractorToPresenterAllNewsProtocol {
         view?.onFetchNewsFailure(error: "Couldn't fetch news: \(errorCode)")
     }
   
-//    func getQuoteSuccess(_ quote: Quote) {
-//        router?.pushToQuoteDetail(on: view!, with: quote)
-//    }
-//
-//    func getQuoteFailure() {
-//        view?.hideHUD()
-//        print("Couldn't retrieve quote by index")
-//    }
+
     
     
 }

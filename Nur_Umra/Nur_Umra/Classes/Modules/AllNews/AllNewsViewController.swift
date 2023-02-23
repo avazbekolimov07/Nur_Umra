@@ -38,10 +38,16 @@ extension AllNewsViewController {
         self.collectionView.addSubview(self.refreshControl)
         self.navigationItem.title = "Yangiliklar"
     }
+    
+    
 }
 
 // MARK: - Update views
 extension AllNewsViewController: PresenterToViewAllNewsProtocol {
+    func showShareView(shareView: UIActivityViewController) {
+        self.present(shareView, animated: true)
+    }
+    
     
     func onFetchNewsSuccess() {
         print("View receives the response from Presenter and updates itself.")
@@ -68,9 +74,12 @@ extension AllNewsViewController: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeNewsCVC", for: indexPath) as? HomeNewsCVC else { return UICollectionViewCell() }
-//        cell.configure(imgString:  , title: <#T##String?#>, time: <#T##String?#>)
-//        cell.didShareButtonPressed = {
-//        self.presenter?.didShowShareView(link: <#T##String#>)
+        cell.configure(new: presenter?.interactor?.getSpecificNews(indexPAth: indexPath))
+        cell.didShareButtonPressed = {[weak self] link in
+            self?.presenter?.didShowShareView(link: link)
+            print("pressed button at link - \(link)  index path -", indexPath.row)
+          
+        }
         return cell
     }
     

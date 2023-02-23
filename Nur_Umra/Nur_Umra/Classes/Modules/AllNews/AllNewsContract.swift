@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 // MARK: View Output (Presenter -> View)
 protocol PresenterToViewAllNewsProtocol: AnyObject {
@@ -14,6 +15,8 @@ protocol PresenterToViewAllNewsProtocol: AnyObject {
     
  
     func  createUIElements()
+    
+    func showShareView(shareView: UIActivityViewController)
 }
 
 
@@ -35,7 +38,8 @@ protocol ViewToPresenterAllNewsProtocol: AnyObject {
     func didShowShareView(link: String)
     
     func didSelectRowAt(index: Int)
-//    func deselectRowAt(index: Int)
+    
+   
 
 }
 
@@ -45,8 +49,14 @@ protocol PresenterToInteractorAllNewsProtocol: AnyObject {
     
     var presenter: InteractorToPresenterAllNewsProtocol? { get set }
     
+    var news: [NewsDM]? { get set}
+    
     func loadNews()
-//    func retrieveQuote(at index: Int)
+    
+    func retrieveAllNews()
+    
+    func getSpecificNews(indexPAth: IndexPath) -> NewsDM?
+
 }
 
 
@@ -55,17 +65,16 @@ protocol InteractorToPresenterAllNewsProtocol: AnyObject {
     
     func fetchNewsSuccess(news: [NewsDM])
     func fetchNewsFailure(errorCode: Int)
+    
+    func getAllNewsSuccess(_ allNews: [NewsDM])
+    func getAllNewsFailure()
 
-//    func getNewsSuccess(_ news: NewsDM)
-//    func getNewsFailure()
     
 }
 
 
 // MARK: Router Input (Presenter -> Router)
 protocol PresenterToRouterAllNewsProtocol: AnyObject {
-    
-//    static func createModule() -> UINavigationController
-//
-//    func pushToAllNews(on view: PresenterToViewHomeProtocol, with news: NewsDM)
+    static func createModule(with allNews: [NewsDM]?) -> UIViewController
+
 }
