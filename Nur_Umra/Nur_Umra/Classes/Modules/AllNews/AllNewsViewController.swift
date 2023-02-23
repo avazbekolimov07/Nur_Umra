@@ -69,18 +69,8 @@ extension AllNewsViewController: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeNewsCVC", for: indexPath) as? HomeNewsCVC else { return UICollectionViewCell() }
 //        cell.configure(imgString:  , title: <#T##String?#>, time: <#T##String?#>)
-        cell.didShareButtonPressed = { [weak self] in
-            print("Share Button Pressed")
-            //Set the default sharing message.
-                    let message = "Message goes here."
-                    //Set the link to share.
-                    if let link = NSURL(string: "Put your url!!!")
-                    {
-                        let objectsToShare = [message,link]
-                        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-                        activityVC.excludedActivityTypes = [UIActivity.ActivityType.airDrop, UIActivity.ActivityType.addToReadingList]
-                        self?.present(activityVC, animated: true, completion: nil)
-                    }        }
+//        cell.didShareButtonPressed = {
+//        self.presenter?.didShowShareView(link: <#T##String#>)
         return cell
     }
     

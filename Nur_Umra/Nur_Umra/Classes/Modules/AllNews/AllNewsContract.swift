@@ -11,7 +11,8 @@ import Foundation
 protocol PresenterToViewAllNewsProtocol: AnyObject {
     func onFetchNewsSuccess()
     func onFetchNewsFailure(error: String)
-
+    
+ 
     func  createUIElements()
 }
 
@@ -31,7 +32,8 @@ protocol ViewToPresenterAllNewsProtocol: AnyObject {
 //
     func numberOfRowsInSection() -> Int
 
-//
+    func didShowShareView(link: String)
+    
     func didSelectRowAt(index: Int)
 //    func deselectRowAt(index: Int)
 

@@ -33,7 +33,10 @@ class AllNewsPresenter: ViewToPresenterAllNewsProtocol {
         interactor?.loadNews()
     }
     
-//    func getAllNews() -> [NewsDM]
+    //MARK: - SHARE>>>
+    func didShowShareView(link: String) {
+        
+    }
     
     func numberOfRowsInSection() -> Int {
         guard let news = self.news else {
