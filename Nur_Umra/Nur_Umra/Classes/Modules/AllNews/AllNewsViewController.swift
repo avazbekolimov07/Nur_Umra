@@ -39,6 +39,7 @@ extension AllNewsViewController {
         self.refreshControl = self.create_refreshController()
         self.collectionView.addSubview(self.refreshControl)
         self.navigationItem.title = "Yangiliklar"
+        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.1716529429, green: 0.1766341031, blue: 0.19795838, alpha: 1)
     }
     
     
