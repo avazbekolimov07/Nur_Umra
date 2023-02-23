@@ -40,12 +40,10 @@ extension HomeRouter: PresenterToRouterHomeProtocol {
     }
     
     func pushToAllNews(on view: PresenterToViewHomeProtocol, with allNews: [NewsDM]) {
-        print("All News")
-//        let quoteDetailViewController = QuoteDetailRouter.createModule(with: allNews)
-
-//        let viewController = view as! AllNewsViewController
-//        viewController.navigationController?
-//            .pushViewController(quoteDetailViewController, animated: true)
+        let AllNewsViewController = AllNewsRouter.createModule(with: allNews)
+        let viewController = view as! HomeViewController
+        viewController.navigationController?
+            .pushViewController(AllNewsViewController, animated: true)
     }
     
 }
