@@ -9,6 +9,8 @@ import SwiftyJSON
 
 class UmraGidePresenter: ViewToPresenterUmraGideProtocol {
     
+    var handbooks: [HandbookDM]?
+    
     // MARK: Properties
     weak var view: PresenterToViewUmraGideProtocol?
     var interactor: PresenterToInteractorUmraGideProtocol?

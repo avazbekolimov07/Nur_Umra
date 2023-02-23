@@ -27,10 +27,10 @@ protocol ViewToPresenterUmraGideProtocol: AnyObject {
     var interactor: PresenterToInteractorUmraGideProtocol? { get set }
     var router: PresenterToRouterUmraGideProtocol? { get set }
     
-//    var news: [NewsDM]? { get set }
-//
-//    func viewDidLoad()
-//
+    var handbooks: [HandbookDM]? { get set }
+
+    func viewDidLoad()
+
 //    func refresh()
 //
 //    func numberOfRowsInSection() -> Int
@@ -46,8 +46,8 @@ protocol ViewToPresenterUmraGideProtocol: AnyObject {
 // MARK: Interactor Input (Presenter -> Interactor)
 protocol PresenterToInteractorUmraGideProtocol: AnyObject {
     
-//    var presenter: InteractorToPresenterHomeProtocol? { get set }
-//
+    var presenter: InteractorToPresenterUmraGideProtocol? { get set }
+
 //    func loadNews()
 //    func retrieveNewDetail(at index: Int)
 //    func retrieveAllNews()
@@ -71,8 +71,8 @@ protocol InteractorToPresenterUmraGideProtocol: AnyObject {
 // MARK: Router Input (Presenter -> Router)
 protocol PresenterToRouterUmraGideProtocol: AnyObject {
     
-//    static func createModule() -> UINavigationController
-//
+    static func createModule() -> UIViewController
+
 //    func pushToNewDetail(on view: PresenterToViewHomeProtocol, with new: NewsDM)
 //    func pushToAllNews(on view: PresenterToViewHomeProtocol, with allNews: [NewsDM])
 }

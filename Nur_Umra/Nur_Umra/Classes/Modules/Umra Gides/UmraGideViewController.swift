@@ -17,13 +17,21 @@ class UmraGideViewController: UIViewController {
     }
     
     // MARK: - Properties
-    var presenter: ViewToPresenterHomeProtocol?
+    var presenter: ViewToPresenterUmraGideProtocol?
     var tableView: UITableView!
     var shareButton: UIButton!
-    var shareImageView: UIImageView!
     
     
     // MARK: - Actions
+    @objc func handleBackButton() {
+        
+    }
+    
+}
+
+extension UmraGideViewController: PresenterToViewUmraGideProtocol {
+    
+    
     
 }
 
@@ -53,6 +61,18 @@ extension UmraGideViewController: UITableViewDelegate, UITableViewDataSource {
         
     }
     
+    // Set the spacing between sections
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 24
+    }
+    
+    // Make the background color show through
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
+        return headerView
+    }
+    
 }
 
 // MARK: - UI Setup
@@ -60,13 +80,7 @@ extension UmraGideViewController {
     func createUIElements() {
         overrideUserInterfaceStyle = .light
         self.tableView = self.create_tableView()
-        
         self.shareButton = self.create_backButton()
-        self.view.addSubview(self.shareButton)
-        
-        self.shareImageView = self.create_backImageView()
-        self.shareButton.addSubview(self.shareButton)
-        
         self.navigationItem.title = ""
     }
 }
