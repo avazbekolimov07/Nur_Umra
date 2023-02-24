@@ -16,6 +16,11 @@ class UmraGideViewController: UIViewController {
         presenter?.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
+    
     // MARK: - Properties
     var presenter: ViewToPresenterUmraGideProtocol?
     var tableView: UITableView!
@@ -53,7 +58,15 @@ extension UmraGideViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        switch indexPath.section {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withCellType: UmraGideTopImageTVC.self, for: indexPath)
+            return cell
+        default:
+            let cell = tableView.dequeueReusableCell(withCellType: UmraGideTVC.self, for: indexPath)
+            
+            return cell
+        }
     }
     
     
@@ -63,7 +76,10 @@ extension UmraGideViewController: UITableViewDelegate, UITableViewDataSource {
     
     // Set the spacing between sections
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 24
+        if section != 0 {
+            return 24
+        }
+        return 0
     }
     
     // Make the background color show through
@@ -71,6 +87,10 @@ extension UmraGideViewController: UITableViewDelegate, UITableViewDataSource {
         let headerView = UIView()
         headerView.backgroundColor = UIColor.clear
         return headerView
+    }
+    
+    private func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 55
     }
     
 }

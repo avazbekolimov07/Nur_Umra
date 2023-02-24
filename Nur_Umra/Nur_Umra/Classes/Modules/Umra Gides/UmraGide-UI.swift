@@ -16,7 +16,7 @@ extension UmraGideViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
-        tableView.backgroundColor = .clear
+        tableView.backgroundColor = .green
         
         tableView.showsVerticalScrollIndicator = false
         
@@ -28,10 +28,11 @@ extension UmraGideViewController {
         self.view.addSubview(tableView)
         
         tableView.snp.makeConstraints { make in
-            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
+            make.top.equalTo(self.view.snp.top)
             make.left.equalTo(self.view.snp.left)
+            make.bottom.equalTo(self.view.snp.bottom)
             make.right.equalTo(self.view.snp.right)
-            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
+            
         }
         return tableView
     }

@@ -43,11 +43,11 @@ class UmraGideTVC: UITableViewCell, ClassIdentifiable {
     // MARK: - Lifecycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
+        setupSubviews()
     }
     
     override func layoutSubviews() {
-        setupSubviews()
+        
     }
 
     @available(*, unavailable)
@@ -71,11 +71,18 @@ extension UmraGideTVC {
             make.width.equalTo(12)
         }
         
-        mainStackView.snp.makeConstraints { make in
+        hStackView.snp.makeConstraints { make in
             make.top.equalTo(self.snp.top).offset(16)
             make.left.equalTo(self.snp.left).offset(16)
             make.right.equalTo(self.snp.right).offset(-16)
             make.bottom.equalTo(self.snp.bottom).offset(-16)
+        }
+        
+        mainStackView.snp.makeConstraints { make in
+            make.top.equalTo(self.snp.top).offset(6)
+            make.left.equalTo(self.snp.left).offset(16)
+            make.right.equalTo(self.snp.right).offset(-16)
+            make.bottom.equalTo(self.snp.bottom).offset(-6)
         }
         
         

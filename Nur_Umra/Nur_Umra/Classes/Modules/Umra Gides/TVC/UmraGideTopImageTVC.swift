@@ -15,11 +15,11 @@ class UmraGideTopImageTVC: UITableViewCell, ClassIdentifiable {
     // MARK: - Lifecycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
+        setupSubviews()
     }
     
     override func layoutSubviews() {
-        setupSubviews()
+//        setupSubviews()
     }
 
     @available(*, unavailable)
