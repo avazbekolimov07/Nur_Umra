@@ -9,6 +9,8 @@ import UIKit
 import SwiftyJSON
 
 class AllNewsPresenter: ViewToPresenterAllNewsProtocol {
+    
+    
 
     
     
@@ -35,15 +37,8 @@ class AllNewsPresenter: ViewToPresenterAllNewsProtocol {
     
     //MARK: SHARE>>>
     func didShowShareView(link: String) {
-      let myWebsite = URL(string: link)
-         let objectsToShare = [myWebsite]
-         let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-
-         //Excluded Activities
-         activityVC.excludedActivityTypes = [UIActivity.ActivityType.airDrop, UIActivity.ActivityType.addToReadingList]
-
-        view?.showShareView(shareView: activityVC)
-
+        print("🥶🥶🥶 Presenter - did shiw share view working !!!!!!    link --", link , "   viewController - ")
+        router?.showShareView(link: link, view: view!)
     }
     
     

@@ -30,7 +30,6 @@ class AllNewsInteractor: PresenterToInteractorAllNewsProtocol {
             presenter?.getAllNewsFailure()
             return
         }
-        print("Is good", safeAllNews)
         presenter?.getAllNewsSuccess(safeAllNews)
         
     }

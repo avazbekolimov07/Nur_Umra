@@ -12,11 +12,8 @@ import UIKit
 protocol PresenterToViewAllNewsProtocol: AnyObject {
     func onFetchNewsSuccess()
     func onFetchNewsFailure(error: String)
-    
- 
+
     func  createUIElements()
-    
-    func showShareView(shareView: UIActivityViewController)
 }
 
 
@@ -76,5 +73,6 @@ protocol InteractorToPresenterAllNewsProtocol: AnyObject {
 // MARK: Router Input (Presenter -> Router)
 protocol PresenterToRouterAllNewsProtocol: AnyObject {
     static func createModule(with allNews: [NewsDM]?) -> UIViewController
-
+    
+    func showShareView(link: String, view: PresenterToViewAllNewsProtocol)
 }

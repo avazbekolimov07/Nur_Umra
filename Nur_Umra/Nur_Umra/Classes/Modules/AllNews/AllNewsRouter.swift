@@ -7,6 +7,7 @@
 
 import UIKit
 class AllNewsRouter: PresenterToRouterAllNewsProtocol {
+    
     static func createModule(with allNews: [NewsDM]?) -> UIViewController {
         let viewController = AllNewsViewController()
 
@@ -29,7 +30,20 @@ class AllNewsRouter: PresenterToRouterAllNewsProtocol {
     }
     
   
+    func showShareView(link: String, view: PresenterToViewAllNewsProtocol) {
+        let vc = view as! AllNewsViewController
+        
+        let myWebsite = URL(string: link)
+        let objectsToShare = [myWebsite]
+        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        
+        //Excluded Activities
+        activityVC.excludedActivityTypes = [UIActivity.ActivityType.airDrop, UIActivity.ActivityType.addToReadingList]
+                vc.present(activityVC, animated: true)
+       
     
+    }
+   
     // MARK: - Navigation
 //    func pushToQuoteDetail(on view: PresenterToViewQuotesProtocol, with quote: Quote) {
 //        print("QuotesRouter is instructed to push QuoteDetailViewController onto the navigation stack.")
