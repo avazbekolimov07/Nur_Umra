@@ -275,7 +275,6 @@
 				08EC25CF29A3A28E00DAC561 /* AllNews */,
 				082FFF3429A8DBB4002F85B6 /* News Detailed */,
 				08EC25C129A39F1700DAC561 /* Umra Gides */,
-				08EC25C229A39F6500DAC561 /* Umra Gides Detailed */,
 				30AC276C29A9EF68005DE047 /* Umra Audios */,
 			);
 			path = Modules;
@@ -339,48 +338,6 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		08EC25B129A39C2F00DAC561 /* Umra Detail - Dua */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Umra Detail - Dua";
-			sourceTree = "<group>";
-		};
-		08EC25B229A39C3800DAC561 /* Umra Detail - Dua Detail */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Umra Detail - Dua Detail";
-			sourceTree = "<group>";
-		};
-		08EC25B329A39C7800DAC561 /* Umra Detail - Preparation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Umra Detail - Preparation";
-			sourceTree = "<group>";
-		};
-		08EC25B429A39CC400DAC561 /* Umra Detail - Places */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Umra Detail - Places";
-			sourceTree = "<group>";
-		};
-		08EC25B529A39D0500DAC561 /* Umra Detail - Places Detail */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Umra Detail - Places Detail";
-			sourceTree = "<group>";
-		};
-		08EC25B629A39D6200DAC561 /* Umra Detail - Abot */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Umra Detail - Abot";
-			sourceTree = "<group>";
-		};
 		08EC25C129A39F1700DAC561 /* Umra Gides */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,19 +350,6 @@
 				08EC25C329A39FC700DAC561 /* UmraGideContract.swift */,
 			);
 			path = "Umra Gides";
-			sourceTree = "<group>";
-		};
-		08EC25C229A39F6500DAC561 /* Umra Gides Detailed */ = {
-			isa = PBXGroup;
-			children = (
-				08EC25B529A39D0500DAC561 /* Umra Detail - Places Detail */,
-				08EC25B629A39D6200DAC561 /* Umra Detail - Abot */,
-				08EC25B129A39C2F00DAC561 /* Umra Detail - Dua */,
-				08EC25B229A39C3800DAC561 /* Umra Detail - Dua Detail */,
-				08EC25B329A39C7800DAC561 /* Umra Detail - Preparation */,
-				08EC25B429A39CC400DAC561 /* Umra Detail - Places */,
-			);
-			path = "Umra Gides Detailed";
 			sourceTree = "<group>";
 		};
 		08EC25CF29A3A28E00DAC561 /* AllNews */ = {
