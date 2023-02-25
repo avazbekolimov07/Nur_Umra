@@ -97,10 +97,10 @@ extension UmraGideTVC {
         }
         
         mainView.snp.makeConstraints { make in
-            make.top.equalTo(self.snp.top).offset(6)
-            make.left.equalTo(self.snp.left).offset(16)
-            make.right.equalTo(self.snp.right).offset(-16)
-            make.bottom.equalTo(self.snp.bottom).offset(-6)
+            make.top.equalTo(contentView.snp.top).offset(6)
+            make.left.equalTo(contentView.snp.left).offset(16)
+            make.right.equalTo(contentView.snp.right).offset(-16)
+            make.bottom.equalTo(contentView.snp.bottom).offset(-6)
         }
         
     }

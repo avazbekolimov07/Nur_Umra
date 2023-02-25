@@ -59,7 +59,7 @@ class HomePresenter: ViewToPresenterHomeProtocol {
             case 0:
                 router?.pushToUmraGide(on: view!)
             case 1:
-                print("2 cell")
+                router?.pushToUmraAudios(on: view!)
             case 2:
                 print("3 cell")
             default:

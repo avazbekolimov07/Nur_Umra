@@ -65,5 +65,12 @@ extension HomeRouter: PresenterToRouterHomeProtocol {
             .pushViewController(UmraGideViewController, animated: true)
     }
     
+    func pushToUmraAudios(on view: PresenterToViewHomeProtocol) {
+        let UmraAudiosViewController = UmraAudiosRouter.createModule()
+        let viewController = view as! HomeViewController
+        viewController.navigationController?
+            .pushViewController(UmraAudiosViewController, animated: true)
+    }
+    
 }
 

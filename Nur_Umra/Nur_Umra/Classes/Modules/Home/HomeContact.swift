@@ -79,4 +79,5 @@ protocol PresenterToRouterHomeProtocol: AnyObject {
     func pushToAllNews(on view: PresenterToViewHomeProtocol, with allNews: [NewsDM])
     
     func pushToUmraGide(on view: PresenterToViewHomeProtocol)
+    func pushToUmraAudios(on view: PresenterToViewHomeProtocol)
 }

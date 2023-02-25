@@ -34,7 +34,7 @@ class UmraGideViewController: UIViewController {
     // MARK: - Properties
     var presenter: ViewToPresenterUmraGideProtocol?
     var tableView: UITableView!
-    var shareButton: UIButton!
+    var backButton: UIButton!
     
     
     // MARK: - Actions
@@ -109,8 +109,9 @@ extension UmraGideViewController: UITableViewDelegate, UITableViewDataSource {
 extension UmraGideViewController {
     func createUIElements() {
         overrideUserInterfaceStyle = .light
+        self.view.backgroundColor = .white
         self.tableView = self.create_tableView()
-        self.shareButton = self.create_backButton()
+        self.backButton = self.create_backButton()
         self.navigationItem.title = ""
     }
 }

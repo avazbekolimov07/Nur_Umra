@@ -15,11 +15,8 @@ extension UIColor {
     static let systemBackgroundLight2 = UIColor.rgb(254, green: 254, blue: 254, alpha: 1)
     static let secondaryWhite = UIColor.rgb(242, green: 242, blue: 242, alpha: 1)
     
-    static let mainGreenColor = UIColor.rgb(74, green: 162, blue: 96, alpha: 1)
-    static let secondGreenColor = UIColor.rgb(226, green: 249, blue: 232, alpha: 1)
-    static let darkGreen = UIColor.rgb(29, green: 62, blue: 52, alpha: 1)
-    static let localGray = UIColor.rgb(210, green: 216, blue: 214, alpha: 1)
-    static let greyGreen = UIColor.rgb(142, green: 158, blue: 153, alpha: 1)
+    static let mainGreenColor = UIColor.rgb(2, green: 137, blue: 122, alpha: 1)
+    
     
     static let primaryRed = UIColor.rgb(237, green: 79, blue: 54, alpha: 1)
     static let primaryShadowColor = UIColor.rgb(24, green: 48, blue: 41, alpha: 1)

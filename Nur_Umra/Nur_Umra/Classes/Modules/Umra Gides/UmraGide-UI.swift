@@ -19,7 +19,6 @@ extension UmraGideViewController {
         tableView.backgroundColor = .white
 
         tableView.showsVerticalScrollIndicator = false
-        tableView.tableHeaderView = create_sectionHeader()
         tableView.contentInset.bottom = UIWindow.safeAreaInsets.bottom
         
         tableView.register(cellType: UmraGideTopImageTVC.self)
@@ -36,20 +35,6 @@ extension UmraGideViewController {
         return tableView
     }
     
-    func create_sectionHeader() -> UIView {
-        let headerView = UIView()
-        let label = UILabel()
-        label.text = "UMRA QO'LLANMASI"
-        label.font = UIFont.systemFont(ofSize: 18)
-        label.textColor = #colorLiteral(red: 0.2224110067, green: 0.2330494523, blue: 0.2606178522, alpha: 1)
-        label.textAlignment = .left
-        headerView.addSubview(label)
-        label.snp.makeConstraints { make in
-            make.top.equalTo(headerView.snp.top)
-            make.left.equalTo(headerView.snp.left).offset(16)
-        }
-        return headerView
-    }
     
     func create_backButton() -> UIButton {
         let button = UIButton()
