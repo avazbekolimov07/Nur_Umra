@@ -18,7 +18,16 @@ class UmraGideViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = true
+        setNeedsStatusBarAppearanceUpdate()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        UIApplication.shared.statusBarStyle = .default
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
     }
     
     // MARK: - Properties
@@ -36,8 +45,15 @@ class UmraGideViewController: UIViewController {
 
 extension UmraGideViewController: PresenterToViewUmraGideProtocol {
     
+    func onFetchHandbooksSuccess() {
+        print("View receives the response from Presenter and updates itself.")
+        self.tableView.reloadData()
+    }
     
-    
+    func onFetchHandbooksFailure(error: String) {
+        print("View receives the response from Presenter with error: \(error)")
+    }
+  
 }
 
 // MARK: - TableView Delegate & Data Source
@@ -53,7 +69,7 @@ extension UmraGideViewController: UITableViewDelegate, UITableViewDataSource {
         case 0:
             return 1
         default:
-            return 4
+            return presenter?.numberOfRowsInSection() ?? 0
         }
     }
     
@@ -64,7 +80,8 @@ extension UmraGideViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withCellType: UmraGideTVC.self, for: indexPath)
-            
+            cell.selectionStyle = .none
+            cell.configure(handbook: presenter?.eachHanbookData(indexPath: indexPath))
             return cell
         }
     }
@@ -72,25 +89,6 @@ extension UmraGideViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-    }
-    
-    // Set the spacing between sections
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if section != 0 {
-            return 24
-        }
-        return 0
-    }
-    
-    // Make the background color show through
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView()
-        headerView.backgroundColor = UIColor.clear
-        return headerView
-    }
-    
-    private func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 55
     }
     
 }

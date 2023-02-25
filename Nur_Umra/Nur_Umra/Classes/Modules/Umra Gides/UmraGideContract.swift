@@ -10,8 +10,8 @@ import UIKit
 
 // MARK: View Output (Presenter -> View)
 protocol PresenterToViewUmraGideProtocol: AnyObject {
-//    func onFetchNewsSuccess()
-//    func onFetchNewsFailure(error: String)
+    func onFetchHandbooksSuccess()
+    func onFetchHandbooksFailure(error: String)
 
 //    func showHUD()
 //    func hideHUD()
@@ -31,15 +31,11 @@ protocol ViewToPresenterUmraGideProtocol: AnyObject {
 
     func viewDidLoad()
 
-//    func refresh()
-//
-//    func numberOfRowsInSection() -> Int
-//    func eachNewsData(indexPath: IndexPath) -> NewsDM?
-//
-//    func didSelectMore()
+    func numberOfRowsInSection() -> Int
+    func eachHanbookData(indexPath: IndexPath) -> HandbookDM?
+
 //    func didSelectRowAt(indexPath: IndexPath)
-//
-//    func didShowShareView(link: String)
+
 }
 
 
@@ -48,7 +44,8 @@ protocol PresenterToInteractorUmraGideProtocol: AnyObject {
     
     var presenter: InteractorToPresenterUmraGideProtocol? { get set }
 
-//    func loadNews()
+    func loadHandbooks()
+    
 //    func retrieveNewDetail(at index: Int)
 //    func retrieveAllNews()
 }
@@ -57,9 +54,9 @@ protocol PresenterToInteractorUmraGideProtocol: AnyObject {
 // MARK: Interactor Output (Interactor -> Presenter)
 protocol InteractorToPresenterUmraGideProtocol: AnyObject {
     
-//    func fetchNewsSuccess(news: [NewsDM])
-//    func fetchNewsFailure(errorCode: Int)
-//
+    func fetchHandbooksSuccess(handbooks: [HandbookDM])
+    func fetchHandbooksFailure(errorCode: Int)
+
 //    func getNewsDetailSuccess(_ news: NewsDM)
 //    func getNewsDetailFailure()
 //

@@ -52,10 +52,6 @@ class HomeGuideCVC: UICollectionViewCell, ClassIdentifiable {
         
         
     }
-    
-    func configure(imgString: String?, title: String?, time: String?) {
-        titleLabel.text = title
-    }
 
     @available(*, unavailable)
     required init?(coder: NSCoder) {

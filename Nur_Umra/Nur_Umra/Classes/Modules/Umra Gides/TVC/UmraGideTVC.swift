@@ -8,14 +8,16 @@
 import UIKit
 
 class UmraGideTVC: UITableViewCell, ClassIdentifiable {
-
-    private lazy var mainStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [hStackView])
-        stackView.distribution = .fill
-        stackView.alignment = .fill
-        stackView.axis = .vertical
-        stackView.spacing = 0
-        return stackView
+    
+    
+    var handbook: HandbookDM?
+    
+    // MARK: - UI Elements
+    private lazy var mainView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .systemGray6
+        view.layer.cornerRadius = 16
+        return view
     }()
     
     private lazy var hStackView: UIStackView = {
@@ -23,13 +25,13 @@ class UmraGideTVC: UITableViewCell, ClassIdentifiable {
         stackView.distribution = .equalSpacing
         stackView.alignment = .center
         stackView.axis = .horizontal
+        stackView.backgroundColor = .clear
         stackView.spacing = 12
         return stackView
     }()
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-
 //        label.font = .jostRegular(size: 14)
         label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = #colorLiteral(red: 0.2224110067, green: 0.2330494523, blue: 0.2606178522, alpha: 1)
@@ -49,6 +51,16 @@ class UmraGideTVC: UITableViewCell, ClassIdentifiable {
     override func layoutSubviews() {
         
     }
+    
+    func configure(handbook: HandbookDM?) {
+        guard let handbookSafe = handbook else { return }
+        self.handbook = handbook
+        self.updateUI(handbook: handbookSafe)
+    }
+    
+    private func updateUI(handbook: HandbookDM) {
+        titleLabel.text = handbook.name
+    }
 
     @available(*, unavailable)
     required init?(coder: NSCoder) {
@@ -61,7 +73,8 @@ class UmraGideTVC: UITableViewCell, ClassIdentifiable {
 extension UmraGideTVC {
     
     private func setupSubviews() {
-        addSubviews(mainStackView)
+        addSubviews(mainView)
+        mainView.addSubview(hStackView)
         configureConstraints()
     }
     
@@ -72,13 +85,13 @@ extension UmraGideTVC {
         }
         
         hStackView.snp.makeConstraints { make in
-            make.top.equalTo(self.snp.top).offset(16)
-            make.left.equalTo(self.snp.left).offset(16)
-            make.right.equalTo(self.snp.right).offset(-16)
-            make.bottom.equalTo(self.snp.bottom).offset(-16)
+            make.top.equalTo(mainView.snp.top).offset(16)
+            make.left.equalTo(mainView.snp.left).offset(16)
+            make.right.equalTo(mainView.snp.right).offset(-16)
+            make.bottom.equalTo(mainView.snp.bottom).offset(-16)
         }
         
-        mainStackView.snp.makeConstraints { make in
+        mainView.snp.makeConstraints { make in
             make.top.equalTo(self.snp.top).offset(6)
             make.left.equalTo(self.snp.left).offset(16)
             make.right.equalTo(self.snp.right).offset(-16)

@@ -1,28 +1,28 @@
 //
-//  HomeService.swift
+//  UmraGideService.swift
 //  Nur_Umra
 //
-//  Created by AvazbekOS on 22/02/23.
+//  Created by AvazbekOS on 24/02/23.
 //
 
 import Foundation
 import SwiftyJSON
 
-class HomeService {
+class UmraGideService {
     
-    static let shared = { HomeService() }()
+    static let shared = { UmraGideService() }()
     
-    func getNews(success: @escaping (Int, [NewsDM]) -> (),
+    func getHandbooks(success: @escaping (Int, [HandbookDM]) -> (),
                  failure: @escaping (Int) -> ()) {
-        let urlString = Endpoints.NEWS
+        let urlString = Endpoints.HANDBOOK
         APIClient.shared.requestJSONEncoding(urlString: urlString,
                                              param: nil,
                                              method: .get,
                                              header: nil,
                                              success: { (code, resultData) in
             let json = JSON(resultData)
-            let news = json.arrayValue.compactMap { NewsDM(json: $0) }
-            success(code, news)
+            let handbooks = json.arrayValue.compactMap { HandbookDM(json: $0) }
+            success(code, handbooks)
         }) { (code) in
             failure(code)
         }

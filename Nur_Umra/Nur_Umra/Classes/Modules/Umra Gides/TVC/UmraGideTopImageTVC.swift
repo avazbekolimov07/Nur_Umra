@@ -9,7 +9,15 @@ import UIKit
 
 class UmraGideTopImageTVC: UITableViewCell, ClassIdentifiable {
 
-    private lazy var stackView = UIStackView(arrangedSubviews: [imgView])
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [imgView])
+        stackView.distribution = .fill
+        stackView.alignment = .center
+        stackView.axis = .vertical
+        stackView.spacing = 0
+        return stackView
+    }()
+    
     private lazy var imgView = UIImageView(image: UIImage(named: "umraGide_img"))
     
     // MARK: - Lifecycle
@@ -38,12 +46,16 @@ extension UmraGideTopImageTVC {
     }
     
     private func configureConstraints() {
-        stackView.snp.makeConstraints { make in
-            make.top.equalTo(self.snp.top)
-            make.left.equalTo(self.snp.left)
-            make.right.equalTo(self.snp.right)
+        imgView.snp.makeConstraints { make in
+            make.width.equalToSuperview()
             make.height.equalTo(260)
-//            make.bottom.equalTo(self.snp.bottom)
+        }
+        
+        stackView.snp.makeConstraints { make in
+            make.top.equalTo(self.snp.top).offset(-UIWindow.safeAreaInsets.top)
+            make.left.equalTo(self.snp.left).offset(0)
+            make.right.equalTo(self.snp.right).offset(0)
+            make.bottom.equalTo(self.snp.bottom).offset(-24)
         }
     }
 }

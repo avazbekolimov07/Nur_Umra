@@ -14,6 +14,13 @@ class UmraGideInteractor: PresenterToInteractorUmraGideProtocol {
     weak var presenter: InteractorToPresenterUmraGideProtocol?
     var handbooks: [HandbookDM]?
     
-    
+    func loadHandbooks() {
+        UmraGideService.shared.getHandbooks(success: { (code, handbooks) in
+            self.handbooks = handbooks
+            self.presenter?.fetchHandbooksSuccess(handbooks: handbooks)
+        }) { (code) in
+            self.presenter?.fetchHandbooksFailure(errorCode: code)
+        }
+    }
     
 }
