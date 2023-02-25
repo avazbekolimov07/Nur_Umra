@@ -39,7 +39,7 @@ class AllNewsRouter: PresenterToRouterAllNewsProtocol {
         
         //Excluded Activities
         activityVC.excludedActivityTypes = [UIActivity.ActivityType.airDrop, UIActivity.ActivityType.addToReadingList]
-                vc.present(activityVC, animated: true)
+        vc.present(activityVC, animated: true)
        
     
     }
