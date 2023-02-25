@@ -18,12 +18,13 @@ class UmraGideViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setNeedsStatusBarAppearanceUpdate()
+        presenter?.viewWillAppear()
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        UIApplication.shared.statusBarStyle = .default
+        presenter?.viewDidDisappear()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -44,6 +45,15 @@ class UmraGideViewController: UIViewController {
 }
 
 extension UmraGideViewController: PresenterToViewUmraGideProtocol {
+    func handleViewWillAppear() {
+        setNeedsStatusBarAppearanceUpdate()
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    func handleViewDidDisappear() {
+        UIApplication.shared.statusBarStyle = .default
+    }
+    
     
     func onFetchHandbooksSuccess() {
         print("View receives the response from Presenter and updates itself.")

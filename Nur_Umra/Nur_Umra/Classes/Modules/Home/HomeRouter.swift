@@ -29,12 +29,24 @@ class HomeRouter {
 
 extension HomeRouter: PresenterToRouterHomeProtocol {
     
+    func showShareView(link: String, view: PresenterToViewHomeProtocol) {
+        let vc = view as! HomeViewController
+        
+        let myWebsite = URL(string: link)
+        let objectsToShare = [myWebsite]
+        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        
+        //Excluded Activities
+        activityVC.excludedActivityTypes = [UIActivity.ActivityType.airDrop, UIActivity.ActivityType.addToReadingList]
+        activityVC.popoverPresentationController?.sourceView = vc.view
+        vc.present(activityVC, animated: true)
+    }
+    
     // MARK: - Navigation
     func pushToNewDetail(on view: PresenterToViewHomeProtocol, with new: NewsDM) {
-        print("New Detail")
 //        let quoteDetailViewController = QuoteDetailRouter.createModule(with: new)
 
-//        let viewController = view as! AllNewsViewController
+//        let viewController = view as! HomeViewController
 //        viewController.navigationController?
 //            .pushViewController(quoteDetailViewController, animated: true)
     }
@@ -44,6 +56,13 @@ extension HomeRouter: PresenterToRouterHomeProtocol {
         let viewController = view as! HomeViewController
         viewController.navigationController?
             .pushViewController(AllNewsViewController, animated: true)
+    }
+    
+    func pushToUmraGide(on view: PresenterToViewHomeProtocol) {
+        let UmraGideViewController = UmraGideRouter.createModule()
+        let viewController = view as! HomeViewController
+        viewController.navigationController?
+            .pushViewController(UmraGideViewController, animated: true)
     }
     
 }

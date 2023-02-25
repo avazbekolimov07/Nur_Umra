@@ -72,7 +72,11 @@ protocol InteractorToPresenterHomeProtocol: AnyObject {
 protocol PresenterToRouterHomeProtocol: AnyObject {
     
     static func createModule() -> UINavigationController
-
+    
+    func showShareView(link: String, view: PresenterToViewHomeProtocol)
+    
     func pushToNewDetail(on view: PresenterToViewHomeProtocol, with new: NewsDM)
     func pushToAllNews(on view: PresenterToViewHomeProtocol, with allNews: [NewsDM])
+    
+    func pushToUmraGide(on view: PresenterToViewHomeProtocol)
 }

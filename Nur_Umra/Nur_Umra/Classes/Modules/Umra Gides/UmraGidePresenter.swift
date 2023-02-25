@@ -24,6 +24,14 @@ class UmraGidePresenter: ViewToPresenterUmraGideProtocol {
         interactor?.loadHandbooks()
     }
     
+    func viewWillAppear() {
+        view?.handleViewWillAppear()
+    }
+    
+    func viewDidDisappear() {
+        view?.handleViewDidDisappear()
+    }
+    
     func numberOfRowsInSection() -> Int {
         guard let handbooks = self.handbooks else {
             return 0

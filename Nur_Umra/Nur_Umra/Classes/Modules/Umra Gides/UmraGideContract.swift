@@ -17,6 +17,8 @@ protocol PresenterToViewUmraGideProtocol: AnyObject {
 //    func hideHUD()
 
     func  createUIElements()
+    func handleViewWillAppear()
+    func handleViewDidDisappear()
 }
 
 
@@ -30,6 +32,8 @@ protocol ViewToPresenterUmraGideProtocol: AnyObject {
     var handbooks: [HandbookDM]? { get set }
 
     func viewDidLoad()
+    func viewWillAppear()
+    func viewDidDisappear()
 
     func numberOfRowsInSection() -> Int
     func eachHanbookData(indexPath: IndexPath) -> HandbookDM?

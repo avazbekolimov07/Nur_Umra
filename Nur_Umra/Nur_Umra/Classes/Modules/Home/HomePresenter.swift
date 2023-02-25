@@ -47,7 +47,7 @@ class HomePresenter: ViewToPresenterHomeProtocol {
     
     //MARK: - SHARE>>>
     func didShowShareView(link: String) {
-        
+        router?.showShareView(link: link, view: view!)
     }
     
     func didSelectRowAt(indexPath: IndexPath) {
@@ -55,13 +55,24 @@ class HomePresenter: ViewToPresenterHomeProtocol {
         case 0:
             interactor?.retrieveNewDetail(at: indexPath.item)
         default:
-            print("retrieve bottom 4 cells data...")
+            switch indexPath.item {
+            case 0:
+                router?.pushToUmraGide(on: view!)
+            case 1:
+                print("2 cell")
+            case 2:
+                print("3 cell")
+            default:
+                print("4 cell")
+            }
         }
     }
     
     func didSelectMore() {
         interactor?.retrieveAllNews()
     }
+    
+    
 }
 
 // MARK: - Outputs to view
