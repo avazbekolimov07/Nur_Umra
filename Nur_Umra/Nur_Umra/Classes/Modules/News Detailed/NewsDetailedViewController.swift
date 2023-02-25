@@ -16,6 +16,7 @@ class NewsDetailedViewController: UIViewController {
     var imgView: UIImageView!
     var titleLbl: UILabel!
     var descriptionLbl: UILabel!
+    var backBtn: UIButton!
 
     
     
@@ -32,11 +33,20 @@ class NewsDetailedViewController: UIViewController {
     
 }
 extension NewsDetailedViewController: PresenterToViewNewsDetailedProtocol {
+    func onFetchSuccess() {
+        print("succes")
+    }
+    
+    func onFetchFailure() {
+        print("error")
+    }
+    
     func createUIElements() {
         self.scrollView = self.createScrollView()
         self.imgView = self.createImgView()
         self.titleLbl = self.createTitleLbl()
         self.descriptionLbl = self.createDescription()
+        self.backBtn = self.createBackBtn()
         self.scrollView.delegate = self
         
         

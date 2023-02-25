@@ -12,17 +12,20 @@ import Foundation
 protocol PresenterToViewNewsDetailedProtocol: AnyObject {
 
     func createUIElements()
+    
+    func onFetchSuccess()
+    func onFetchFailure()
 }
 
 
 // MARK: View Input (View -> Presenter)
 protocol ViewToPresenterNewsDetailedProtocol: AnyObject {
     
-    var view: PresenterToViewNewsDetailedProtocol { get set }
-    var interactor: PresenterToInteractorNewsDetailedProtocol { get set }
-    var router: PresenterToRouterNewsDetailedProtocol { get set }
+    var view: PresenterToViewNewsDetailedProtocol? { get set }
+    var interactor: PresenterToInteractorNewsDetailedProtocol? { get set }
+    var router: PresenterToRouterNewsDetailedProtocol? { get set }
     
-    var news: NewsDM { get set }
+    var news: NewsDM? { get set }
     
  
 }
@@ -31,15 +34,17 @@ protocol ViewToPresenterNewsDetailedProtocol: AnyObject {
 // MARK: Interactor Input (Presenter -> Interactor)
 protocol PresenterToInteractorNewsDetailedProtocol: AnyObject {
     
-    var presenter: InteractorToPresenterNewsDetailedProtocol { get set }
-    var detailedNews: NewsDM { get set }
+    var presenter: InteractorToPresenterNewsDetailedProtocol? { get set }
+    var detailedNews: NewsDM? { get set }
+    
+    func retrievDetailedNews()
 }
 
 
 // MARK: Interactor Output (Interactor -> Presenter)
 protocol InteractorToPresenterNewsDetailedProtocol: AnyObject {
     
-    func getDetailedNews()
+    func getDetailedNews( news: NewsDM)
 
 }
 

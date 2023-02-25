@@ -32,7 +32,6 @@ extension NewsDetailedViewController {
     
     func createImgView() -> UIImageView {
         let imgView = UIImageView()
-        imgView.image = UIImage(named: "umraGide_img")
         
         self.scrollView.addSubviews(imgView)
         
@@ -49,7 +48,6 @@ extension NewsDetailedViewController {
     
     func createTitleLbl() -> UILabel {
         let titleLbl = UILabel()
-        titleLbl.text = "Safarni boshlashda o’qiladigan duo"
         
         titleLbl.font = UIFont(name: "Poppins-SemiBold", size: 18)
         titleLbl.numberOfLines = 0
@@ -68,28 +66,6 @@ extension NewsDetailedViewController {
     
     func createDescription() -> UILabel {
         let titleLbl = UILabel()
-        titleLbl.text = """
-             Safarga ot kishi uyidan chikayotgan dushmani kuyidagi duoni o'qsa, shayton hamlasidan omonda bo'lib, har qanday mushkuli oson bo'ldi, in shaa Alloh.
-             Oqilishi: "Bismi-l-laahi tavakkaltu ala-l-lohi, laa havla va laa kuchata illaa bi-l-laah" (Termiziy rivoyati).
-             Manosi: Allohinning nomi bilan (safarni boshlayman), Alloqa tavakkal qildim. Toat turib va ​​gunodan saklanishga tokat yolgiz Alloh taolo berilgandir.
-             Okilishi: "Allohumma, bika asuulu va bika ahuulu va bika asiyru" (Imom Ahmad rivoyati).
-             Manosi: Salom! Sening madading ila hafsala va himmat qilib etib borishni kuzlayman, Sening madading ila gunohdan tiyilaman, Sening madading ila safarga chikaman.
-                     Safarga ot kishi uyidan chikayotgan dushmani kuyidagi duoni o'qsa, shayton hamlasidan omonda bo'lib, har qanday mushkuli oson bo'ldi, in shaa Alloh.
-                     Oqilishi: "Bismi-l-laahi tavakkaltu ala-l-lohi, laa havla va laa kuchata illaa bi-l-laah" (Termiziy rivoyati).
-                     Manosi: Allohinning nomi bilan (safarni boshlayman), Alloqa tavakkal qildim. Toat turib va ​​gunodan saklanishga tokat yolgiz Alloh taolo berilgandir.
-                     Okilishi: "Allohumma, bika asuulu va bika ahuulu va bika asiyru" (Imom Ahmad rivoyati).
-                     Manosi: Salom! Sening madading ila hafsala va himmat qilib etib borishni kuzlayman, Sening madading ila gunohdan tiyilaman, Sening madading ila safarga chikaman.
-                     Safarga ot kishi uyidan chikayotgan dushmani kuyidagi duoni o'qsa, shayton hamlasidan omonda bo'lib, har qanday mushkuli oson bo'ldi, in shaa Alloh.
-                     Oqilishi: "Bismi-l-laahi tavakkaltu ala-l-lohi, laa havla va laa kuchata illaa bi-l-laah" (Termiziy rivoyati).
-                     Manosi: Allohinning nomi bilan (safarni boshlayman), Alloqa tavakkal qildim. Toat turib va ​​gunodan  saklanishga tokat yolgiz Alloh taolo berilgandir.
-                     Okilishi: "Allohumma, bika asuulu va bika ahuulu va bika asiyru" (Imom Ahmad rivoyati).
-                     Manosi: Salom! Sening madading ila hafsala va himmat qilib etib borishni kuzlayman, Sening madading ila gunohdan tiyilaman, Sening madading ila safarga chikaman.
-                     Safarga ot kishi uyidan chikayotgan dushmani kuyidagi duoni o'qsa, shayton hamlasidan omonda  bo'lib, har qanday mushkuli oson bo'ldi, in shaa Alloh.
-                     Oqilishi: "Bismi-l-laahi tavakkaltu ala-l-lohi, laa havla va laa kuchata illaa bi-l-laah" (Termiziy              rivoyati).
-                     Manosi: Allohinning nomi bilan (safarni boshlayman), Alloqa tavakkal qildim. Toat turib va ​​gunodan              saklanishga tokat yolgiz Alloh taolo berilgandir.
-                     Okilishi: "Allohumma, bika asuulu va bika ahuulu va bika asiyru" (Imom Ahmad rivoyati).
-                     Manosi: Salom! Sening madading ila hafsala va himmat qilib etib borishni kuzlayman, Sening madading              ila gunohdan tiyilaman, Sening madading ila safarga chikaman.
-        """
         
         titleLbl.font = UIFont(name: "Poppins-Regular", size: 14)
         titleLbl.numberOfLines = 0
@@ -105,5 +81,51 @@ extension NewsDetailedViewController {
         }
         
         return titleLbl
+    }
+    
+    func createBackBtn() -> UIButton {
+        let btn = UIButton()
+        btn.addTarget(self, action: #selector(backBtnPressed), for: .touchUpInside)
+        
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.regular)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = btn.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        blurEffectView.alpha = 0.8
+        blurEffectView.isUserInteractionEnabled = false
+        
+        btn.insertSubview(blurEffectView, at: 0)
+        
+        btn.layer.masksToBounds = true
+        btn.layer.cornerRadius = 8
+        btn.isUserInteractionEnabled = true
+        
+        btn.setImage(UIImage(systemName: "chevron.left")?.applyingSymbolConfiguration(.init(weight: .semibold) ) , for: .normal)
+        btn.tintColor = .white
+        btn.bringSubviewToFront(btn.imageView!)
+        
+        self.view.addSubviews(btn)
+        self.view.backgroundColor = .blue
+        
+        btn.snp.makeConstraints { make in
+            make.width.height.equalTo(38)
+            make.top.equalTo(self.view.snp.top).offset(54)
+            make.left.equalTo(self.view.snp.left).inset(16)
+        }
+        
+        return btn
+        
+    }
+    
+    func updateUI(newsDetailed: NewsDM) {
+            self.imgView.sd_setImage(with: URL(string: newsDetailed.image), placeholderImage: UIImage(named: "umraGide_img"))
+        self.titleLbl.text = newsDetailed.title
+        self.descriptionLbl.text = newsDetailed.content
+        
+    }
+    
+    // NARK: Action with buttons
+    @objc func backBtnPressed() {
+        print("Bakc.btn pressed -------")
     }
 }
