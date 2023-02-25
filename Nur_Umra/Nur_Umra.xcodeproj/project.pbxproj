@@ -67,6 +67,7 @@
 		30AA27B229A5E0660014C351 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AA27B129A5E0660014C351 /* APIClient.swift */; };
 		30AA27B429A5E9380014C351 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AA27B329A5E9380014C351 /* HomeService.swift */; };
 		30AA27B629A5EBED0014C351 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AA27B529A5EBED0014C351 /* Endpoints.swift */; };
+		30AC276B29A9DEC9005DE047 /* UIFont+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC276A29A9DEC9005DE047 /* UIFont+App.swift */; };
 		30C71D5329A50DAE00E5F6CF /* UIView+Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C71D5229A50DAE00E5F6CF /* UIView+Subviews.swift */; };
 		30C71D5529A50DCC00E5F6CF /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C71D5429A50DCC00E5F6CF /* UIView+Shadow.swift */; };
 		30C71D5729A50E0500E5F6CF /* CALayer+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C71D5629A50E0500E5F6CF /* CALayer+Shadow.swift */; };
@@ -142,6 +143,7 @@
 		30AA27B129A5E0660014C351 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIClient.swift; path = Nur_Umra/Classes/Modules/Home/APIClient.swift; sourceTree = SOURCE_ROOT; };
 		30AA27B329A5E9380014C351 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeService.swift; path = Nur_Umra/Classes/Modules/Home/HomeService.swift; sourceTree = SOURCE_ROOT; };
 		30AA27B529A5EBED0014C351 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Endpoints.swift; path = Nur_Umra/Classes/Modules/Home/Endpoints.swift; sourceTree = SOURCE_ROOT; };
+		30AC276A29A9DEC9005DE047 /* UIFont+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+App.swift"; sourceTree = "<group>"; };
 		30C71D5229A50DAE00E5F6CF /* UIView+Subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Subviews.swift"; sourceTree = "<group>"; };
 		30C71D5429A50DCC00E5F6CF /* UIView+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
 		30C71D5629A50E0500E5F6CF /* CALayer+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Shadow.swift"; sourceTree = "<group>"; };
@@ -483,6 +485,7 @@
 			isa = PBXGroup;
 			children = (
 				30C71D5D29A528B500E5F6CF /* UIColor+App.swift */,
+				30AC276A29A9DEC9005DE047 /* UIFont+App.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -690,6 +693,7 @@
 				08EC25BA29A39ED100DAC561 /* HomePresenter.swift in Sources */,
 				08EC25C829A39FE800DAC561 /* UmraGideRouter.swift in Sources */,
 				08476B7329A4EB4B006D7509 /* AllNewsPresenter.swift in Sources */,
+				30AC276B29A9DEC9005DE047 /* UIFont+App.swift in Sources */,
 				30AA27B029A5E0490014C351 /* APIManager.swift in Sources */,
 				08EC25C629A39FDA00DAC561 /* UmraGidePresenter.swift in Sources */,
 				08476B7129A4EB2A006D7509 /* AllNewsViewController.swift in Sources */,

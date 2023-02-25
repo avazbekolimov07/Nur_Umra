@@ -88,7 +88,9 @@ extension UmraGideViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if indexPath.section == 1 {
+            presenter?.didSelectRowAt(indexPath: indexPath)
+        }
     }
     
 }
@@ -100,5 +102,13 @@ extension UmraGideViewController {
         self.tableView = self.create_tableView()
         self.shareButton = self.create_backButton()
         self.navigationItem.title = ""
+    }
+}
+
+extension UmraGideViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+       if scrollView.contentOffset.y < 0 {
+            scrollView.contentOffset.y = 0
+        }
     }
 }

@@ -15,8 +15,13 @@ class UmraGideTVC: UITableViewCell, ClassIdentifiable {
     // MARK: - UI Elements
     private lazy var mainView: UIView = {
         let view = UIView()
-        view.backgroundColor = .systemGray6
+        view.backgroundColor = .white
         view.layer.cornerRadius = 16
+        
+        view.layer.shadowColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.16).cgColor
+        view.layer.shadowOpacity = 1
+        view.layer.shadowRadius = 8
+        view.layer.shadowOffset = CGSize(width: 0, height: 4)
         return view
     }()
     
@@ -32,8 +37,8 @@ class UmraGideTVC: UITableViewCell, ClassIdentifiable {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-//        label.font = .jostRegular(size: 14)
-        label.font = UIFont.systemFont(ofSize: 14)
+        label.font = .poppins_SemiBold(size: 14)
+
         label.textColor = #colorLiteral(red: 0.2224110067, green: 0.2330494523, blue: 0.2606178522, alpha: 1)
         label.textAlignment = .left
         label.numberOfLines = 0
@@ -97,7 +102,6 @@ extension UmraGideTVC {
             make.right.equalTo(self.snp.right).offset(-16)
             make.bottom.equalTo(self.snp.bottom).offset(-6)
         }
-        
         
     }
 }

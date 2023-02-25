@@ -38,6 +38,12 @@ class UmraGidePresenter: ViewToPresenterUmraGideProtocol {
         
         return handbooks[indexPath.row]
     }
+    
+    func didSelectRowAt(indexPath: IndexPath) {
+        if indexPath.section == 1{
+            interactor?.retrieveHandbookDetail(at: indexPath.item)
+        }
+    }
 }
 
 extension UmraGidePresenter: InteractorToPresenterUmraGideProtocol {
@@ -53,6 +59,15 @@ extension UmraGidePresenter: InteractorToPresenterUmraGideProtocol {
         print("Presenter receives the result from Interactor after it's done its job.")
 //        view?.hideHUD()
         view?.onFetchHandbooksFailure(error: "Couldn't fetch news: \(errorCode)")
+    }
+    
+    func getHandbookDetailSuccess(_ handbook: HandbookDM) {
+        router?.pushToHandbookDetail(on: view!, with: handbook)
+    }
+    
+    func getHandbookDetailFailure() {
+//        view?.hideHUD()
+        print("Couldn't retrieve news by index")
     }
     
     

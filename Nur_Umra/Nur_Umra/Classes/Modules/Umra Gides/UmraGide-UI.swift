@@ -18,7 +18,6 @@ extension UmraGideViewController {
         tableView.separatorStyle = .none
         tableView.backgroundColor = .white
 
-        tableView.bounces = false
         tableView.showsVerticalScrollIndicator = false
         tableView.tableHeaderView = create_sectionHeader()
         tableView.contentInset.bottom = UIWindow.safeAreaInsets.bottom
@@ -67,6 +66,10 @@ extension UmraGideViewController {
         button.layer.masksToBounds = true
         button.layer.cornerRadius = 8
         button.isUserInteractionEnabled = true
+        
+        button.setImage(UIImage(systemName: "chevron.left")?.applyingSymbolConfiguration(.init(weight: .semibold) ) , for: .normal)
+        button.tintColor = .white
+        button.bringSubviewToFront(button.imageView!)
 
         view.addSubview(button)
         button.addTarget(self, action: #selector(handleBackButton), for: .touchUpInside)
@@ -76,19 +79,6 @@ extension UmraGideViewController {
             make.height.equalTo(36)
             make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(20)
             make.left.equalTo(self.view.snp.left).offset(16)
-        }
-        
-        let image = UIImageView()
-        image.isUserInteractionEnabled = false
-        image.image = UIImage(named: "back_img")?.withRenderingMode(.alwaysTemplate)
-        image.tintColor = .white
-        
-        button.addSubview(image)
-        image.snp.makeConstraints { make in
-            make.width.equalTo(8)
-            make.height.equalTo(16)
-            make.centerY.equalToSuperview()
-            make.centerX.equalToSuperview()
         }
         
         return button

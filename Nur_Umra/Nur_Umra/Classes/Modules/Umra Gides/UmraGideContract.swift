@@ -34,7 +34,7 @@ protocol ViewToPresenterUmraGideProtocol: AnyObject {
     func numberOfRowsInSection() -> Int
     func eachHanbookData(indexPath: IndexPath) -> HandbookDM?
 
-//    func didSelectRowAt(indexPath: IndexPath)
+    func didSelectRowAt(indexPath: IndexPath)
 
 }
 
@@ -46,8 +46,8 @@ protocol PresenterToInteractorUmraGideProtocol: AnyObject {
 
     func loadHandbooks()
     
-//    func retrieveNewDetail(at index: Int)
-//    func retrieveAllNews()
+    func retrieveHandbookDetail(at index: Int)
+
 }
 
 
@@ -57,11 +57,9 @@ protocol InteractorToPresenterUmraGideProtocol: AnyObject {
     func fetchHandbooksSuccess(handbooks: [HandbookDM])
     func fetchHandbooksFailure(errorCode: Int)
 
-//    func getNewsDetailSuccess(_ news: NewsDM)
-//    func getNewsDetailFailure()
-//
-//    func getAllNewsSuccess(_ allNews: [NewsDM])
-//    func getAllNewsFailure()
+    func getHandbookDetailSuccess(_ handbook: HandbookDM)
+    func getHandbookDetailFailure()
+
 }
 
 
@@ -70,6 +68,6 @@ protocol PresenterToRouterUmraGideProtocol: AnyObject {
     
     static func createModule() -> UIViewController
 
-//    func pushToNewDetail(on view: PresenterToViewHomeProtocol, with new: NewsDM)
-//    func pushToAllNews(on view: PresenterToViewHomeProtocol, with allNews: [NewsDM])
+    func pushToHandbookDetail(on view: PresenterToViewUmraGideProtocol, with handbook: HandbookDM)
+
 }

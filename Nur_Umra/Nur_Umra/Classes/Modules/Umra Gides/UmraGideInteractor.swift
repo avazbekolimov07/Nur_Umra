@@ -23,4 +23,12 @@ class UmraGideInteractor: PresenterToInteractorUmraGideProtocol {
         }
     }
     
+    func retrieveHandbookDetail(at index: Int) {
+        guard let handbooks = self.handbooks, handbooks.indices.contains(index) else {
+            self.presenter?.getHandbookDetailFailure()
+            return
+        }
+        self.presenter?.getHandbookDetailSuccess(handbooks[index])
+    }
+    
 }
