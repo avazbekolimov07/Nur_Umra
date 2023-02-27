@@ -40,7 +40,7 @@ class HistoricalPlacesTVC: UITableViewCell {
         lbl.font = UIFont(name: "Poppins-SemiBold", size: 18)
         lbl.numberOfLines = 0
         lbl.textAlignment = .left
-        lbl.text = "Masjidul Nabaviy - In Medina al Munavvara Masjidul Nabaviy - In Medina al Munavvara Masjidul Nabaviy - In Medina al Munavvara"
+        lbl.text = "Masjidul Nabaviy - In Medina al Munavvara Masjidul"
         return lbl
     }()
     
