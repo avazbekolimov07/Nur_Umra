@@ -29,7 +29,7 @@ class NewsDetailedViewController: UIViewController {
     
     // MARK: - Actions
     @objc func backBtnTapped() {
-        print("back btn pressed")
+        self.navigationController?.popViewController(animated: true)
     }
     
 }
@@ -38,23 +38,21 @@ class NewsDetailedViewController: UIViewController {
 // MARK: - Update views
 extension NewsDetailedViewController: PresenterToViewNewsDetailedProtocol {
     func createUIElements() {
+        navigationController?.navigationBar.isHidden = true
         self.view.backgroundColor = .white
         self.scrollView = self.createScrollView()
         self.imgView = self.createImgView()
         self.titleLbl = self.createTitleLbl()
-        self.descriptionLbl = self.createTitleLbl()
+        self.descriptionLbl = self.createDescription()
         self.backBtn = self.createBackBtn()
-        print("🥶 create ur elements ui elents is working")
     }
     
    
     func onUpdateUIElementsSuccess(with news: NewsDM) {
-        print("🥶 Update ui elements is working")
         self.updateUI(newsDetailed: news)
     }
     
     func updateUI(newsDetailed: NewsDM) {
-        print("🥶 , Update ui ")
         self.imgView.sd_setImage(with: URL(string: newsDetailed.image), placeholderImage: UIImage(named: "umraGide_img"))
         self.titleLbl.text = newsDetailed.title
         self.descriptionLbl.text = newsDetailed.content
