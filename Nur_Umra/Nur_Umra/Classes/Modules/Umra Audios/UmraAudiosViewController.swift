@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class UmraAudiosViewController: UIViewController {
     
@@ -33,6 +34,7 @@ class UmraAudiosViewController: UIViewController {
     // MARK: - Properties
     var presenter: ViewToPresenterUmraAudiosProtocol?
     var tableView: UITableView!
+    var audioPlayer: AVPlayer?
     
     
     // MARK: - Actions
@@ -52,7 +54,6 @@ extension UmraAudiosViewController: PresenterToViewUmraAudiosProtocol {
         UIApplication.shared.statusBarStyle = .default
     }
     
-    
     func onFetchDuolarSuccess() {
         print("View receives the response from Presenter and updates itself.")
         self.tableView.reloadData()
@@ -61,7 +62,37 @@ extension UmraAudiosViewController: PresenterToViewUmraAudiosProtocol {
     func onFetchDuolarFailure(error: String) {
         print("View receives the response from Presenter with error: \(error)")
     }
-  
+    
+    func onFetchAudioSuccess(player: AVPlayer, indexPath: IndexPath) {
+        try? AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+        try? AVAudioSession.sharedInstance().setActive(true)
+        audioPlayer = player
+        audioPlayer?.volume = 1
+        audioPlayer?.play()
+        let cell = tableView.cellForRow(at: indexPath) as? UmraAudioTVC
+        cell?.updateToPlay()
+    }
+    
+    func onFetchAudioFailure(error: String, indexPath: IndexPath) {
+        audioPlayer = nil
+        try? AVAudioSession.sharedInstance().setActive(false)
+        print("View receives the response from Presenter with Message: \(error)")
+    }
+    
+    func onViewPlay(indexPath: IndexPath) {
+        try? AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+        try? AVAudioSession.sharedInstance().setActive(true)
+        audioPlayer?.play()
+        let cell = tableView.cellForRow(at: indexPath) as? UmraAudioTVC
+        cell?.updateToPlay()
+    }
+    
+    func onviewStop(indexPath: IndexPath) {
+        audioPlayer?.pause()
+        let cell = tableView.cellForRow(at: indexPath) as? UmraAudioTVC
+        cell?.updateToStop()
+        try? AVAudioSession.sharedInstance().setActive(false)
+    }
 }
 
 // MARK: - TableView Delegate & Data Source
@@ -80,9 +111,11 @@ extension UmraAudiosViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withCellType: UmraAudioTVC.self, for: indexPath)
         cell.selectionStyle = .none
         cell.configure(duo: presenter?.eachUmraAudioData(indexPath: indexPath))
+        cell.didPlayBtnTapped = { [weak self] url in
+            self?.presenter?.didPlayAndStop(audioUrlSting: url, indexPath: indexPath, currentPlayer: self?.audioPlayer)
+        }
         return cell
     }
-    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter?.didSelectRowAt(indexPath: indexPath)

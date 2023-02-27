@@ -6,13 +6,18 @@
 //
 
 import UIKit
-
+import AVFoundation
 
 // MARK: View Output (Presenter -> View)
 protocol PresenterToViewUmraAudiosProtocol: AnyObject {
     func onFetchDuolarSuccess()
     func onFetchDuolarFailure(error: String)
 
+    func onFetchAudioSuccess(player: AVPlayer, indexPath: IndexPath)
+    func onFetchAudioFailure(error: String, indexPath: IndexPath)
+    
+    func onViewPlay(indexPath: IndexPath)
+    func onviewStop(indexPath: IndexPath)
 //    func showHUD()
 //    func hideHUD()
 
@@ -30,6 +35,7 @@ protocol ViewToPresenterUmraAudiosProtocol: AnyObject {
     var router: PresenterToRouterUmraAudiosProtocol? { get set }
     
     var duolar: [DuoDM]? { get set }
+    var iPath: IndexPath? { get set }
     
     func viewDidLoad()
     func viewWillAppear()
@@ -38,6 +44,7 @@ protocol ViewToPresenterUmraAudiosProtocol: AnyObject {
     func numberOfRowsInSection() -> Int
     func eachUmraAudioData(indexPath: IndexPath) -> DuoDM?
 
+    func didPlayAndStop(audioUrlSting: String, indexPath: IndexPath, currentPlayer: AVPlayer?)
     func didSelectRowAt(indexPath: IndexPath)
 
 }
@@ -49,7 +56,8 @@ protocol PresenterToInteractorUmraAudiosProtocol: AnyObject {
     var presenter: InteractorToPresenterUmraAudiosProtocol? { get set }
     
     func loadDuolar()
-    func retrieveUmraAudioDetail(at index: Int)
+    func retrieveUmraAudioDetail(at indexPath: IndexPath)
+    func retrieveAudioURL(urlString: String, at indexPath: IndexPath)
 }
 
 
@@ -59,8 +67,11 @@ protocol InteractorToPresenterUmraAudiosProtocol: AnyObject {
     func fetchDuolarSuccess(duolar: [DuoDM])
     func fetchDuolarFailure(errorCode: Int)
 
-    func getDuolarDetailSuccess(_ duo: DuoDM)
+    func getDuolarDetailSuccess(_ duo: DuoDM, _ indexPath: IndexPath)
     func getDuolarDetailFailure()
+    
+    func playAudioSuccess(player: AVPlayer, indexPath: IndexPath)
+    func playAudioFailure(errorString: String, indexPath: IndexPath)
 
 }
 

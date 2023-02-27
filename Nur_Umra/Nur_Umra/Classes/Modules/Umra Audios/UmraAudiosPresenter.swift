@@ -6,10 +6,13 @@
 //
 
 import SwiftyJSON
+import AVFoundation
 
 class UmraAudiosPresenter: ViewToPresenterUmraAudiosProtocol {
     
     var duolar: [DuoDM]?
+    // iPath -> item which is selected before the current indexPath
+    var iPath: IndexPath?
     
     // MARK: Properties
     weak var view: PresenterToViewUmraAudiosProtocol?
@@ -43,13 +46,29 @@ class UmraAudiosPresenter: ViewToPresenterUmraAudiosProtocol {
         guard let duolar = self.duolar else {
             return nil
         }
-        
         return duolar[indexPath.row]
     }
     
-    func didSelectRowAt(indexPath: IndexPath) {
-        interactor?.retrieveUmraAudioDetail(at: indexPath.item)
+    func didPlayAndStop(audioUrlSting: String, indexPath: IndexPath, currentPlayer: AVPlayer?) {
+        if currentPlayer != nil && iPath == indexPath {
+            if currentPlayer?.rate == 1.0 {
+                view?.onviewStop(indexPath: indexPath)
+            } else {
+                view?.onViewPlay(indexPath: indexPath)
+            }
+        } else {
+            if let iPath = iPath, currentPlayer?.rate == 1.0 {
+                view?.onviewStop(indexPath: iPath)
+            }
+            iPath = indexPath
+            interactor?.retrieveAudioURL(urlString: audioUrlSting, at: indexPath)
+        }
     }
+    
+    func didSelectRowAt(indexPath: IndexPath) {
+        interactor?.retrieveUmraAudioDetail(at: indexPath)
+    }
+    
 }
 
 extension UmraAudiosPresenter: InteractorToPresenterUmraAudiosProtocol {
@@ -57,6 +76,7 @@ extension UmraAudiosPresenter: InteractorToPresenterUmraAudiosProtocol {
     func fetchDuolarSuccess(duolar: [DuoDM]) {
         print("Presenter receives the result from Interactor after it's done its job.")
         self.duolar = duolar
+        self.iPath = IndexPath()
 //        view?.hideHUD()
         view?.onFetchDuolarSuccess()
     }
@@ -67,7 +87,22 @@ extension UmraAudiosPresenter: InteractorToPresenterUmraAudiosProtocol {
         view?.onFetchDuolarFailure(error: "Couldn't fetch news: \(errorCode)")
     }
     
-    func getDuolarDetailSuccess(_ duo: DuoDM) {
+    func playAudioSuccess(player: AVPlayer, indexPath: IndexPath) {
+//        view?.hideHUD()
+        view?.onFetchAudioSuccess(player: player, indexPath: indexPath)
+    }
+    
+    func playAudioFailure(errorString: String, indexPath: IndexPath) {
+//        view?.hideHUD()
+        view?.onFetchAudioFailure(error: "Couldn't fetch audio: \(errorString)", indexPath: indexPath)
+    }
+    
+    func getDuolarDetailSuccess(_ duo: DuoDM, _ indexPath: IndexPath) {
+//        view?.hideHUD()
+        if let iPath = iPath {
+            view?.onviewStop(indexPath: iPath)
+            view?.onFetchAudioFailure(error: "Next Page Shown", indexPath: iPath)
+        }
         router?.pushToUmraAudioDetail(on: view!, with: duo)
     }
     

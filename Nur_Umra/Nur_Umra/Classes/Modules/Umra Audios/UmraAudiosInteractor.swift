@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVKit
 
 class UmraAudiosInteractor: PresenterToInteractorUmraAudiosProtocol {
 
@@ -23,12 +24,29 @@ class UmraAudiosInteractor: PresenterToInteractorUmraAudiosProtocol {
         }
     }
     
-    func retrieveUmraAudioDetail(at index: Int) {
-        guard let duolar = self.duolar, duolar.indices.contains(index) else {
+    func retrieveUmraAudioDetail(at indexPath: IndexPath) {
+        
+        guard let duolar = self.duolar, duolar.indices.contains(indexPath.item) else {
             self.presenter?.getDuolarDetailFailure()
             return
         }
-        self.presenter?.getDuolarDetailSuccess(duolar[index])
+        self.presenter?.getDuolarDetailSuccess(duolar[indexPath.item], indexPath)
+    }
+    
+    func retrieveAudioURL(urlString: String, at indexPath: IndexPath) {
+        guard let url = URL.init(string: urlString) else {
+            presenter?.playAudioFailure(errorString: "error to URL not exist", indexPath: indexPath)
+            return
+        }
+        let asset = AVAsset(url: url)
+        guard asset.isPlayable else {
+            presenter?.playAudioFailure(errorString: "error to invalid URL", indexPath: indexPath)
+            return
+        }
+        asset.cancelLoading()
+        let playerItem = AVPlayerItem(url: url)
+        let player = AVPlayer(playerItem: playerItem)
+        presenter?.playAudioSuccess(player: player, indexPath: indexPath)
     }
     
     

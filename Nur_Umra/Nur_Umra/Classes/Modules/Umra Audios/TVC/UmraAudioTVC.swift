@@ -75,6 +75,14 @@ class UmraAudioTVC: UITableViewCell, ClassIdentifiable {
         self.updateUI(duo: duoSafe)
     }
     
+    func updateToPlay() {
+        playButton.setImage(UIImage(named: "stop_img")?.withRenderingMode(.alwaysOriginal), for: .normal)
+    }
+    
+    func updateToStop() {
+        playButton.setImage(UIImage(named: "play_img")?.withRenderingMode(.alwaysOriginal), for: .normal)
+    }
+    
     private func updateUI(duo: DuoDM) {
         titleLabel.text = duo.name
         if titleLabel.calculateMaxLines() > 2 {
@@ -88,7 +96,9 @@ class UmraAudioTVC: UITableViewCell, ClassIdentifiable {
     
     //MARK: - Actions
     @objc func handlePlay() {
-        print("Play")
+        if let audio = duo?.audio {
+            didPlayBtnTapped?(audio)
+        }
     }
 
     @available(*, unavailable)
