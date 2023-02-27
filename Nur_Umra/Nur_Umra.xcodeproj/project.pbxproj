@@ -32,6 +32,14 @@
 		082FFF6629A8F47A002F85B6 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 082FFF5329A8F47A002F85B6 /* Poppins-SemiBold.ttf */; };
 		082FFF6729A8F47A002F85B6 /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 082FFF5429A8F47A002F85B6 /* Poppins-Italic.ttf */; };
 		082FFF6829A8F47A002F85B6 /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 082FFF5529A8F47A002F85B6 /* Poppins-MediumItalic.ttf */; };
+		083C541A29ACA0C100485BCE /* PreparationForUmraContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083C541929ACA0C100485BCE /* PreparationForUmraContract.swift */; };
+		083C541C29ACA0E500485BCE /* PreparationForUmra-UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083C541B29ACA0E500485BCE /* PreparationForUmra-UI.swift */; };
+		083C541E29ACA10800485BCE /* PreparationForUmraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083C541D29ACA10800485BCE /* PreparationForUmraViewController.swift */; };
+		083C542029ACA11400485BCE /* PreparationForUmraPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083C541F29ACA11400485BCE /* PreparationForUmraPresenter.swift */; };
+		083C542229ACA11D00485BCE /* PreparationForUmraRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083C542129ACA11D00485BCE /* PreparationForUmraRouter.swift */; };
+		083C542429ACA12B00485BCE /* PreparationForUmraIntertactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083C542329ACA12B00485BCE /* PreparationForUmraIntertactor.swift */; };
+		083C542629ACA40000485BCE /* PreparationDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083C542529ACA40000485BCE /* PreparationDM.swift */; };
+		083C542829ACA48E00485BCE /* PreparationFoUmraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083C542729ACA48E00485BCE /* PreparationFoUmraService.swift */; };
 		08476B6D29A4EAFF006D7509 /* AllNews-UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08476B6C29A4EAFF006D7509 /* AllNews-UI.swift */; };
 		08476B6F29A4EB16006D7509 /* AllNewsContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08476B6E29A4EB16006D7509 /* AllNewsContract.swift */; };
 		08476B7129A4EB2A006D7509 /* AllNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08476B7029A4EB2A006D7509 /* AllNewsViewController.swift */; };
@@ -126,6 +134,14 @@
 		082FFF5329A8F47A002F85B6 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		082FFF5429A8F47A002F85B6 /* Poppins-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Italic.ttf"; sourceTree = "<group>"; };
 		082FFF5529A8F47A002F85B6 /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
+		083C541929ACA0C100485BCE /* PreparationForUmraContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationForUmraContract.swift; sourceTree = "<group>"; };
+		083C541B29ACA0E500485BCE /* PreparationForUmra-UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreparationForUmra-UI.swift"; sourceTree = "<group>"; };
+		083C541D29ACA10800485BCE /* PreparationForUmraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationForUmraViewController.swift; sourceTree = "<group>"; };
+		083C541F29ACA11400485BCE /* PreparationForUmraPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationForUmraPresenter.swift; sourceTree = "<group>"; };
+		083C542129ACA11D00485BCE /* PreparationForUmraRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationForUmraRouter.swift; sourceTree = "<group>"; };
+		083C542329ACA12B00485BCE /* PreparationForUmraIntertactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationForUmraIntertactor.swift; sourceTree = "<group>"; };
+		083C542529ACA40000485BCE /* PreparationDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationDM.swift; sourceTree = "<group>"; };
+		083C542729ACA48E00485BCE /* PreparationFoUmraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreparationFoUmraService.swift; path = Nur_Umra/Classes/Common/Entites/PreparationFoUmraService.swift; sourceTree = SOURCE_ROOT; };
 		08476B6C29A4EAFF006D7509 /* AllNews-UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AllNews-UI.swift"; sourceTree = "<group>"; };
 		08476B6E29A4EB16006D7509 /* AllNewsContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNewsContract.swift; sourceTree = "<group>"; };
 		08476B7029A4EB2A006D7509 /* AllNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNewsViewController.swift; sourceTree = "<group>"; };
@@ -257,6 +273,19 @@
 			path = Poppins;
 			sourceTree = "<group>";
 		};
+		083C541829AC9FF100485BCE /* Preparation for Umra */ = {
+			isa = PBXGroup;
+			children = (
+				083C541B29ACA0E500485BCE /* PreparationForUmra-UI.swift */,
+				083C541D29ACA10800485BCE /* PreparationForUmraViewController.swift */,
+				083C541F29ACA11400485BCE /* PreparationForUmraPresenter.swift */,
+				083C542129ACA11D00485BCE /* PreparationForUmraRouter.swift */,
+				083C542329ACA12B00485BCE /* PreparationForUmraIntertactor.swift */,
+				083C541929ACA0C100485BCE /* PreparationForUmraContract.swift */,
+			);
+			path = "Preparation for Umra";
+			sourceTree = "<group>";
+		};
 		08EC25A429A39A0500DAC561 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +331,7 @@
 				08EC25AF29A39B5600DAC561 /* Home */,
 				08EC25CF29A3A28E00DAC561 /* AllNews */,
 				082FFF3429A8DBB4002F85B6 /* News Detailed */,
+				083C541829AC9FF100485BCE /* Preparation for Umra */,
 				08EC25C129A39F1700DAC561 /* Umra Gides */,
 				306C77F729ACAEB500C1072A /* Umra Gide Detailed */,
 				30AC276C29A9EF68005DE047 /* Umra Audios */,
@@ -334,6 +364,7 @@
 				30AA27B329A5E9380014C351 /* HomeService.swift */,
 				30A9890129A8ECBA00CD602F /* UmraGideService.swift */,
 				30AC277B29A9F285005DE047 /* UmraAudioService.swift */,
+				083C542729ACA48E00485BCE /* PreparationFoUmraService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -352,6 +383,7 @@
 				30CC5EB929A757A0005C158A /* HandbookDM.swift */,
 				08639A2829A5FC61002E0D48 /* NewsDM.swift */,
 				30AC277929A9F225005DE047 /* DuoDM.swift */,
+				083C542529ACA40000485BCE /* PreparationDM.swift */,
 			);
 			path = Entites;
 			sourceTree = "<group>";
@@ -710,6 +742,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				083C541C29ACA0E500485BCE /* PreparationForUmra-UI.swift in Sources */,
 				30CC5EBA29A757A0005C158A /* HandbookDM.swift in Sources */,
 				306C780529ACB02500C1072A /* UmraGideDetailContract.swift in Sources */,
 				305DBDFE29A4982A00D962EF /* UITableView+ClassIdentifiable.swift in Sources */,
@@ -719,6 +752,7 @@
 				305DBE0329A498EE00D962EF /* UIWindow+Extension.swift in Sources */,
 				305DBDF429A4945E00D962EF /* HomeGuideCVC.swift in Sources */,
 				082FFF3A29A8DDCB002F85B6 /* NewsDetailedViewController.swift in Sources */,
+				083C542029ACA11400485BCE /* PreparationForUmraPresenter.swift in Sources */,
 				08476B6D29A4EAFF006D7509 /* AllNews-UI.swift in Sources */,
 				082FFF3829A8DDB1002F85B6 /* NewsDetailedContract.swift in Sources */,
 				30AC277629A9EFEB005DE047 /* UmraAudiosInteractor.swift in Sources */,
@@ -750,17 +784,20 @@
 				30C71D5329A50DAE00E5F6CF /* UIView+Subviews.swift in Sources */,
 				30AC277F29AA0E1E005DE047 /* UmraAudioTVC.swift in Sources */,
 				08EC25BC29A39EEE00DAC561 /* HomeRouter.swift in Sources */,
+				083C541A29ACA0C100485BCE /* PreparationForUmraContract.swift in Sources */,
 				30C71D5B29A5225200E5F6CF /* HomeViewController+Layout.swift in Sources */,
 				305DBDEF29A48EA300D962EF /* Home-UI.swift in Sources */,
 				305DBDF229A4940000D962EF /* HomeNewsCVC.swift in Sources */,
 				305DBDFC29A4980900D962EF /* ClassIdentifiable.swift in Sources */,
 				30AC278129AA1883005DE047 /* UILabel+Extension.swift in Sources */,
+				083C542829ACA48E00485BCE /* PreparationFoUmraService.swift in Sources */,
 				08639A2929A5FC61002E0D48 /* NewsDM.swift in Sources */,
 				306C780729ACB04000C1072A /* UmraAudioDetailPresenter.swift in Sources */,
 				30AC277429A9EFD9005DE047 /* UmraAudiosRouter.swift in Sources */,
 				30C71D5729A50E0500E5F6CF /* CALayer+Shadow.swift in Sources */,
 				30AC277A29A9F225005DE047 /* DuoDM.swift in Sources */,
 				30AA27B629A5EBED0014C351 /* Endpoints.swift in Sources */,
+				083C541E29ACA10800485BCE /* PreparationForUmraViewController.swift in Sources */,
 				307344A029A65D700051BFFD /* UmraGide-UI.swift in Sources */,
 				30CC5EBE29A757BC005C158A /* UmraGideTVC.swift in Sources */,
 				30C71D5E29A528B500E5F6CF /* UIColor+App.swift in Sources */,
@@ -771,14 +808,17 @@
 				08EC25C429A39FC700DAC561 /* UmraGideContract.swift in Sources */,
 				082FFF4029A8E168002F85B6 /* NewsDetailedInteractor.swift in Sources */,
 				08EC25BE29A39EFD00DAC561 /* HomeViewController.swift in Sources */,
+				083C542629ACA40000485BCE /* PreparationDM.swift in Sources */,
 				08EC25C029A39F0D00DAC561 /* HomeInteractor.swift in Sources */,
 				306C77FF29ACAFED00C1072A /* UmraGideDetailPresenter.swift in Sources */,
 				30AC277229A9EFCC005DE047 /* UmraAudiosPresenter.swift in Sources */,
 				30AC277029A9EFBA005DE047 /* UmraAudiosViewController.swift in Sources */,
+				083C542229ACA11D00485BCE /* PreparationForUmraRouter.swift in Sources */,
 				08476B6F29A4EB16006D7509 /* AllNewsContract.swift in Sources */,
 				30C71D5529A50DCC00E5F6CF /* UIView+Shadow.swift in Sources */,
 				082FFF3629A8DDA0002F85B6 /* NewsDetailed-UI.swift in Sources */,
 				08476B7529A4EB69006D7509 /* AllNewsRouter.swift in Sources */,
+				083C542429ACA12B00485BCE /* PreparationForUmraIntertactor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
