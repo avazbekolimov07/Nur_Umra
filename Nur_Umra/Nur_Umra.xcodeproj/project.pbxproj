@@ -60,6 +60,14 @@
 		305DBE0329A498EE00D962EF /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305DBE0229A498EE00D962EF /* UIWindow+Extension.swift */; };
 		306C77FB29ACAF4300C1072A /* UmraGideDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306C77FA29ACAF4300C1072A /* UmraGideDetailViewController.swift */; };
 		306C77FD29ACAF5900C1072A /* UmraAudioDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306C77FC29ACAF5900C1072A /* UmraAudioDetailViewController.swift */; };
+		306C77FF29ACAFED00C1072A /* UmraGideDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306C77FE29ACAFED00C1072A /* UmraGideDetailPresenter.swift */; };
+		306C780129ACB00600C1072A /* UmraGideDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306C780029ACB00600C1072A /* UmraGideDetailInteractor.swift */; };
+		306C780329ACB01800C1072A /* UmraGideDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306C780229ACB01800C1072A /* UmraGideDetailRouter.swift */; };
+		306C780529ACB02500C1072A /* UmraGideDetailContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306C780429ACB02500C1072A /* UmraGideDetailContract.swift */; };
+		306C780729ACB04000C1072A /* UmraAudioDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306C780629ACB04000C1072A /* UmraAudioDetailPresenter.swift */; };
+		306C780929ACB05000C1072A /* UmraAudioDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306C780829ACB05000C1072A /* UmraAudioDetailInteractor.swift */; };
+		306C780B29ACB05D00C1072A /* UmraAudioDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306C780A29ACB05D00C1072A /* UmraAudioDetailRouter.swift */; };
+		306C780D29ACB08200C1072A /* UmraAudioDetailContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306C780C29ACB08200C1072A /* UmraAudioDetailContract.swift */; };
 		307344A029A65D700051BFFD /* UmraGide-UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3073449F29A65D700051BFFD /* UmraGide-UI.swift */; };
 		30A9890229A8ECBA00CD602F /* UmraGideService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A9890129A8ECBA00CD602F /* UmraGideService.swift */; };
 		30A9C35D29A32AD700C9EEEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A9C35C29A32AD700C9EEEA /* AppDelegate.swift */; };
@@ -146,6 +154,14 @@
 		305DBE0229A498EE00D962EF /* UIWindow+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extension.swift"; sourceTree = "<group>"; };
 		306C77FA29ACAF4300C1072A /* UmraGideDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmraGideDetailViewController.swift; sourceTree = "<group>"; };
 		306C77FC29ACAF5900C1072A /* UmraAudioDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmraAudioDetailViewController.swift; sourceTree = "<group>"; };
+		306C77FE29ACAFED00C1072A /* UmraGideDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmraGideDetailPresenter.swift; sourceTree = "<group>"; };
+		306C780029ACB00600C1072A /* UmraGideDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmraGideDetailInteractor.swift; sourceTree = "<group>"; };
+		306C780229ACB01800C1072A /* UmraGideDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmraGideDetailRouter.swift; sourceTree = "<group>"; };
+		306C780429ACB02500C1072A /* UmraGideDetailContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmraGideDetailContract.swift; sourceTree = "<group>"; };
+		306C780629ACB04000C1072A /* UmraAudioDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmraAudioDetailPresenter.swift; sourceTree = "<group>"; };
+		306C780829ACB05000C1072A /* UmraAudioDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmraAudioDetailInteractor.swift; sourceTree = "<group>"; };
+		306C780A29ACB05D00C1072A /* UmraAudioDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmraAudioDetailRouter.swift; sourceTree = "<group>"; };
+		306C780C29ACB08200C1072A /* UmraAudioDetailContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmraAudioDetailContract.swift; sourceTree = "<group>"; };
 		3073449F29A65D700051BFFD /* UmraGide-UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UmraGide-UI.swift"; sourceTree = "<group>"; };
 		30A9890129A8ECBA00CD602F /* UmraGideService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UmraGideService.swift; path = Nur_Umra/Classes/Common/Entites/UmraGideService.swift; sourceTree = SOURCE_ROOT; };
 		30A9C35929A32AD700C9EEEA /* Nur_Umra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nur_Umra.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -429,6 +445,10 @@
 			isa = PBXGroup;
 			children = (
 				306C77FA29ACAF4300C1072A /* UmraGideDetailViewController.swift */,
+				306C77FE29ACAFED00C1072A /* UmraGideDetailPresenter.swift */,
+				306C780029ACB00600C1072A /* UmraGideDetailInteractor.swift */,
+				306C780229ACB01800C1072A /* UmraGideDetailRouter.swift */,
+				306C780429ACB02500C1072A /* UmraGideDetailContract.swift */,
 			);
 			path = "Umra Gide Detailed";
 			sourceTree = "<group>";
@@ -437,6 +457,10 @@
 			isa = PBXGroup;
 			children = (
 				306C77FC29ACAF5900C1072A /* UmraAudioDetailViewController.swift */,
+				306C780629ACB04000C1072A /* UmraAudioDetailPresenter.swift */,
+				306C780829ACB05000C1072A /* UmraAudioDetailInteractor.swift */,
+				306C780A29ACB05D00C1072A /* UmraAudioDetailRouter.swift */,
+				306C780C29ACB08200C1072A /* UmraAudioDetailContract.swift */,
 			);
 			path = "Umra Audio Detailed";
 			sourceTree = "<group>";
@@ -687,6 +711,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30CC5EBA29A757A0005C158A /* HandbookDM.swift in Sources */,
+				306C780529ACB02500C1072A /* UmraGideDetailContract.swift in Sources */,
 				305DBDFE29A4982A00D962EF /* UITableView+ClassIdentifiable.swift in Sources */,
 				082FFF3C29A8DDE8002F85B6 /* NewsDetailedPresenter.swift in Sources */,
 				305DBE0029A4984200D962EF /* UICollectionView+ClassIdentifiable.swift in Sources */,
@@ -700,21 +725,26 @@
 				30AA27B429A5E9380014C351 /* HomeService.swift in Sources */,
 				30CC5EBF29A757BC005C158A /* UmraGideTopImageTVC.swift in Sources */,
 				08EC25A329A341F700DAC561 /* MainVC.swift in Sources */,
+				306C780929ACB05000C1072A /* UmraAudioDetailInteractor.swift in Sources */,
 				08EC25B829A39EB300DAC561 /* HomeContact.swift in Sources */,
 				30AA27B229A5E0660014C351 /* APIClient.swift in Sources */,
 				30A9C35D29A32AD700C9EEEA /* AppDelegate.swift in Sources */,
 				08EC25BA29A39ED100DAC561 /* HomePresenter.swift in Sources */,
 				306C77FD29ACAF5900C1072A /* UmraAudioDetailViewController.swift in Sources */,
 				08EC25C829A39FE800DAC561 /* UmraGideRouter.swift in Sources */,
+				306C780D29ACB08200C1072A /* UmraAudioDetailContract.swift in Sources */,
 				08476B7329A4EB4B006D7509 /* AllNewsPresenter.swift in Sources */,
 				30AC276B29A9DEC9005DE047 /* UIFont+App.swift in Sources */,
 				30AA27B029A5E0490014C351 /* APIManager.swift in Sources */,
+				306C780329ACB01800C1072A /* UmraGideDetailRouter.swift in Sources */,
 				30AC276E29A9EFA7005DE047 /* UmraAudios-UI.swift in Sources */,
 				30AC277829A9EFFC005DE047 /* UmraAudiosContact.swift in Sources */,
+				306C780129ACB00600C1072A /* UmraGideDetailInteractor.swift in Sources */,
 				08EC25C629A39FDA00DAC561 /* UmraGidePresenter.swift in Sources */,
 				08476B7129A4EB2A006D7509 /* AllNewsViewController.swift in Sources */,
 				30A9890229A8ECBA00CD602F /* UmraGideService.swift in Sources */,
 				08EC25CA29A39FFD00DAC561 /* UmraGideViewController.swift in Sources */,
+				306C780B29ACB05D00C1072A /* UmraAudioDetailRouter.swift in Sources */,
 				305DBDF829A4952E00D962EF /* HomeReusableHeaderView.swift in Sources */,
 				30C71D5929A50E5900E5F6CF /* UIViewController+Extensions.swift in Sources */,
 				30C71D5329A50DAE00E5F6CF /* UIView+Subviews.swift in Sources */,
@@ -726,6 +756,7 @@
 				305DBDFC29A4980900D962EF /* ClassIdentifiable.swift in Sources */,
 				30AC278129AA1883005DE047 /* UILabel+Extension.swift in Sources */,
 				08639A2929A5FC61002E0D48 /* NewsDM.swift in Sources */,
+				306C780729ACB04000C1072A /* UmraAudioDetailPresenter.swift in Sources */,
 				30AC277429A9EFD9005DE047 /* UmraAudiosRouter.swift in Sources */,
 				30C71D5729A50E0500E5F6CF /* CALayer+Shadow.swift in Sources */,
 				30AC277A29A9F225005DE047 /* DuoDM.swift in Sources */,
@@ -741,6 +772,7 @@
 				082FFF4029A8E168002F85B6 /* NewsDetailedInteractor.swift in Sources */,
 				08EC25BE29A39EFD00DAC561 /* HomeViewController.swift in Sources */,
 				08EC25C029A39F0D00DAC561 /* HomeInteractor.swift in Sources */,
+				306C77FF29ACAFED00C1072A /* UmraGideDetailPresenter.swift in Sources */,
 				30AC277229A9EFCC005DE047 /* UmraAudiosPresenter.swift in Sources */,
 				30AC277029A9EFBA005DE047 /* UmraAudiosViewController.swift in Sources */,
 				08476B6F29A4EB16006D7509 /* AllNewsContract.swift in Sources */,

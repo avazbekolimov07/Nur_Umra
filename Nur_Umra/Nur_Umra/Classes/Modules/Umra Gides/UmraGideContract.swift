@@ -16,7 +16,7 @@ protocol PresenterToViewUmraGideProtocol: AnyObject {
 //    func showHUD()
 //    func hideHUD()
 
-    func  createUIElements()
+    func createUIElements()
     func handleViewWillAppear()
     func handleViewDidDisappear()
 }
