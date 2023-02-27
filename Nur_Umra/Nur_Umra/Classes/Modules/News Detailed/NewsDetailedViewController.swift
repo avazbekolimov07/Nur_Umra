@@ -26,6 +26,9 @@ class NewsDetailedViewController: UIViewController {
         presenter?.viewDidLoad()
 
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
+    }
     
     // MARK: - Actions
     @objc func backBtnTapped() {

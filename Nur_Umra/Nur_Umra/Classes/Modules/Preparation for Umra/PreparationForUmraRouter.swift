@@ -9,9 +9,18 @@ import Foundation
 import UIKit
 
 class PreparationForUmraRouter: PresenterToRouterPreparationForUmraProtocol {
-    func createModule(with: [PreparationDm]) -> UIViewController {
-        print("fdsf")
-        return NewsDetailedViewController()
+   static func createModule() -> UIViewController {
+        let viewController = PreparationForUmraViewController()
+        
+        let presenter: ViewtoPresenterPreparationForUmraProtocol & InteractorToPresenterPreparationForUmraProtocol = PreparationForUmraPresenter()
+       
+        viewController.presenter = presenter
+        viewController.presenter?.view = viewController
+        viewController.presenter?.router = PreparationForUmraRouter()
+        viewController.presenter?.interactor = PreparationForUmraInteractor()
+        viewController.presenter?.interactor?.presenter = presenter
+        print("Preparation for umra module is working")
+       return viewController
     }
     
     

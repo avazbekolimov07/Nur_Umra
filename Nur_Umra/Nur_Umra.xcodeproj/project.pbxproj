@@ -39,6 +39,7 @@
 		083C542429ACA12B00485BCE /* PreparationForUmraIntertactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083C542329ACA12B00485BCE /* PreparationForUmraIntertactor.swift */; };
 		083C542629ACA40000485BCE /* PreparationDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083C542529ACA40000485BCE /* PreparationDM.swift */; };
 		083C542829ACA48E00485BCE /* PreparationFoUmraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083C542729ACA48E00485BCE /* PreparationFoUmraService.swift */; };
+		083C542A29ACBA2A00485BCE /* PreparationForUmraPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083C542929ACBA2A00485BCE /* PreparationForUmraPresenter.swift */; };
 		08476B6D29A4EAFF006D7509 /* AllNews-UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08476B6C29A4EAFF006D7509 /* AllNews-UI.swift */; };
 		08476B6F29A4EB16006D7509 /* AllNewsContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08476B6E29A4EB16006D7509 /* AllNewsContract.swift */; };
 		08476B7129A4EB2A006D7509 /* AllNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08476B7029A4EB2A006D7509 /* AllNewsViewController.swift */; };
@@ -140,6 +141,7 @@
 		083C542329ACA12B00485BCE /* PreparationForUmraIntertactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationForUmraIntertactor.swift; sourceTree = "<group>"; };
 		083C542529ACA40000485BCE /* PreparationDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationDM.swift; sourceTree = "<group>"; };
 		083C542729ACA48E00485BCE /* PreparationFoUmraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreparationFoUmraService.swift; path = Nur_Umra/Classes/Common/Entites/PreparationFoUmraService.swift; sourceTree = SOURCE_ROOT; };
+		083C542929ACBA2A00485BCE /* PreparationForUmraPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationForUmraPresenter.swift; sourceTree = "<group>"; };
 		08476B6C29A4EAFF006D7509 /* AllNews-UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AllNews-UI.swift"; sourceTree = "<group>"; };
 		08476B6E29A4EB16006D7509 /* AllNewsContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNewsContract.swift; sourceTree = "<group>"; };
 		08476B7029A4EB2A006D7509 /* AllNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNewsViewController.swift; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 			children = (
 				083C541B29ACA0E500485BCE /* PreparationForUmra-UI.swift */,
 				083C541D29ACA10800485BCE /* PreparationForUmraViewController.swift */,
+				083C542929ACBA2A00485BCE /* PreparationForUmraPresenter.swift */,
 				083C542129ACA11D00485BCE /* PreparationForUmraRouter.swift */,
 				083C542329ACA12B00485BCE /* PreparationForUmraIntertactor.swift */,
 				083C541929ACA0C100485BCE /* PreparationForUmraContract.swift */,
@@ -790,6 +793,7 @@
 				08639A2929A5FC61002E0D48 /* NewsDM.swift in Sources */,
 				306C780729ACB04000C1072A /* UmraAudioDetailPresenter.swift in Sources */,
 				30AC277429A9EFD9005DE047 /* UmraAudiosRouter.swift in Sources */,
+				083C542A29ACBA2A00485BCE /* PreparationForUmraPresenter.swift in Sources */,
 				30C71D5729A50E0500E5F6CF /* CALayer+Shadow.swift in Sources */,
 				30AC277A29A9F225005DE047 /* DuoDM.swift in Sources */,
 				30AA27B629A5EBED0014C351 /* Endpoints.swift in Sources */,
