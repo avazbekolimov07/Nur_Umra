@@ -40,6 +40,15 @@
 		083C542629ACA40000485BCE /* PreparationDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083C542529ACA40000485BCE /* PreparationDM.swift */; };
 		083C542829ACA48E00485BCE /* PreparationFoUmraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083C542729ACA48E00485BCE /* PreparationFoUmraService.swift */; };
 		083C542A29ACBA2A00485BCE /* PreparationForUmraPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083C542929ACBA2A00485BCE /* PreparationForUmraPresenter.swift */; };
+		083C542E29ACCDDC00485BCE /* HistoricalPlaces UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083C542D29ACCDDC00485BCE /* HistoricalPlaces UI.swift */; };
+		083C543029ACCDF900485BCE /* HistoricalPlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083C542F29ACCDF900485BCE /* HistoricalPlacesViewController.swift */; };
+		083C543229ACCE0C00485BCE /* HistoricalPlacesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083C543129ACCE0C00485BCE /* HistoricalPlacesPresenter.swift */; };
+		083C543429ACCE1C00485BCE /* HistoricalPlacesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083C543329ACCE1C00485BCE /* HistoricalPlacesInteractor.swift */; };
+		083C543629ACCE2600485BCE /* HistoricalPlacesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083C543529ACCE2600485BCE /* HistoricalPlacesRouter.swift */; };
+		083C543829ACCE3100485BCE /* HistoricalPlacesContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083C543729ACCE3100485BCE /* HistoricalPlacesContract.swift */; };
+		083C543A29ACF27F00485BCE /* HistoricalPlacesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083C543929ACF27F00485BCE /* HistoricalPlacesService.swift */; };
+		083C543C29ACF2E400485BCE /* HistoricalPlacesDm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083C543B29ACF2E400485BCE /* HistoricalPlacesDm.swift */; };
+		083C543F29ACFDF400485BCE /* HistoricalPlacesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083C543E29ACFDF400485BCE /* HistoricalPlacesTVC.swift */; };
 		08476B6D29A4EAFF006D7509 /* AllNews-UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08476B6C29A4EAFF006D7509 /* AllNews-UI.swift */; };
 		08476B6F29A4EB16006D7509 /* AllNewsContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08476B6E29A4EB16006D7509 /* AllNewsContract.swift */; };
 		08476B7129A4EB2A006D7509 /* AllNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08476B7029A4EB2A006D7509 /* AllNewsViewController.swift */; };
@@ -144,6 +153,15 @@
 		083C542529ACA40000485BCE /* PreparationDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationDM.swift; sourceTree = "<group>"; };
 		083C542729ACA48E00485BCE /* PreparationFoUmraService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreparationFoUmraService.swift; path = Nur_Umra/Classes/Common/Entites/PreparationFoUmraService.swift; sourceTree = SOURCE_ROOT; };
 		083C542929ACBA2A00485BCE /* PreparationForUmraPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationForUmraPresenter.swift; sourceTree = "<group>"; };
+		083C542D29ACCDDC00485BCE /* HistoricalPlaces UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistoricalPlaces UI.swift"; sourceTree = "<group>"; };
+		083C542F29ACCDF900485BCE /* HistoricalPlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalPlacesViewController.swift; sourceTree = "<group>"; };
+		083C543129ACCE0C00485BCE /* HistoricalPlacesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalPlacesPresenter.swift; sourceTree = "<group>"; };
+		083C543329ACCE1C00485BCE /* HistoricalPlacesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalPlacesInteractor.swift; sourceTree = "<group>"; };
+		083C543529ACCE2600485BCE /* HistoricalPlacesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalPlacesRouter.swift; sourceTree = "<group>"; };
+		083C543729ACCE3100485BCE /* HistoricalPlacesContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalPlacesContract.swift; sourceTree = "<group>"; };
+		083C543929ACF27F00485BCE /* HistoricalPlacesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HistoricalPlacesService.swift; path = "Nur_Umra/Classes/Modules/Historical Places/HistoricalPlacesService.swift"; sourceTree = SOURCE_ROOT; };
+		083C543B29ACF2E400485BCE /* HistoricalPlacesDm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalPlacesDm.swift; sourceTree = "<group>"; };
+		083C543E29ACFDF400485BCE /* HistoricalPlacesTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalPlacesTVC.swift; sourceTree = "<group>"; };
 		08476B6C29A4EAFF006D7509 /* AllNews-UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AllNews-UI.swift"; sourceTree = "<group>"; };
 		08476B6E29A4EB16006D7509 /* AllNewsContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNewsContract.swift; sourceTree = "<group>"; };
 		08476B7029A4EB2A006D7509 /* AllNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNewsViewController.swift; sourceTree = "<group>"; };
@@ -290,6 +308,35 @@
 			path = "Preparation for Umra";
 			sourceTree = "<group>";
 		};
+		083C542B29ACCD6300485BCE /* Historical Places */ = {
+			isa = PBXGroup;
+			children = (
+				083C543D29ACFDAA00485BCE /* TVC */,
+				083C542D29ACCDDC00485BCE /* HistoricalPlaces UI.swift */,
+				083C542F29ACCDF900485BCE /* HistoricalPlacesViewController.swift */,
+				083C543129ACCE0C00485BCE /* HistoricalPlacesPresenter.swift */,
+				083C543329ACCE1C00485BCE /* HistoricalPlacesInteractor.swift */,
+				083C543529ACCE2600485BCE /* HistoricalPlacesRouter.swift */,
+				083C543729ACCE3100485BCE /* HistoricalPlacesContract.swift */,
+			);
+			path = "Historical Places";
+			sourceTree = "<group>";
+		};
+		083C542C29ACCDA800485BCE /* Historical Places Detailed */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Historical Places Detailed";
+			sourceTree = "<group>";
+		};
+		083C543D29ACFDAA00485BCE /* TVC */ = {
+			isa = PBXGroup;
+			children = (
+				083C543E29ACFDF400485BCE /* HistoricalPlacesTVC.swift */,
+			);
+			path = TVC;
+			sourceTree = "<group>";
+		};
 		08EC25A429A39A0500DAC561 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -340,6 +387,8 @@
 				306C77F729ACAEB500C1072A /* Umra Gide Detailed */,
 				30AC276C29A9EF68005DE047 /* Umra Audios */,
 				306C77F929ACAEE200C1072A /* Umra Audio Detailed */,
+				083C542B29ACCD6300485BCE /* Historical Places */,
+				083C542C29ACCDA800485BCE /* Historical Places Detailed */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -369,6 +418,7 @@
 				30A9890129A8ECBA00CD602F /* UmraGideService.swift */,
 				30AC277B29A9F285005DE047 /* UmraAudioService.swift */,
 				083C542729ACA48E00485BCE /* PreparationFoUmraService.swift */,
+				083C543929ACF27F00485BCE /* HistoricalPlacesService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -388,6 +438,7 @@
 				08639A2829A5FC61002E0D48 /* NewsDM.swift */,
 				30AC277929A9F225005DE047 /* DuoDM.swift */,
 				083C542529ACA40000485BCE /* PreparationDM.swift */,
+				083C543B29ACF2E400485BCE /* HistoricalPlacesDm.swift */,
 			);
 			path = Entites;
 			sourceTree = "<group>";
@@ -762,6 +813,8 @@
 				082FFF3A29A8DDCB002F85B6 /* NewsDetailedViewController.swift in Sources */,
 				08476B6D29A4EAFF006D7509 /* AllNews-UI.swift in Sources */,
 				082FFF3829A8DDB1002F85B6 /* NewsDetailedContract.swift in Sources */,
+				083C543029ACCDF900485BCE /* HistoricalPlacesViewController.swift in Sources */,
+				083C543C29ACF2E400485BCE /* HistoricalPlacesDm.swift in Sources */,
 				30AC277629A9EFEB005DE047 /* UmraAudiosInteractor.swift in Sources */,
 				30AA27B429A5E9380014C351 /* HomeService.swift in Sources */,
 				30CC5EBF29A757BC005C158A /* UmraGideTopImageTVC.swift in Sources */,
@@ -771,6 +824,9 @@
 				30AA27B229A5E0660014C351 /* APIClient.swift in Sources */,
 				30A9C35D29A32AD700C9EEEA /* AppDelegate.swift in Sources */,
 				08EC25BA29A39ED100DAC561 /* HomePresenter.swift in Sources */,
+				306C77FD29ACAF5900C1072A /* UmraAudioDetailViewController.swift in Sources */,
+				083C542E29ACCDDC00485BCE /* HistoricalPlaces UI.swift in Sources */,
+				083C543F29ACFDF400485BCE /* HistoricalPlacesTVC.swift in Sources */,
 				08EC25C829A39FE800DAC561 /* UmraGideRouter.swift in Sources */,
 				306C780D29ACB08200C1072A /* UmraAudioDetailContract.swift in Sources */,
 				08476B7329A4EB4B006D7509 /* AllNewsPresenter.swift in Sources */,
@@ -781,12 +837,14 @@
 				30AC277829A9EFFC005DE047 /* UmraAudiosContact.swift in Sources */,
 				306C780129ACB00600C1072A /* UmraGideDetailInteractor.swift in Sources */,
 				08EC25C629A39FDA00DAC561 /* UmraGidePresenter.swift in Sources */,
+				083C543629ACCE2600485BCE /* HistoricalPlacesRouter.swift in Sources */,
 				08476B7129A4EB2A006D7509 /* AllNewsViewController.swift in Sources */,
 				30A9890229A8ECBA00CD602F /* UmraGideService.swift in Sources */,
 				08EC25CA29A39FFD00DAC561 /* UmraGideViewController.swift in Sources */,
 				306C780B29ACB05D00C1072A /* UmraAudioDetailRouter.swift in Sources */,
 				305DBDF829A4952E00D962EF /* HomeReusableHeaderView.swift in Sources */,
 				30C71D5929A50E5900E5F6CF /* UIViewController+Extensions.swift in Sources */,
+				083C543829ACCE3100485BCE /* HistoricalPlacesContract.swift in Sources */,
 				30C71D5329A50DAE00E5F6CF /* UIView+Subviews.swift in Sources */,
 				30AC277F29AA0E1E005DE047 /* UmraAudioTVC.swift in Sources */,
 				08EC25BC29A39EEE00DAC561 /* HomeRouter.swift in Sources */,
@@ -801,6 +859,7 @@
 				08639A2929A5FC61002E0D48 /* NewsDM.swift in Sources */,
 				306C780729ACB04000C1072A /* UmraAudioDetailPresenter.swift in Sources */,
 				30AC277429A9EFD9005DE047 /* UmraAudiosRouter.swift in Sources */,
+				083C543A29ACF27F00485BCE /* HistoricalPlacesService.swift in Sources */,
 				306C781129ACCB8100C1072A /* UmraAudioDetail-UI.swift in Sources */,
 				083C542A29ACBA2A00485BCE /* PreparationForUmraPresenter.swift in Sources */,
 				30C71D5729A50E0500E5F6CF /* CALayer+Shadow.swift in Sources */,
@@ -809,10 +868,12 @@
 				083C541E29ACA10800485BCE /* PreparationForUmraViewController.swift in Sources */,
 				307344A029A65D700051BFFD /* UmraGide-UI.swift in Sources */,
 				30CC5EBE29A757BC005C158A /* UmraGideTVC.swift in Sources */,
+				083C543229ACCE0C00485BCE /* HistoricalPlacesPresenter.swift in Sources */,
 				30C71D5E29A528B500E5F6CF /* UIColor+App.swift in Sources */,
 				30AC277C29A9F285005DE047 /* UmraAudioService.swift in Sources */,
 				082FFF3E29A8DDF8002F85B6 /* NewsDetailedRouter.swift in Sources */,
 				08EC25CC29A3A00E00DAC561 /* UmraGideInteractor.swift in Sources */,
+				083C543429ACCE1C00485BCE /* HistoricalPlacesInteractor.swift in Sources */,
 				08EC25C429A39FC700DAC561 /* UmraGideContract.swift in Sources */,
 				082FFF4029A8E168002F85B6 /* NewsDetailedInteractor.swift in Sources */,
 				08EC25BE29A39EFD00DAC561 /* HomeViewController.swift in Sources */,
