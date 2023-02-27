@@ -27,11 +27,13 @@ class NewsDetailedViewController: UIViewController {
 
     }
     override func viewWillDisappear(_ animated: Bool) {
+        //
         self.navigationController?.navigationBar.isHidden = false
     }
     
     // MARK: - Actions
     @objc func backBtnTapped() {
+        //
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -41,6 +43,7 @@ class NewsDetailedViewController: UIViewController {
 // MARK: - Update views
 extension NewsDetailedViewController: PresenterToViewNewsDetailedProtocol {
     func createUIElements() {
+        //
         navigationController?.navigationBar.isHidden = true
         self.view.backgroundColor = .white
         self.scrollView = self.createScrollView()

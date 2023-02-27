@@ -18,7 +18,7 @@ class PreparationForUmraPresenter: ViewtoPresenterPreparationForUmraProtocol {
     
     var router: PresenterToRouterPreparationForUmraProtocol?
     
-    var preparationForUmra: PreparationDm?
+    var preparationForUmra: PreparationDM?
     
     func viewDidLoad() {
         print("Didload preparaion in presenter is working ")
@@ -37,7 +37,7 @@ extension PreparationForUmraPresenter: InteractorToPresenterPreparationForUmraPr
     }
 
     
-    func getPreparionForUmraSucces(preparion: PreparationDm) {
+    func getPreparionForUmraSucces(preparion: PreparationDM) {
         print("Should work get preparation for umra successs ")
         view?.onUpdateUIElementsSuccess(with: preparion)
     }

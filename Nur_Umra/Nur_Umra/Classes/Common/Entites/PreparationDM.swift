@@ -8,7 +8,7 @@
 import Foundation
 import SwiftyJSON
 
-struct PreparationDm {
+struct PreparationDM {
     let id: Int
     let text: String
     

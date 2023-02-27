@@ -9,7 +9,7 @@ import Foundation
 
 class PreparationForUmraInteractor: PresenterToInteractorPreparationForUmraProtocol {
     
-    var preparationForUmra: PreparationDm?
+    var preparationForUmra: PreparationDM?
     
     var presenter: InteractorToPresenterPreparationForUmraProtocol?
     

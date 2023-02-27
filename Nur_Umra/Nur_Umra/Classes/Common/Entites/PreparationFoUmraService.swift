@@ -12,12 +12,13 @@ class PreparationForUmraService {
     
     static let shared = { PreparationForUmraService() }()
     
-    func getPreparation(success: @escaping (Int, [PreparationDm]) -> (), failure: @escaping (Int) -> ()) {
+    func getPreparation(success: @escaping (Int, [PreparationDM]) -> (),
+                        failure: @escaping (Int) -> ()) {
         let urlString = Endpoints.PREPARATION
         
         APIClient.shared.requestJSONEncoding(urlString: urlString, param: nil, method: .get, header: nil, success:  { code, resultData in
             let json = JSON(resultData)
-            let preparationForIUmra = json.arrayValue.compactMap { PreparationDm(json: $0) }
+            let preparationForIUmra = json.arrayValue.compactMap { PreparationDM(json: $0) }
             success(code, preparationForIUmra)
            
         }) { (code) in

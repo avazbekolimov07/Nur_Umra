@@ -47,9 +47,9 @@ extension AllNewsViewController {
 
 // MARK: - Update views
 extension AllNewsViewController: PresenterToViewAllNewsProtocol {
-    func showShareView(shareView: UIActivityViewController) {
-        self.present(shareView, animated: true)
-    }
+//    func showShareView(shareView: UIActivityViewController) {
+//        self.present(shareView, animated: true)
+//    }
     
     
     func onFetchNewsSuccess() {

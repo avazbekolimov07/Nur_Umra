@@ -9,7 +9,7 @@ import UIKit
 // MARK: View Output (Presenter -> View)
 protocol PresenterToViewPreparationForUmraProtocol: AnyObject {
     
-    func onUpdateUIElementsSuccess(with preparation: PreparationDm)
+    func onUpdateUIElementsSuccess(with preparation: PreparationDM)
     func onUpdateUIElementsFailure()
     
     func createUIElements()
@@ -24,7 +24,7 @@ protocol ViewtoPresenterPreparationForUmraProtocol: AnyObject {
     var interactor: PresenterToInteractorPreparationForUmraProtocol? { get set }
     var router: PresenterToRouterPreparationForUmraProtocol? { get set }
     
-    var preparationForUmra: PreparationDm? { get set }
+    var preparationForUmra: PreparationDM? { get set }
     
     func viewDidLoad()
 }
@@ -35,7 +35,7 @@ protocol PresenterToInteractorPreparationForUmraProtocol: AnyObject {
     
     var presenter: InteractorToPresenterPreparationForUmraProtocol? { get set }
     
-    var preparationForUmra: PreparationDm? { get set }
+    var preparationForUmra: PreparationDM? { get set }
     
     func loadPreparationForUmra()
 }
@@ -44,7 +44,7 @@ protocol PresenterToInteractorPreparationForUmraProtocol: AnyObject {
 
 protocol InteractorToPresenterPreparationForUmraProtocol: AnyObject {
     
-    func getPreparionForUmraSucces(preparion: PreparationDm)
+    func getPreparionForUmraSucces(preparion: PreparationDM)
     func getPreparionForUmraFailure(errorCode: Int)
     
 }
