@@ -7,50 +7,51 @@
 
 import Foundation
 
+import UIKit
 
 // MARK: View Output (Presenter -> View)
-protocol PresenterToViewNewsDetailedProtocol: AnyObject {
 
+protocol PresenterToViewNewsDetailedProtocol {
+    
+    func onFetchError()
+    
     func createUIElements()
     
-    func onFetchSuccess()
-    func onFetchFailure()
+    func updateUIElements(with news: NewsDM)
 }
 
 
 // MARK: View Input (View -> Presenter)
-protocol ViewToPresenterNewsDetailedProtocol: AnyObject {
+
+protocol ViewToPresenterNewsDetailedProtocol {
     
     var view: PresenterToViewNewsDetailedProtocol? { get set }
     var interactor: PresenterToInteractorNewsDetailedProtocol? { get set }
     var router: PresenterToRouterNewsDetailedProtocol? { get set }
     
-    var news: NewsDM? { get set }
+    var newsDetailed: NewsDM? { get set }
     
- 
+    func viewDidLoad()
+    
 }
-
 
 // MARK: Interactor Input (Presenter -> Interactor)
-protocol PresenterToInteractorNewsDetailedProtocol: AnyObject {
+protocol PresenterToInteractorNewsDetailedProtocol {
     
-    var presenter: InteractorToPresenterNewsDetailedProtocol? { get set }
-    var detailedNews: NewsDM? { get set }
-    
-    func retrievDetailedNews()
+    var presenter: InteractorToPresentjrNewsDetailedProtocol? { get set }
+    var newsDetailed: NewsDM? { get set }
+    func retrieveNewsDetailed()
 }
 
-
 // MARK: Interactor Output (Interactor -> Presenter)
-protocol InteractorToPresenterNewsDetailedProtocol: AnyObject {
-    
-    func getDetailedNews( news: NewsDM)
-
+protocol InteractorToPresentjrNewsDetailedProtocol {
+    func getNewsDetailedSuccess(news: NewsDM)
+    func getNewsDetailedFailure()
 }
 
 
 // MARK: Router Input (Presenter -> Router)
-protocol PresenterToRouterNewsDetailedProtocol: AnyObject {
-    
 
+protocol PresenterToRouterNewsDetailedProtocol {
+    static func createModule(with news: NewsDM) -> UIViewController
 }

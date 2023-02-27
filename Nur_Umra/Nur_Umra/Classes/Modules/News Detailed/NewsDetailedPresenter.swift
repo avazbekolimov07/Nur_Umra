@@ -16,17 +16,28 @@ class NewsDetailsPresenter: ViewToPresenterNewsDetailedProtocol {
     
     var router: PresenterToRouterNewsDetailedProtocol?
     
-    var news: NewsDM?
+    var newsDetailed: NewsDM?
     
-     
-}
-
-extension NewsDetailsPresenter: InteractorToPresenterNewsDetailedProtocol {
-    func getDetailedNews(news: NewsDM) {
-        print("get Detail")
+    func viewDidLoad() {
+        print("Did load of news detailed")
+        view?.createUIElements()
+        interactor?.retrieveNewsDetailed()
     }
     
     
+    
+}
+
+extension NewsDetailsPresenter: InteractorToPresentjrNewsDetailedProtocol {
+    
+    func getNewsDetailedSuccess(news: NewsDM) {
+        self.newsDetailed = news
+        view?.updateUIElements(with: news)
+    }
+    
+    func getNewsDetailedFailure() {
+        print("Could not get news detailed")
+    }
     
     
 }
