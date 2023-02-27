@@ -28,6 +28,7 @@ class HomeRouter {
 }
 
 extension HomeRouter: PresenterToRouterHomeProtocol {
+ 
     
     func showShareView(link: String, view: PresenterToViewHomeProtocol) {
         let vc = view as! HomeViewController
@@ -71,6 +72,13 @@ extension HomeRouter: PresenterToRouterHomeProtocol {
         viewController.navigationController?
             .pushViewController(UmraAudiosViewController, animated: true)
     }
+    
+    func pushToPreparationForUmra(on view: PresenterToViewHomeProtocol) {
+        let PreparationForUmraVC = PreparationForUmraRouter.createModule()
+        let viewController = view as! HomeViewController
+        viewController.navigationController?.pushViewController(PreparationForUmraVC, animated: true)
+    }
+    
     
 }
 

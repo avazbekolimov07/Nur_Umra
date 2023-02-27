@@ -141,6 +141,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 // MARK: - UI Setup
 extension HomeViewController {
     func createUIElements() {
+        navigationController?.navigationBar.isHidden = false
         overrideUserInterfaceStyle = .light
         self.collectionView = self.create_collectionView()
         self.refreshControl = self.create_refreshController()
