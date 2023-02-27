@@ -9,34 +9,32 @@ import Foundation
 
 class NewsDetailsPresenter: ViewToPresenterNewsDetailedProtocol {
     
-    
-    var view: PresenterToViewNewsDetailedProtocol?
-    
+    // MARK: Properties
+    weak var view: PresenterToViewNewsDetailedProtocol?
     var interactor: PresenterToInteractorNewsDetailedProtocol?
-    
     var router: PresenterToRouterNewsDetailedProtocol?
     
     var newsDetailed: NewsDM?
     
+    // MARK: Inputs from view
     func viewDidLoad() {
         print("Did load of news detailed")
         view?.createUIElements()
         interactor?.retrieveNewsDetailed()
     }
     
-    
-    
 }
 
-extension NewsDetailsPresenter: InteractorToPresentjrNewsDetailedProtocol {
+// MARK: - Outputs to view
+extension NewsDetailsPresenter: InteractorToPresenterNewsDetailedProtocol {
     
     func getNewsDetailedSuccess(news: NewsDM) {
         self.newsDetailed = news
-        view?.updateUIElements(with: news)
+        view?.onUpdateUIElementsSuccess(with: news)
     }
     
     func getNewsDetailedFailure() {
-        print("Could not get news detailed")
+        view?.onUpdateUIElementsFailure()
     }
     
     

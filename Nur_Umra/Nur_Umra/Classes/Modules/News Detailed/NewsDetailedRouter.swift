@@ -12,10 +12,11 @@ class NewsDetailsRouter: PresenterToRouterNewsDetailedProtocol {
     static func createModule(with news: NewsDM) -> UIViewController {
         let viewController = NewsDetailedViewController()
         
-        let presenter: ViewToPresenterNewsDetailedProtocol & InteractorToPresentjrNewsDetailedProtocol = NewsDetailsPresenter()
+        let presenter: ViewToPresenterNewsDetailedProtocol & InteractorToPresenterNewsDetailedProtocol = NewsDetailsPresenter()
         
         viewController.presenter = presenter
         viewController.presenter?.router = NewsDetailsRouter()
+        viewController.presenter?.view = viewController
         viewController.presenter?.interactor = NewsDetailedInteractor()
         viewController.presenter?.interactor?.newsDetailed = news
         viewController.presenter?.interactor?.presenter = presenter

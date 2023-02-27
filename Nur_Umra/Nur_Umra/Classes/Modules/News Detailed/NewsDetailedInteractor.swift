@@ -9,17 +9,16 @@ import Foundation
 
 class NewsDetailedInteractor: PresenterToInteractorNewsDetailedProtocol {
  
-    
-    
-    var presenter: InteractorToPresentjrNewsDetailedProtocol?
+    // MARK: Properties
+    var presenter: InteractorToPresenterNewsDetailedProtocol?
     var newsDetailed: NewsDM?
     
     func retrieveNewsDetailed() {
         if let safeDetailedNews = newsDetailed {
-            print("sucess get news detiled should work")
+            print("success get news detiled should work")
             presenter?.getNewsDetailedSuccess(news: safeDetailedNews)
         } else {
-            print("failure get news detiled should  nor work")
+            print("failure get news detiled should  not work")
             presenter?.getNewsDetailedFailure()
         }
     }

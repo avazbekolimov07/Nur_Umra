@@ -50,7 +50,6 @@ class AllNewsRouter: PresenterToRouterAllNewsProtocol {
     
     func pushtoNewsDetailed(on view: PresenterToViewAllNewsProtocol, with news: NewsDM) {
         let newsDetailedVC = NewsDetailsRouter.createModule(with: news)
-        
         let viewController = view as! AllNewsViewController
         
         viewController.navigationController?.pushViewController(newsDetailedVC, animated: true)

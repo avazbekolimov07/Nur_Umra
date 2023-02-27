@@ -10,10 +10,6 @@ import SwiftyJSON
 
 class AllNewsPresenter: ViewToPresenterAllNewsProtocol {
     
-    
-
-    
-    
     // MARK: Properties
     weak var view: PresenterToViewAllNewsProtocol?
     var interactor: PresenterToInteractorAllNewsProtocol?

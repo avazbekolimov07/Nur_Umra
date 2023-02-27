@@ -85,7 +85,6 @@ extension NewsDetailedViewController {
     
     func createBackBtn() -> UIButton {
         let btn = UIButton()
-        btn.addTarget(self, action: #selector(backBtnPressed), for: .touchUpInside)
         
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.regular)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -105,7 +104,6 @@ extension NewsDetailedViewController {
         btn.bringSubviewToFront(btn.imageView!)
         
         self.view.addSubviews(btn)
-        self.view.backgroundColor = .blue
         
         btn.snp.makeConstraints { make in
             make.width.height.equalTo(38)
@@ -118,17 +116,5 @@ extension NewsDetailedViewController {
         return btn
         
     }
-    
-    func updateUI(newsDetailed: NewsDM) {
-        print("🥶 , update ui ----")
-            self.imgView.sd_setImage(with: URL(string: newsDetailed.image), placeholderImage: UIImage(named: "umraGide_img"))
-        self.titleLbl.text = newsDetailed.title
-        self.descriptionLbl.text = newsDetailed.content
-        
-    }
-    
-    // NARK: Action with buttons
-    @objc func backBtnPressed() {
-        print("Bakc.btn pressed -------")
-    }
+   
 }

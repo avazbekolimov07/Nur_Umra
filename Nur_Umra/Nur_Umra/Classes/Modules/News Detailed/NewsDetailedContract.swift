@@ -11,19 +11,18 @@ import UIKit
 
 // MARK: View Output (Presenter -> View)
 
-protocol PresenterToViewNewsDetailedProtocol {
+protocol PresenterToViewNewsDetailedProtocol: AnyObject {
     
-    func onFetchError()
+    func onUpdateUIElementsFailure()
+    func onUpdateUIElementsSuccess(with news: NewsDM)
     
     func createUIElements()
-    
-    func updateUIElements(with news: NewsDM)
 }
 
 
 // MARK: View Input (View -> Presenter)
 
-protocol ViewToPresenterNewsDetailedProtocol {
+protocol ViewToPresenterNewsDetailedProtocol: AnyObject {
     
     var view: PresenterToViewNewsDetailedProtocol? { get set }
     var interactor: PresenterToInteractorNewsDetailedProtocol? { get set }
@@ -36,15 +35,15 @@ protocol ViewToPresenterNewsDetailedProtocol {
 }
 
 // MARK: Interactor Input (Presenter -> Interactor)
-protocol PresenterToInteractorNewsDetailedProtocol {
+protocol PresenterToInteractorNewsDetailedProtocol: AnyObject {
     
-    var presenter: InteractorToPresentjrNewsDetailedProtocol? { get set }
+    var presenter: InteractorToPresenterNewsDetailedProtocol? { get set }
     var newsDetailed: NewsDM? { get set }
     func retrieveNewsDetailed()
 }
 
 // MARK: Interactor Output (Interactor -> Presenter)
-protocol InteractorToPresentjrNewsDetailedProtocol {
+protocol InteractorToPresenterNewsDetailedProtocol {
     func getNewsDetailedSuccess(news: NewsDM)
     func getNewsDetailedFailure()
 }
@@ -52,6 +51,6 @@ protocol InteractorToPresentjrNewsDetailedProtocol {
 
 // MARK: Router Input (Presenter -> Router)
 
-protocol PresenterToRouterNewsDetailedProtocol {
+protocol PresenterToRouterNewsDetailedProtocol: AnyObject {
     static func createModule(with news: NewsDM) -> UIViewController
 }

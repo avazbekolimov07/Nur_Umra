@@ -20,7 +20,6 @@ class NewsDetailedViewController: UIViewController {
     var backBtn: UIButton!
 
     
-    
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,23 +38,30 @@ class NewsDetailedViewController: UIViewController {
 // MARK: - Update views
 extension NewsDetailedViewController: PresenterToViewNewsDetailedProtocol {
     func createUIElements() {
-                self.view.backgroundColor = .red
-                self.scrollView = self.createScrollView()
-                self.imgView = self.createImgView()
-                self.titleLbl = self.createTitleLbl()
-                self.descriptionLbl = self.createTitleLbl()
-                self.backBtn = self.createBackBtn()
-                print("🥶 create ur elements ui elents is working")
+        self.view.backgroundColor = .white
+        self.scrollView = self.createScrollView()
+        self.imgView = self.createImgView()
+        self.titleLbl = self.createTitleLbl()
+        self.descriptionLbl = self.createTitleLbl()
+        self.backBtn = self.createBackBtn()
+        print("🥶 create ur elements ui elents is working")
     }
     
    
-    func updateUIElements(with news: NewsDM) {
-        print("🥶 Update ui elents is working")
+    func onUpdateUIElementsSuccess(with news: NewsDM) {
+        print("🥶 Update ui elements is working")
         self.updateUI(newsDetailed: news)
     }
     
-    func onFetchError() {
-        print("error in fetching data")
+    func updateUI(newsDetailed: NewsDM) {
+        print("🥶 , Update ui ")
+        self.imgView.sd_setImage(with: URL(string: newsDetailed.image), placeholderImage: UIImage(named: "umraGide_img"))
+        self.titleLbl.text = newsDetailed.title
+        self.descriptionLbl.text = newsDetailed.content
+    }
+    
+    func onUpdateUIElementsFailure() {
+        print("Could not get news detailed")
     }
     
     
