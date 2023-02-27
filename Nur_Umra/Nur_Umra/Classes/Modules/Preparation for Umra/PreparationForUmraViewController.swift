@@ -27,11 +27,6 @@ class PreparationForUmraViewController: UIViewController {
 
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.navigationController?.navigationBar.isHidden = false
-    }
-    
     // MARK: - Actions
     @objc func backBtnTapped() {
         self.navigationController?.popViewController(animated: true)
