@@ -35,7 +35,6 @@
 		083C541A29ACA0C100485BCE /* PreparationForUmraContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083C541929ACA0C100485BCE /* PreparationForUmraContract.swift */; };
 		083C541C29ACA0E500485BCE /* PreparationForUmra-UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083C541B29ACA0E500485BCE /* PreparationForUmra-UI.swift */; };
 		083C541E29ACA10800485BCE /* PreparationForUmraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083C541D29ACA10800485BCE /* PreparationForUmraViewController.swift */; };
-		083C542029ACA11400485BCE /* PreparationForUmraPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083C541F29ACA11400485BCE /* PreparationForUmraPresenter.swift */; };
 		083C542229ACA11D00485BCE /* PreparationForUmraRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083C542129ACA11D00485BCE /* PreparationForUmraRouter.swift */; };
 		083C542429ACA12B00485BCE /* PreparationForUmraIntertactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083C542329ACA12B00485BCE /* PreparationForUmraIntertactor.swift */; };
 		083C542629ACA40000485BCE /* PreparationDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083C542529ACA40000485BCE /* PreparationDM.swift */; };
@@ -137,7 +136,6 @@
 		083C541929ACA0C100485BCE /* PreparationForUmraContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationForUmraContract.swift; sourceTree = "<group>"; };
 		083C541B29ACA0E500485BCE /* PreparationForUmra-UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PreparationForUmra-UI.swift"; sourceTree = "<group>"; };
 		083C541D29ACA10800485BCE /* PreparationForUmraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationForUmraViewController.swift; sourceTree = "<group>"; };
-		083C541F29ACA11400485BCE /* PreparationForUmraPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationForUmraPresenter.swift; sourceTree = "<group>"; };
 		083C542129ACA11D00485BCE /* PreparationForUmraRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationForUmraRouter.swift; sourceTree = "<group>"; };
 		083C542329ACA12B00485BCE /* PreparationForUmraIntertactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationForUmraIntertactor.swift; sourceTree = "<group>"; };
 		083C542529ACA40000485BCE /* PreparationDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationDM.swift; sourceTree = "<group>"; };
@@ -278,7 +276,6 @@
 			children = (
 				083C541B29ACA0E500485BCE /* PreparationForUmra-UI.swift */,
 				083C541D29ACA10800485BCE /* PreparationForUmraViewController.swift */,
-				083C541F29ACA11400485BCE /* PreparationForUmraPresenter.swift */,
 				083C542129ACA11D00485BCE /* PreparationForUmraRouter.swift */,
 				083C542329ACA12B00485BCE /* PreparationForUmraIntertactor.swift */,
 				083C541929ACA0C100485BCE /* PreparationForUmraContract.swift */,
@@ -752,7 +749,6 @@
 				305DBE0329A498EE00D962EF /* UIWindow+Extension.swift in Sources */,
 				305DBDF429A4945E00D962EF /* HomeGuideCVC.swift in Sources */,
 				082FFF3A29A8DDCB002F85B6 /* NewsDetailedViewController.swift in Sources */,
-				083C542029ACA11400485BCE /* PreparationForUmraPresenter.swift in Sources */,
 				08476B6D29A4EAFF006D7509 /* AllNews-UI.swift in Sources */,
 				082FFF3829A8DDB1002F85B6 /* NewsDetailedContract.swift in Sources */,
 				30AC277629A9EFEB005DE047 /* UmraAudiosInteractor.swift in Sources */,
