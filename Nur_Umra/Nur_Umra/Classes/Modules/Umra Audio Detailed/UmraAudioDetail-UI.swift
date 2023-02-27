@@ -1,14 +1,14 @@
 //
-//  NewsDetailed-UI.swift
+//  UmraAudioDetail-UI.swift
 //  Nur_Umra
 //
-//  Created by Azizbek Salimov on 24/02/23.
+//  Created by AvazbekOS on 27/02/23.
 //
 
 import Foundation
 import SnapKit
 
-extension NewsDetailedViewController {
+extension UmraAudioDetailViewController {
     
     func createScrollView() -> UIScrollView {
         let window = UIApplication.shared.windows.first
@@ -51,7 +51,7 @@ extension NewsDetailedViewController {
         
         titleLbl.font = UIFont(name: "Poppins-SemiBold", size: 18)
         titleLbl.numberOfLines = 0
-        titleLbl.textAlignment = .center
+        titleLbl.textAlignment = .left
         
         self.scrollView.addSubviews(titleLbl)
         
@@ -77,10 +77,37 @@ extension NewsDetailedViewController {
             make.top.equalTo(self.titleLbl.snp.bottom).offset(16)
             make.left.equalTo(self.view.snp.left).offset(16)
             make.right.equalTo(self.view.snp.right).inset(16)
-            make.bottom.equalTo(self.scrollView.snp.bottom).inset(80)
         }
         
         return titleLbl
+    }
+    
+    func createAudioPlayerBtn() -> UIButton {
+        let btn = UIButton()
+        
+        btn.layer.masksToBounds = true
+        btn.layer.cornerRadius = 8
+        btn.isUserInteractionEnabled = true
+        
+        btn.backgroundColor = #colorLiteral(red: 0, green: 0.5999550223, blue: 0.5522605777, alpha: 1)
+        btn.setTitle("Duoni Tinglash", for: .normal)
+        btn.titleLabel?.font =  UIFont.poppins_SemiBold(size: 14)
+        btn.titleLabel?.textColor = .white
+        btn.setImage(UIImage(named: "play_img"), for: .normal)
+        btn.imageView?.snp.makeConstraints({ make in
+            make.height.equalTo(24)
+            make.width.equalTo(24)
+        })
+        
+//        btn.addTarget(self, action: #selector(audioPlayTapped), for: .touchUpInside)
+        btn.snp.makeConstraints { make in
+            make.left.equalTo(self.view.snp.left).offset(16)
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).inset(34)
+            make.right.equalTo(self.view.snp.right).inset(16)
+            make.height.equalTo(48)
+        }
+        
+        return btn
     }
     
     func createBackBtn() -> UIButton {
@@ -111,7 +138,7 @@ extension NewsDetailedViewController {
             make.left.equalTo(self.view.snp.left).inset(16)
         }
         
-        btn.addTarget(self, action: #selector(backBtnTapped), for: .touchUpInside)
+//        btn.addTarget(self, action: #selector(backBtnTapped), for: .touchUpInside)
         
         return btn
         
