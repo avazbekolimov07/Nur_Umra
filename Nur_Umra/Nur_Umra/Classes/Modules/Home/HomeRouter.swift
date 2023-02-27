@@ -44,11 +44,11 @@ extension HomeRouter: PresenterToRouterHomeProtocol {
     
     // MARK: - Navigation
     func pushToNewDetail(on view: PresenterToViewHomeProtocol, with new: NewsDM) {
-//        let quoteDetailViewController = QuoteDetailRouter.createModule(with: new)
+        let newsDetailedVC = NewsDetailsRouter.createModule(with: new)
 
-//        let viewController = view as! HomeViewController
-//        viewController.navigationController?
-//            .pushViewController(quoteDetailViewController, animated: true)
+        let viewController = view as! HomeViewController
+        viewController.navigationController?
+            .pushViewController(newsDetailedVC, animated: true)
     }
     
     func pushToAllNews(on view: PresenterToViewHomeProtocol, with allNews: [NewsDM]) {
