@@ -10,7 +10,8 @@ import UIKit
 
 class NewsDetailedViewController: UIViewController {
     
-    var presenter: ViewToPresenterAllNewsProtocol?
+    // MARK: - Properties
+    var presenter: ViewToPresenterNewsDetailedProtocol?
     
     var scrollView: UIScrollView!
     var imgView: UIImageView!
@@ -23,42 +24,41 @@ class NewsDetailedViewController: UIViewController {
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        createUIElements()
-//        presenter?.viewDidLoad()
+        presenter?.viewDidLoad()
+
     }
-//    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        .lightContent
+    
+    // MARK: - Actions
+    @objc func backBtnTapped() {
+        print("back btn pressed")
     }
     
 }
+
+
+// MARK: - Update views
 extension NewsDetailedViewController: PresenterToViewNewsDetailedProtocol {
-    func onFetchSuccess() {
-        print("succes")
-    }
-    
-    func onFetchFailure() {
-        print("error")
-    }
-    
     func createUIElements() {
-        self.scrollView = self.createScrollView()
-        self.imgView = self.createImgView()
-        self.titleLbl = self.createTitleLbl()
-        self.descriptionLbl = self.createDescription()
-        self.backBtn = self.createBackBtn()
-        self.scrollView.delegate = self
-        
-        
+                self.view.backgroundColor = .red
+                self.scrollView = self.createScrollView()
+                self.imgView = self.createImgView()
+                self.titleLbl = self.createTitleLbl()
+                self.descriptionLbl = self.createTitleLbl()
+                self.backBtn = self.createBackBtn()
+                print("🥶 create ur elements ui elents is working")
+    }
+    
+   
+    func updateUIElements(with news: NewsDM) {
+        print("🥶 Update ui elents is working")
+        self.updateUI(newsDetailed: news)
+    }
+    
+    func onFetchError() {
+        print("error in fetching data")
     }
     
     
 }
 
-extension NewsDetailedViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-       if scrollView.contentOffset.y < 0 {
-            scrollView.contentOffset.y = 0
-        }
-    }
-}
+

@@ -74,5 +74,7 @@ protocol InteractorToPresenterAllNewsProtocol: AnyObject {
 protocol PresenterToRouterAllNewsProtocol: AnyObject {
     static func createModule(with allNews: [NewsDM]?) -> UIViewController
     
+    func pushtoNewsDetailed(on view: PresenterToViewAllNewsProtocol, with news: NewsDM)
+    
     func showShareView(link: String, view: PresenterToViewAllNewsProtocol)
 }

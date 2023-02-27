@@ -51,6 +51,14 @@ class AllNewsPresenter: ViewToPresenterAllNewsProtocol {
     }
     
     func didSelectRowAt(index: Int) {
+        print("did select", index)
+        guard let safeNews = news?[index]
+        else {
+            print("Failure in did select news -",news)
+            return
+        }
+        print("Should show news - on detailed vc ",safeNews)
+        router?.pushtoNewsDetailed(on: view!, with: safeNews)
 //        interactor?.retrieveQuote(at: index)
     }
     

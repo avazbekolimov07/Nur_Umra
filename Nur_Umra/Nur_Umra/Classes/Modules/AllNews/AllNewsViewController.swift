@@ -86,6 +86,10 @@ extension AllNewsViewController: UICollectionViewDelegate, UICollectionViewDataS
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.presenter?.didSelectRowAt(index: indexPath.row)
+    }
+    
     
     
 }

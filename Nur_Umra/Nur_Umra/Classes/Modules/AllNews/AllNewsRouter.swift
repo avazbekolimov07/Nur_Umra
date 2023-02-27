@@ -7,6 +7,8 @@
 
 import UIKit
 class AllNewsRouter: PresenterToRouterAllNewsProtocol {
+ 
+    
     
     static func createModule(with allNews: [NewsDM]?) -> UIViewController {
         let viewController = AllNewsViewController()
@@ -44,15 +46,16 @@ class AllNewsRouter: PresenterToRouterAllNewsProtocol {
     
     }
    
-    // MARK: - Navigation
-//    func pushToQuoteDetail(on view: PresenterToViewQuotesProtocol, with quote: Quote) {
-//        print("QuotesRouter is instructed to push QuoteDetailViewController onto the navigation stack.")
-//        let quoteDetailViewController = QuoteDetailRouter.createModule(with: quote)
-//
-//        let viewController = view as! QuotesViewController
-//        viewController.navigationController?
-//            .pushViewController(quoteDetailViewController, animated: true)
-//    }
+//     MARK: - Push to view
+    
+    func pushtoNewsDetailed(on view: PresenterToViewAllNewsProtocol, with news: NewsDM) {
+        let newsDetailedVC = NewsDetailsRouter.createModule(with: news)
+        
+        let viewController = view as! AllNewsViewController
+        
+        viewController.navigationController?.pushViewController(newsDetailedVC, animated: true)
+    }
+   
     
 }
 

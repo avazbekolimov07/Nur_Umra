@@ -113,11 +113,14 @@ extension NewsDetailedViewController {
             make.left.equalTo(self.view.snp.left).inset(16)
         }
         
+        btn.addTarget(self, action: #selector(backBtnTapped), for: .touchUpInside)
+        
         return btn
         
     }
     
     func updateUI(newsDetailed: NewsDM) {
+        print("🥶 , update ui ----")
             self.imgView.sd_setImage(with: URL(string: newsDetailed.image), placeholderImage: UIImage(named: "umraGide_img"))
         self.titleLbl.text = newsDetailed.title
         self.descriptionLbl.text = newsDetailed.content

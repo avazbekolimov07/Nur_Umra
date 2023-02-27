@@ -8,22 +8,22 @@
 import Foundation
 
 class NewsDetailedInteractor: PresenterToInteractorNewsDetailedProtocol {
-    
-    var presenter: InteractorToPresenterNewsDetailedProtocol?
-    
-    var detailedNews: NewsDM?
+ 
     
     
-    func retrievDetailedNews() {
-        guard let safeDetailedNews = detailedNews
-        else {
-        print("no data")
-            return
+    var presenter: InteractorToPresentjrNewsDetailedProtocol?
+    var newsDetailed: NewsDM?
+    
+    func retrieveNewsDetailed() {
+        if let safeDetailedNews = newsDetailed {
+            print("sucess get news detiled should work")
+            presenter?.getNewsDetailedSuccess(news: safeDetailedNews)
+        } else {
+            print("failure get news detiled should  nor work")
+            presenter?.getNewsDetailedFailure()
         }
-        
-        presenter?.getDetailedNews(news: safeDetailedNews)
     }
     
     
-    
+ 
 }
