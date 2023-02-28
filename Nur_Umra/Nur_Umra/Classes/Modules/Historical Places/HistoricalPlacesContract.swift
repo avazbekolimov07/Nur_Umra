@@ -34,6 +34,8 @@ protocol ViewToPresenterHistoricalPlacesProtocol: AnyObject {
     func didSelectRawAt(indexPath: IndexPath)
     func eachPlacesData(indexPath: IndexPath) -> HistoricalPlacesDM?
     func numberOfRowsInSection() -> Int
+    
+ 
 }
 
 // MARK: Interactor Input (Presenter -> Interactor)
@@ -62,5 +64,6 @@ protocol InteractorToPresenterHistoricalPlacesProtocol: AnyObject {
 protocol PresenterToRouterHistoricalPlacesProtocol: AnyObject  {
     static func createModule() -> UIViewController
     
-    func pushTohistoricalPlacesDetailed(with specificPlace: HistoricalPlacesDM )
+    func pushTohistoricalPlacesDetailed(on view: PresenterToViewHistoricalPlacesProtocol, with specificPlace: HistoricalPlacesDM )
+    
 }

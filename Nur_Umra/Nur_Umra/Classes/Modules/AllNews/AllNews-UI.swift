@@ -26,7 +26,8 @@ extension AllNewsViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
        
-        self.view.addSubview(collectionView)
+         self.view.addSubview(self.baseView)
+        self.baseView.addSubview(collectionView)
         
         collectionView.snp.makeConstraints { make in
             make.center.equalTo(self.view.snp.center)

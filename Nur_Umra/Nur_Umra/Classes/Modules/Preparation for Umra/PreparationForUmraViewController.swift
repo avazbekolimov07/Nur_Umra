@@ -18,6 +18,7 @@ class PreparationForUmraViewController: UIViewController {
     var titleLbl: UILabel!
     var descriptionLbl: UILabel!
     var backBtn: UIButton!
+    var baseView: UIView!
     
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
@@ -41,6 +42,7 @@ extension PreparationForUmraViewController: PresenterToViewPreparationForUmraPro
     func createUIElements() {
         navigationController?.navigationBar.isHidden = true
              self.view.backgroundColor = .white
+             self.baseView = self.create_baseView()
              self.scrollView = self.createScrollView()
              self.imgView = self.createImgView()
              self.titleLbl = self.createTitleLbl()

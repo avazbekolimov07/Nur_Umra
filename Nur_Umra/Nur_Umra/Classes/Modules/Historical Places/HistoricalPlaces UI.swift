@@ -12,7 +12,8 @@ extension HistoricalPlacesViewController {
     func createTableView() -> UITableView  {
         let tableView = UITableView()
         tableView.showsVerticalScrollIndicator = false
-        tableView.backgroundColor = .white
+        tableView.backgroundColor = .clear
+        
         
         tableView.register(HistoricalPlacesTVC.self , forCellReuseIdentifier: HistoricalPlacesTVC.identifier)
         tableView.delegate = self
@@ -20,11 +21,22 @@ extension HistoricalPlacesViewController {
         
         tableView.frame = self.view.frame
         tableView.separatorStyle = .none
+        tableView.separatorStyle = .none
         
-        self.view.addSubview(tableView)
+        self.view.addSubview(baseView)
+        self.baseView.addSubview(tableView)
+        
         self.view.backgroundColor = .white
         
         return tableView
+    }
+    
+    func create_refreshController() -> UIRefreshControl {
+        let refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Refreshing")
+        
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        return refreshControl
     }
     
 

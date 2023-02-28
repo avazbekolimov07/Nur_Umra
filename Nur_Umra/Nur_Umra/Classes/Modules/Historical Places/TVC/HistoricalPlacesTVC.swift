@@ -21,7 +21,7 @@ class HistoricalPlacesTVC: UITableViewCell {
         view.layer.shadowOpacity = 0.1
 //        view.layer.shouldRasterize = true
         view.layer.borderWidth = 0.3
-        view.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        view.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         return view
     }()
     

@@ -19,7 +19,9 @@ extension NewsDetailedViewController {
         scroll.showsHorizontalScrollIndicator = false
         scroll.showsVerticalScrollIndicator = false
         scroll.contentInset.top = -topPadding
-        self.view.addSubviews(scroll)
+        
+        self.view.addSubview(self.baseView)
+        self.baseView.addSubviews(scroll)
         
         scroll.snp.makeConstraints { make in
             make.top.equalTo(self.view.snp.top)

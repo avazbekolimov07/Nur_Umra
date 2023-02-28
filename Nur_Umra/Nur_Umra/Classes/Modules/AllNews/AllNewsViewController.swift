@@ -21,6 +21,7 @@ class AllNewsViewController: UIViewController {
     var collectionView: UICollectionView!
     var presenter: ViewToPresenterAllNewsProtocol?
     var refreshControl: UIRefreshControl!
+    var baseView: UIView!
     
     // MARK: - Actions
     @objc func refresh() {
@@ -35,6 +36,7 @@ extension AllNewsViewController {
         overrideUserInterfaceStyle = .light
         
         self.view.backgroundColor = .white
+        self.baseView = self.create_baseView()
         self.collectionView = self.create_collectionView()
         self.refreshControl = self.create_refreshController()
         self.collectionView.addSubview(self.refreshControl)

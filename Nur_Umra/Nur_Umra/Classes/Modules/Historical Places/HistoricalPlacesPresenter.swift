@@ -8,6 +8,8 @@
 import Foundation
 
 class HistoricalPlacesPresenter: ViewToPresenterHistoricalPlacesProtocol {
+    
+    
    
     var view: PresenterToViewHistoricalPlacesProtocol?
     
@@ -24,7 +26,7 @@ class HistoricalPlacesPresenter: ViewToPresenterHistoricalPlacesProtocol {
     }
     
     func refresh() {
-        
+        interactor?.loadHistoricalPlaces()
     }
     
     func didSelectRawAt(indexPath: IndexPath) {
@@ -47,6 +49,8 @@ class HistoricalPlacesPresenter: ViewToPresenterHistoricalPlacesProtocol {
     }
     
     
+    
+    
 }
 
 extension HistoricalPlacesPresenter: InteractorToPresenterHistoricalPlacesProtocol {
@@ -62,7 +66,7 @@ extension HistoricalPlacesPresenter: InteractorToPresenterHistoricalPlacesProtoc
     }
     
     func getSpecificHistroicalPlaceSucces(specificPlace place: HistoricalPlacesDM) {
-        router?.pushTohistoricalPlacesDetailed(with: place)
+        router?.pushTohistoricalPlacesDetailed(on: view!, with: place)
     }
     
     func getSpecificHistroicalPlaceFailure() {

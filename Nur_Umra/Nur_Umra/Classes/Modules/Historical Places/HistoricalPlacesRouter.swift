@@ -21,9 +21,10 @@ class HistoricalPlacesRouter: PresenterToRouterHistoricalPlacesProtocol {
         return viewController
     }
     
-    func pushTohistoricalPlacesDetailed(with specificPlace: HistoricalPlacesDM) {
-        
+    func pushTohistoricalPlacesDetailed(on view: PresenterToViewHistoricalPlacesProtocol , with specificPlace: HistoricalPlacesDM) {
     }
+    
+    
     
     
 }
