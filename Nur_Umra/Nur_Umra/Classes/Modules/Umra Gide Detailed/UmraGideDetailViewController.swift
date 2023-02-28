@@ -12,6 +12,7 @@ class UmraGideDetailViewController: UIViewController {
     // MARK: - Properties
     var presenter: ViewToPresenterUmraGideDetailProtocol?
     
+    var baseView: UIView!
     var scrollView: UIScrollView!
     var descriptionLbl: UILabel!
     
@@ -76,6 +77,7 @@ extension UmraGideDetailViewController {
     func createUIElements() {
         overrideUserInterfaceStyle = .light
         self.view.backgroundColor = .white
+        self.baseView = self.create_baseView()
         self.scrollView = self.createScrollView()
         self.descriptionLbl = self.createDescription()
         self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.1716529429, green: 0.1766341031, blue: 0.19795838, alpha: 1)

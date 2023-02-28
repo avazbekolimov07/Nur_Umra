@@ -10,9 +10,11 @@ import SnapKit
 
 extension HomeViewController {
     
+    
      func create_collectionView() -> UICollectionView {
          let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
         collectionView.backgroundColor = .clear
+        collectionView.register(cellType: HomeIconCVC.self)
         collectionView.register(cellType: HomeNewsCVC.self)
         collectionView.register(cellType: HomeGuideCVC.self)
         
@@ -20,6 +22,7 @@ extension HomeViewController {
         
         collectionView.showsVerticalScrollIndicator = false
         collectionView.contentInset.bottom = UIWindow.safeAreaInsets.bottom
+        
         collectionView.delegate = self
         collectionView.dataSource = self
        

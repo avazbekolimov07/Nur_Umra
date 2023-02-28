@@ -13,6 +13,8 @@ class HomeGuideCVC: UICollectionViewCell, ClassIdentifiable {
     lazy var photoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
+        imageView.layer.masksToBounds = true
+        imageView.layer.cornerRadius = 16
         return imageView
     }()
     
@@ -34,8 +36,7 @@ class HomeGuideCVC: UICollectionViewCell, ClassIdentifiable {
     
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-//        label.font = .jostRegular(size: 16)
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.font = .poppins_SemiBold(size: 16)
         label.textColor = .white
         label.textAlignment = .left
         label.numberOfLines = 1
@@ -45,9 +46,13 @@ class HomeGuideCVC: UICollectionViewCell, ClassIdentifiable {
     // MARK: - Lifecycle
     override init(frame: CGRect) {
         super.init(frame: frame)
+
+        // shadow...
+        self.layer.shadowColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.16).cgColor
+        self.layer.shadowOpacity = 1
+        self.layer.shadowRadius = 8
+        self.layer.shadowOffset = CGSize(width: 0, height: 4)
         
-        self.layer.masksToBounds = true
-        self.layer.cornerRadius = 16
         setupSubviews()
         
         
@@ -64,7 +69,8 @@ class HomeGuideCVC: UICollectionViewCell, ClassIdentifiable {
 extension HomeGuideCVC {
 
     func setupSubviews() {
-        addSubviews(photoImageView, bottomView)
+        addSubview(photoImageView)
+        photoImageView.addSubview(bottomView)
         bottomView.addSubview(titleLabel)
         configureConstraints()
     }

@@ -33,6 +33,8 @@ class UmraGideViewController: UIViewController {
     
     // MARK: - Properties
     var presenter: ViewToPresenterUmraGideProtocol?
+    
+    var baseView: UIView!
     var tableView: UITableView!
     var backButton: UIButton!
     
@@ -110,6 +112,7 @@ extension UmraGideViewController {
     func createUIElements() {
         overrideUserInterfaceStyle = .light
         self.view.backgroundColor = .white
+        self.baseView = self.create_baseView()
         self.tableView = self.create_tableView()
         self.backButton = self.create_backButton()
         self.navigationItem.title = ""

@@ -33,6 +33,8 @@ class UmraAudiosViewController: UIViewController {
     
     // MARK: - Properties
     var presenter: ViewToPresenterUmraAudiosProtocol?
+    
+    var baseView: UIView!
     var tableView: UITableView!
     var audioPlayer: AVPlayer?
     
@@ -129,6 +131,7 @@ extension UmraAudiosViewController {
     func createUIElements() {
         overrideUserInterfaceStyle = .light
         self.view.backgroundColor = .white
+        self.baseView = self.create_baseView()
         self.tableView = self.create_tableView()
         self.navigationItem.title = "UMRA DUOLARI"
         self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.1716529429, green: 0.1766341031, blue: 0.19795838, alpha: 1)

@@ -68,8 +68,7 @@ class HomeNewsCVC: UICollectionViewCell, ClassIdentifiable {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
 
-//        label.font = .jostRegular(size: 14)
-        label.font = UIFont.systemFont(ofSize: 14)
+        label.font = .poppins_SemiBold(size: 14)
         label.textColor = .white
         label.textAlignment = .left
         label.numberOfLines = 0
@@ -79,8 +78,7 @@ class HomeNewsCVC: UICollectionViewCell, ClassIdentifiable {
     private lazy var timeLabel: UILabel = {
         let label = UILabel()
     
-//        label.font = .jostRegular(size: 11)
-        label.font = UIFont.systemFont(ofSize: 11)
+        label.font = .poppins_SemiBold(size: 11)
         label.alpha = 0.6
 
         label.textColor = .white
@@ -100,6 +98,13 @@ class HomeNewsCVC: UICollectionViewCell, ClassIdentifiable {
     // MARK: - Lifecycle
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        // shadow...
+        self.layer.shadowColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.16).cgColor
+        self.layer.shadowOpacity = 1
+        self.layer.shadowRadius = 8
+        self.layer.shadowOffset = CGSize(width: 0, height: 0)
+        
         setupSubviews()
     }
     

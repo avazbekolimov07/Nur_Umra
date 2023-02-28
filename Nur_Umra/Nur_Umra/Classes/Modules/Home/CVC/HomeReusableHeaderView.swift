@@ -12,7 +12,7 @@ class HomeReusableHeaderView: UICollectionReusableView, ClassIdentifiable {
     
     private(set) lazy var label: UILabel = {
         let label = UILabel()
-        label.font = .boldSystemFont(ofSize: 25)
+        label.font = .poppins_SemiBold(size: 18)
         label.textColor = #colorLiteral(red: 0.2224110067, green: 0.2330494523, blue: 0.2606178522, alpha: 1)
         
         return label
@@ -20,9 +20,9 @@ class HomeReusableHeaderView: UICollectionReusableView, ClassIdentifiable {
     
     lazy var seeMoreButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("see more", for: .normal)
+        button.setTitle("Hammasini ko'rish", for: .normal)
         button.setTitleColor(#colorLiteral(red: 0, green: 0.3961157799, blue: 0.404067874, alpha: 1), for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 12)
+        button.titleLabel?.font = .poppins_Medium(size: 12)
         button.addTarget(self, action: #selector(handleLearnMore), for: .touchUpInside)
         return button
     }()
@@ -63,7 +63,7 @@ extension HomeReusableHeaderView {
             make.top.equalTo(self.snp.top)
             make.bottom.equalTo(self.snp.bottom)
             make.right.equalTo(self.snp.right).offset(-16)
-            make.width.equalTo(60)
+            make.width.equalTo(120)
         }
         
         label.snp.makeConstraints { make in

@@ -32,6 +32,7 @@ class HomeViewController: UIViewController {
     
     // MARK: - Properties
     var presenter: ViewToPresenterHomeProtocol?
+    var baseView: UIView!
     var collectionView: UICollectionView!
     var refreshControl: UIRefreshControl!
     
@@ -81,12 +82,14 @@ extension HomeViewController: PresenterToViewHomeProtocol {
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
+            return 1
+        case 1:
             return presenter?.numberOfRowsInSection() ?? 0
         default:
             return 4
@@ -96,6 +99,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.section {
         case 0:
+            let cell = collectionView.dequeueReusableCell(withCellType: HomeIconCVC.self, for: indexPath)
+            return cell
+        case 1:
             let cell = collectionView.dequeueReusableCell(withCellType: HomeNewsCVC.self, for: indexPath)
             cell.configure(new: presenter?.eachNewsData(indexPath: indexPath))
             cell.didShareButtonPressed = { [weak self] link in
@@ -130,6 +136,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         if viewKind == .header {
             switch indexPath.section {
             case 0:
+                return UICollectionReusableView()
+            case 1:
                 let header = collectionView.dequeueReusableView(ofKind: .header,
                                                                 withViewType: HomeReusableHeaderView.self,
                                                                 for:indexPath)
@@ -155,6 +163,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.section {
         case 0:
+            print("")
+        case 1:
             presenter?.didSelectRowAt(indexPath: indexPath)
         default:
             presenter?.didSelectRowAt(indexPath: indexPath)
@@ -168,6 +178,7 @@ extension HomeViewController {
     func createUIElements() {
         navigationController?.navigationBar.isHidden = false
         overrideUserInterfaceStyle = .light
+        self.baseView = self.create_baseView()
         self.collectionView = self.create_collectionView()
         self.refreshControl = self.create_refreshController()
         self.collectionView.addSubview(self.refreshControl)

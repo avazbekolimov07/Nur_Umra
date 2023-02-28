@@ -12,9 +12,11 @@ class UmraAudioDetailViewController: UIViewController {
     
     // MARK: - Properties
     var presenter: ViewToPresenterUmraAudioDetailProtocol?
+    
     var audioPlayer: AVPlayer?
     var url: String?
     
+    var baseView: UIView!
     var scrollView: UIScrollView!
     var imgView: UIImageView!
     var titleLbl: UILabel!
@@ -106,7 +108,7 @@ extension UmraAudioDetailViewController {
     func createUIElements() {
         overrideUserInterfaceStyle = .light
         self.view.backgroundColor = .white
-        
+        self.baseView = self.create_baseView()
         self.scrollView = self.createScrollView()
         self.imgView = self.createImgView()
         self.titleLbl = self.createTitleLbl()

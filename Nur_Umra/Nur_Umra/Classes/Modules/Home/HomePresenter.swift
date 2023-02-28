@@ -70,7 +70,6 @@ class HomePresenter: ViewToPresenterHomeProtocol {
                 router?.pushToUmraAudios(on: view!)
             case 2:
                 router?.pushToPreparationForUmra(on: view!)
-                print("3 cell")
             default:
                 print("4 cell")
             }
@@ -100,6 +99,7 @@ extension HomePresenter: InteractorToPresenterHomeProtocol {
     }
   
     func getNewsDetailSuccess(_ news: NewsDM) {
+//        view?.hideHUD()
         router?.pushToNewDetail(on: view!, with: news)
     }
     func getNewsDetailFailure() {
@@ -108,6 +108,7 @@ extension HomePresenter: InteractorToPresenterHomeProtocol {
     }
     
     func getAllNewsSuccess(_ allNews: [NewsDM]) {
+//        view?.hideHUD()
         router?.pushToAllNews(on: view!, with: allNews)
     }
     func getAllNewsFailure() {
