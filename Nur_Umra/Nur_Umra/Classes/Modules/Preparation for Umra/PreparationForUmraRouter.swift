@@ -22,8 +22,8 @@ class PreparationForUmraRouter: PresenterToRouterPreparationForUmraProtocol {
         print("Preparation for umra module is working")
        return viewController
     }
-    func popVC(inView: PresenterToViewHistoricalPlacesDetailedProtocol) {
-        let vc = inView as? HistoricalPlacesDetailedViewController
+    func popVC(inView: PresenterToViewPreparationForUmraProtocol) {
+        let vc = inView as? PreparationForUmraViewController
         vc?.navigationController?.popViewController(animated: true)
     }
     

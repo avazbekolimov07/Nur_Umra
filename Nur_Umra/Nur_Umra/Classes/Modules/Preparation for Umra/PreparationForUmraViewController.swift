@@ -41,7 +41,7 @@ class PreparationForUmraViewController: UIViewController {
     // MARK: - Actions
     @objc func backBtnTapped() {
         //
-        self.navigationController?.popViewController(animated: true)
+        presenter?.userWantsToPopVC()
     }
     
 }

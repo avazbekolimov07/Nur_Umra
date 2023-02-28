@@ -8,9 +8,7 @@
 import Foundation
 
 class PreparationForUmraPresenter: ViewtoPresenterPreparationForUmraProtocol {
-    
    
-    
     
     weak var view: PresenterToViewPreparationForUmraProtocol?
     
@@ -32,6 +30,10 @@ class PreparationForUmraPresenter: ViewtoPresenterPreparationForUmraProtocol {
        
     func viewWillDisappear() {
            view?.handleViewWillDisappear()
+    }
+    
+    func userWantsToPopVC() {
+        router?.popVC(inView: view!)
     }
     
     

@@ -31,6 +31,10 @@ class NewsDetailsPresenter: ViewToPresenterNewsDetailedProtocol {
            view?.handleViewWillDisappear()
     }
     
+    func userWantsToPopVC() {
+        router?.popVC(inView: view!)
+    }
+    
 }
 
 // MARK: - Outputs to view

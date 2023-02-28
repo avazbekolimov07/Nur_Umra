@@ -40,10 +40,7 @@ class HistoricalPlacesDetailedViewController: UIViewController {
     
     // MARK: - Actions
     @objc func backBtnTapped() {
-        //
         presenter?.userWantsToPopVC()
-//        self.navigationController?.popViewController(animated: true)
-        
     }
     
 }

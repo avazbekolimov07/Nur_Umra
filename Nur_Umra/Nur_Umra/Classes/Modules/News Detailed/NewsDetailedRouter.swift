@@ -25,6 +25,11 @@ class NewsDetailsRouter: PresenterToRouterNewsDetailedProtocol {
         return viewController
     }
     
+    func popVC(inView: PresenterToViewNewsDetailedProtocol) {
+        print("pop vc is working ----->>> Router")
+        let vc = inView as! NewsDetailedViewController
+        vc.navigationController?.popViewController(animated: true)
+    }
     
     
 }
