@@ -31,6 +31,8 @@ protocol ViewtoPresenterPreparationForUmraProtocol: AnyObject {
     func viewDidLoad()
     func viewWillAppear()
     func viewWillDisappear()
+    
+    func userWantsToPopVC()
 }
 
 // MARK: Interactor Input (Presenter -> Interactor)
@@ -56,4 +58,5 @@ protocol InteractorToPresenterPreparationForUmraProtocol: AnyObject {
 // MARK: Router Input (Presenter -> Router)
 protocol PresenterToRouterPreparationForUmraProtocol: AnyObject {
     static func createModule() -> UIViewController
+    func popVC(inView: PresenterToViewPreparationForUmraProtocol)
 }

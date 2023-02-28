@@ -36,6 +36,8 @@ protocol ViewToPresenterNewsDetailedProtocol: AnyObject {
     func viewDidLoad()
     func viewWillAppear()
     func viewWillDisappear()
+    
+    func userWantsToPopVC()
 }
 
 // MARK: Interactor Input (Presenter -> Interactor)
@@ -57,4 +59,5 @@ protocol InteractorToPresenterNewsDetailedProtocol {
 
 protocol PresenterToRouterNewsDetailedProtocol: AnyObject {
     static func createModule(with news: NewsDM) -> UIViewController
+    func popVC(inView: PresenterToViewNewsDetailedProtocol)
 }
