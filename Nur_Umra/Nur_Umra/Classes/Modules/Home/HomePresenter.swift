@@ -71,7 +71,7 @@ class HomePresenter: ViewToPresenterHomeProtocol {
             case 2:
                 router?.pushToPreparationForUmra(on: view!)
             default:
-                print("4 cell")
+                router?.pushToHistoricalPlaces(on: view!)
             }
         }
     }

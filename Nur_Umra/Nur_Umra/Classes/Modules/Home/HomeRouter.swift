@@ -79,6 +79,12 @@ extension HomeRouter: PresenterToRouterHomeProtocol {
         viewController.navigationController?.pushViewController(PreparationForUmraVC, animated: true)
     }
     
+    func pushToHistoricalPlaces(on view: PresenterToViewHomeProtocol) {
+        let historicalPlaces = HistoricalPlacesRouter.createModule()
+        let viewController = view as! HomeViewController
+        viewController.navigationController?.pushViewController(historicalPlaces, animated: true)
+    }
+    
     
 }
 

@@ -86,4 +86,5 @@ protocol PresenterToRouterHomeProtocol: AnyObject {
     func pushToUmraAudios(on view: PresenterToViewHomeProtocol)
     
     func pushToPreparationForUmra(on view: PresenterToViewHomeProtocol)
+    func pushToHistoricalPlaces(on view: PresenterToViewHomeProtocol)
 }
