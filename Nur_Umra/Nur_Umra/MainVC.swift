@@ -8,10 +8,14 @@
 import UIKit
 
 class MainVC: UIViewController {
+    var baseView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .blue
+        self.baseView = self.create_baseView()
+        self.view.addSubviews(baseView)
+        
         // Do any additional setup after loading the view.
     }
     
