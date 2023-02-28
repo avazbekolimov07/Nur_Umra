@@ -32,29 +32,35 @@ protocol ViewToPresenterHistoricalPlacesProtocol: AnyObject {
     func refresh()
     
     func didSelectRawAt(indexPath: IndexPath)
+    func eachPlacesData(indexPath: IndexPath) -> HistoricalPlacesDM?
+    func numberOfRowsInSection() -> Int
 }
 
 // MARK: Interactor Input (Presenter -> Interactor)
 protocol PresenterToInteractorHistoricalPlacesProtocol: AnyObject  {
-    func getHistoricalPlacesSuccess(historicalPlaces: [HistoricalPlacesDM])
-    func getHistoricalPlacesFailure(errorCode: Int )
-}
-
-// MARK: Interactor Output (Interactor -> Presenter)
-protocol InteractorToPresenterHistoricalPlacesProtocol: AnyObject {
+    var presenter: InteractorToPresenterHistoricalPlacesProtocol? { get set }
     var historicalPlaces: [HistoricalPlacesDM]? { get set }
-    var presenter: PresenterToInteractorHistoricalPlacesProtocol? { get set }
     
     func loadHistoricalPlaces()
     func retrieveHistoricalPlaces()
     
-    func retrieveSpecificHistoricalPlace()
+    func retrieveSpecificHistoricalPlace(with indexPath: IndexPath)
+}
+
+// MARK: Interactor Output (Interactor -> Presenter)
+protocol InteractorToPresenterHistoricalPlacesProtocol: AnyObject {
+   
+    func getHistoricalPlacesSuccess(historicalPlaces: [HistoricalPlacesDM])
+    func getHistoricalPlacesFailure(errorCode: Int )
+    
+    func getSpecificHistroicalPlaceSucces(specificPlace: HistoricalPlacesDM)
+    func getSpecificHistroicalPlaceFailure()
     
 }
 
 // MARK: Router Input (Presenter -> Router)
 protocol PresenterToRouterHistoricalPlacesProtocol: AnyObject  {
-    static func createModule()
+    static func createModule() -> UIViewController
     
     func pushTohistoricalPlacesDetailed(with specificPlace: HistoricalPlacesDM )
 }

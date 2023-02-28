@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.backgroundColor = .white
         window?.rootViewController = HomeRouter.createModule()
-//        window?.rootViewController = NewsDetailedViewController()
+//        window?.rootViewController = HistoricalPlacesRouter.createModule()
         window?.makeKeyAndVisible()
         
         return true

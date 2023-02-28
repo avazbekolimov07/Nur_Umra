@@ -16,11 +16,11 @@ class HistoricalPlacesTVC: UITableViewCell {
         view.backgroundColor = .systemBackground
         view.layer.cornerRadius = 16
         view.layer.shadowColor = UIColor.black.cgColor
-        view.layer.shadowOffset = CGSize(width: 6, height: -6)
-        view.layer.shadowRadius = 18
-        view.layer.shadowOpacity = 0.3
+        view.layer.shadowOffset = CGSize(width: 0, height: 4)
+        view.layer.shadowRadius = 8
+        view.layer.shadowOpacity = 0.1
 //        view.layer.shouldRasterize = true
-        view.layer.borderWidth = 1
+        view.layer.borderWidth = 0.3
         view.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         return view
     }()
@@ -44,9 +44,13 @@ class HistoricalPlacesTVC: UITableViewCell {
         return lbl
     }()
     
-    func updateCell(with place: HistoricalPlacesDM) {
-        self.img.sd_setImage(with: URL(string: place.img), placeholderImage: UIImage(named: "tarix_img"))
-        self.nameLbl.text = place.name
+    func updateCell(with place: HistoricalPlacesDM?) {
+        guard let safePlace = place
+        else {
+            return
+        }
+        self.img.sd_setImage(with: URL(string: safePlace.img), placeholderImage: UIImage(named: "tarix_img"))
+        self.nameLbl.text = safePlace.name
     }
     
     private func setupViews() {
