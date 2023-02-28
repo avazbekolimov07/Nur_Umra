@@ -23,7 +23,7 @@ protocol PresenterToViewUmraAudiosProtocol: AnyObject {
 
     func  createUIElements()
     func handleViewWillAppear()
-    func handleViewDidDisappear()
+    func handleViewWillDisappear()
 }
 
 
@@ -39,7 +39,7 @@ protocol ViewToPresenterUmraAudiosProtocol: AnyObject {
     
     func viewDidLoad()
     func viewWillAppear()
-    func viewDidDisappear()
+    func viewWillDisappear()
 
     func numberOfRowsInSection() -> Int
     func eachUmraAudioData(indexPath: IndexPath) -> DuoDM?

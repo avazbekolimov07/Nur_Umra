@@ -27,8 +27,8 @@ class UmraAudioDetailPresenter: ViewToPresenterUmraAudioDetailProtocol {
         view?.handleViewWillAppear()
     }
     
-    func viewDidDisappear() {
-        view?.handleViewDidDisappear()
+    func viewWillDisappear() {
+        view?.handleViewWillDisappear()
     }
     
     func didPlayAndStop(audioUrlSting: String, currentPlayer: AVPlayer?) {

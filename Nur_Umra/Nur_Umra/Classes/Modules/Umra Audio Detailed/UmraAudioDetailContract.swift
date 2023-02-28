@@ -23,7 +23,7 @@ protocol PresenterToViewUmraAudioDetailProtocol: AnyObject {
 
     func  createUIElements()
     func handleViewWillAppear()
-    func handleViewDidDisappear()
+    func handleViewWillDisappear()
 }
 
 
@@ -38,7 +38,7 @@ protocol ViewToPresenterUmraAudioDetailProtocol: AnyObject {
     
     func viewDidLoad()
     func viewWillAppear()
-    func viewDidDisappear()
+    func viewWillDisappear()
 
     func didPlayAndStop(audioUrlSting: String, currentPlayer: AVPlayer?)
 

@@ -17,6 +17,8 @@ protocol PresenterToViewHomeProtocol: AnyObject {
 //    func hideHUD()
 
     func  createUIElements()
+    func handleViewWillAppear()
+    func handleViewWillDisappear()
 }
 
 
@@ -30,6 +32,8 @@ protocol ViewToPresenterHomeProtocol: AnyObject {
     var news: [NewsDM]? { get set }
     
     func viewDidLoad()
+    func viewWillAppear()
+    func viewWillDisappear()
 
     func refresh()
 

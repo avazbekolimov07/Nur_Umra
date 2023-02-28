@@ -15,6 +15,21 @@ class HomeViewController: UIViewController {
         presenter?.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter?.viewWillAppear()
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        presenter?.viewWillDisappear()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .default
+    }
+    
     // MARK: - Properties
     var presenter: ViewToPresenterHomeProtocol?
     var collectionView: UICollectionView!
@@ -24,9 +39,19 @@ class HomeViewController: UIViewController {
     @objc func refresh() {
         presenter?.refresh()
     }
+    
 }
 
-extension HomeViewController: PresenterToViewHomeProtocol{
+extension HomeViewController: PresenterToViewHomeProtocol {
+    
+    func handleViewWillAppear() {
+        setNeedsStatusBarAppearanceUpdate()
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    func handleViewWillDisappear() {
+        UIApplication.shared.statusBarStyle = .default
+    }
     
     func onFetchNewsSuccess() {
         print("View receives the response from Presenter and updates itself.")

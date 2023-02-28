@@ -35,9 +35,9 @@ class UmraAudioDetailViewController: UIViewController {
         
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        presenter?.viewDidDisappear()
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        presenter?.viewWillDisappear()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -65,7 +65,7 @@ extension UmraAudioDetailViewController: PresenterToViewUmraAudioDetailProtocol 
         navigationController?.navigationBar.isHidden = true
     }
     
-    func handleViewDidDisappear() {
+    func handleViewWillDisappear() {
         UIApplication.shared.statusBarStyle = .default
     }
     

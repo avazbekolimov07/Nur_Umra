@@ -31,8 +31,8 @@ class UmraAudiosPresenter: ViewToPresenterUmraAudiosProtocol {
         view?.handleViewWillAppear()
     }
     
-    func viewDidDisappear() {
-        view?.handleViewDidDisappear()
+    func viewWillDisappear() {
+        view?.handleViewWillDisappear()
     }
     
     func numberOfRowsInSection() -> Int {
