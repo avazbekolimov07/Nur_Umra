@@ -81,8 +81,6 @@ extension UmraAudiosViewController: PresenterToViewUmraAudiosProtocol {
     }
     
     func onViewPlay(indexPath: IndexPath) {
-        try? AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
-        try? AVAudioSession.sharedInstance().setActive(true)
         audioPlayer?.play()
         let cell = tableView.cellForRow(at: indexPath) as? UmraAudioTVC
         cell?.updateToPlay()
@@ -92,7 +90,6 @@ extension UmraAudiosViewController: PresenterToViewUmraAudiosProtocol {
         audioPlayer?.pause()
         let cell = tableView.cellForRow(at: indexPath) as? UmraAudioTVC
         cell?.updateToStop()
-        try? AVAudioSession.sharedInstance().setActive(false)
     }
 }
 

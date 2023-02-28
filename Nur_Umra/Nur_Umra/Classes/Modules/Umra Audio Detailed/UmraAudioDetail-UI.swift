@@ -16,7 +16,7 @@ extension UmraAudioDetailViewController {
         
         let scroll = UIScrollView()
         scroll.showsHorizontalScrollIndicator = false
-        scroll.showsVerticalScrollIndicator = false
+        scroll.showsVerticalScrollIndicator = true
         scroll.delegate = self
         scroll.contentInset.top = -topPadding
         self.view.addSubviews(scroll)
@@ -78,7 +78,7 @@ extension UmraAudioDetailViewController {
             make.top.equalTo(self.titleLbl.snp.bottom).offset(16)
             make.left.equalTo(self.view.snp.left).offset(16)
             make.right.equalTo(self.view.snp.right).inset(16)
-            make.bottom.equalTo(self.scrollView.snp.bottom).inset(50)
+            make.bottom.equalTo(self.scrollView.snp.bottom).inset(48 + 24)
             
         }
         
@@ -95,20 +95,17 @@ extension UmraAudioDetailViewController {
         
         btn.backgroundColor = #colorLiteral(red: 0, green: 0.5999550223, blue: 0.5522605777, alpha: 1)
         btn.setTitle("Duoni Tinglash", for: .normal)
-        btn.titleLabel?.font =  UIFont.poppins_SemiBold(size: 14)
+        btn.titleLabel?.font = .poppins_SemiBold(size: 14)
         btn.titleLabel?.textColor = .white
-        btn.setImage(UIImage(named: "play_img"), for: .normal)
-        btn.imageView?.snp.makeConstraints({ make in
-            make.height.equalTo(24)
-            make.width.equalTo(24)
-        })
         
+        btn.leftImage(image: UIImage(named: "play_img")!, renderMode: .alwaysTemplate)
+        btn.tintColor = .white
         self.view.addSubviews(btn)
         
         btn.snp.makeConstraints { make in
             make.height.equalTo(48)
             make.left.equalTo(self.view.snp.left).offset(16)
-            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).inset(10)
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
             make.right.equalTo(self.view.snp.right).inset(16)
         }
         
