@@ -6,3 +6,19 @@
 //
 
 import Foundation
+
+class UmraGideDetailInteractor: PresenterToInteractorUmraGideDetailProtocol {
+ 
+    // MARK: Properties
+    var presenter: InteractorToPresenterUmraGideDetailProtocol?
+    var handbook: HandbookDM?
+    
+    func retrieveHandbookDetailed() {
+        if let safeDetail = handbook {
+            presenter?.getHandbookDetailedSuccess(handbook: safeDetail)
+        } else {
+            presenter?.getHandbookDetailedFailure()
+        }
+    }
+    
+}

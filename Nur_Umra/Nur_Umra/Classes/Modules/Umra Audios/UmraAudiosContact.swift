@@ -17,7 +17,7 @@ protocol PresenterToViewUmraAudiosProtocol: AnyObject {
     func onFetchAudioFailure(error: String, indexPath: IndexPath)
     
     func onViewPlay(indexPath: IndexPath)
-    func onviewStop(indexPath: IndexPath)
+    func onViewStop(indexPath: IndexPath)
 //    func showHUD()
 //    func hideHUD()
 
@@ -67,7 +67,7 @@ protocol InteractorToPresenterUmraAudiosProtocol: AnyObject {
     func fetchDuolarSuccess(duolar: [DuoDM])
     func fetchDuolarFailure(errorCode: Int)
 
-    func getDuolarDetailSuccess(_ duo: DuoDM, _ indexPath: IndexPath)
+    func getDuolarDetailSuccess(_ duo: DuoDM)
     func getDuolarDetailFailure()
     
     func playAudioSuccess(player: AVPlayer, indexPath: IndexPath)

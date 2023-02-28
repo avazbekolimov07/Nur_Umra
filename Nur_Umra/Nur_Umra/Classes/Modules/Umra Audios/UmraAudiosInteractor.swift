@@ -25,12 +25,13 @@ class UmraAudiosInteractor: PresenterToInteractorUmraAudiosProtocol {
     }
     
     func retrieveUmraAudioDetail(at indexPath: IndexPath) {
-        
-        guard let duolar = self.duolar, duolar.indices.contains(indexPath.item) else {
+        let item = indexPath.item
+        print("Item:", item)
+        guard let duolar = self.duolar, duolar.indices.contains(item) else {
             self.presenter?.getDuolarDetailFailure()
             return
         }
-        self.presenter?.getDuolarDetailSuccess(duolar[indexPath.item], indexPath)
+        self.presenter?.getDuolarDetailSuccess(duolar[item])
     }
     
     func retrieveAudioURL(urlString: String, at indexPath: IndexPath) {

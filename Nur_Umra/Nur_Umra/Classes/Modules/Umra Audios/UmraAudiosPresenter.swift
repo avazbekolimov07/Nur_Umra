@@ -52,13 +52,13 @@ class UmraAudiosPresenter: ViewToPresenterUmraAudiosProtocol {
     func didPlayAndStop(audioUrlSting: String, indexPath: IndexPath, currentPlayer: AVPlayer?) {
         if currentPlayer != nil && iPath == indexPath {
             if currentPlayer?.rate == 1.0 {
-                view?.onviewStop(indexPath: indexPath)
+                view?.onViewStop(indexPath: indexPath)
             } else {
                 view?.onViewPlay(indexPath: indexPath)
             }
         } else {
             if let iPath = iPath, currentPlayer?.rate == 1.0 {
-                view?.onviewStop(indexPath: iPath)
+                view?.onViewStop(indexPath: iPath)
             }
             iPath = indexPath
             interactor?.retrieveAudioURL(urlString: audioUrlSting, at: indexPath)
@@ -97,18 +97,18 @@ extension UmraAudiosPresenter: InteractorToPresenterUmraAudiosProtocol {
         view?.onFetchAudioFailure(error: "Couldn't fetch audio: \(errorString)", indexPath: indexPath)
     }
     
-    func getDuolarDetailSuccess(_ duo: DuoDM, _ indexPath: IndexPath) {
+    func getDuolarDetailSuccess(_ duo: DuoDM) {
 //        view?.hideHUD()
-        if let iPath = iPath {
-            view?.onviewStop(indexPath: iPath)
-            view?.onFetchAudioFailure(error: "Next Page Shown", indexPath: iPath)
+        if iPath != IndexPath() {
+            view?.onViewStop(indexPath: iPath!)
+            view?.onFetchAudioFailure(error: "Next Page Shown", indexPath: iPath!)
         }
         router?.pushToUmraAudioDetail(on: view!, with: duo)
     }
     
     func getDuolarDetailFailure() {
 //        view?.hideHUD()
-        print("Couldn't retrieve news by index")
+        print("Couldn't retrieve duo by index")
     }
     
     

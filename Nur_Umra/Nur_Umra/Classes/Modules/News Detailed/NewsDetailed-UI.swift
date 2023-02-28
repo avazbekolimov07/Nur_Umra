@@ -15,6 +15,7 @@ extension NewsDetailedViewController {
         let topPadding = window!.safeAreaInsets.top
         
         let scroll = UIScrollView()
+        scroll.delegate = self
         scroll.showsHorizontalScrollIndicator = false
         scroll.showsVerticalScrollIndicator = false
         scroll.contentInset.top = -topPadding
@@ -24,7 +25,7 @@ extension NewsDetailedViewController {
             make.top.equalTo(self.view.snp.top)
             make.left.equalTo(self.view.snp.left)
             make.right.equalTo(self.view.snp.right)
-            make.bottom.equalTo(self.view.snp.bottom)
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
         }
         return scroll
         
@@ -77,7 +78,7 @@ extension NewsDetailedViewController {
             make.top.equalTo(self.titleLbl.snp.bottom).offset(16)
             make.left.equalTo(self.view.snp.left).offset(16)
             make.right.equalTo(self.view.snp.right).inset(16)
-            make.bottom.equalTo(self.scrollView.snp.bottom).inset(80)
+            make.bottom.equalTo(self.scrollView.snp.bottom).inset(50)
         }
         
         return titleLbl

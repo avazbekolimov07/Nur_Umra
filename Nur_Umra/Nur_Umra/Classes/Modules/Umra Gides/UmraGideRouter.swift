@@ -27,30 +27,13 @@ class UmraGideRouter {
 
 extension UmraGideRouter: PresenterToRouterUmraGideProtocol {
     
-    
-    
     // MARK: - Navigation
     
     func pushToHandbookDetail(on view: PresenterToViewUmraGideProtocol, with handbook: HandbookDM) {
-        print("Umra Detail Page", handbook.name)
+        let handbookDetailedVC = UmraGideDetailRouter.createModule(with: handbook)
+        let viewController = view as! UmraGideViewController
+        
+        viewController.navigationController?.pushViewController(handbookDetailedVC, animated: true)
     }
-    
-//    func pushToNewDetail(on view: PresenterToViewHomeProtocol, with new: NewsDM) {
-//        print("New Detail Page")
-//        let quoteDetailViewController = QuoteDetailRouter.createModule(with: new)
-
-//        let viewController = view as! UmraGideViewController
-//        viewController.navigationController?
-//            .pushViewController(quoteDetailViewController, animated: true)
-//    }
-    
-//    func pushToAllNews(on view: PresenterToViewHomeProtocol, with allNews: [NewsDM]) {
-//        print("All News Page")
-//        let allNewsViewController = AllNewsRouter.createModule(with: allNews)
-//
-//        let viewController = view as! UmraGideViewController
-//        viewController.navigationController?
-//            .pushViewController(viewController, animated: true)
-//    }
     
 }

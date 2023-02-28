@@ -17,6 +17,7 @@ extension UmraAudioDetailViewController {
         let scroll = UIScrollView()
         scroll.showsHorizontalScrollIndicator = false
         scroll.showsVerticalScrollIndicator = false
+        scroll.delegate = self
         scroll.contentInset.top = -topPadding
         self.view.addSubviews(scroll)
         
@@ -24,7 +25,7 @@ extension UmraAudioDetailViewController {
             make.top.equalTo(self.view.snp.top)
             make.left.equalTo(self.view.snp.left)
             make.right.equalTo(self.view.snp.right)
-            make.bottom.equalTo(self.view.snp.bottom)
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
         }
         return scroll
         
@@ -77,6 +78,8 @@ extension UmraAudioDetailViewController {
             make.top.equalTo(self.titleLbl.snp.bottom).offset(16)
             make.left.equalTo(self.view.snp.left).offset(16)
             make.right.equalTo(self.view.snp.right).inset(16)
+            make.bottom.equalTo(self.scrollView.snp.bottom).inset(50)
+            
         }
         
         return titleLbl
@@ -84,6 +87,7 @@ extension UmraAudioDetailViewController {
     
     func createAudioPlayerBtn() -> UIButton {
         let btn = UIButton()
+        btn.addTarget(self, action: #selector(audioPlayBtnTapped), for: .touchUpInside)
         
         btn.layer.masksToBounds = true
         btn.layer.cornerRadius = 8
@@ -99,12 +103,13 @@ extension UmraAudioDetailViewController {
             make.width.equalTo(24)
         })
         
-//        btn.addTarget(self, action: #selector(audioPlayTapped), for: .touchUpInside)
+        self.view.addSubviews(btn)
+        
         btn.snp.makeConstraints { make in
-            make.left.equalTo(self.view.snp.left).offset(16)
-            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).inset(34)
-            make.right.equalTo(self.view.snp.right).inset(16)
             make.height.equalTo(48)
+            make.left.equalTo(self.view.snp.left).offset(16)
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).inset(10)
+            make.right.equalTo(self.view.snp.right).inset(16)
         }
         
         return btn
@@ -138,7 +143,7 @@ extension UmraAudioDetailViewController {
             make.left.equalTo(self.view.snp.left).inset(16)
         }
         
-//        btn.addTarget(self, action: #selector(backBtnTapped), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(backBtnTapped), for: .touchUpInside)
         
         return btn
         

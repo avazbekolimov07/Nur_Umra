@@ -87,7 +87,7 @@ extension UmraAudiosViewController: PresenterToViewUmraAudiosProtocol {
         cell?.updateToPlay()
     }
     
-    func onviewStop(indexPath: IndexPath) {
+    func onViewStop(indexPath: IndexPath) {
         audioPlayer?.pause()
         let cell = tableView.cellForRow(at: indexPath) as? UmraAudioTVC
         cell?.updateToStop()
@@ -118,6 +118,7 @@ extension UmraAudiosViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Did Select ")
         presenter?.didSelectRowAt(indexPath: indexPath)
     }
     

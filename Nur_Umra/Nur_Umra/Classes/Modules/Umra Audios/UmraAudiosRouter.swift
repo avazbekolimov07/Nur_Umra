@@ -31,25 +31,11 @@ extension UmraAudiosRouter: PresenterToRouterUmraAudiosProtocol {
     // MARK: - Navigation
     
     func pushToUmraAudioDetail(on view: PresenterToViewUmraAudiosProtocol, with duo: DuoDM) {
-        print("Umra Audio Detail Page", duo.name)
-    }
-    
-//    func pushToNewDetail(on view: PresenterToViewHomeProtocol, with new: NewsDM) {
-//        print("New Detail Page")
-//        let quoteDetailViewController = QuoteDetailRouter.createModule(with: new)
+        let UmraAudioDetailViewController = UmraAudioDetailRouter.createModule(with: duo)
 
-//        let viewController = view as! UmraGideViewController
-//        viewController.navigationController?
-//            .pushViewController(quoteDetailViewController, animated: true)
-//    }
-    
-//    func pushToAllNews(on view: PresenterToViewHomeProtocol, with allNews: [NewsDM]) {
-//        print("All News Page")
-//        let allNewsViewController = AllNewsRouter.createModule(with: allNews)
-//
-//        let viewController = view as! UmraGideViewController
-//        viewController.navigationController?
-//            .pushViewController(viewController, animated: true)
-//    }
+        let viewController = view as! UmraAudiosViewController
+        viewController.navigationController?
+            .pushViewController(UmraAudioDetailViewController, animated: true)
+    }
     
 }

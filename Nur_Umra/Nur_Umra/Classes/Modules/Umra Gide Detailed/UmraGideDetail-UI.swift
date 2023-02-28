@@ -15,6 +15,7 @@ extension UmraGideDetailViewController {
         let bottomPadding = window!.safeAreaInsets.bottom
         
         let scroll = UIScrollView()
+        scroll.delegate = self
         scroll.showsHorizontalScrollIndicator = false
         scroll.showsVerticalScrollIndicator = false
         scroll.contentInset.bottom = bottomPadding
