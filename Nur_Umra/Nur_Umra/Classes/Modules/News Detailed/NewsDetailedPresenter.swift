@@ -23,6 +23,14 @@ class NewsDetailsPresenter: ViewToPresenterNewsDetailedProtocol {
         interactor?.retrieveNewsDetailed()
     }
     
+    func viewWillAppear() {
+           view?.handleViewWillAppear()
+    }
+       
+    func viewWillDisappear() {
+           view?.handleViewWillDisappear()
+    }
+    
 }
 
 // MARK: - Outputs to view

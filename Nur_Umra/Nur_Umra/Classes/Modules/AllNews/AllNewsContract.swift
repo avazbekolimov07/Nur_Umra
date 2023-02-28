@@ -14,6 +14,9 @@ protocol PresenterToViewAllNewsProtocol: AnyObject {
     func onFetchNewsFailure(error: String)
 
     func  createUIElements()
+    
+    func handleViewWillAppear()
+    func handleViewWillDisappear()
 }
 
 
@@ -27,6 +30,8 @@ protocol ViewToPresenterAllNewsProtocol: AnyObject {
 //    var quotesStrings: [String]? { get set }
 
     func viewDidLoad()
+    func viewWillAppear()
+    func viewWillDisappear()
 
     func refresh()
 //

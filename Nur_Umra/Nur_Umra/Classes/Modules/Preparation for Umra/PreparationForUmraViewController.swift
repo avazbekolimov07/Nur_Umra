@@ -27,6 +27,16 @@ class PreparationForUmraViewController: UIViewController {
         presenter?.viewDidLoad()
 
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter?.viewWillAppear()
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        presenter?.viewWillDisappear()
+    }
     
     // MARK: - Actions
     @objc func backBtnTapped() {
@@ -40,7 +50,6 @@ extension PreparationForUmraViewController: PresenterToViewPreparationForUmraPro
     
     
     func createUIElements() {
-        navigationController?.navigationBar.isHidden = true
              self.view.backgroundColor = .white
              self.baseView = self.create_baseView()
              self.scrollView = self.createScrollView()
@@ -64,6 +73,18 @@ extension PreparationForUmraViewController: PresenterToViewPreparationForUmraPro
         self.imgView.image = UIImage(named: "umraGide_img")
         self.titleLbl.text = "ҚУЙИДАГИЛАРГА АҲАМИЯТ БЕРИНГ"
         self.descriptionLbl.text = preparationInformation.text
+    }
+    
+    func handleViewWillAppear() {
+        setNeedsStatusBarAppearanceUpdate()
+        UIApplication.shared.statusBarStyle = .lightContent
+        navigationController?.navigationBar.isHidden = true
+        self.navigationItem.title = "Safarga tayyorgarlik"
+        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.1716529429, green: 0.1766341031, blue: 0.19795838, alpha: 1)
+    }
+    
+    func handleViewWillDisappear() {
+        UIApplication.shared.statusBarStyle = .default
     }
     
     

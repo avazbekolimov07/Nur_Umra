@@ -25,12 +25,25 @@ class HistoricalPlacesPresenter: ViewToPresenterHistoricalPlacesProtocol {
         interactor?.loadHistoricalPlaces()
     }
     
+    func viewWillAppear() {
+           view?.handleViewWillAppear()
+    }
+       
+    func viewWillDisappear() {
+           view?.handleViewWillDisappear()
+    }
+    
     func refresh() {
         interactor?.loadHistoricalPlaces()
     }
     
     func didSelectRawAt(indexPath: IndexPath) {
-        
+        guard let safePlace = historicalPlaces?[indexPath.row]
+        else {
+            print("error in selecting specific place")
+            return
+        }
+        router?.pushTohistoricalPlacesDetailed(on: view!, with: safePlace)
     }
     
     func eachPlacesData(indexPath: IndexPath) -> HistoricalPlacesDM? {

@@ -15,6 +15,16 @@ class HistoricalPlacesViewController: UIViewController {
         print("View -> did load")
         presenter?.viewDidLoad()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter?.viewWillAppear()
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        presenter?.viewWillDisappear()
+    }
     
     // MARK: - Properties
     var presenter: ViewToPresenterHistoricalPlacesProtocol?
@@ -52,6 +62,18 @@ extension HistoricalPlacesViewController: PresenterToViewHistoricalPlacesProtoco
         self.refreshControl.endRefreshing()
     }
     
+    func handleViewWillAppear() {
+        setNeedsStatusBarAppearanceUpdate()
+        UIApplication.shared.statusBarStyle = .lightContent
+        navigationController?.navigationBar.isHidden = false
+        self.navigationItem.title = "Islom tarixiga oid joylar"
+        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.1716529429, green: 0.1766341031, blue: 0.19795838, alpha: 1)
+    }
+    
+    func handleViewWillDisappear() {
+        UIApplication.shared.statusBarStyle = .default
+    }
+    
     
 }
 
@@ -69,6 +91,11 @@ extension HistoricalPlacesViewController: UITableViewDelegate, UITableViewDataSo
         cell.selectionStyle = .none
         cell.backgroundColor = .clear
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("indexPath is selected -",indexPath)
+        presenter?.didSelectRawAt(indexPath: indexPath)
     }
     
     

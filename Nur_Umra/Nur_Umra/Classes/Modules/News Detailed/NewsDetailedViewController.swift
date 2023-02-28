@@ -27,10 +27,17 @@ class NewsDetailedViewController: UIViewController {
         presenter?.viewDidLoad()
 
     }
-    override func viewWillDisappear(_ animated: Bool) {
-        //
-        self.navigationController?.navigationBar.isHidden = false
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter?.viewWillAppear()
+        
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        presenter?.viewWillDisappear()
+    }
+    
     
     // MARK: - Actions
     @objc func backBtnTapped() {
@@ -43,9 +50,8 @@ class NewsDetailedViewController: UIViewController {
 
 // MARK: - Update views
 extension NewsDetailedViewController: PresenterToViewNewsDetailedProtocol {
+    
     func createUIElements() {
-        //
-        navigationController?.navigationBar.isHidden = true
         self.view.backgroundColor = .white
         self.baseView = self.create_baseView()
         self.scrollView = self.createScrollView()
@@ -68,6 +74,18 @@ extension NewsDetailedViewController: PresenterToViewNewsDetailedProtocol {
     
     func onUpdateUIElementsFailure() {
         print("Could not get news detailed")
+    }
+    
+    func handleViewWillAppear() {
+        setNeedsStatusBarAppearanceUpdate()
+        UIApplication.shared.statusBarStyle = .lightContent
+        navigationController?.navigationBar.isHidden = true
+        self.navigationItem.title = ""
+        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.1716529429, green: 0.1766341031, blue: 0.19795838, alpha: 1)
+    }
+    
+    func handleViewWillDisappear() {
+        UIApplication.shared.statusBarStyle = .default
     }
     
     

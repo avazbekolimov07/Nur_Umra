@@ -51,6 +51,7 @@ extension HomeViewController: PresenterToViewHomeProtocol {
     }
     
     func handleViewWillDisappear() {
+        navigationController?.navigationBar.isHidden = false
         UIApplication.shared.statusBarStyle = .default
     }
     

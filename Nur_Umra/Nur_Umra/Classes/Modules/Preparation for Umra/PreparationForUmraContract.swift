@@ -14,6 +14,8 @@ protocol PresenterToViewPreparationForUmraProtocol: AnyObject {
     
     func createUIElements()
     
+    func handleViewWillAppear()
+    func handleViewWillDisappear()
 }
 
 
@@ -27,6 +29,8 @@ protocol ViewtoPresenterPreparationForUmraProtocol: AnyObject {
     var preparationForUmra: PreparationDM? { get set }
     
     func viewDidLoad()
+    func viewWillAppear()
+    func viewWillDisappear()
 }
 
 // MARK: Interactor Input (Presenter -> Interactor)

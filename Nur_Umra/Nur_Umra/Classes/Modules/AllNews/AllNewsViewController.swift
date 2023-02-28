@@ -16,6 +16,16 @@ class AllNewsViewController: UIViewController {
        print("didLoad")
         presenter?.viewDidLoad()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter?.viewWillAppear()
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        presenter?.viewWillDisappear()
+    }
     
     // MARK: - Properties
     var collectionView: UICollectionView!
@@ -33,15 +43,12 @@ class AllNewsViewController: UIViewController {
 extension AllNewsViewController {
     
     func createUIElements() {
-        overrideUserInterfaceStyle = .light
-        
         self.view.backgroundColor = .white
         self.baseView = self.create_baseView()
         self.collectionView = self.create_collectionView()
         self.refreshControl = self.create_refreshController()
         self.collectionView.addSubview(self.refreshControl)
-        self.navigationItem.title = "Yangiliklar"
-        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.1716529429, green: 0.1766341031, blue: 0.19795838, alpha: 1)
+
     }
     
     
@@ -49,9 +56,16 @@ extension AllNewsViewController {
 
 // MARK: - Update views
 extension AllNewsViewController: PresenterToViewAllNewsProtocol {
-//    func showShareView(shareView: UIActivityViewController) {
-//        self.present(shareView, animated: true)
-//    }
+    func handleViewWillAppear() {
+        setNeedsStatusBarAppearanceUpdate()
+        navigationController?.navigationBar.isHidden = false
+        self.navigationItem.title = "Yangiliklar"
+        self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.1716529429, green: 0.1766341031, blue: 0.19795838, alpha: 1)
+    }
+    
+    func handleViewWillDisappear() {
+        UIApplication.shared.statusBarStyle = .default
+    }
     
     
     func onFetchNewsSuccess() {

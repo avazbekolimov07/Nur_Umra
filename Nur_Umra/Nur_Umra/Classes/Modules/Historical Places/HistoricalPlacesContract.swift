@@ -15,6 +15,8 @@ protocol PresenterToViewHistoricalPlacesProtocol: AnyObject {
     func onFetchSuccess()
     func onFetchFailure(errorCode: Int)
     
+    func handleViewWillAppear()
+       func handleViewWillDisappear()
     
 }
 
@@ -28,6 +30,8 @@ protocol ViewToPresenterHistoricalPlacesProtocol: AnyObject {
     var historicalPlaces: [HistoricalPlacesDM]? { get set }
     
     func viewDidLoad()
+    func viewWillAppear()
+    func viewWillDisappear()
     
     func refresh()
     

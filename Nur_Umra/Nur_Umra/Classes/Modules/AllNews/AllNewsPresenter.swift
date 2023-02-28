@@ -26,6 +26,14 @@ class AllNewsPresenter: ViewToPresenterAllNewsProtocol {
 
     }
     
+    func viewWillAppear() {
+        view?.handleViewWillAppear()
+    }
+    
+    func viewWillDisappear() {
+        view?.handleViewWillDisappear()
+    }
+    
     func refresh() {
         print("Presenter is being notified that the View was refreshed.")
         interactor?.loadNews()

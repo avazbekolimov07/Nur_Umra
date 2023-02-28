@@ -49,6 +49,12 @@
 		083C543A29ACF27F00485BCE /* HistoricalPlacesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083C543929ACF27F00485BCE /* HistoricalPlacesService.swift */; };
 		083C543C29ACF2E400485BCE /* HistoricalPlacesDm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083C543B29ACF2E400485BCE /* HistoricalPlacesDm.swift */; };
 		083C543F29ACFDF400485BCE /* HistoricalPlacesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083C543E29ACFDF400485BCE /* HistoricalPlacesTVC.swift */; };
+		083D5DAE29AE0883006CF41F /* HistoricalPlacesDetailed-UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D5DAD29AE0883006CF41F /* HistoricalPlacesDetailed-UI.swift */; };
+		083D5DB029AE08A7006CF41F /* HistoricalPlacesDetailedVewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D5DAF29AE08A7006CF41F /* HistoricalPlacesDetailedVewController.swift */; };
+		083D5DB229AE08B3006CF41F /* HistoricalPlacesDetailedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D5DB129AE08B3006CF41F /* HistoricalPlacesDetailedPresenter.swift */; };
+		083D5DB429AE08C8006CF41F /* HistoricalPlacesDetailedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D5DB329AE08C8006CF41F /* HistoricalPlacesDetailedInteractor.swift */; };
+		083D5DB629AE08D2006CF41F /* HistoricalPlacesDetailedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D5DB529AE08D2006CF41F /* HistoricalPlacesDetailedRouter.swift */; };
+		083D5DB829AE08DE006CF41F /* HistoricalPlacesDetailedContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D5DB729AE08DE006CF41F /* HistoricalPlacesDetailedContract.swift */; };
 		08476B6D29A4EAFF006D7509 /* AllNews-UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08476B6C29A4EAFF006D7509 /* AllNews-UI.swift */; };
 		08476B6F29A4EB16006D7509 /* AllNewsContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08476B6E29A4EB16006D7509 /* AllNewsContract.swift */; };
 		08476B7129A4EB2A006D7509 /* AllNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08476B7029A4EB2A006D7509 /* AllNewsViewController.swift */; };
@@ -164,6 +170,12 @@
 		083C543929ACF27F00485BCE /* HistoricalPlacesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HistoricalPlacesService.swift; path = "Nur_Umra/Classes/Modules/Historical Places/HistoricalPlacesService.swift"; sourceTree = SOURCE_ROOT; };
 		083C543B29ACF2E400485BCE /* HistoricalPlacesDm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalPlacesDm.swift; sourceTree = "<group>"; };
 		083C543E29ACFDF400485BCE /* HistoricalPlacesTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalPlacesTVC.swift; sourceTree = "<group>"; };
+		083D5DAD29AE0883006CF41F /* HistoricalPlacesDetailed-UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistoricalPlacesDetailed-UI.swift"; sourceTree = "<group>"; };
+		083D5DAF29AE08A7006CF41F /* HistoricalPlacesDetailedVewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalPlacesDetailedVewController.swift; sourceTree = "<group>"; };
+		083D5DB129AE08B3006CF41F /* HistoricalPlacesDetailedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalPlacesDetailedPresenter.swift; sourceTree = "<group>"; };
+		083D5DB329AE08C8006CF41F /* HistoricalPlacesDetailedInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalPlacesDetailedInteractor.swift; sourceTree = "<group>"; };
+		083D5DB529AE08D2006CF41F /* HistoricalPlacesDetailedRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalPlacesDetailedRouter.swift; sourceTree = "<group>"; };
+		083D5DB729AE08DE006CF41F /* HistoricalPlacesDetailedContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalPlacesDetailedContract.swift; sourceTree = "<group>"; };
 		08476B6C29A4EAFF006D7509 /* AllNews-UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AllNews-UI.swift"; sourceTree = "<group>"; };
 		08476B6E29A4EB16006D7509 /* AllNewsContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNewsContract.swift; sourceTree = "<group>"; };
 		08476B7029A4EB2A006D7509 /* AllNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNewsViewController.swift; sourceTree = "<group>"; };
@@ -319,8 +331,8 @@
 				083C542D29ACCDDC00485BCE /* HistoricalPlaces UI.swift */,
 				083C542F29ACCDF900485BCE /* HistoricalPlacesViewController.swift */,
 				083C543129ACCE0C00485BCE /* HistoricalPlacesPresenter.swift */,
-				083C543329ACCE1C00485BCE /* HistoricalPlacesInteractor.swift */,
 				083C543529ACCE2600485BCE /* HistoricalPlacesRouter.swift */,
+				083C543329ACCE1C00485BCE /* HistoricalPlacesInteractor.swift */,
 				083C543729ACCE3100485BCE /* HistoricalPlacesContract.swift */,
 			);
 			path = "Historical Places";
@@ -329,6 +341,12 @@
 		083C542C29ACCDA800485BCE /* Historical Places Detailed */ = {
 			isa = PBXGroup;
 			children = (
+				083D5DAD29AE0883006CF41F /* HistoricalPlacesDetailed-UI.swift */,
+				083D5DAF29AE08A7006CF41F /* HistoricalPlacesDetailedVewController.swift */,
+				083D5DB129AE08B3006CF41F /* HistoricalPlacesDetailedPresenter.swift */,
+				083D5DB529AE08D2006CF41F /* HistoricalPlacesDetailedRouter.swift */,
+				083D5DB329AE08C8006CF41F /* HistoricalPlacesDetailedInteractor.swift */,
+				083D5DB729AE08DE006CF41F /* HistoricalPlacesDetailedContract.swift */,
 			);
 			path = "Historical Places Detailed";
 			sourceTree = "<group>";
@@ -842,6 +860,7 @@
 				30AC276E29A9EFA7005DE047 /* UmraAudios-UI.swift in Sources */,
 				30AC277829A9EFFC005DE047 /* UmraAudiosContact.swift in Sources */,
 				306C780129ACB00600C1072A /* UmraGideDetailInteractor.swift in Sources */,
+				083D5DB829AE08DE006CF41F /* HistoricalPlacesDetailedContract.swift in Sources */,
 				08EC25C629A39FDA00DAC561 /* UmraGidePresenter.swift in Sources */,
 				083C543629ACCE2600485BCE /* HistoricalPlacesRouter.swift in Sources */,
 				08476B7129A4EB2A006D7509 /* AllNewsViewController.swift in Sources */,
@@ -861,7 +880,9 @@
 				305DBDFC29A4980900D962EF /* ClassIdentifiable.swift in Sources */,
 				306C780F29ACC92E00C1072A /* UmraGideDetail-UI.swift in Sources */,
 				30AC278129AA1883005DE047 /* UILabel+Extension.swift in Sources */,
+				083D5DAE29AE0883006CF41F /* HistoricalPlacesDetailed-UI.swift in Sources */,
 				083C542829ACA48E00485BCE /* PreparationFoUmraService.swift in Sources */,
+				083D5DB029AE08A7006CF41F /* HistoricalPlacesDetailedVewController.swift in Sources */,
 				08639A2929A5FC61002E0D48 /* NewsDM.swift in Sources */,
 				306C780729ACB04000C1072A /* UmraAudioDetailPresenter.swift in Sources */,
 				30AC277429A9EFD9005DE047 /* UmraAudiosRouter.swift in Sources */,
@@ -883,11 +904,14 @@
 				083C543429ACCE1C00485BCE /* HistoricalPlacesInteractor.swift in Sources */,
 				08EC25C429A39FC700DAC561 /* UmraGideContract.swift in Sources */,
 				082FFF4029A8E168002F85B6 /* NewsDetailedInteractor.swift in Sources */,
+				083D5DB429AE08C8006CF41F /* HistoricalPlacesDetailedInteractor.swift in Sources */,
 				08EC25BE29A39EFD00DAC561 /* HomeViewController.swift in Sources */,
+				083D5DB229AE08B3006CF41F /* HistoricalPlacesDetailedPresenter.swift in Sources */,
 				083C542629ACA40000485BCE /* PreparationDM.swift in Sources */,
 				08EC25C029A39F0D00DAC561 /* HomeInteractor.swift in Sources */,
 				306C77FF29ACAFED00C1072A /* UmraGideDetailPresenter.swift in Sources */,
 				30AC277229A9EFCC005DE047 /* UmraAudiosPresenter.swift in Sources */,
+				083D5DB629AE08D2006CF41F /* HistoricalPlacesDetailedRouter.swift in Sources */,
 				30AC277029A9EFBA005DE047 /* UmraAudiosViewController.swift in Sources */,
 				083C542229ACA11D00485BCE /* PreparationForUmraRouter.swift in Sources */,
 				08476B6F29A4EB16006D7509 /* AllNewsContract.swift in Sources */,

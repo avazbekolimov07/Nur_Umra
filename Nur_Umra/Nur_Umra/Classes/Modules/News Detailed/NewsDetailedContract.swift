@@ -17,6 +17,9 @@ protocol PresenterToViewNewsDetailedProtocol: AnyObject {
     func onUpdateUIElementsSuccess(with news: NewsDM)
     
     func createUIElements()
+    
+    func handleViewWillAppear()
+    func handleViewWillDisappear()
 }
 
 
@@ -31,7 +34,8 @@ protocol ViewToPresenterNewsDetailedProtocol: AnyObject {
     var newsDetailed: NewsDM? { get set }
     
     func viewDidLoad()
-    
+    func viewWillAppear()
+    func viewWillDisappear()
 }
 
 // MARK: Interactor Input (Presenter -> Interactor)

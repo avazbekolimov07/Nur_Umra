@@ -26,6 +26,14 @@ class PreparationForUmraPresenter: ViewtoPresenterPreparationForUmraProtocol {
         interactor?.loadPreparationForUmra()
     }
     
+    func viewWillAppear() {
+           view?.handleViewWillAppear()
+    }
+       
+    func viewWillDisappear() {
+           view?.handleViewWillDisappear()
+    }
+    
     
 }
 
