@@ -28,7 +28,7 @@ class UmraAudiosViewController: UIViewController {
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        .default
+        .darkContent
     }
     
     // MARK: - Properties
@@ -53,7 +53,6 @@ extension UmraAudiosViewController: PresenterToViewUmraAudiosProtocol {
     }
     
     func handleViewWillDisappear() {
-        UIApplication.shared.statusBarStyle = .default
     }
     
     func onFetchDuolarSuccess() {

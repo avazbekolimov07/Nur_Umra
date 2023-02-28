@@ -11,9 +11,9 @@ import UIKit
 class HomeRouter {
     
     // MARK: Static methods
-    static func createModule() -> UINavigationController {
+    static func createModule() -> NavigationController {
         let viewController = HomeViewController()
-        let navigationController = UINavigationController(rootViewController: viewController)
+        let navigationController = NavigationController(rootViewController: viewController)
         
         let presenter: ViewToPresenterHomeProtocol & InteractorToPresenterHomeProtocol = HomePresenter()
         

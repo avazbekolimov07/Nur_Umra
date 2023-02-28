@@ -29,13 +29,13 @@ class UmraGideDetailViewController: UIViewController {
         
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        presenter?.viewDidDisappear()
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        presenter?.viewWillDisappear()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        .default
+        .darkContent
     }
     
     // MARK: - Actions
@@ -51,8 +51,7 @@ extension UmraGideDetailViewController: PresenterToViewUmraGideDetailProtocol {
         navigationController?.navigationBar.isHidden = false
     }
     
-    func handleViewDidDisappear() {
-        UIApplication.shared.statusBarStyle = .default
+    func handleViewWillDisappear() {
     }
     
     func onUpdateUIElementsSuccess(with handbook: HandbookDM) {

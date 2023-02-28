@@ -28,8 +28,8 @@ class UmraGidePresenter: ViewToPresenterUmraGideProtocol {
         view?.handleViewWillAppear()
     }
     
-    func viewDidDisappear() {
-        view?.handleViewDidDisappear()
+    func viewWillDisappear() {
+        view?.handleViewWillDisappear()
     }
     
     func userWantsToPopVC() {

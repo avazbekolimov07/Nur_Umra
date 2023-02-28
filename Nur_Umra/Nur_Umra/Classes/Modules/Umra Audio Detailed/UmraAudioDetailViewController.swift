@@ -43,7 +43,7 @@ class UmraAudioDetailViewController: UIViewController {
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        .default
+        .lightContent
     }
     
     // MARK: - Actions
@@ -52,7 +52,7 @@ class UmraAudioDetailViewController: UIViewController {
     }
     
     @objc func audioPlayBtnTapped() {
-        if let url = url, let audioPlayer = audioPlayer {
+        if let url = url {
             presenter?.didPlayAndStop(audioUrlSting: url, currentPlayer: audioPlayer)
         }
     }
@@ -68,7 +68,6 @@ extension UmraAudioDetailViewController: PresenterToViewUmraAudioDetailProtocol 
     }
     
     func handleViewWillDisappear() {
-        UIApplication.shared.statusBarStyle = .default
     }
     
     func onUpdateUIElementsSuccess(with duo: DuoDM) {
@@ -83,22 +82,32 @@ extension UmraAudioDetailViewController: PresenterToViewUmraAudioDetailProtocol 
         self.imgView.image = UIImage(named: "duolar_img")
         self.titleLbl.text = duo.name
         self.descriptionLbl.text = duo.description + "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum"
+        self.url = duo.audio
     }
     
     func onFetchAudioSuccess(player: AVPlayer) {
-        
+        try? AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+        try? AVAudioSession.sharedInstance().setActive(true)
+        audioPlayer = player
+        audioPlayer?.volume = 1
+        audioPlayer?.play()
     }
     
     func onFetchAudioFailure(error: String) {
-        
+        audioPlayer = nil
+        try? AVAudioSession.sharedInstance().setActive(false)
+        print("View receives the response from Presenter with Message: \(error)")
     }
     
     func onViewPlay() {
-        
+        try? AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+        try? AVAudioSession.sharedInstance().setActive(true)
+        audioPlayer?.play()
     }
     
     func onViewStop() {
-        
+        audioPlayer?.pause()
+        try? AVAudioSession.sharedInstance().setActive(false)
     }
     
 }

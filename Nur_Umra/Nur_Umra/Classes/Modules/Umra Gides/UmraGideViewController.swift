@@ -22,9 +22,9 @@ class UmraGideViewController: UIViewController {
         
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        presenter?.viewDidDisappear()
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        presenter?.viewWillDisappear()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -52,8 +52,7 @@ extension UmraGideViewController: PresenterToViewUmraGideProtocol {
         navigationController?.navigationBar.isHidden = true
     }
     
-    func handleViewDidDisappear() {
-        UIApplication.shared.statusBarStyle = .default
+    func handleViewWillDisappear() {
     }
     
     

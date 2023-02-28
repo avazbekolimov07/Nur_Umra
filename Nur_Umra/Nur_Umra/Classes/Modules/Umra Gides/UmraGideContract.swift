@@ -18,7 +18,7 @@ protocol PresenterToViewUmraGideProtocol: AnyObject {
 
     func createUIElements()
     func handleViewWillAppear()
-    func handleViewDidDisappear()
+    func handleViewWillDisappear()
 }
 
 
@@ -33,7 +33,7 @@ protocol ViewToPresenterUmraGideProtocol: AnyObject {
 
     func viewDidLoad()
     func viewWillAppear()
-    func viewDidDisappear()
+    func viewWillDisappear()
 
     func userWantsToPopVC()
     

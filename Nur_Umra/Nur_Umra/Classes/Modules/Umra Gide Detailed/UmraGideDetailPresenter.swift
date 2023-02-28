@@ -26,8 +26,8 @@ class UmraGideDetailPresenter: ViewToPresenterUmraGideDetailProtocol {
         view?.handleViewWillAppear()
     }
     
-    func viewDidDisappear() {
-        view?.handleViewDidDisappear()
+    func viewWillDisappear() {
+        view?.handleViewWillDisappear()
     }
     
 }

@@ -16,5 +16,7 @@
 		<string>Poppins-Regular.ttf</string>
 		<string>Poppins-ExtraLight.ttf</string>
 	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<true/>
 </dict>
 </plist>

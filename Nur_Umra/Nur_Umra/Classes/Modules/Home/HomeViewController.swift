@@ -27,7 +27,7 @@ class HomeViewController: UIViewController {
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        .default
+        .darkContent
     }
     
     // MARK: - Properties
@@ -51,8 +51,6 @@ extension HomeViewController: PresenterToViewHomeProtocol {
     }
     
     func handleViewWillDisappear() {
-        navigationController?.navigationBar.isHidden = false
-        UIApplication.shared.statusBarStyle = .default
     }
     
     func onFetchNewsSuccess() {
@@ -66,7 +64,6 @@ extension HomeViewController: PresenterToViewHomeProtocol {
         self.refreshControl.endRefreshing()
     }
     
-
 //    func showHUD() {
 //        HUD.show(.progress, onView: self.view)
 //    }
@@ -177,7 +174,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 // MARK: - UI Setup
 extension HomeViewController {
     func createUIElements() {
-        navigationController?.navigationBar.isHidden = false
         overrideUserInterfaceStyle = .light
         self.baseView = self.create_baseView()
         self.collectionView = self.create_collectionView()

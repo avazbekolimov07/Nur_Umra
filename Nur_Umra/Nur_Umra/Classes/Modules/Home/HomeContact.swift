@@ -75,7 +75,7 @@ protocol InteractorToPresenterHomeProtocol: AnyObject {
 // MARK: Router Input (Presenter -> Router)
 protocol PresenterToRouterHomeProtocol: AnyObject {
     
-    static func createModule() -> UINavigationController
+    static func createModule() -> NavigationController
     
     func showShareView(link: String, view: PresenterToViewHomeProtocol)
     
