@@ -32,6 +32,10 @@ class UmraGidePresenter: ViewToPresenterUmraGideProtocol {
         view?.handleViewDidDisappear()
     }
     
+    func userWantsToPopVC() {
+        router?.popVC(inView: view!)
+    }
+    
     func numberOfRowsInSection() -> Int {
         guard let handbooks = self.handbooks else {
             return 0

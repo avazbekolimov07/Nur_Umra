@@ -35,6 +35,8 @@ protocol ViewToPresenterUmraGideProtocol: AnyObject {
     func viewWillAppear()
     func viewDidDisappear()
 
+    func userWantsToPopVC()
+    
     func numberOfRowsInSection() -> Int
     func eachHanbookData(indexPath: IndexPath) -> HandbookDM?
 
@@ -73,5 +75,6 @@ protocol PresenterToRouterUmraGideProtocol: AnyObject {
     static func createModule() -> UIViewController
 
     func pushToHandbookDetail(on view: PresenterToViewUmraGideProtocol, with handbook: HandbookDM)
+    func popVC(inView: PresenterToViewUmraGideProtocol)
 
 }

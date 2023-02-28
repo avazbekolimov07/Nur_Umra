@@ -30,5 +30,9 @@ class UmraAudioDetailRouter {
 extension UmraAudioDetailRouter: PresenterToRouterUmraAudioDetailProtocol {
     
     // MARK: - Navigation
-    
+    func popVC(inView: PresenterToViewUmraAudioDetailProtocol) {
+        let viewController = inView as! UmraAudioDetailViewController
+        
+        viewController.navigationController?.popViewController(animated: true)
+    }
 }

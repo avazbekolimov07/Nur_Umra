@@ -36,4 +36,10 @@ extension UmraGideRouter: PresenterToRouterUmraGideProtocol {
         viewController.navigationController?.pushViewController(handbookDetailedVC, animated: true)
     }
     
+    func popVC(inView: PresenterToViewUmraGideProtocol) {
+        let viewController = inView as! UmraGideViewController
+        
+        viewController.navigationController?.popViewController(animated: true)
+    }
+    
 }

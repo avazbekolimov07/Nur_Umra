@@ -39,6 +39,8 @@ protocol ViewToPresenterUmraAudioDetailProtocol: AnyObject {
     func viewDidLoad()
     func viewWillAppear()
     func viewWillDisappear()
+    
+    func userWantsToPopVC()
 
     func didPlayAndStop(audioUrlSting: String, currentPlayer: AVPlayer?)
 
@@ -72,5 +74,5 @@ protocol InteractorToPresenterUmraAudioDetailProtocol: AnyObject {
 protocol PresenterToRouterUmraAudioDetailProtocol: AnyObject {
     
     static func createModule(with duo: DuoDM) -> UIViewController
-    
+    func popVC(inView: PresenterToViewUmraAudioDetailProtocol)
 }

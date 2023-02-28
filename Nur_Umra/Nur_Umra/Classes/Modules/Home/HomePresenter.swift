@@ -61,6 +61,8 @@ class HomePresenter: ViewToPresenterHomeProtocol {
     func didSelectRowAt(indexPath: IndexPath) {
         switch indexPath.section {
         case 0:
+            print("")
+        case 1:
             interactor?.retrieveNewDetail(at: indexPath.item)
         default:
             switch indexPath.item {

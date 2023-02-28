@@ -48,7 +48,7 @@ class UmraAudioDetailViewController: UIViewController {
     
     // MARK: - Actions
     @objc func backBtnTapped() {
-
+        presenter?.userWantsToPopVC()
     }
     
     @objc func audioPlayBtnTapped() {

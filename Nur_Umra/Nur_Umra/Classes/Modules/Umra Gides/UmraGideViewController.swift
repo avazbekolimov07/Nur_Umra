@@ -41,7 +41,7 @@ class UmraGideViewController: UIViewController {
     
     // MARK: - Actions
     @objc func handleBackButton() {
-        
+        presenter?.userWantsToPopVC()
     }
     
 }

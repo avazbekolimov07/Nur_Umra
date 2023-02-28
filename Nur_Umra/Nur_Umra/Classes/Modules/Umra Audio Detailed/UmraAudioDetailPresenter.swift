@@ -31,6 +31,10 @@ class UmraAudioDetailPresenter: ViewToPresenterUmraAudioDetailProtocol {
         view?.handleViewWillDisappear()
     }
     
+    func userWantsToPopVC() {
+        router?.popVC(inView: view!)
+    }
+    
     func didPlayAndStop(audioUrlSting: String, currentPlayer: AVPlayer?) {
         if currentPlayer != nil {
             if currentPlayer?.rate == 1.0 {
