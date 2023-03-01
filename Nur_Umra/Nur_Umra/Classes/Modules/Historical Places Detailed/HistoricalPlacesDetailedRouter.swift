@@ -30,6 +30,11 @@ class HistoricalPlacesDetailedRouter: PresenterToRouterHistoricalPlacesDetailedP
             vc.navigationController?.popViewController(animated: true)
         }
     
+    func showMaps(inView: PresenterToViewHistoricalPlacesDetailedProtocol) {
+        let vc = inView as! HistoricalPlacesDetailedViewController
+        vc.modalPresentationStyle = .
+        vc.present(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: <#T##Bool#>)
+    }
     
     
 }

@@ -19,6 +19,7 @@ class HistoricalPlacesDetailedViewController: UIViewController {
     var descriptionLbl: UILabel!
     var backBtn: UIButton!
     var baseView: UIView!
+    var openOnTheMapBtn: UIButton!
     
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
@@ -41,6 +42,9 @@ class HistoricalPlacesDetailedViewController: UIViewController {
     // MARK: - Actions
     @objc func backBtnTapped() {
         presenter?.userWantsToPopVC()
+    }
+    @objc func mapBtnPressed() {
+        print("map presed")
     }
     
 }
@@ -73,6 +77,8 @@ extension HistoricalPlacesDetailedViewController: PresenterToViewHistoricalPlace
         self.titleLbl = self.createTitleLbl()
         self.descriptionLbl = self.createDescription()
         self.backBtn = self.createBackBtn()
+        self.openOnTheMapBtn = self.createOpenOnTheMapBtn()
+       
     }
     
     func updateUI(placeDetailed: HistoricalPlacesDM) {

@@ -74,7 +74,6 @@ extension HistoricalPlacesViewController: PresenterToViewHistoricalPlacesProtoco
         UIApplication.shared.statusBarStyle = .default
     }
     
-    
 }
 
 extension HistoricalPlacesViewController: UITableViewDelegate, UITableViewDataSource {

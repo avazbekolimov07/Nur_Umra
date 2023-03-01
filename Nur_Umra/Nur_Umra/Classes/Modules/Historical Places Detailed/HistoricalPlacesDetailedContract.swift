@@ -32,6 +32,7 @@ protocol ViewToPresenterHistoricalPlacesDetailedProtocol: AnyObject {
     func viewWillDisappear()
     
     func userWantsToPopVC()
+    func userWantsToOpenOntheMap()
     
 }
 
@@ -54,4 +55,5 @@ protocol PresenterToRouterHistoricalPlacesDetailedProtocol: AnyObject {
 
     static func createModule(withPlace: HistoricalPlacesDM) -> UIViewController
     func popVC(inView: PresenterToViewHistoricalPlacesDetailedProtocol)
+    func showMaps(inView: PresenterToViewHistoricalPlacesDetailedProtocol)
 }

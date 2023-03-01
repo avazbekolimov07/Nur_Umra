@@ -21,10 +21,10 @@ extension HistoricalPlacesDetailedViewController {
         self.baseView.addSubviews(scroll)
         
         scroll.snp.makeConstraints { make in
-            make.top.equalTo(self.view.snp.top)
-            make.left.equalTo(self.view.snp.left)
-            make.right.equalTo(self.view.snp.right)
-            make.bottom.equalTo(self.view.snp.bottom)
+            make.top.equalTo(self.baseView.snp.top)
+            make.left.equalTo(self.baseView.snp.left)
+            make.right.equalTo(self.baseView.snp.right)
+            make.bottom.equalTo(self.baseView.snp.bottom)
         }
         return scroll
         
@@ -39,12 +39,13 @@ extension HistoricalPlacesDetailedViewController {
             make.top.equalTo(self.scrollView.snp.top)
             make.left.equalTo(self.scrollView.snp.left)
             make.right.equalTo(self.scrollView.snp.right)
-            make.height.equalTo(self.view.frame.height * 0.32)
-            make.width.equalTo(self.view.snp.width)
+            make.height.equalTo(self.baseView.frame.height * 0.32)
+            make.width.equalTo(self.baseView.snp.width)
         }
         
         return imgView
     }
+
     
     func createTitleLbl() -> UILabel {
         let titleLbl = UILabel()
@@ -57,8 +58,8 @@ extension HistoricalPlacesDetailedViewController {
         
         titleLbl.snp.makeConstraints { make in
             make.top.equalTo(self.imgView.snp.bottom).offset(24)
-            make.left.equalTo(self.view.snp.left).offset(16)
-            make.right.equalTo(self.view.snp.right).inset(16)
+            make.left.equalTo(self.baseView.snp.left).offset(16)
+            make.right.equalTo(self.baseView.snp.right).inset(16)
         }
         
         return titleLbl
@@ -75,12 +76,36 @@ extension HistoricalPlacesDetailedViewController {
         
         titleLbl.snp.makeConstraints { make in
             make.top.equalTo(self.titleLbl.snp.bottom).offset(16)
-            make.left.equalTo(self.view.snp.left).offset(16)
-            make.right.equalTo(self.view.snp.right).inset(16)
-            make.bottom.equalTo(self.scrollView.snp.bottom).inset(80)
+            make.left.equalTo(self.baseView.snp.left).offset(16)
+            make.right.equalTo(self.baseView.snp.right).inset(16)
         }
         
         return titleLbl
+    }
+    
+    
+    func createOpenOnTheMapBtn() -> UIButton {
+        let btn = UIButton()
+        btn.setImage(UIImage(systemName: "map.fill")?.applyingSymbolConfiguration(.init(pointSize: 20)) , for: .normal)
+        btn.setTitle("Kartadan ko`rish", for: .normal)
+        btn.titleLabel?.font = UIFont(name: "Poppins-SemiBold", size: 16)
+        btn.imageEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: 24)
+        btn.backgroundColor = #colorLiteral(red: 0, green: 0.5478978157, blue: 0.478407383, alpha: 1)
+        btn.layer.cornerRadius = 8
+        
+        btn.tintColor = .white
+        
+        self.scrollView.addSubview(btn)
+        btn.addTarget(self, action: #selector(mapBtnPressed), for: .touchUpInside)
+        
+        btn.snp.makeConstraints { make in
+            make.top.equalTo(self.descriptionLbl.snp.bottom).offset(80)
+            make.left.equalTo(self.baseView.snp.left).offset(16)
+            make.right.equalTo(self.baseView.snp.right).inset(16)
+            make.bottom.equalTo(self.scrollView.snp.bottom).inset(80)
+            make.height.equalTo(50)
+        }
+        return btn
     }
     
     func createBackBtn() -> UIButton {
@@ -107,8 +132,8 @@ extension HistoricalPlacesDetailedViewController {
         
         btn.snp.makeConstraints { make in
             make.width.height.equalTo(38)
-            make.top.equalTo(self.view.snp.top).offset(54)
-            make.left.equalTo(self.view.snp.left).inset(16)
+            make.top.equalTo(self.baseView.snp.top).offset(54)
+            make.left.equalTo(self.baseView.snp.left).inset(16)
         }
         
         btn.addTarget(self, action: #selector(backBtnTapped), for: .touchUpInside)
@@ -116,4 +141,6 @@ extension HistoricalPlacesDetailedViewController {
         return btn
         
     }
+    
+ 
 }
