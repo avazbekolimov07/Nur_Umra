@@ -18,7 +18,6 @@ extension AllNewsViewController {
          
          let collectionView = UICollectionView(frame: view.frame, collectionViewLayout: flow )
         collectionView.backgroundColor = .clear
-         collectionView.contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 80, right: 0)
         collectionView.register(cellType: HomeNewsCVC.self)
      
         collectionView.showsVerticalScrollIndicator = false
@@ -30,8 +29,10 @@ extension AllNewsViewController {
         self.baseView.addSubview(collectionView)
         
         collectionView.snp.makeConstraints { make in
-            make.center.equalTo(self.view.snp.center)
-            make.edges.equalTo(self.view.snp.edges)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.bottom.equalToSuperview()
         }
         return collectionView
     }

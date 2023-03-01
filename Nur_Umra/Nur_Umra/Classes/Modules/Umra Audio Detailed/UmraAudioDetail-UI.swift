@@ -95,7 +95,7 @@ extension UmraAudioDetailViewController {
         
         btn.backgroundColor = #colorLiteral(red: 0, green: 0.5999550223, blue: 0.5522605777, alpha: 1)
         btn.setTitle("Duoni Tinglash", for: .normal)
-        btn.titleLabel?.font = .poppins_SemiBold(size: 14)
+        btn.titleLabel?.font = .poppins_SemiBold(size: 16)
         btn.titleLabel?.textColor = .white
         
         btn.leftImage(image: UIImage(named: "play_img")!, renderMode: .alwaysTemplate)
