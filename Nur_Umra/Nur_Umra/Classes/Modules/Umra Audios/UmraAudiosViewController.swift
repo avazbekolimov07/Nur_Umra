@@ -37,7 +37,8 @@ class UmraAudiosViewController: UIViewController {
     var baseView: UIView!
     var tableView: UITableView!
     var audioPlayer: AVPlayer?
-    
+    var selectedIndexPath: IndexPath?
+    var isPlaying: Bool = false
     
     // MARK: - Actions
     @objc func handleBackButton() {
@@ -70,26 +71,38 @@ extension UmraAudiosViewController: PresenterToViewUmraAudiosProtocol {
         audioPlayer = player
         audioPlayer?.volume = 1
         audioPlayer?.play()
-        let cell = tableView.cellForRow(at: indexPath) as? UmraAudioTVC
-        cell?.updateToPlay()
+        
+        isPlaying = true
+        selectedIndexPath = indexPath
+        tableView.beginUpdates()
+
+        tableView.reloadRows(at: [indexPath], with: .none)
+        tableView.endUpdates()
     }
     
     func onFetchAudioFailure(error: String, indexPath: IndexPath) {
         audioPlayer = nil
+        selectedIndexPath = nil
         try? AVAudioSession.sharedInstance().setActive(false)
         print("View receives the response from Presenter with Message: \(error)")
     }
     
     func onViewPlay(indexPath: IndexPath) {
         audioPlayer?.play()
-        let cell = tableView.cellForRow(at: indexPath) as? UmraAudioTVC
-        cell?.updateToPlay()
+        isPlaying = true
+        
+        tableView.beginUpdates()
+        tableView.reloadRows(at: [indexPath], with: .none)
+        tableView.endUpdates()
     }
     
     func onViewStop(indexPath: IndexPath) {
         audioPlayer?.pause()
-        let cell = tableView.cellForRow(at: indexPath) as? UmraAudioTVC
-        cell?.updateToStop()
+        isPlaying = false
+        
+        tableView.beginUpdates()
+        tableView.reloadRows(at: [indexPath], with: .none)
+        tableView.endUpdates()
     }
 }
 
@@ -109,6 +122,12 @@ extension UmraAudiosViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withCellType: UmraAudioTVC.self, for: indexPath)
         cell.selectionStyle = .none
         cell.configure(duo: presenter?.eachUmraAudioData(indexPath: indexPath))
+        
+        //MARK: - prepareForReuse is called every time before cellForRowAt
+        cell.isSelectedItem = selectedIndexPath == indexPath
+        cell.isPlaying = isPlaying
+        cell.configureBtnState()
+    
         cell.didPlayBtnTapped = { [weak self] url in
             self?.presenter?.didPlayAndStop(audioUrlSting: url, indexPath: indexPath, currentPlayer: self?.audioPlayer)
         }
@@ -116,7 +135,6 @@ extension UmraAudiosViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Did Select ")
         presenter?.didSelectRowAt(indexPath: indexPath)
     }
     

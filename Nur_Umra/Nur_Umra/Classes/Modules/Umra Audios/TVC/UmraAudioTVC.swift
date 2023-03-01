@@ -12,6 +12,8 @@ class UmraAudioTVC: UITableViewCell, ClassIdentifiable {
     
     var duo: DuoDM?
     var didPlayBtnTapped: ((_ url: String) -> Void)?
+    var isSelectedItem: Bool = false
+    var isPlaying: Bool = false
     var topConstraint: NSLayoutConstraint!
     var bottomConstraint: NSLayoutConstraint!
     
@@ -67,6 +69,21 @@ class UmraAudioTVC: UITableViewCell, ClassIdentifiable {
     
     override func layoutSubviews() {
         
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        //MARK: - prepareForReuse is called every time before cellForRowAt
+        isSelectedItem = false
+        isPlaying = false
+    }
+    
+    func configureBtnState() {
+        if isSelectedItem && isPlaying {
+            playButton.setImage(UIImage(named: "stop_img")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        } else {
+            playButton.setImage(UIImage(named: "play_img")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        }
     }
     
     func configure(duo: DuoDM?) {
