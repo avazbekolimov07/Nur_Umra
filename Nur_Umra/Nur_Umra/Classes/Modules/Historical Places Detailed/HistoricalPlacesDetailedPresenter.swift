@@ -35,6 +35,7 @@ class HistoricalPlacesDetailedPresenter: ViewToPresenterHistoricalPlacesDetailed
         router?.popVC(inView: view!)
     }
     func userWantsToOpenOntheMap() {
+        print("presenter is Workingggg")
         router?.showMaps(inView: view!)
     }
     

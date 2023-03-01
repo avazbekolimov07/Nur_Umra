@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "Frame 95-4.png",
+      "filename" : "googleMaps.pdf",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Frame 95-5.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Frame 95-6.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
@@ -19,9 +17,5 @@
   "info" : {
     "author" : "xcode",
     "version" : 1
-  },
-  "properties" : {
-    "preserves-vector-representation" : true,
-    "template-rendering-intent" : "original"
   }
 }

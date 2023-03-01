@@ -47,6 +47,7 @@ class HistoricalPlacesDetailedViewController: UIViewController {
         presenter?.userWantsToPopVC()
     }
     @objc func mapBtnPressed() {
+        presenter?.userWantsToOpenOntheMap()
         print("map presed")
     }
     

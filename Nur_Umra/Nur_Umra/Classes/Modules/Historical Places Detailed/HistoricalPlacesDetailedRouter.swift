@@ -31,7 +31,10 @@ class HistoricalPlacesDetailedRouter: PresenterToRouterHistoricalPlacesDetailedP
         }
     
     func showMaps(inView: PresenterToViewHistoricalPlacesDetailedProtocol) {
+        print("router - should show map view ")
         let vc = inView as! HistoricalPlacesDetailedViewController
+        vc.modalPresentationStyle = .formSheet
+        vc.present( MapViewController() , animated: true)
         
         
     }
