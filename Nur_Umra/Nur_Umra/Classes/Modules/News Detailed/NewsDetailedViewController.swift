@@ -37,6 +37,9 @@ class NewsDetailedViewController: UIViewController {
         super.viewWillDisappear(animated)
         presenter?.viewWillDisappear()
     }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
     
     
     // MARK: - Actions

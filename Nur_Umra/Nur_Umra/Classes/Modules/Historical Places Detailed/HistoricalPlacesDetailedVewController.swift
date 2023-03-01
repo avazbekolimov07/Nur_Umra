@@ -38,6 +38,9 @@ class HistoricalPlacesDetailedViewController: UIViewController {
         super.viewWillDisappear(animated)
         presenter?.viewWillDisappear()
     }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
     
     // MARK: - Actions
     @objc func backBtnTapped() {
