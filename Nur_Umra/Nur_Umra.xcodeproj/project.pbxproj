@@ -357,7 +357,6 @@
 		083C542C29ACCDA800485BCE /* Historical Places Detailed */ = {
 			isa = PBXGroup;
 			children = (
-				083D5DBD29AF1222006CF41F /* Map view */,
 				083D5DAD29AE0883006CF41F /* HistoricalPlacesDetailed-UI.swift */,
 				083D5DAF29AE08A7006CF41F /* HistoricalPlacesDetailedVewController.swift */,
 				083D5DB129AE08B3006CF41F /* HistoricalPlacesDetailedPresenter.swift */,
@@ -442,6 +441,7 @@
 				306C77F929ACAEE200C1072A /* Umra Audio Detailed */,
 				083C542B29ACCD6300485BCE /* Historical Places */,
 				083C542C29ACCDA800485BCE /* Historical Places Detailed */,
+				083D5DBD29AF1222006CF41F /* Map view */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
