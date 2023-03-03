@@ -27,6 +27,9 @@ protocol ViewToPresenterHistoricalPlacesDetailedProtocol: AnyObject {
     var interactor: PresenterToInteractorHistoricalPlacesDetailedProtocol? { get set }
     var historicalPlace: HistoricalPlacesDM? { get set }
     
+    var lat: String? { get set }
+    var long: String? { get set }
+    
     func viewDidLoad()
     func viewWillAppear()
     func viewWillDisappear()
@@ -55,5 +58,5 @@ protocol PresenterToRouterHistoricalPlacesDetailedProtocol: AnyObject {
 
     static func createModule(withPlace: HistoricalPlacesDM) -> UIViewController
     func popVC(inView: PresenterToViewHistoricalPlacesDetailedProtocol)
-    func showMaps(inView: PresenterToViewHistoricalPlacesDetailedProtocol)
+    func showMaps(inView: PresenterToViewHistoricalPlacesDetailedProtocol, withLat: String, long: String)
 }

@@ -10,6 +10,8 @@ import Foundation
 
 class HistoricalPlacesDetailedPresenter: ViewToPresenterHistoricalPlacesDetailedProtocol {
     
+    
+    
     weak var view: PresenterToViewHistoricalPlacesDetailedProtocol?
     
     var router: PresenterToRouterHistoricalPlacesDetailedProtocol?
@@ -17,6 +19,11 @@ class HistoricalPlacesDetailedPresenter: ViewToPresenterHistoricalPlacesDetailed
     var interactor: PresenterToInteractorHistoricalPlacesDetailedProtocol?
     
     var historicalPlace: HistoricalPlacesDM?
+    
+    var lat: String?
+    
+    var long: String?
+    
     
     func viewDidLoad() {
         view?.createUIElements()
@@ -34,9 +41,10 @@ class HistoricalPlacesDetailedPresenter: ViewToPresenterHistoricalPlacesDetailed
     func userWantsToPopVC() {
         router?.popVC(inView: view!)
     }
+    
     func userWantsToOpenOntheMap() {
         print("presenter is Workingggg")
-        router?.showMaps(inView: view!)
+        router?.showMaps(inView: view!, withLat: self.lat!, long: self.long!)
     }
     
     
@@ -45,6 +53,8 @@ class HistoricalPlacesDetailedPresenter: ViewToPresenterHistoricalPlacesDetailed
 extension HistoricalPlacesDetailedPresenter: InteractorToPresenterHistoricalPlacesDetailedProtocol {
     func retrieveSpecificPlaceSuccess(place: HistoricalPlacesDM) {
         self.historicalPlace = place
+        self.lat = place.latitude
+        self.long = place.longitude
         view?.onFetchSuccess(place: place)
     }
     

@@ -8,6 +8,8 @@
 import UIKit
 
 class HistoricalPlacesDetailedRouter: PresenterToRouterHistoricalPlacesDetailedProtocol {
+  
+    
    
    static func createModule(withPlace: HistoricalPlacesDM) -> UIViewController {
         let viewController = HistoricalPlacesDetailedViewController()
@@ -30,13 +32,12 @@ class HistoricalPlacesDetailedRouter: PresenterToRouterHistoricalPlacesDetailedP
             vc.navigationController?.popViewController(animated: true)
         }
     
-    func showMaps(inView: PresenterToViewHistoricalPlacesDetailedProtocol) {
-        print("router - should show map view ")
+    func showMaps(inView: PresenterToViewHistoricalPlacesDetailedProtocol, withLat: String, long: String) {
+        print("router  -> should show map view ")
         let vc = inView as! HistoricalPlacesDetailedViewController
-        vc.modalPresentationStyle = .formSheet
-        vc.present( MapViewController() , animated: true)
-        
-        
+        let presentedVC = MapViewRouter.createModule(withLat: withLat, long: long)
+        presentedVC.modalPresentationStyle = .formSheet
+        vc.present(presentedVC, animated: true)
     }
     
     

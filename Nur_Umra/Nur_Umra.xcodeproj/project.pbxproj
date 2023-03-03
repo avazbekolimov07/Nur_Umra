@@ -55,8 +55,12 @@
 		083D5DB429AE08C8006CF41F /* HistoricalPlacesDetailedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D5DB329AE08C8006CF41F /* HistoricalPlacesDetailedInteractor.swift */; };
 		083D5DB629AE08D2006CF41F /* HistoricalPlacesDetailedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D5DB529AE08D2006CF41F /* HistoricalPlacesDetailedRouter.swift */; };
 		083D5DB829AE08DE006CF41F /* HistoricalPlacesDetailedContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D5DB729AE08DE006CF41F /* HistoricalPlacesDetailedContract.swift */; };
-		083D5DBC29AF11F6006CF41F /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D5DBB29AF11F6006CF41F /* MapView.swift */; };
+		083D5DBC29AF11F6006CF41F /* MapView-UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D5DBB29AF11F6006CF41F /* MapView-UI.swift */; };
 		083D5DBF29AF1237006CF41F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D5DBE29AF1237006CF41F /* MapViewController.swift */; };
+		083D5DEC29B06BD7006CF41F /* MapViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D5DEB29B06BD7006CF41F /* MapViewInteractor.swift */; };
+		083D5DEE29B06BF1006CF41F /* MapViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D5DED29B06BF1006CF41F /* MapViewRouter.swift */; };
+		083D5DF029B06BFD006CF41F /* MapViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D5DEF29B06BFD006CF41F /* MapViewPresenter.swift */; };
+		083D5DF229B06C0F006CF41F /* MapViewContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D5DF129B06C0F006CF41F /* MapViewContract.swift */; };
 		08476B6D29A4EAFF006D7509 /* AllNews-UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08476B6C29A4EAFF006D7509 /* AllNews-UI.swift */; };
 		08476B6F29A4EB16006D7509 /* AllNewsContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08476B6E29A4EB16006D7509 /* AllNewsContract.swift */; };
 		08476B7129A4EB2A006D7509 /* AllNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08476B7029A4EB2A006D7509 /* AllNewsViewController.swift */; };
@@ -180,8 +184,12 @@
 		083D5DB329AE08C8006CF41F /* HistoricalPlacesDetailedInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalPlacesDetailedInteractor.swift; sourceTree = "<group>"; };
 		083D5DB529AE08D2006CF41F /* HistoricalPlacesDetailedRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalPlacesDetailedRouter.swift; sourceTree = "<group>"; };
 		083D5DB729AE08DE006CF41F /* HistoricalPlacesDetailedContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalPlacesDetailedContract.swift; sourceTree = "<group>"; };
-		083D5DBB29AF11F6006CF41F /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		083D5DBB29AF11F6006CF41F /* MapView-UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapView-UI.swift"; sourceTree = "<group>"; };
 		083D5DBE29AF1237006CF41F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		083D5DEB29B06BD7006CF41F /* MapViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewInteractor.swift; sourceTree = "<group>"; };
+		083D5DED29B06BF1006CF41F /* MapViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewRouter.swift; sourceTree = "<group>"; };
+		083D5DEF29B06BFD006CF41F /* MapViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewPresenter.swift; sourceTree = "<group>"; };
+		083D5DF129B06C0F006CF41F /* MapViewContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewContract.swift; sourceTree = "<group>"; };
 		08476B6C29A4EAFF006D7509 /* AllNews-UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AllNews-UI.swift"; sourceTree = "<group>"; };
 		08476B6E29A4EB16006D7509 /* AllNewsContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNewsContract.swift; sourceTree = "<group>"; };
 		08476B7029A4EB2A006D7509 /* AllNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNewsViewController.swift; sourceTree = "<group>"; };
@@ -371,8 +379,12 @@
 		083D5DBD29AF1222006CF41F /* Map view */ = {
 			isa = PBXGroup;
 			children = (
-				083D5DBB29AF11F6006CF41F /* MapView.swift */,
+				083D5DBB29AF11F6006CF41F /* MapView-UI.swift */,
 				083D5DBE29AF1237006CF41F /* MapViewController.swift */,
+				083D5DEF29B06BFD006CF41F /* MapViewPresenter.swift */,
+				083D5DEB29B06BD7006CF41F /* MapViewInteractor.swift */,
+				083D5DED29B06BF1006CF41F /* MapViewRouter.swift */,
+				083D5DF129B06C0F006CF41F /* MapViewContract.swift */,
 			);
 			path = "Map view";
 			sourceTree = "<group>";
@@ -845,6 +857,7 @@
 			files = (
 				083C541C29ACA0E500485BCE /* PreparationForUmra-UI.swift in Sources */,
 				30CC5EBA29A757A0005C158A /* HandbookDM.swift in Sources */,
+				083D5DEC29B06BD7006CF41F /* MapViewInteractor.swift in Sources */,
 				30A824AB29AD0C2500B51CEE /* UmraGideDetailViewController.swift in Sources */,
 				306C780529ACB02500C1072A /* UmraGideDetailContract.swift in Sources */,
 				305DBDFE29A4982A00D962EF /* UITableView+ClassIdentifiable.swift in Sources */,
@@ -868,7 +881,7 @@
 				08EC25B829A39EB300DAC561 /* HomeContact.swift in Sources */,
 				30AA27B229A5E0660014C351 /* APIClient.swift in Sources */,
 				30A9C35D29A32AD700C9EEEA /* AppDelegate.swift in Sources */,
-				083D5DBC29AF11F6006CF41F /* MapView.swift in Sources */,
+				083D5DBC29AF11F6006CF41F /* MapView-UI.swift in Sources */,
 				08EC25BA29A39ED100DAC561 /* HomePresenter.swift in Sources */,
 				083C542E29ACCDDC00485BCE /* HistoricalPlaces UI.swift in Sources */,
 				083C543F29ACFDF400485BCE /* HistoricalPlacesTVC.swift in Sources */,
@@ -878,6 +891,7 @@
 				08476B7329A4EB4B006D7509 /* AllNewsPresenter.swift in Sources */,
 				30AC276B29A9DEC9005DE047 /* UIFont+App.swift in Sources */,
 				30AA27B029A5E0490014C351 /* APIManager.swift in Sources */,
+				083D5DF029B06BFD006CF41F /* MapViewPresenter.swift in Sources */,
 				306C780329ACB01800C1072A /* UmraGideDetailRouter.swift in Sources */,
 				30AC276E29A9EFA7005DE047 /* UmraAudios-UI.swift in Sources */,
 				30AC277829A9EFFC005DE047 /* UmraAudiosContact.swift in Sources */,
@@ -888,6 +902,7 @@
 				08476B7129A4EB2A006D7509 /* AllNewsViewController.swift in Sources */,
 				30A9890229A8ECBA00CD602F /* UmraGideService.swift in Sources */,
 				08EC25CA29A39FFD00DAC561 /* UmraGideViewController.swift in Sources */,
+				083D5DEE29B06BF1006CF41F /* MapViewRouter.swift in Sources */,
 				306C780B29ACB05D00C1072A /* UmraAudioDetailRouter.swift in Sources */,
 				305DBDF829A4952E00D962EF /* HomeReusableHeaderView.swift in Sources */,
 				30C71D5929A50E5900E5F6CF /* UIViewController+Extensions.swift in Sources */,
@@ -919,6 +934,7 @@
 				083C541E29ACA10800485BCE /* PreparationForUmraViewController.swift in Sources */,
 				307344A029A65D700051BFFD /* UmraGide-UI.swift in Sources */,
 				30CC5EBE29A757BC005C158A /* UmraGideTVC.swift in Sources */,
+				083D5DF229B06C0F006CF41F /* MapViewContract.swift in Sources */,
 				083C543229ACCE0C00485BCE /* HistoricalPlacesPresenter.swift in Sources */,
 				30C71D5E29A528B500E5F6CF /* UIColor+App.swift in Sources */,
 				30AC277C29A9F285005DE047 /* UmraAudioService.swift in Sources */,

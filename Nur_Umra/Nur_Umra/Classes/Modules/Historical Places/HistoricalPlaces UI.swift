@@ -18,13 +18,20 @@ extension HistoricalPlacesViewController {
         tableView.register(HistoricalPlacesTVC.self , forCellReuseIdentifier: HistoricalPlacesTVC.identifier)
         tableView.delegate = self
         tableView.dataSource = self
-        
-        tableView.frame = self.view.frame
-        tableView.separatorStyle = .none
+    
         tableView.separatorStyle = .none
         
         self.view.addSubview(baseView)
         self.baseView.addSubview(tableView)
+        
+        tableView.snp.makeConstraints { make in
+            make.top.equalTo(self.baseView.snp.top)
+            make.left.equalTo(self.baseView.snp.left)
+            make.right.equalTo(self.baseView.snp.right)
+            make.bottom.equalTo(self.baseView.snp.bottom)
+        }
+        
+     
         
         self.view.backgroundColor = .white
         

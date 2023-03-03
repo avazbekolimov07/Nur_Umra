@@ -11,114 +11,118 @@ import MapKit
 
 class MapViewController: UIViewController {
     
-    let baseView = MapView()
-    var latFrom: Double?
-    var langFrom: Double?
-    var latTO: Double?
-    var langTO: Double?
-    var destinationName = ""
+    var presenter: ViewToPresenterMapViewProtocol?
+    var formSheetView: UIView!
+    var backgroundView: UIView!
+    var stackView: UIStackView!
+    var verticalStackViewAppleMaps: UIStackView!
+    var verticalStackViewYandexMaps: UIStackView!
+    var verticalStackViewGoogleMaps: UIStackView!
+    var verticalStackViewYandexNavigator: UIStackView!
     
+    var appleMapImg: UIImageView!
+    var appleMapLbl: UILabel!
+    var appleMapBtn: UIButton!
+    
+    var googleMapImg: UIImageView!
+    var googleMapLbl: UILabel!
+    var googleMapBtn: UIButton!
+    
+    var yandexMapImg: UIImageView!
+    var yandexMapLbl: UILabel!
+    var yandexMapBtn: UIButton!
+    
+    var yandexNavigatorImg: UIImageView!
+    var yandexNavigatorLbl: UILabel!
+    var yandexNavigatorBtn: UIButton!
+    var cancelBtn: UIButton!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .black
-        someAnimation()
-        
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        callBaseView()
-        setupBaseViewTargets()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        callBaseView()
-        setupBaseViewTargets()
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print("scroll", scrollView.contentOffset.y)
-    }
-    
-    private func callBaseView() {
-        self.baseView.frame = view.bounds
-        view.addSubview(baseView)
-        
-    }
-    
-    private func someAnimation() {
-        UIView.animate(withDuration: 0.1, delay: 0) {
-            self.view.transform = CGAffineTransform(translationX: 0, y: 20)
-        } completion: { _ in
-            self.view.transform = .identity
-        }
-    }
-    
-    private func setupBaseViewTargets() {
-        self.baseView.appleMapsAddTarget(target: self, action: #selector(appleMapsTapped))
-        self.baseView.googleMapsAddTarget(target: self, action: #selector(googleMapsTapped))
-        self.baseView.yandexMapsAddTarget(target: self, action: #selector(yandexMapsTapeed))
-        self.baseView.yandexNAvigatorAddTarget(target: self, action: #selector(yandexNAvigatorTapeed))
-        self.baseView.cancelBtnAddTarget(target: self, action: #selector(cancelBtnTapped))
+        self.view.backgroundColor = .clear
+        presenter?.viewDidLoad()
     }
     @objc func cancelBtnTapped() {
         self.dismiss(animated: true)
     }
-    
+
     @objc func appleMapsTapped() {
-        if let latFrom = self.latFrom {
-            if let langFrom = self.langFrom{
-                if let latTO = self.latTO{
-                    if let langTO = self.langTO{
-                        let source = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: latFrom, longitude: langFrom)))
-                        source.name = "Me"
-                        
-                        let destination = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: latTO, longitude: langTO)))
-                        destination.name = destinationName
-                        MKMapItem.openMaps(
-                            with: [source, destination],
-                            launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
-                        )
-                    }
-                }
-            }
-        }
-        
+        print("aple map pressed")
+        presenter?.userWantsToOpenInAppleMap()
+
+
     }
-    
+
     @objc func googleMapsTapped() {
-        let appUrl = URL(string:"comgooglemaps://")
-        let apstoreURl = URL(string: "https://apps.apple.com/us/app/google-maps/id585027354")
-        if (UIApplication.shared.canOpenURL( appUrl!)) {
-            UIApplication.shared.openURL(URL(string: "comgooglemaps://?saddr=&daddr=\(self.latTO!),\(self.langTO!)&directionsmode=driving")!)
-            
-        } else {
-            UIApplication.shared.open(apstoreURl!)
-        }
-        
+        print("google pressed")
+//        let appUrl = URL(string:"comgooglemaps://")
+//        let apstoreURl = URL(string: "https://apps.apple.com/us/app/google-maps/id585027354")
+//        if (UIApplication.shared.canOpenURL( appUrl!)) {
+//            UIApplication.shared.openURL(URL(string: "comgooglemaps://?saddr=&daddr=\(self.latTO!),\(self.langTO!)&directionsmode=driving")!)
+//
+//        } else {
+//            UIApplication.shared.open(apstoreURl!)
+//        }
+
     }
-    
+
     @objc func yandexMapsTapeed() {
-        let appUrl = URL(string: "yandexmaps://build_route_on_map/?lat_from=\(self.latFrom!)&lon_from=\(self.langFrom!)&lat_to=\(self.latTO!)&lon_to=\(self.langTO!)")
-        let apstoreURl = URL(string: "https://apps.apple.com/us/app/yandex-maps-navigator/id313877526")
-        UIApplication.shared.open((appUrl)! , options: [:]) { result in
-            if !result {
-                UIApplication.shared.open(apstoreURl!)
-            }
-        }
-        
+        print("yandex map pressed")
+//        let appUrl = URL(string: "yandexmaps://build_route_on_map/?lat_from=\(self.latFrom!)&lon_from=\(self.langFrom!)&lat_to=\(self.latTO!)&lon_to=\(self.langTO!)")
+//        let apstoreURl = URL(string: "https://apps.apple.com/us/app/yandex-maps-navigator/id313877526")
+//        UIApplication.shared.open((appUrl)! , options: [:]) { result in
+//            if !result {
+//                UIApplication.shared.open(apstoreURl!)
+//            }
+//        }
+
+    }
+
+    @objc func yandexNAvigatorTapeed() {
+        print("yandexNavpressed")
+//        let appUrl = URL(string: "yandexnavi://build_route_on_map?lat_to=" + "\(self.latTO!)" + "&lon_to=" + "\(self.langTO!)")
+//        let apstoreURl = URL(string: "https://apps.apple.com/us/app/yandex-navi-navigation-maps/id474500851")
+//        UIApplication.shared.open((appUrl)! , options: [:]) { result in
+//            if !result {
+//                var apstoreURl = URL(string: "https://apps.apple.com/us/app/yandex-navi-navigation-maps/id474500851")
+//                UIApplication.shared.open(apstoreURl!)
+//            }
+//        }
+
     }
     
-    @objc func yandexNAvigatorTapeed() {
-        let appUrl = URL(string: "yandexnavi://build_route_on_map?lat_to=" + "\(self.latTO!)" + "&lon_to=" + "\(self.langTO!)")
-        let apstoreURl = URL(string: "https://apps.apple.com/us/app/yandex-navi-navigation-maps/id474500851")
-        UIApplication.shared.open((appUrl)! , options: [:]) { result in
-            if !result {
-                var apstoreURl = URL(string: "https://apps.apple.com/us/app/yandex-navi-navigation-maps/id474500851")
-                UIApplication.shared.open(apstoreURl!)
-            }
-        }
+}
+
+extension MapViewController: PresenterToViewMapViewProtocol {
+    func createUIElements() {
+        self.backgroundView = self.createBackgroundView()
+        self.formSheetView = self.createFormSheetView()
+       
+        self.appleMapImg = self.createAppleMapsImg()
+        self.appleMapLbl = self.createAppleMapsLbl()
         
+        self.googleMapImg = self.createGoogleMapsImg()
+        self.googleMapLbl = self.createGoogleMapsLbl()
+        
+        self.yandexMapImg = self.createYandexMapsImg()
+        self.yandexMapLbl = self.createYandexMapsLbl()
+        
+        self.yandexNavigatorImg = self.createNavigatorImg()
+        self.yandexNavigatorLbl = self.createYandexNavigatorMapsLbl()
+        
+        self.verticalStackViewAppleMaps = self.createVerticalViewAppleMap()
+        self.verticalStackViewGoogleMaps = self.createVerticalViewGoogleMap()
+        self.verticalStackViewYandexMaps = self.createVerticalViewYandexMap()
+        self.verticalStackViewYandexNavigator = self.createVerticalViewyandexNavigator()
+        self.stackView = self.createStackView()
+        
+        self.appleMapBtn = self.createAppleMapsBtn()
+        self.googleMapBtn = self.createGoogleMapsBtn()
+        self.yandexMapBtn = self.createYandexMapsBtn()
+        self.yandexNavigatorBtn = self.createYandexNavigatorMapsBtn()
+        self.cancelBtn = self.createCancelBtn()
     }
+    
+ 
     
 }
