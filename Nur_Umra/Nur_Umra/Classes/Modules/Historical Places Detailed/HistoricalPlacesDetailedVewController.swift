@@ -88,7 +88,7 @@ extension HistoricalPlacesDetailedViewController: PresenterToViewHistoricalPlace
     func updateUI(placeDetailed: HistoricalPlacesDM) {
         self.imgView.sd_setImage(with: URL(string: placeDetailed.img), placeholderImage: UIImage(named: "umraGide_img"))
         self.titleLbl.text = placeDetailed.name
-        self.descriptionLbl.text = placeDetailed.description
+        self.descriptionLbl.text = placeDetailed.description.deleteHTMLTag()
     }
     
     

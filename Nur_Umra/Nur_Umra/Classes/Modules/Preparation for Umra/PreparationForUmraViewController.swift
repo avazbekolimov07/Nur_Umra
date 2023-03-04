@@ -75,7 +75,7 @@ extension PreparationForUmraViewController: PresenterToViewPreparationForUmraPro
     func updateUI(preparationInformation: PreparationDM) {
         self.imgView.image = UIImage(named: "umraGide_img")
         self.titleLbl.text = "ҚУЙИДАГИЛАРГА АҲАМИЯТ БЕРИНГ"
-        self.descriptionLbl.text = preparationInformation.text
+        self.descriptionLbl.text = preparationInformation.text.deleteHTMLTag()
     }
     
     func handleViewWillAppear() {

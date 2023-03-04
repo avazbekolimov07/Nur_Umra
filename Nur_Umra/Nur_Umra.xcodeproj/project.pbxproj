@@ -68,6 +68,7 @@
 		08476B7329A4EB4B006D7509 /* AllNewsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08476B7229A4EB4B006D7509 /* AllNewsPresenter.swift */; };
 		08476B7529A4EB69006D7509 /* AllNewsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08476B7429A4EB69006D7509 /* AllNewsRouter.swift */; };
 		08476B7729A4EB78006D7509 /* AllNewsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08476B7629A4EB78006D7509 /* AllNewsInteractor.swift */; };
+		085D2A5129B326E300CD9D11 /* String+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085D2A5029B326E300CD9D11 /* String+Extention.swift */; };
 		08639A2929A5FC61002E0D48 /* NewsDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08639A2829A5FC61002E0D48 /* NewsDM.swift */; };
 		08EC25A329A341F700DAC561 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EC25A229A341F700DAC561 /* MainVC.swift */; };
 		08EC25B829A39EB300DAC561 /* HomeContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EC25B729A39EB300DAC561 /* HomeContact.swift */; };
@@ -198,6 +199,7 @@
 		08476B7229A4EB4B006D7509 /* AllNewsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNewsPresenter.swift; sourceTree = "<group>"; };
 		08476B7429A4EB69006D7509 /* AllNewsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNewsRouter.swift; sourceTree = "<group>"; };
 		08476B7629A4EB78006D7509 /* AllNewsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNewsInteractor.swift; sourceTree = "<group>"; };
+		085D2A5029B326E300CD9D11 /* String+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extention.swift"; sourceTree = "<group>"; };
 		08639A2829A5FC61002E0D48 /* NewsDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDM.swift; sourceTree = "<group>"; };
 		08EC25A229A341F700DAC561 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		08EC25B729A39EB300DAC561 /* HomeContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContact.swift; sourceTree = "<group>"; };
@@ -581,6 +583,7 @@
 				30C71D5629A50E0500E5F6CF /* CALayer+Shadow.swift */,
 				30AC278029AA1883005DE047 /* UILabel+Extension.swift */,
 				0819FA0429B300DA00A60787 /* UIImage+Extension.swift */,
+				085D2A5029B326E300CD9D11 /* String+Extention.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -959,6 +962,7 @@
 				30AC277029A9EFBA005DE047 /* UmraAudiosViewController.swift in Sources */,
 				083C542229ACA11D00485BCE /* PreparationForUmraRouter.swift in Sources */,
 				08476B6F29A4EB16006D7509 /* AllNewsContract.swift in Sources */,
+				085D2A5129B326E300CD9D11 /* String+Extention.swift in Sources */,
 				30C71D5529A50DCC00E5F6CF /* UIView+Shadow.swift in Sources */,
 				082FFF3629A8DDA0002F85B6 /* NewsDetailed-UI.swift in Sources */,
 				08476B7529A4EB69006D7509 /* AllNewsRouter.swift in Sources */,

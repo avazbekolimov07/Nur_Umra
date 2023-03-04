@@ -80,7 +80,7 @@ extension UmraAudioDetailViewController: PresenterToViewUmraAudioDetailProtocol 
     func updateUI(duo: DuoDM) {
         self.imgView.image = UIImage(named: "duolar_img")
         self.titleLbl.text = duo.name
-        self.descriptionLbl.text = duo.description
+        self.descriptionLbl.text = duo.description.deleteHTMLTag()
         self.url = duo.audio
     }
     

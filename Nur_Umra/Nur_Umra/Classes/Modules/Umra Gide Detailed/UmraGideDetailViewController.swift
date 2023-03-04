@@ -63,8 +63,8 @@ extension UmraGideDetailViewController: PresenterToViewUmraGideDetailProtocol {
     }
     
     func updateUI(handbook: HandbookDM) {
-        self.descriptionLbl.text = handbook.description
-        self.navigationItem.title = handbook.name
+        self.descriptionLbl.text = handbook.description.deleteHTMLTag()
+        self.navigationItem.title = handbook.name.deleteHTMLTag()
     }
     
 }
