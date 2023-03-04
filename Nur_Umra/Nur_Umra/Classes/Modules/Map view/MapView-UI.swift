@@ -45,7 +45,7 @@ extension MapViewController {
         img.image = UIImage(named: "appleMaps")
         img.contentMode = .scaleAspectFit
         img.snp.makeConstraints { make in
-            make.width.height.equalTo(self.view.frame.width / 5.2)
+            make.width.height.equalTo(self.view.frame.width / 6)
         }
         return img
     }
@@ -55,10 +55,10 @@ extension MapViewController {
         img.image = UIImage(named: "googleMaps")
         img.contentMode = .scaleAspectFill
         img.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        img.layer.borderWidth = 1
+        img.layer.borderWidth = 0.5
         img.layer.cornerRadius = 12
         img.snp.makeConstraints { make in
-            make.width.height.equalTo(self.view.frame.width / 5.2)
+            make.width.height.equalTo(self.view.frame.width / 6)
         }
 
         return img
@@ -67,12 +67,12 @@ extension MapViewController {
     func createYandexMapsImg() -> UIImageView {
         let img = UIImageView()
         img.image = UIImage(named: "yandexMap")
-        img.contentMode = .scaleAspectFit
-        img.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
-        img.layer.borderWidth = 1
+        img.contentMode = .scaleAspectFill
+        img.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        img.layer.borderWidth = 0.5
         img.layer.cornerRadius = 12
         img.snp.makeConstraints { make in
-            make.width.height.equalTo(self.view.frame.width / 5.2)
+            make.width.height.equalTo(self.view.frame.width / 6)
         }
         return img
     }
@@ -82,10 +82,10 @@ extension MapViewController {
         img.image = UIImage(named: "yandexNavigator")
         img.contentMode = .scaleAspectFit
         img.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        img.layer.borderWidth = 1
+        img.layer.borderWidth = 0.5
         img.layer.cornerRadius = 12
         img.snp.makeConstraints { make in
-            make.width.height.equalTo(self.view.frame.width / 5.2)
+            make.width.height.equalTo(self.view.frame.width / 6)
         }
         return img
     }

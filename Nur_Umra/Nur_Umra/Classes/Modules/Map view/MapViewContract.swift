@@ -44,5 +44,8 @@ protocol PresenterToRouterMapViewProtocol: AnyObject {
     
     static func createModule(withLat: String, long: String) -> UIViewController
     func openInAppleMap(withLat: String, long: String)
+    func openInYandexMap(withLat: String, long: String)
+    func openInGoogleMap(withLat: String, long: String)
+    func openInYandexNAvigator(withLat: String, long: String)
 
 }

@@ -55,39 +55,19 @@ class MapViewController: UIViewController {
 
     @objc func googleMapsTapped() {
         print("google pressed")
-//        let appUrl = URL(string:"comgooglemaps://")
-//        let apstoreURl = URL(string: "https://apps.apple.com/us/app/google-maps/id585027354")
-//        if (UIApplication.shared.canOpenURL( appUrl!)) {
-//            UIApplication.shared.openURL(URL(string: "comgooglemaps://?saddr=&daddr=\(self.latTO!),\(self.langTO!)&directionsmode=driving")!)
-//
-//        } else {
-//            UIApplication.shared.open(apstoreURl!)
-//        }
+        presenter?.userWantsToOpenInGoogleMap()
 
     }
 
     @objc func yandexMapsTapeed() {
         print("yandex map pressed")
-//        let appUrl = URL(string: "yandexmaps://build_route_on_map/?lat_from=\(self.latFrom!)&lon_from=\(self.langFrom!)&lat_to=\(self.latTO!)&lon_to=\(self.langTO!)")
-//        let apstoreURl = URL(string: "https://apps.apple.com/us/app/yandex-maps-navigator/id313877526")
-//        UIApplication.shared.open((appUrl)! , options: [:]) { result in
-//            if !result {
-//                UIApplication.shared.open(apstoreURl!)
-//            }
-//        }
-
+        presenter?.userWantsToOpenInYandexMap()
+        
     }
 
     @objc func yandexNAvigatorTapeed() {
         print("yandexNavpressed")
-//        let appUrl = URL(string: "yandexnavi://build_route_on_map?lat_to=" + "\(self.latTO!)" + "&lon_to=" + "\(self.langTO!)")
-//        let apstoreURl = URL(string: "https://apps.apple.com/us/app/yandex-navi-navigation-maps/id474500851")
-//        UIApplication.shared.open((appUrl)! , options: [:]) { result in
-//            if !result {
-//                var apstoreURl = URL(string: "https://apps.apple.com/us/app/yandex-navi-navigation-maps/id474500851")
-//                UIApplication.shared.open(apstoreURl!)
-//            }
-//        }
+        presenter?.userWantsToOpenInYandexNavigator()
 
     }
     

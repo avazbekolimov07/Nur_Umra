@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0819FA0529B300DA00A60787 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819FA0429B300DA00A60787 /* UIImage+Extension.swift */; };
 		082FFF3629A8DDA0002F85B6 /* NewsDetailed-UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082FFF3529A8DDA0002F85B6 /* NewsDetailed-UI.swift */; };
 		082FFF3829A8DDB1002F85B6 /* NewsDetailedContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082FFF3729A8DDB1002F85B6 /* NewsDetailedContract.swift */; };
 		082FFF3A29A8DDCB002F85B6 /* NewsDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082FFF3929A8DDCB002F85B6 /* NewsDetailedViewController.swift */; };
@@ -136,6 +137,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0819FA0429B300DA00A60787 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		082FFF3529A8DDA0002F85B6 /* NewsDetailed-UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewsDetailed-UI.swift"; sourceTree = "<group>"; };
 		082FFF3729A8DDB1002F85B6 /* NewsDetailedContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailedContract.swift; sourceTree = "<group>"; };
 		082FFF3929A8DDCB002F85B6 /* NewsDetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailedViewController.swift; sourceTree = "<group>"; };
@@ -578,6 +580,7 @@
 				30C71D5829A50E5900E5F6CF /* UIViewController+Extensions.swift */,
 				30C71D5629A50E0500E5F6CF /* CALayer+Shadow.swift */,
 				30AC278029AA1883005DE047 /* UILabel+Extension.swift */,
+				0819FA0429B300DA00A60787 /* UIImage+Extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -912,6 +915,7 @@
 				08EC25BC29A39EEE00DAC561 /* HomeRouter.swift in Sources */,
 				083C541A29ACA0C100485BCE /* PreparationForUmraContract.swift in Sources */,
 				30C71D5B29A5225200E5F6CF /* HomeViewController+Layout.swift in Sources */,
+				0819FA0529B300DA00A60787 /* UIImage+Extension.swift in Sources */,
 				305DBDEF29A48EA300D962EF /* Home-UI.swift in Sources */,
 				305DBDF229A4940000D962EF /* HomeNewsCVC.swift in Sources */,
 				305DBDFC29A4980900D962EF /* ClassIdentifiable.swift in Sources */,

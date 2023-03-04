@@ -29,20 +29,38 @@ class MapViewPresenter: ViewToPresenterMapViewProtocol {
     }
    
     func userWantsToOpenInAppleMap() {
-        print("Presenter ---->>> Uwer wants t open \(self.lat)  and \(self.long)")
-        router?.openInAppleMap(withLat: self.lat!, long: self.long!)
+
+        if let latSafe = lat {
+            if let longSafe = long {
+                router?.openInAppleMap(withLat: latSafe, long: longSafe)
+            }
+        }
+        
     }
     
     func userWantsToOpenInGoogleMap() {
         
+        if let latSafe = lat {
+            if let longSafe = long {
+                router?.openInAppleMap(withLat: latSafe, long: longSafe)
+            }
+        }
     }
     
     func userWantsToOpenInYandexMap() {
-        
+        if let latSafe = lat {
+            if let longSafe = long {
+                router?.openInYandexMap(withLat: latSafe, long: longSafe)
+            }
+        }
     }
     
     func userWantsToOpenInYandexNavigator() {
-        
+        if let latSafe = lat {
+            if let longSafe = long {
+                router?.openInYandexNAvigator(withLat: latSafe, long: longSafe)
+            }
+        }
     }
     
     
