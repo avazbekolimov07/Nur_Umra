@@ -118,7 +118,8 @@ extension HomePresenter: InteractorToPresenterHomeProtocol {
   
     func getNewsDetailSuccess(_ news: NewsDM) {
 //        view?.hideHUD()
-        router?.pushToNewDetail(on: view!, with: news)
+//        router?.pushToNewDetail(on: view!, with: news)
+        router?.openInWeb(link: news.link)
     }
     func getNewsDetailFailure() {
 //        view?.hideHUD()

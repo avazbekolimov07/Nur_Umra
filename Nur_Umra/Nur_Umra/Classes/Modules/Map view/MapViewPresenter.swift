@@ -42,7 +42,7 @@ class MapViewPresenter: ViewToPresenterMapViewProtocol {
         
         if let latSafe = lat {
             if let longSafe = long {
-                router?.openInAppleMap(withLat: latSafe, long: longSafe)
+                router?.openInGoogleMap(withLat: latSafe, long: longSafe)
             }
         }
     }

@@ -44,13 +44,13 @@ extension HomeRouter: PresenterToRouterHomeProtocol {
     }
     
     // MARK: - Navigation
-    func pushToNewDetail(on view: PresenterToViewHomeProtocol, with new: NewsDM) {
-        let newsDetailedVC = NewsDetailsRouter.createModule(with: new)
-
-        let viewController = view as! HomeViewController
-        viewController.navigationController?
-            .pushViewController(newsDetailedVC, animated: true)
-    }
+//    func pushToNewDetail(on view: PresenterToViewHomeProtocol, with new: NewsDM) {
+//        let newsDetailedVC = NewsDetailsRouter.createModule(with: new)
+//
+//        let viewController = view as! HomeViewController
+//        viewController.navigationController?
+//            .pushViewController(newsDetailedVC, animated: true)
+//    }
     
     func pushToAllNews(on view: PresenterToViewHomeProtocol, with allNews: [NewsDM]) {
         let AllNewsViewController = AllNewsRouter.createModule(with: allNews)
@@ -83,6 +83,12 @@ extension HomeRouter: PresenterToRouterHomeProtocol {
         let historicalPlaces = HistoricalPlacesRouter.createModule()
         let viewController = view as! HomeViewController
         viewController.navigationController?.pushViewController(historicalPlaces, animated: true)
+    }
+    
+    func openInWeb(link: String) {
+        if let url = URL(string: link) {
+            UIApplication.shared.open(url)
+        }
     }
     
     

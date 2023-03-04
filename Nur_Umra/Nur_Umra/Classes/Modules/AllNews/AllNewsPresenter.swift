@@ -61,8 +61,9 @@ class AllNewsPresenter: ViewToPresenterAllNewsProtocol {
             print("Failure in did select news -",news)
             return
         }
-        print("Should show news - on detailed vc ",safeNews)
-        router?.pushtoNewsDetailed(on: view!, with: safeNews)
+        print("Should show news - on detailed vc ",safeNews.link)
+//        router?.pushtoNewsDetailed(on: view!, with: safeNews)
+        router?.openInWeb(link: safeNews.link)
 //        interactor?.retrieveQuote(at: index)
     }
     

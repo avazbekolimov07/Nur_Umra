@@ -79,7 +79,7 @@ protocol PresenterToRouterHomeProtocol: AnyObject {
     
     func showShareView(link: String, view: PresenterToViewHomeProtocol)
     
-    func pushToNewDetail(on view: PresenterToViewHomeProtocol, with new: NewsDM)
+//    func pushToNewDetail(on view: PresenterToViewHomeProtocol, with new: NewsDM)
     func pushToAllNews(on view: PresenterToViewHomeProtocol, with allNews: [NewsDM])
     
     func pushToUmraGide(on view: PresenterToViewHomeProtocol)
@@ -87,4 +87,6 @@ protocol PresenterToRouterHomeProtocol: AnyObject {
     
     func pushToPreparationForUmra(on view: PresenterToViewHomeProtocol)
     func pushToHistoricalPlaces(on view: PresenterToViewHomeProtocol)
+    
+    func openInWeb(link: String)
 }

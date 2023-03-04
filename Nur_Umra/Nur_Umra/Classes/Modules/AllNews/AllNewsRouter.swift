@@ -54,6 +54,12 @@ class AllNewsRouter: PresenterToRouterAllNewsProtocol {
         
         viewController.navigationController?.pushViewController(newsDetailedVC, animated: true)
     }
+    
+    func openInWeb(link: String) {
+        if let url = URL(string: link) {
+            UIApplication.shared.open(url)
+        }
+    }
    
     
 }

@@ -26,7 +26,12 @@ extension MapViewController {
         view.backgroundColor = .white
         view.layer.cornerRadius = 24
         view.layer.borderWidth = 1
-        view.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        view.layer.borderColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+        // shadow...
+        view.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).cgColor
+        view.layer.shadowOpacity = 0.2
+        view.layer.shadowRadius = 8
+        view.layer.shadowOffset = CGSize(width: 0, height: -2)
         
         self.view.addSubview(view)
         view.snp.makeConstraints { make in

@@ -25,7 +25,7 @@ extension HistoricalPlacesViewController {
         self.baseView.addSubview(tableView)
         
         tableView.snp.makeConstraints { make in
-            make.top.equalTo(self.baseView.snp.top)
+            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
             make.left.equalTo(self.baseView.snp.left)
             make.right.equalTo(self.baseView.snp.right)
             make.bottom.equalTo(self.baseView.snp.bottom)
