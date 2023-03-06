@@ -56,6 +56,8 @@ class UmraGideTVC: UITableViewCell, ClassIdentifiable {
     // MARK: - Lifecycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        moreImageView.skeletonCornerRadius = 4
         setupSubviews()
     }
     
@@ -76,18 +78,22 @@ class UmraGideTVC: UITableViewCell, ClassIdentifiable {
     
     func configureSkeleton() {
         [self.titleLabel,
+         self.moreImageView,
          self.hStackView,
-         self.mainView,
-         self].forEach {
+         self.mainView].forEach {
             $0.isSkeletonable = true
+            $0.showAnimatedGradientSkeleton()
         }
-        self.showAnimatedGradientSkeleton()
     }
     
     func removeSkeleton() {
-        [self].forEach {
-            $0.hideSkeleton()
+        [self.titleLabel,
+         self.moreImageView,
+         self.hStackView,
+         self.mainView].forEach {
+            $0.stopSkeletonAnimation()
         }
+        self.hideSkeleton(reloadDataAfter: true, transition: .crossDissolve(0.25))
     }
 
     @available(*, unavailable)

@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import SkeletonView
 
 class UmraAudioTVC: UITableViewCell, ClassIdentifiable {
     
@@ -45,6 +46,8 @@ class UmraAudioTVC: UITableViewCell, ClassIdentifiable {
         button.isUserInteractionEnabled = true
         button.setImage(UIImage(named: "play_img")?.withRenderingMode(.alwaysOriginal), for: .normal)
         button.addTarget(self, action: #selector(handlePlay), for: .touchUpInside)
+        
+        button.skeletonCornerRadius = 28
         return button
     }()
     
@@ -55,6 +58,10 @@ class UmraAudioTVC: UITableViewCell, ClassIdentifiable {
         label.textColor = #colorLiteral(red: 0.2224110067, green: 0.2330494523, blue: 0.2606178522, alpha: 1)
         label.textAlignment = .left
         label.numberOfLines = 0
+        
+        label.skeletonCornerRadius = 4
+        label.linesCornerRadius = 4
+        label.lastLineFillPercent = 60
         return label
     }()
     
@@ -64,7 +71,10 @@ class UmraAudioTVC: UITableViewCell, ClassIdentifiable {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.isUserInteractionEnabled = true
+        
+        moreImageView.skeletonCornerRadius = 4
         setupSubviews()
+        configureSkeleton()
     }
     
     override func layoutSubviews() {
@@ -111,6 +121,18 @@ class UmraAudioTVC: UITableViewCell, ClassIdentifiable {
         }
     }
     
+    func configureSkeleton() {
+        [self.titleLabel,
+         self.moreImageView,
+         self.playButton,
+         self.hStackView,
+         self.mainView,
+         self.contentView,
+         self].forEach {
+            $0.isSkeletonable = true
+        }
+    }
+    
     //MARK: - Actions
     @objc func handlePlay() {
         if let audio = duo?.audio {
@@ -129,7 +151,7 @@ class UmraAudioTVC: UITableViewCell, ClassIdentifiable {
 extension UmraAudioTVC {
     
     private func setupSubviews() {
-        addSubviews(mainView)
+        contentView.addSubviews(mainView)
         mainView.addSubview(hStackView)
         configureConstraints()
     }
@@ -158,10 +180,10 @@ extension UmraAudioTVC {
         bottomConstraint.isActive = true
         
         mainView.snp.makeConstraints { make in
-            make.top.equalTo(self.snp.top).offset(6)
-            make.left.equalTo(self.snp.left).offset(16)
-            make.right.equalTo(self.snp.right).offset(-16)
-            make.bottom.equalTo(self.snp.bottom).offset(-6)
+            make.top.equalTo(contentView.snp.top).offset(6)
+            make.left.equalTo(contentView.snp.left).offset(16)
+            make.right.equalTo(contentView.snp.right).offset(-16)
+            make.bottom.equalTo(contentView.snp.bottom).offset(-6)
         }
         
     }

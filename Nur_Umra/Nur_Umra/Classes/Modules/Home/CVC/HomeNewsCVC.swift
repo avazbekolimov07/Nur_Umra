@@ -150,17 +150,23 @@ class HomeNewsCVC: UICollectionViewCell, ClassIdentifiable {
          self.timeLabel,
          self.stackView,
          self.bottomView,
-         self.photoImageView,
-         self].forEach {
+         self.photoImageView].forEach {
             $0.isSkeletonable = true
+            $0.showAnimatedGradientSkeleton()
         }
-        self.showAnimatedGradientSkeleton()
     }
     
     func removeSkeleton() {
-        [self].forEach {
-            $0.hideSkeleton()
+        [self.shareImageView,
+         self.shareButton,
+         self.titleLabel,
+         self.timeLabel,
+         self.stackView,
+         self.bottomView,
+         self.photoImageView].forEach {
+            $0.stopSkeletonAnimation()
         }
+        self.hideSkeleton(reloadDataAfter: true, transition: .crossDissolve(0.25))
     }
 
     @available(*, unavailable)

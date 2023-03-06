@@ -7,6 +7,7 @@
 
 import UIKit
 import AVFoundation
+import SkeletonView
 
 class UmraAudiosViewController: UIViewController {
     
@@ -60,11 +61,17 @@ extension UmraAudiosViewController: PresenterToViewUmraAudiosProtocol {
     
     func onFetchDuolarSuccess() {
         print("View receives the response from Presenter and updates itself.")
+        self.tableView.stopSkeletonAnimation()
+        self.view.hideSkeleton(reloadDataAfter: true, transition: .crossDissolve(0.25))
+        
         self.tableView.reloadData()
     }
     
     func onFetchDuolarFailure(error: String) {
         print("View receives the response from Presenter with error: \(error)")
+        self.tableView.stopSkeletonAnimation()
+        self.view.hideSkeleton(reloadDataAfter: true, transition: .crossDissolve(0.25))
+        
         self.tableView.reloadData()
     }
     
@@ -109,10 +116,18 @@ extension UmraAudiosViewController: PresenterToViewUmraAudiosProtocol {
     }
 }
 
-// MARK: - TableView Delegate & Data Source
+// MARK: - Skeleton TableView Delegate & Data Source
 
-extension UmraAudiosViewController: UITableViewDelegate, UITableViewDataSource {
+extension UmraAudiosViewController: UITableViewDelegate, SkeletonTableViewDataSource {
     
+    func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        return UmraAudioTVC.self.reuseId
+    }
+        
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -129,6 +144,7 @@ extension UmraAudiosViewController: UITableViewDelegate, UITableViewDataSource {
         //MARK: - prepareForReuse is called every time before cellForRowAt
         cell.isSelectedItem = selectedIndexPath == indexPath
         cell.isPlaying = isPlaying
+        
         cell.configureBtnState()
     
         cell.didPlayBtnTapped = { [weak self] url in
@@ -152,6 +168,9 @@ extension UmraAudiosViewController {
         self.tableView = self.create_tableView()
         self.navigationItem.title = "UMRA DUOLARI"
         self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.1716529429, green: 0.1766341031, blue: 0.19795838, alpha: 1)
+        
+        tableView.isSkeletonable = true
+        tableView.showAnimatedGradientSkeleton()
     }
 }
 
