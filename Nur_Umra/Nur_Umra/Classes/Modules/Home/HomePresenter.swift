@@ -19,7 +19,6 @@ class HomePresenter: ViewToPresenterHomeProtocol {
     
     // MARK: Inputs from view
     func viewDidLoad() {
-        print("Presenter is being notified that the View was loaded.")
 //        view?.showHUD()
         view?.createUIElements()
         interactor?.loadNews()
@@ -88,7 +87,6 @@ class HomePresenter: ViewToPresenterHomeProtocol {
 extension HomePresenter: InteractorToPresenterHomeProtocol {
     
     func fetchNewsSuccess(news: [NewsDM]) {
-        print("Presenter receives the result from Interactor after it's done its job.")
         self.news = news
 //        view?.hideHUD()
         view?.onFetchNewsSuccess()

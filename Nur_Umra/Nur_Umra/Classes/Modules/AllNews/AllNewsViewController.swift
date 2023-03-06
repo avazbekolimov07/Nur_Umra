@@ -13,7 +13,6 @@ class AllNewsViewController: UIViewController {
    
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
-       print("didLoad")
         presenter?.viewDidLoad()
     }
     override func viewWillAppear(_ animated: Bool) {
