@@ -23,7 +23,6 @@ class HomePresenter: ViewToPresenterHomeProtocol {
 //        view?.showHUD()
         view?.createUIElements()
         interactor?.loadNews()
-        loadNotification()
     }
     
     func viewWillAppear() {
@@ -82,22 +81,6 @@ class HomePresenter: ViewToPresenterHomeProtocol {
     func didSelectMore() {
         interactor?.retrieveAllNews()
     }
-    
-  
-    
-    @objc func musicStop(notification: NSNotification){
-        print("Presenter --->>>> music stop is working")
-    }
-    
-    func loadNotification() {
-        NotificationCenter.default.addObserver(self, selector: #selector(musicStop(notification: )), name: Notification.Name("musicStop"), object: nil)
-        
-        
-    }
-    
-    
-    
-    
     
 }
 

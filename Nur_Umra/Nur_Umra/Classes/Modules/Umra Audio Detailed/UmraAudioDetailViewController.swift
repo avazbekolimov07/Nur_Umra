@@ -41,6 +41,10 @@ class UmraAudioDetailViewController: UIViewController {
         presenter?.viewWillDisappear()
     }
     
+    deinit {
+        presenter?.viewDeinit()
+    }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .lightContent
     }
@@ -55,7 +59,6 @@ class UmraAudioDetailViewController: UIViewController {
             presenter?.didPlayAndStop(audioUrlSting: url, currentPlayer: audioPlayer)
         }
     }
-    
     
 }
 

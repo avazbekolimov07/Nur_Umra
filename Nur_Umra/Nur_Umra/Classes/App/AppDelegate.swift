@@ -23,10 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
+    
     func applicationDidEnterBackground(_ application: UIApplication) {
-        print("enter background")
-        NotificationCenter.default.post(name: Notification.Name("musicStop"), object: nil)
-       
+        print("AppDelegate enter background")
+        NotificationCenter.default.post(name: Notification.Name("musicStopBackground"), object: nil)
     }
     
     

@@ -25,6 +25,7 @@ class UmraAudiosPresenter: ViewToPresenterUmraAudiosProtocol {
 //        view?.showHUD()
         view?.createUIElements()
         interactor?.loadDuolar()
+        loadNotification()
     }
     
     func viewWillAppear() {
@@ -33,6 +34,10 @@ class UmraAudiosPresenter: ViewToPresenterUmraAudiosProtocol {
     
     func viewWillDisappear() {
         view?.handleViewWillDisappear()
+    }
+    
+    func viewDeinit() {
+        removeNotification()
     }
     
     func numberOfRowsInSection() -> Int {
@@ -69,6 +74,28 @@ class UmraAudiosPresenter: ViewToPresenterUmraAudiosProtocol {
         interactor?.retrieveUmraAudioDetail(at: indexPath)
     }
     
+    @objc func musicStopBackground(notification: NSNotification){
+        print("UmraAudiosPresenter --->>> music stop is working")
+        if iPath != IndexPath() {
+            view?.onViewStop(indexPath: iPath!)
+            view?.onFetchAudioFailure(error: "View enter background", indexPath: iPath!)
+        }
+    }
+    
+    func loadNotification() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(musicStopBackground(notification: )),
+                                               name: Notification.Name("musicStopBackground"),
+                                               object: nil)
+    }
+    
+    func removeNotification() {
+        print("Umra Audios View <<<---- remove observer")
+        NotificationCenter.default.removeObserver(self,
+                                                  name: Notification.Name("musicStopBackground"),
+                                                  object: nil)
+    }
+    
 }
 
 extension UmraAudiosPresenter: InteractorToPresenterUmraAudiosProtocol {
@@ -101,7 +128,7 @@ extension UmraAudiosPresenter: InteractorToPresenterUmraAudiosProtocol {
 //        view?.hideHUD()
         if iPath != IndexPath() {
             view?.onViewStop(indexPath: iPath!)
-            view?.onFetchAudioFailure(error: "Next Page Shown", indexPath: iPath!)
+            view?.onFetchAudioFailure(error: "View shows next page", indexPath: iPath!)
         }
         router?.pushToUmraAudioDetail(on: view!, with: duo)
     }

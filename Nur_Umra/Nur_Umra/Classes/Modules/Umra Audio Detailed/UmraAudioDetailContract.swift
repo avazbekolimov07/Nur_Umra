@@ -39,6 +39,7 @@ protocol ViewToPresenterUmraAudioDetailProtocol: AnyObject {
     func viewDidLoad()
     func viewWillAppear()
     func viewWillDisappear()
+    func viewDeinit()
     
     func userWantsToPopVC()
 

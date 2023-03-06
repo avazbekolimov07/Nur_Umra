@@ -21,6 +21,7 @@ class UmraAudioDetailPresenter: ViewToPresenterUmraAudioDetailProtocol {
     func viewDidLoad() {
         view?.createUIElements()
         interactor?.retrieveUmraAudioDetail()
+        loadNotification()
     }
     
     func viewWillAppear() {
@@ -29,6 +30,10 @@ class UmraAudioDetailPresenter: ViewToPresenterUmraAudioDetailProtocol {
     
     func viewWillDisappear() {
         view?.handleViewWillDisappear()
+    }
+    
+    func viewDeinit() {
+        removeNotification()
     }
     
     func userWantsToPopVC() {
@@ -45,6 +50,25 @@ class UmraAudioDetailPresenter: ViewToPresenterUmraAudioDetailProtocol {
         } else {
             interactor?.retrieveAudioURL(urlString: audioUrlSting)
         }
+    }
+    
+    @objc func musicStopBackground(notification: NSNotification){
+        print("UmraAudioDetailPresenter --->>> music stop is working")
+        view?.onViewStop()
+    }
+    
+    func loadNotification() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(musicStopBackground(notification: )),
+                                               name: Notification.Name("musicStopBackground"),
+                                               object: nil)
+    }
+    
+    func removeNotification() {
+        print("Audio Detail View <<<---- remove observer")
+        NotificationCenter.default.removeObserver(self,
+                                                  name: Notification.Name("musicStopBackground"),
+                                                  object: nil)
     }
     
 }

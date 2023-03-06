@@ -27,6 +27,10 @@ class UmraAudiosViewController: UIViewController {
         presenter?.viewWillDisappear()
     }
     
+    deinit {
+        presenter?.viewDeinit()
+    }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .darkContent
     }
@@ -41,9 +45,6 @@ class UmraAudiosViewController: UIViewController {
     var isPlaying: Bool = false
     
     // MARK: - Actions
-    @objc func handleBackButton() {
-        
-    }
     
 }
 
@@ -54,6 +55,7 @@ extension UmraAudiosViewController: PresenterToViewUmraAudiosProtocol {
     }
     
     func handleViewWillDisappear() {
+        
     }
     
     func onFetchDuolarSuccess() {
