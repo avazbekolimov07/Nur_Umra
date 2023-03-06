@@ -13,6 +13,7 @@ class UmraAudiosPresenter: ViewToPresenterUmraAudiosProtocol {
     var duolar: [DuoDM]?
     // iPath -> item which is selected before the current indexPath
     var iPath: IndexPath?
+    var dataFetched: Bool = false
     
     // MARK: Properties
     weak var view: PresenterToViewUmraAudiosProtocol?
@@ -42,7 +43,7 @@ class UmraAudiosPresenter: ViewToPresenterUmraAudiosProtocol {
     
     func numberOfRowsInSection() -> Int {
         guard let duolar = self.duolar else {
-            return 0
+            return dataFetched ? 0 : 10
         }
         return duolar.count
     }
@@ -104,12 +105,14 @@ extension UmraAudiosPresenter: InteractorToPresenterUmraAudiosProtocol {
         print("Presenter receives the result from Interactor after it's done its job.")
         self.duolar = duolar
         self.iPath = IndexPath()
+        self.dataFetched = true
 //        view?.hideHUD()
         view?.onFetchDuolarSuccess()
     }
     
     func fetchDuolarFailure(errorCode: Int) {
         print("Presenter receives the result from Interactor after it's done its job.")
+        self.dataFetched = true
 //        view?.hideHUD()
         view?.onFetchDuolarFailure(error: "Couldn't fetch news: \(errorCode)")
     }

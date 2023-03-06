@@ -30,7 +30,8 @@ protocol ViewToPresenterUmraGideProtocol: AnyObject {
     var router: PresenterToRouterUmraGideProtocol? { get set }
     
     var handbooks: [HandbookDM]? { get set }
-
+    var dataFetched: Bool { get set }
+    
     func viewDidLoad()
     func viewWillAppear()
     func viewWillDisappear()

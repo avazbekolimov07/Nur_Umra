@@ -10,6 +10,7 @@ import SwiftyJSON
 class UmraGidePresenter: ViewToPresenterUmraGideProtocol {
     
     var handbooks: [HandbookDM]?
+    var dataFetched: Bool = false
     
     // MARK: Properties
     weak var view: PresenterToViewUmraGideProtocol?
@@ -38,7 +39,7 @@ class UmraGidePresenter: ViewToPresenterUmraGideProtocol {
     
     func numberOfRowsInSection() -> Int {
         guard let handbooks = self.handbooks else {
-            return 0
+            return dataFetched ? 0 : 10
         }
         return handbooks.count
     }
@@ -52,7 +53,7 @@ class UmraGidePresenter: ViewToPresenterUmraGideProtocol {
     }
     
     func didSelectRowAt(indexPath: IndexPath) {
-        if indexPath.section == 1{
+        if indexPath.section == 1 {
             interactor?.retrieveHandbookDetail(at: indexPath.item)
         }
     }
@@ -63,12 +64,14 @@ extension UmraGidePresenter: InteractorToPresenterUmraGideProtocol {
     func fetchHandbooksSuccess(handbooks: [HandbookDM]) {
         print("Presenter receives the result from Interactor after it's done its job.")
         self.handbooks = handbooks
+        self.dataFetched = true
 //        view?.hideHUD()
         view?.onFetchHandbooksSuccess()
     }
     
     func fetchHandbooksFailure(errorCode: Int) {
         print("Presenter receives the result from Interactor after it's done its job.")
+        self.dataFetched = true
 //        view?.hideHUD()
         view?.onFetchHandbooksFailure(error: "Couldn't fetch news: \(errorCode)")
     }

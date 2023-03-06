@@ -40,7 +40,7 @@ class HomePresenter: ViewToPresenterHomeProtocol {
     
     func numberOfRowsInSection() -> Int {
         guard let news = self.news else {
-            return 0
+            return 4
         }
         return news.count
     }

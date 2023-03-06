@@ -36,6 +36,7 @@ protocol ViewToPresenterUmraAudiosProtocol: AnyObject {
     
     var duolar: [DuoDM]? { get set }
     var iPath: IndexPath? { get set }
+    var dataFetched: Bool { get set }
     
     func viewDidLoad()
     func viewWillAppear()

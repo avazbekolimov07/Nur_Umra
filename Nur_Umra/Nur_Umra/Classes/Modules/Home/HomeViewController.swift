@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class HomeViewController: UIViewController {
     
     // MARK: - Lifecycle Methods
@@ -41,7 +42,6 @@ class HomeViewController: UIViewController {
         presenter?.refresh()
     }
     
-    
 }
 
 extension HomeViewController: PresenterToViewHomeProtocol {
@@ -56,12 +56,20 @@ extension HomeViewController: PresenterToViewHomeProtocol {
     
     func onFetchNewsSuccess() {
         print("View receives the response from Presenter and updates itself.")
+    
+//        self.collectionView.stopSkeletonAnimation()
+//        self.view.hideSkeleton(reloadDataAfter: true, transition: .crossDissolve(0.25))
+        
         self.collectionView.reloadData()
         self.refreshControl.endRefreshing()
     }
 
     func onFetchNewsFailure(error: String) {
         print("View receives the response from Presenter with error: \(error)")
+        
+//        self.collectionView.stopSkeletonAnimation()
+//        self.view.hideSkeleton(reloadDataAfter: true, transition: .crossDissolve(0.25))
+        
         self.refreshControl.endRefreshing()
     }
     
@@ -80,6 +88,26 @@ extension HomeViewController: PresenterToViewHomeProtocol {
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
+//    func numSections(in collectionSkeletonView: UICollectionView) -> Int {
+//        return 3
+//    }
+//
+//    func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        switch section {
+//        case 0:
+//            return 0
+//        case 1:
+//            return 4
+//        default:
+//            return 0
+//        }
+//    }
+//
+//    func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> ReusableCellIdentifier {
+//        return HomeNewsCVC.self.reuseId
+//    }
+
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 3
     }
@@ -89,7 +117,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         case 0:
             return 1
         case 1:
-            return presenter?.numberOfRowsInSection() ?? 0
+            return presenter?.numberOfRowsInSection() ?? 0 // default is 4 in presenter func
         default:
             return 4
         }
@@ -102,6 +130,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return cell
         case 1:
             let cell = collectionView.dequeueReusableCell(withCellType: HomeNewsCVC.self, for: indexPath)
+            cell.configureSkeleton()
             cell.configure(new: presenter?.eachNewsData(indexPath: indexPath))
             cell.didShareButtonPressed = { [weak self] link in
                 self?.presenter?.didShowShareView(link: link)
@@ -176,10 +205,14 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 extension HomeViewController {
     func createUIElements() {
         overrideUserInterfaceStyle = .light
+        
         self.baseView = self.create_baseView()
         self.collectionView = self.create_collectionView()
         self.refreshControl = self.create_refreshController()
         self.collectionView.addSubview(self.refreshControl)
         self.navigationItem.title = ""
+        
+//        collectionView.isSkeletonable = true
+//        collectionView.showAnimatedGradientSkeleton()
     }
 }

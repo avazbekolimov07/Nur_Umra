@@ -13,5 +13,6 @@ target 'Nur_Umra' do
  pod 'GooglePlaces'
  pod 'Localize-Swift', '~> 3.2'
  pod 'SnapKit'
+ pod 'SkeletonView'
 
 end

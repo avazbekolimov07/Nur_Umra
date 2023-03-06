@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 class UmraGideTVC: UITableViewCell, ClassIdentifiable {
     
@@ -31,7 +32,7 @@ class UmraGideTVC: UITableViewCell, ClassIdentifiable {
         stackView.alignment = .center
         stackView.axis = .horizontal
         stackView.backgroundColor = .clear
-        stackView.spacing = 12
+        stackView.spacing = 8
         return stackView
     }()
     
@@ -42,6 +43,11 @@ class UmraGideTVC: UITableViewCell, ClassIdentifiable {
         label.textColor = #colorLiteral(red: 0.2224110067, green: 0.2330494523, blue: 0.2606178522, alpha: 1)
         label.textAlignment = .left
         label.numberOfLines = 0
+        
+        label.text = "simple data to make skeletion view so that it would be visible"
+        label.skeletonCornerRadius = 4
+        label.linesCornerRadius = 4
+        label.lastLineFillPercent = 60
         return label
     }()
     
@@ -60,11 +66,28 @@ class UmraGideTVC: UITableViewCell, ClassIdentifiable {
     func configure(handbook: HandbookDM?) {
         guard let handbookSafe = handbook else { return }
         self.handbook = handbook
+        self.removeSkeleton()
         self.updateUI(handbook: handbookSafe)
     }
     
     private func updateUI(handbook: HandbookDM) {
         titleLabel.text = handbook.name
+    }
+    
+    func configureSkeleton() {
+        [self.titleLabel,
+         self.hStackView,
+         self.mainView,
+         self].forEach {
+            $0.isSkeletonable = true
+        }
+        self.showAnimatedGradientSkeleton()
+    }
+    
+    func removeSkeleton() {
+        [self].forEach {
+            $0.hideSkeleton()
+        }
     }
 
     @available(*, unavailable)
@@ -78,7 +101,7 @@ class UmraGideTVC: UITableViewCell, ClassIdentifiable {
 extension UmraGideTVC {
     
     private func setupSubviews() {
-        addSubviews(mainView)
+        contentView.addSubviews(mainView)
         mainView.addSubview(hStackView)
         configureConstraints()
     }
@@ -97,10 +120,10 @@ extension UmraGideTVC {
         }
         
         mainView.snp.makeConstraints { make in
-            make.top.equalTo(self.snp.top).offset(6)
-            make.left.equalTo(self.snp.left).offset(16)
-            make.right.equalTo(self.snp.right).offset(-16)
-            make.bottom.equalTo(self.snp.bottom).offset(-6)
+            make.top.equalTo(self.contentView.snp.top).offset(6)
+            make.left.equalTo(self.contentView.snp.left).offset(16)
+            make.right.equalTo(self.contentView.snp.right).offset(-16)
+            make.bottom.equalTo(self.contentView.snp.bottom).offset(-6)
         }
         
     }

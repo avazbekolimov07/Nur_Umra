@@ -65,6 +65,7 @@ extension UmraAudiosViewController: PresenterToViewUmraAudiosProtocol {
     
     func onFetchDuolarFailure(error: String) {
         print("View receives the response from Presenter with error: \(error)")
+        self.tableView.reloadData()
     }
     
     func onFetchAudioSuccess(player: AVPlayer, indexPath: IndexPath) {
@@ -117,7 +118,7 @@ extension UmraAudiosViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter?.numberOfRowsInSection() ?? 0
+        return presenter?.numberOfRowsInSection() ?? 0 // default is 10 in presenter func
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

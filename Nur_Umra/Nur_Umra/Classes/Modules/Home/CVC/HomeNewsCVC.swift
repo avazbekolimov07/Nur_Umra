@@ -7,6 +7,7 @@
 
 import UIKit
 import SDWebImage
+import SkeletonView
 
 class HomeNewsCVC: UICollectionViewCell, ClassIdentifiable {
     
@@ -72,6 +73,12 @@ class HomeNewsCVC: UICollectionViewCell, ClassIdentifiable {
         label.textColor = .white
         label.textAlignment = .left
         label.numberOfLines = 0
+        
+        label.text = "simple data to make skeletion view so that it would be visible ( but it would be longer )"
+        label.skeletonCornerRadius = 4
+        label.linesCornerRadius = 4
+//        label.skeletonTextNumberOfLines = 0
+//        label.lastLineFillPercent = 80
         return label
     }()
     
@@ -84,6 +91,12 @@ class HomeNewsCVC: UICollectionViewCell, ClassIdentifiable {
         label.textColor = .white
         label.textAlignment = .left
         label.numberOfLines = 1
+        
+        label.text = "simple data to make skeletion view so that it would be visible"
+        label.skeletonCornerRadius = 4
+        label.linesCornerRadius = 4
+//        label.skeletonTextNumberOfLines = 1
+//        label.lastLineFillPercent = 80
         return label
     }()
     
@@ -118,15 +131,36 @@ class HomeNewsCVC: UICollectionViewCell, ClassIdentifiable {
     func configure(new: NewsDM?) {
         guard let newSafe = new else { return }
         self.new = newSafe
+        self.removeSkeleton()
         self.updateUI(new: newSafe)
     }
     
     private func updateUI(new: NewsDM) {
-        guard let url =  URL(string: new.image) else {return}
+        guard let url = URL(string: new.image) else {return}
         photoImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
         photoImageView.sd_setImage(with: url, placeholderImage: nil)
         titleLabel.text = new.title
         timeLabel.text = new.created_at
+    }
+    
+    func configureSkeleton() {
+        [self.shareImageView,
+         self.shareButton,
+         self.titleLabel,
+         self.timeLabel,
+         self.stackView,
+         self.bottomView,
+         self.photoImageView,
+         self].forEach {
+            $0.isSkeletonable = true
+        }
+        self.showAnimatedGradientSkeleton()
+    }
+    
+    func removeSkeleton() {
+        [self].forEach {
+            $0.hideSkeleton()
+        }
     }
 
     @available(*, unavailable)
@@ -140,7 +174,7 @@ class HomeNewsCVC: UICollectionViewCell, ClassIdentifiable {
 extension HomeNewsCVC {
 
     func setupSubviews() {
-        addSubviews(photoImageView, bottomView, shareButton)
+        contentView.addSubviews(photoImageView, bottomView, shareButton)
         bottomView.addSubview(stackView)
         shareButton.addSubview(shareImageView)
         configureConstraints()

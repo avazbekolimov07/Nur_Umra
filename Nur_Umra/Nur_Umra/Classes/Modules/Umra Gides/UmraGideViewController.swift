@@ -63,6 +63,7 @@ extension UmraGideViewController: PresenterToViewUmraGideProtocol {
     
     func onFetchHandbooksFailure(error: String) {
         print("View receives the response from Presenter with error: \(error)")
+        self.tableView.reloadData() // to make  to 0 cell from 10 cells
     }
   
 }
@@ -80,7 +81,7 @@ extension UmraGideViewController: UITableViewDelegate, UITableViewDataSource {
         case 0:
             return 1
         default:
-            return presenter?.numberOfRowsInSection() ?? 0
+            return presenter?.numberOfRowsInSection() ?? 0 // default is 10 in presenter func
         }
     }
     
@@ -92,6 +93,7 @@ extension UmraGideViewController: UITableViewDelegate, UITableViewDataSource {
         default:
             let cell = tableView.dequeueReusableCell(withCellType: UmraGideTVC.self, for: indexPath)
             cell.selectionStyle = .none
+            cell.configureSkeleton()
             cell.configure(handbook: presenter?.eachHanbookData(indexPath: indexPath))
             return cell
         }
