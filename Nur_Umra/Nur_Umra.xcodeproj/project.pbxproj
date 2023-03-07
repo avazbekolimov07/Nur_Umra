@@ -722,7 +722,6 @@
 				30A9C35629A32AD700C9EEEA /* Frameworks */,
 				30A9C35729A32AD700C9EEEA /* Resources */,
 				4A26E0A8B09BCCFC5F020C06 /* [CP] Embed Pods Frameworks */,
-				973CC17C74EAE6774AD9F3D5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -813,23 +812,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Nur_Umra/Pods-Nur_Umra-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		973CC17C74EAE6774AD9F3D5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Nur_Umra/Pods-Nur_Umra-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Nur_Umra/Pods-Nur_Umra-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Nur_Umra/Pods-Nur_Umra-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B55B066729FEFDE71F95B7F9 /* [CP] Check Pods Manifest.lock */ = {
