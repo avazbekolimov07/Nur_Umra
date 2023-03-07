@@ -30,7 +30,7 @@ class NetworkLottie: UIViewController {
         let label = UILabel()
         label.text = "Internet Aloqasi Mavjud Emas!"
         label.textAlignment = .center
-        label.textColor = .white
+        label.textColor = .mainGreenColor
         label.font = UIFont.poppins_Medium(size: 22)
         
         return label
