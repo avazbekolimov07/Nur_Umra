@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.backgroundColor = .white
         window?.rootViewController = HomeRouter.createModule()
-//        window?.rootViewController = MapViewController()
         window?.makeKeyAndVisible()
         
         return true

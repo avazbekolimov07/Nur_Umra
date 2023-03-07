@@ -214,5 +214,30 @@ extension HomeViewController {
         
 //        collectionView.isSkeletonable = true
 //        collectionView.showAnimatedGradientSkeleton()
+        
+        NetworkMonitor.shared.startMonitoring()
+        networkListener()
+    }
+}
+
+extension HomeViewController {
+    func networkListener(){
+        print("networkListener")
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(internetConnectionOff(notification: )),
+                                               name: Notification.Name("internetConnectionOff"),
+                                               object: nil)
+        
+    }
+    
+    
+    @objc func internetConnectionOff(notification: NSNotification){
+        print("internetConnectionOff")
+        DispatchQueue.main.async {
+            let vc = NetworkLottie()
+            vc.modalPresentationStyle = .overFullScreen
+            vc.modalTransitionStyle = .crossDissolve
+            self.present(vc, animated: false, completion: nil)
+        }
     }
 }

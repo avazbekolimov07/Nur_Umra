@@ -125,6 +125,9 @@
 		30AC277C29A9F285005DE047 /* UmraAudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC277B29A9F285005DE047 /* UmraAudioService.swift */; };
 		30AC277F29AA0E1E005DE047 /* UmraAudioTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC277E29AA0E1D005DE047 /* UmraAudioTVC.swift */; };
 		30AC278129AA1883005DE047 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AC278029AA1883005DE047 /* UILabel+Extension.swift */; };
+		30B1CD4529B7001D00636506 /* NetworkLottie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B1CD4429B7001D00636506 /* NetworkLottie.swift */; };
+		30B1CD4729B7002900636506 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B1CD4629B7002900636506 /* NetworkManager.swift */; };
+		30B1CD4929B7006900636506 /* wiFiOff.json in Resources */ = {isa = PBXBuildFile; fileRef = 30B1CD4829B7006900636506 /* wiFiOff.json */; };
 		30C71D5329A50DAE00E5F6CF /* UIView+Subviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C71D5229A50DAE00E5F6CF /* UIView+Subviews.swift */; };
 		30C71D5529A50DCC00E5F6CF /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C71D5429A50DCC00E5F6CF /* UIView+Shadow.swift */; };
 		30C71D5729A50E0500E5F6CF /* CALayer+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C71D5629A50E0500E5F6CF /* CALayer+Shadow.swift */; };
@@ -258,6 +261,9 @@
 		30AC277B29A9F285005DE047 /* UmraAudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UmraAudioService.swift; path = Nur_Umra/Classes/Common/Entites/UmraAudioService.swift; sourceTree = SOURCE_ROOT; };
 		30AC277E29AA0E1D005DE047 /* UmraAudioTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmraAudioTVC.swift; sourceTree = "<group>"; };
 		30AC278029AA1883005DE047 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		30B1CD4429B7001D00636506 /* NetworkLottie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkLottie.swift; sourceTree = "<group>"; };
+		30B1CD4629B7002900636506 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		30B1CD4829B7006900636506 /* wiFiOff.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wiFiOff.json; sourceTree = "<group>"; };
 		30C71D5229A50DAE00E5F6CF /* UIView+Subviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Subviews.swift"; sourceTree = "<group>"; };
 		30C71D5429A50DCC00E5F6CF /* UIView+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
 		30C71D5629A50E0500E5F6CF /* CALayer+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Shadow.swift"; sourceTree = "<group>"; };
@@ -403,6 +409,7 @@
 		08EC25A529A39A1800DAC561 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				30B1CD4329B6FF8200636506 /* Network */,
 				08EC25A729A39A4300DAC561 /* App */,
 				08EC25A829A39A5400DAC561 /* Modules */,
 				08EC25A929A39AA000DAC561 /* Common */,
@@ -666,6 +673,16 @@
 			path = TVC;
 			sourceTree = "<group>";
 		};
+		30B1CD4329B6FF8200636506 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				30B1CD4429B7001D00636506 /* NetworkLottie.swift */,
+				30B1CD4629B7002900636506 /* NetworkManager.swift */,
+				30B1CD4829B7006900636506 /* wiFiOff.json */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		30C71D5C29A528A000E5F6CF /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -782,6 +799,7 @@
 				082FFF5F29A8F47A002F85B6 /* Poppins-BlackItalic.ttf in Resources */,
 				082FFF5D29A8F47A002F85B6 /* Poppins-ExtraBoldItalic.ttf in Resources */,
 				082FFF5929A8F47A002F85B6 /* Poppins-BoldItalic.ttf in Resources */,
+				30B1CD4929B7006900636506 /* wiFiOff.json in Resources */,
 				082FFF5C29A8F47A002F85B6 /* Poppins-SemiBoldItalic.ttf in Resources */,
 				082FFF6029A8F47A002F85B6 /* OFL.txt in Resources */,
 				082FFF6129A8F47A002F85B6 /* Poppins-Regular.ttf in Resources */,
@@ -843,6 +861,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30B1CD4729B7002900636506 /* NetworkManager.swift in Sources */,
 				083C541C29ACA0E500485BCE /* PreparationForUmra-UI.swift in Sources */,
 				30CC5EBA29A757A0005C158A /* HandbookDM.swift in Sources */,
 				083D5DEC29B06BD7006CF41F /* MapViewInteractor.swift in Sources */,
@@ -933,6 +952,7 @@
 				08EC25C429A39FC700DAC561 /* UmraGideContract.swift in Sources */,
 				083D5DBF29AF1237006CF41F /* MapViewController.swift in Sources */,
 				082FFF4029A8E168002F85B6 /* NewsDetailedInteractor.swift in Sources */,
+				30B1CD4529B7001D00636506 /* NetworkLottie.swift in Sources */,
 				083D5DB429AE08C8006CF41F /* HistoricalPlacesDetailedInteractor.swift in Sources */,
 				08EC25BE29A39EFD00DAC561 /* HomeViewController.swift in Sources */,
 				083D5DB229AE08B3006CF41F /* HistoricalPlacesDetailedPresenter.swift in Sources */,
