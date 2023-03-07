@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 extension PreparationForUmraViewController {
     
@@ -33,7 +34,7 @@ extension PreparationForUmraViewController {
     
     func createImgView() -> UIImageView {
         let imgView = UIImageView()
-        
+        imgView.image = UIImage(systemName: "person")
         self.scrollView.addSubviews(imgView)
         
         imgView.snp.makeConstraints { make in
@@ -54,6 +55,8 @@ extension PreparationForUmraViewController {
         titleLbl.numberOfLines = 0
         titleLbl.textAlignment = .center
         
+        titleLbl.text = "Just for skeleton view some text,Just for skeleton view some text,Just for skeleton view some text,Just for skeleton view some text,Just for skeleton view some text,Just for skeleton view some text,"
+        
         self.scrollView.addSubviews(titleLbl)
         
         titleLbl.snp.makeConstraints { make in
@@ -71,6 +74,7 @@ extension PreparationForUmraViewController {
         titleLbl.font = UIFont(name: "Poppins-Regular", size: 14)
         titleLbl.numberOfLines = 0
         titleLbl.textAlignment = .left
+        titleLbl.text = "Just for skeleton view some text,Just for skeleton view some text,Just for skeleton view some text,Just for skeleton view some text,Just for skeleton view some text,Just for skeleton view some text,"
         
         self.scrollView.addSubviews(titleLbl)
         
@@ -116,5 +120,33 @@ extension PreparationForUmraViewController {
         
         return btn
         
+    }
+    
+    func configureSkeleton() {
+        print("☠ Configure skeleton is working")
+        [
+         self.backBtn,
+         self.descriptionLbl,
+         self.titleLbl,
+         self.imgView,
+         self.view
+         ].forEach {
+            $0.isSkeletonable = true
+            $0.showAnimatedGradientSkeleton()
+        }
+    }
+    
+    func removeSkeleton() {
+        print("☠ remove skeleton is working")
+        [
+         self.backBtn,
+         self.descriptionLbl,
+         self.titleLbl,
+         self.imgView,
+         self.view
+         ].forEach {
+            $0.stopSkeletonAnimation()
+        }
+        self.view.hideSkeleton(reloadDataAfter: true, transition: .crossDissolve(0.25))
     }
 }

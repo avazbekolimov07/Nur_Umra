@@ -35,6 +35,7 @@ class AllNewsViewController: UIViewController {
     // MARK: - Actions
     @objc func refresh() {
         presenter?.refresh()
+        
     }
 }
 
@@ -92,6 +93,7 @@ extension AllNewsViewController: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeNewsCVC", for: indexPath) as? HomeNewsCVC else { return UICollectionViewCell() }
+        cell.configureSkeleton()
         cell.configure(new: presenter?.interactor?.getSpecificNews(indexPAth: indexPath))
         cell.didShareButtonPressed = {[weak self] link in
             self?.presenter?.didShowShareView(link: link)

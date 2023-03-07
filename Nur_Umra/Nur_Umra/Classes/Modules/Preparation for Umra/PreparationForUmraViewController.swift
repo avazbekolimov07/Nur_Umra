@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 class PreparationForUmraViewController: UIViewController {
     
@@ -53,13 +54,15 @@ extension PreparationForUmraViewController: PresenterToViewPreparationForUmraPro
     
     
     func createUIElements() {
-             self.view.backgroundColor = .white
-             self.baseView = self.create_baseView()
-             self.scrollView = self.createScrollView()
-             self.imgView = self.createImgView()
-             self.titleLbl = self.createTitleLbl()
-             self.descriptionLbl = self.createDescription()
-             self.backBtn = self.createBackBtn()
+        self.view.backgroundColor = .white
+        self.baseView = self.create_baseView()
+        self.scrollView = self.createScrollView()
+        self.imgView = self.createImgView()
+        self.titleLbl = self.createTitleLbl()
+        self.descriptionLbl = self.createDescription()
+        self.backBtn = self.createBackBtn()
+        
+        self.configureSkeleton()
     }
     
     func onUpdateUIElementsSuccess(with preparation: PreparationDM) {
@@ -68,6 +71,7 @@ extension PreparationForUmraViewController: PresenterToViewPreparationForUmraPro
     
     func onUpdateUIElementsFailure() {
         print("failure in updating ui elements")
+        self.removeSkeleton()
     }
     
     
@@ -76,6 +80,8 @@ extension PreparationForUmraViewController: PresenterToViewPreparationForUmraPro
         self.imgView.image = UIImage(named: "umraGide_img")
         self.titleLbl.text = "ҚУЙИДАГИЛАРГА АҲАМИЯТ БЕРИНГ"
         self.descriptionLbl.text = preparationInformation.text.deleteHTMLTag()
+        self.removeSkeleton()
+
     }
     
     func handleViewWillAppear() {
