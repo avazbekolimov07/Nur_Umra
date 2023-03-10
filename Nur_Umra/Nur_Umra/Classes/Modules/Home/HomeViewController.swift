@@ -213,7 +213,7 @@ extension HomeViewController {
         self.navigationItem.title = ""
         
         collectionView.isSkeletonable = true
-//        collectionView.showAnimatedGradientSkeleton()
+        collectionView.showAnimatedGradientSkeleton()
         
         NetworkMonitor.shared.startMonitoring()
         networkListener()
