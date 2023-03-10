@@ -70,7 +70,6 @@
 		08476B7729A4EB78006D7509 /* AllNewsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08476B7629A4EB78006D7509 /* AllNewsInteractor.swift */; };
 		085D2A5129B326E300CD9D11 /* String+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085D2A5029B326E300CD9D11 /* String+Extention.swift */; };
 		08639A2929A5FC61002E0D48 /* NewsDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08639A2829A5FC61002E0D48 /* NewsDM.swift */; };
-		08EC25A329A341F700DAC561 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EC25A229A341F700DAC561 /* MainVC.swift */; };
 		08EC25B829A39EB300DAC561 /* HomeContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EC25B729A39EB300DAC561 /* HomeContact.swift */; };
 		08EC25BA29A39ED100DAC561 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EC25B929A39ED100DAC561 /* HomePresenter.swift */; };
 		08EC25BC29A39EEE00DAC561 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EC25BB29A39EEE00DAC561 /* HomeRouter.swift */; };
@@ -204,7 +203,6 @@
 		08476B7629A4EB78006D7509 /* AllNewsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNewsInteractor.swift; sourceTree = "<group>"; };
 		085D2A5029B326E300CD9D11 /* String+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extention.swift"; sourceTree = "<group>"; };
 		08639A2829A5FC61002E0D48 /* NewsDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDM.swift; sourceTree = "<group>"; };
-		08EC25A229A341F700DAC561 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		08EC25B729A39EB300DAC561 /* HomeContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContact.swift; sourceTree = "<group>"; };
 		08EC25B929A39ED100DAC561 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		08EC25BB29A39EEE00DAC561 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
@@ -645,7 +643,6 @@
 				08EC25A529A39A1800DAC561 /* Classes */,
 				08EC25A629A39A2E00DAC561 /* Resources */,
 				08EC25A429A39A0500DAC561 /* Supporting Files */,
-				08EC25A229A341F700DAC561 /* MainVC.swift */,
 				30A9C36A29A32AD800C9EEEA /* Info.plist */,
 			);
 			path = Nur_Umra;
@@ -883,7 +880,6 @@
 				30AC277629A9EFEB005DE047 /* UmraAudiosInteractor.swift in Sources */,
 				30AA27B429A5E9380014C351 /* HomeService.swift in Sources */,
 				30CC5EBF29A757BC005C158A /* UmraGideTopImageTVC.swift in Sources */,
-				08EC25A329A341F700DAC561 /* MainVC.swift in Sources */,
 				306C780929ACB05000C1072A /* UmraAudioDetailInteractor.swift in Sources */,
 				08EC25B829A39EB300DAC561 /* HomeContact.swift in Sources */,
 				30AA27B229A5E0660014C351 /* APIClient.swift in Sources */,
@@ -1111,6 +1107,7 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Nur_Umra/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Nur Umra";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
@@ -1122,7 +1119,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.avazbek.Nur-Umra";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.avazbek.Nur-Umra-a";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1141,6 +1138,7 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Nur_Umra/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Nur Umra";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
@@ -1152,7 +1150,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.avazbek.Nur-Umra";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.avazbek.Nur-Umra-a";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

@@ -10,7 +10,6 @@ import SkeletonView
 
 class PreparationForUmraViewController: UIViewController {
     
-    
     // MARK: - Properties
     var presenter: ViewtoPresenterPreparationForUmraProtocol?
     
@@ -26,25 +25,28 @@ class PreparationForUmraViewController: UIViewController {
         super.viewDidLoad()
         print("View did load")
         presenter?.viewDidLoad()
-
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         presenter?.viewWillAppear()
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         presenter?.viewWillDisappear()
     }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         .lightContent
     }
     
+    override func viewDidLayoutSubviews() {
+        view.layoutSkeletonIfNeeded()
+    }
+    
     // MARK: - Actions
     @objc func backBtnTapped() {
-        //
         presenter?.userWantsToPopVC()
     }
     
@@ -52,9 +54,9 @@ class PreparationForUmraViewController: UIViewController {
 
 extension PreparationForUmraViewController: PresenterToViewPreparationForUmraProtocol  {
     
-    
     func createUIElements() {
         self.view.backgroundColor = .white
+        
         self.baseView = self.create_baseView()
         self.scrollView = self.createScrollView()
         self.imgView = self.createImgView()
@@ -66,7 +68,8 @@ extension PreparationForUmraViewController: PresenterToViewPreparationForUmraPro
     }
     
     func onUpdateUIElementsSuccess(with preparation: PreparationDM) {
-        updateUI(preparationInformation: preparation)
+        self.removeSkeleton()
+        self.updateUI(preparationInformation: preparation)
     }
     
     func onUpdateUIElementsFailure() {
@@ -75,13 +78,10 @@ extension PreparationForUmraViewController: PresenterToViewPreparationForUmraPro
     }
     
     
-    
     func updateUI(preparationInformation: PreparationDM) {
         self.imgView.image = UIImage(named: "umraGide_img")
         self.titleLbl.text = "ҚУЙИДАГИЛАРГА АҲАМИЯТ БЕРИНГ"
         self.descriptionLbl.text = preparationInformation.text.deleteHTMLTag()
-        self.removeSkeleton()
-
     }
     
     func handleViewWillAppear() {
@@ -97,4 +97,12 @@ extension PreparationForUmraViewController: PresenterToViewPreparationForUmraPro
     }
     
     
+}
+
+extension PreparationForUmraViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+       if scrollView.contentOffset.y < 0 {
+            scrollView.contentOffset.y = 0
+        }
+    }
 }

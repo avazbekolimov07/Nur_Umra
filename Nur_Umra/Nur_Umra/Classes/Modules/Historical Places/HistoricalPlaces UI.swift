@@ -15,7 +15,7 @@ extension HistoricalPlacesViewController {
         tableView.backgroundColor = .clear
         
         
-        tableView.register(HistoricalPlacesTVC.self , forCellReuseIdentifier: HistoricalPlacesTVC.identifier)
+        tableView.register(cellType: HistoricalPlacesTVC.self)
         tableView.delegate = self
         tableView.dataSource = self
     

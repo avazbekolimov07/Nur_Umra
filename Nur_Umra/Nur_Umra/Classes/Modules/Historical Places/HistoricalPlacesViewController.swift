@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 class HistoricalPlacesViewController: UIViewController {
     
@@ -35,6 +36,9 @@ class HistoricalPlacesViewController: UIViewController {
     // MARK: - Actions
     @objc func refresh() {
         presenter?.refresh()
+        
+        tableView.isSkeletonable = true
+        tableView.showAnimatedGradientSkeleton()
     }
     
 }
@@ -48,17 +52,25 @@ extension HistoricalPlacesViewController: PresenterToViewHistoricalPlacesProtoco
         self.tableView = self.createTableView()
         self.refreshControl = self.create_refreshController()
         self.tableView.addSubview(refreshControl)
-       
+        
+        baseView.isSkeletonable = true
+        tableView.isSkeletonable = true
+        tableView.showAnimatedGradientSkeleton()
     }
     
     func onFetchSuccess() {
-        print("success")
+        self.tableView.stopSkeletonAnimation()
+        self.view.hideSkeleton(reloadDataAfter: true, transition: .crossDissolve(0.25))
+        
         self.tableView.reloadData()
         self.refreshControl.endRefreshing()
     }
     
     func onFetchFailure(errorCode: Int) {
         print("failure eror code on fetch historical place - ", errorCode)
+        self.tableView.stopSkeletonAnimation()
+        self.view.hideSkeleton(reloadDataAfter: true, transition: .crossDissolve(0.25))
+        
         self.refreshControl.endRefreshing()
     }
     
@@ -76,26 +88,34 @@ extension HistoricalPlacesViewController: PresenterToViewHistoricalPlacesProtoco
     
 }
 
-extension HistoricalPlacesViewController: UITableViewDelegate, UITableViewDataSource {
+extension HistoricalPlacesViewController: UITableViewDelegate, SkeletonTableViewDataSource {
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        return HistoricalPlacesTVC.self.reuseId
+    }
+        
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (presenter?.numberOfRowsInSection())!
+        return presenter?.numberOfRowsInSection() ?? 0 // default is 4 in presenter func
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "HistoricalPlacesTVC", for: indexPath) as? HistoricalPlacesTVC
-        else {
-            return UITableViewCell()
-        }
-        cell.updateCell(with: presenter?.eachPlacesData(indexPath: indexPath) )
+        let cell = tableView.dequeueReusableCell(withCellType: HistoricalPlacesTVC.self, for: indexPath)
+        cell.updateCell(with: presenter?.eachPlacesData(indexPath: indexPath))
         cell.selectionStyle = .none
         cell.backgroundColor = .clear
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("indexPath is selected -",indexPath)
         presenter?.didSelectRawAt(indexPath: indexPath)
     }
-    
     
 }

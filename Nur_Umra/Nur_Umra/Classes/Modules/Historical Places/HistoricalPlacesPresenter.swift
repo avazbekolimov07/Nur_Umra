@@ -9,15 +9,13 @@ import Foundation
 
 class HistoricalPlacesPresenter: ViewToPresenterHistoricalPlacesProtocol {
     
-    
    
     var view: PresenterToViewHistoricalPlacesProtocol?
-    
     var router: PresenterToRouterHistoricalPlacesProtocol?
-    
     var interactor: PresenterToInteractorHistoricalPlacesProtocol?
     
     var historicalPlaces: [HistoricalPlacesDM]?
+    var dataFetched: Bool = false
     
     func viewDidLoad() {
         print("Presenter - view did load")
@@ -53,15 +51,14 @@ class HistoricalPlacesPresenter: ViewToPresenterHistoricalPlacesProtocol {
         }
         return safePleace
     }
+    
     func numberOfRowsInSection() -> Int {
-        guard let safePlacesCount = historicalPlaces?.count
+        guard let safePlaces = historicalPlaces
         else {
-            return 0
+            return dataFetched ? 0 : 4
         }
-        return safePlacesCount
+        return safePlaces.count
     }
-    
-    
     
     
 }
@@ -70,10 +67,12 @@ extension HistoricalPlacesPresenter: InteractorToPresenterHistoricalPlacesProtoc
     
     func getHistoricalPlacesSuccess(historicalPlaces: [HistoricalPlacesDM]) {
         self.historicalPlaces = historicalPlaces
+        dataFetched = true
         view?.onFetchSuccess()
     }
     
     func getHistoricalPlacesFailure(errorCode: Int) {
+        dataFetched = true
         view?.onFetchFailure(errorCode: errorCode)
         print("Presenter -> erorrCode -\(errorCode) , Failure -  Cannot get all historical place")
     }

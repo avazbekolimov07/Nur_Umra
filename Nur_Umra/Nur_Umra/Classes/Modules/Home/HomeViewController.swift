@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import SkeletonView
 
 class HomeViewController: UIViewController {
     
@@ -212,7 +212,8 @@ extension HomeViewController {
         self.collectionView.addSubview(self.refreshControl)
         self.navigationItem.title = ""
         
-//        collectionView.isSkeletonable = true
+        baseView.isSkeletonable = true
+        collectionView.isSkeletonable = true
 //        collectionView.showAnimatedGradientSkeleton()
         
         NetworkMonitor.shared.startMonitoring()
@@ -222,7 +223,6 @@ extension HomeViewController {
 
 extension HomeViewController {
     func networkListener(){
-        print("networkListener")
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(internetConnectionOff(notification: )),
                                                name: Notification.Name("internetConnectionOff"),
@@ -232,7 +232,6 @@ extension HomeViewController {
     
     
     @objc func internetConnectionOff(notification: NSNotification){
-        print("internetConnectionOff")
         DispatchQueue.main.async {
             let vc = NetworkLottie()
             vc.modalPresentationStyle = .overFullScreen

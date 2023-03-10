@@ -6,11 +6,10 @@
 //
 
 import UIKit
+import SkeletonView
 
-class HistoricalPlacesTVC: UITableViewCell {
-    static let identifier = "HistoricalPlacesTVC"
+class HistoricalPlacesTVC: UITableViewCell, ClassIdentifiable {
 
-    
     private let containerView: UIView = {
         let view = UIView()
         view.backgroundColor = .systemBackground
@@ -19,6 +18,7 @@ class HistoricalPlacesTVC: UITableViewCell {
         view.layer.shadowOffset = CGSize(width: 0, height: 4)
         view.layer.shadowRadius = 8
         view.layer.shadowOpacity = 0.1
+        
 //        view.layer.shouldRasterize = true
         view.layer.borderWidth = 0.3
         view.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
@@ -40,26 +40,28 @@ class HistoricalPlacesTVC: UITableViewCell {
         lbl.font = UIFont(name: "Poppins-SemiBold", size: 18)
         lbl.numberOfLines = 0
         lbl.textAlignment = .left
-        lbl.text = "Masjidul Nabaviy - In Medina al Munavvara Masjidul"
+        lbl.text = "Masjidul Nabavi"
+        
+        lbl.skeletonTextNumberOfLines = 1
+        lbl.skeletonCornerRadius = 4
+        lbl.linesCornerRadius = 4
         return lbl
     }()
     
     func updateCell(with place: HistoricalPlacesDM?) {
-        guard let safePlace = place
-        else {
-            return
-        }
+        guard let safePlace = place else { return }
         self.img.sd_setImage(with: URL(string: safePlace.img), placeholderImage: UIImage(named: "tarix_img"))
         self.nameLbl.text = safePlace.name
     }
     
     private func setupViews() {
-        self.contentView.addSubview(containerView)
+        contentView.addSubview(containerView)
         self.containerView.addSubview(img)
         self.containerView.addSubview(nameLbl)
     }
     
     private func setupConstraints() {
+        
         containerView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(10)
             make.left.equalToSuperview().offset(16)
@@ -83,20 +85,31 @@ class HistoricalPlacesTVC: UITableViewCell {
         }
     }
     
-    func setupCell() {
-        setupViews()
-        setupConstraints()
+    func configureSkeleton() {
+        [self.nameLbl,
+         self.img,
+         self.containerView,
+         self.contentView,
+         self].forEach {
+            $0.isSkeletonable = true
+        }
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.selectionStyle = .default
+        
         setupViews()
         setupConstraints()
+        configureSkeleton()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func layoutSubviews() {
+        
     }
     
 }

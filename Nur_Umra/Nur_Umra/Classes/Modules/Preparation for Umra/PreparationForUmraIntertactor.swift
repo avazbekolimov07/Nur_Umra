@@ -21,6 +21,5 @@ class PreparationForUmraInteractor: PresenterToInteractorPreparationForUmraProto
         } failure: { code in
             self.presenter?.getPreparionForUmraFailure(errorCode: code)
         }
-
     }
 }

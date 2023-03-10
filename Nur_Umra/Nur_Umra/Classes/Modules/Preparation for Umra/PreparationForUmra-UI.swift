@@ -15,6 +15,7 @@ extension PreparationForUmraViewController {
         let topPadding = window!.safeAreaInsets.top
         
         let scroll = UIScrollView()
+        scroll.delegate = self
         scroll.showsHorizontalScrollIndicator = false
         scroll.showsVerticalScrollIndicator = false
         scroll.contentInset.top = -topPadding
@@ -34,7 +35,8 @@ extension PreparationForUmraViewController {
     
     func createImgView() -> UIImageView {
         let imgView = UIImageView()
-        imgView.image = UIImage(systemName: "person")
+        imgView.image = UIImage(named: "umraGide_img")
+        
         self.scrollView.addSubviews(imgView)
         
         imgView.snp.makeConstraints { make in
@@ -55,7 +57,10 @@ extension PreparationForUmraViewController {
         titleLbl.numberOfLines = 0
         titleLbl.textAlignment = .center
         
-        titleLbl.text = "Just for skeleton view some text,Just for skeleton view some text,Just for skeleton view some text,Just for skeleton view some text,Just for skeleton view some text,Just for skeleton view some text,"
+        titleLbl.text = "Just for skeleton view some text"
+        
+        titleLbl.skeletonCornerRadius = 4
+        titleLbl.linesCornerRadius = 4
         
         self.scrollView.addSubviews(titleLbl)
         
@@ -74,7 +79,12 @@ extension PreparationForUmraViewController {
         titleLbl.font = UIFont(name: "Poppins-Regular", size: 14)
         titleLbl.numberOfLines = 0
         titleLbl.textAlignment = .left
+        
         titleLbl.text = "Just for skeleton view some text,Just for skeleton view some text,Just for skeleton view some text,Just for skeleton view some text,Just for skeleton view some text,Just for skeleton view some text,"
+        
+        titleLbl.skeletonCornerRadius = 4
+        titleLbl.linesCornerRadius = 4
+        titleLbl.lastLineFillPercent = 80
         
         self.scrollView.addSubviews(titleLbl)
         
@@ -112,7 +122,7 @@ extension PreparationForUmraViewController {
         
         btn.snp.makeConstraints { make in
             make.width.height.equalTo(38)
-            make.top.equalTo(self.view.snp.top).offset(54)
+            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(20)
             make.left.equalTo(self.view.snp.left).inset(16)
         }
         
@@ -124,12 +134,11 @@ extension PreparationForUmraViewController {
     
     func configureSkeleton() {
         print("☠ Configure skeleton is working")
-        [
-         self.backBtn,
-         self.descriptionLbl,
+        [self.descriptionLbl,
          self.titleLbl,
          self.imgView,
-         self.view
+         self.scrollView,
+         self.baseView
          ].forEach {
             $0.isSkeletonable = true
             $0.showAnimatedGradientSkeleton()
@@ -138,14 +147,14 @@ extension PreparationForUmraViewController {
     
     func removeSkeleton() {
         print("☠ remove skeleton is working")
-        [
-         self.backBtn,
-         self.descriptionLbl,
+        [self.descriptionLbl,
          self.titleLbl,
          self.imgView,
-         self.view
+         self.scrollView,
+         self.baseView,
          ].forEach {
-            $0.stopSkeletonAnimation()
+            $0?.stopSkeletonAnimation()
+            $0?.hideSkeleton()
         }
         self.view.hideSkeleton(reloadDataAfter: true, transition: .crossDissolve(0.25))
     }

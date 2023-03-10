@@ -9,7 +9,6 @@ import Foundation
 
 class PreparationForUmraPresenter: ViewtoPresenterPreparationForUmraProtocol {
    
-    
     weak var view: PresenterToViewPreparationForUmraProtocol?
     
     var interactor: PresenterToInteractorPreparationForUmraProtocol?
@@ -19,17 +18,16 @@ class PreparationForUmraPresenter: ViewtoPresenterPreparationForUmraProtocol {
     var preparationForUmra: PreparationDM?
     
     func viewDidLoad() {
-        print("Didload preparaion in presenter is working ")
         view?.createUIElements()
         interactor?.loadPreparationForUmra()
     }
     
     func viewWillAppear() {
-           view?.handleViewWillAppear()
+        view?.handleViewWillAppear()
     }
-       
+    
     func viewWillDisappear() {
-           view?.handleViewWillDisappear()
+        view?.handleViewWillDisappear()
     }
     
     func userWantsToPopVC() {
@@ -48,11 +46,8 @@ extension PreparationForUmraPresenter: InteractorToPresenterPreparationForUmraPr
 
     
     func getPreparionForUmraSucces(preparion: PreparationDM) {
-        print("Should work get preparation for umra successs ")
+        print("Should work get preparation for umra successs")
         view?.onUpdateUIElementsSuccess(with: preparion)
     }
-    
-    
-    
     
 }

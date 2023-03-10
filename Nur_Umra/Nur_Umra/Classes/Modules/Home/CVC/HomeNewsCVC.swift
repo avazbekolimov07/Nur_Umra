@@ -44,6 +44,7 @@ class HomeNewsCVC: UICollectionViewCell, ClassIdentifiable {
     
     private lazy var photoImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.image = UIImage(named: "tarix_img")
         imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = 16
         imageView.contentMode = .scaleAspectFill

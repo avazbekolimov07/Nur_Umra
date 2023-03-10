@@ -19,13 +19,11 @@ class PreparationForUmraRouter: PresenterToRouterPreparationForUmraProtocol {
         viewController.presenter?.router = PreparationForUmraRouter()
         viewController.presenter?.interactor = PreparationForUmraInteractor()
         viewController.presenter?.interactor?.presenter = presenter
-        print("Preparation for umra module is working")
        return viewController
     }
+    
     func popVC(inView: PresenterToViewPreparationForUmraProtocol) {
         let vc = inView as? PreparationForUmraViewController
         vc?.navigationController?.popViewController(animated: true)
     }
-    
-    
 }

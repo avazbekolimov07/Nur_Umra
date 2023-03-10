@@ -28,6 +28,7 @@ protocol ViewToPresenterHistoricalPlacesProtocol: AnyObject {
     var interactor: PresenterToInteractorHistoricalPlacesProtocol? { get set }
     
     var historicalPlaces: [HistoricalPlacesDM]? { get set }
+    var dataFetched: Bool { get set }
     
     func viewDidLoad()
     func viewWillAppear()
