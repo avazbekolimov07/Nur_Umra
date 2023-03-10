@@ -212,7 +212,6 @@ extension HomeViewController {
         self.collectionView.addSubview(self.refreshControl)
         self.navigationItem.title = ""
         
-        baseView.isSkeletonable = true
         collectionView.isSkeletonable = true
 //        collectionView.showAnimatedGradientSkeleton()
         
