@@ -212,8 +212,8 @@ extension HomeViewController {
         self.collectionView.addSubview(self.refreshControl)
         self.navigationItem.title = ""
         
-        collectionView.isSkeletonable = true
-        collectionView.showAnimatedGradientSkeleton()
+//        collectionView.isSkeletonable = true
+//        collectionView.showAnimatedGradientSkeleton()
         
         NetworkMonitor.shared.startMonitoring()
         networkListener()
